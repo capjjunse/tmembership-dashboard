@@ -4,9 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>통신 3사 멤버십 현황 대시보드</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
-/* ── 토큰 ── */
 :root{
   --p:#4422e0;--pl:#ece8ff;--pd:#1a1240;--pm:#6644ff;
   --skt:#5B0F8A;--skt-bg:#f3edff;--skt-t:#3d0a5c;--skt-bd:#c8a0f0;
@@ -23,544 +21,514 @@
   --sh:0 1px 3px rgba(68,34,224,.06),0 4px 16px rgba(68,34,224,.06);
   --sh-hover:0 2px 6px rgba(68,34,224,.1),0 8px 28px rgba(68,34,224,.1);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Apple SD Gothic Neo',sans-serif;font-size:14px;color:var(--tx);background:#eceaf5;min-height:100vh}
-a{color:var(--p);text-decoration:none}
-a:hover{text-decoration:underline}
-.page{max-width:1160px;margin:0 auto;padding:22px 16px 64px}
-.hdr{position:relative;overflow:hidden;background:linear-gradient(135deg,#120d32 0%,#1e1260 30%,#3617ce 65%,#5533ee 100%);border-radius:var(--rxl);padding:28px 32px 24px;margin-bottom:18px;color:#fff;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;box-shadow:0 12px 48px rgba(54,23,206,.32)}
-.hdr::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,rgba(130,80,255,.25) 0%,transparent 70%);pointer-events:none}
-.hdr::after{content:'';position:absolute;bottom:-80px;left:20%;width:240px;height:240px;background:radial-gradient(circle,rgba(255,80,180,.12) 0%,transparent 70%);pointer-events:none}
-.hdr-l .htag{font-size:10px;font-weight:700;letter-spacing:.14em;color:rgba(220,217,255,.75);text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.hdr-l .htag::before{content:'';width:16px;height:1px;background:rgba(220,217,255,.5);display:inline-block}
-.hdr-l h1{font-size:22px;font-weight:800;letter-spacing:-.5px;line-height:1.2}
-.hdr-meta{font-size:11px;color:rgba(255,255,255,.5);margin-top:6px;display:flex;align-items:center;gap:8px}
-.hdr-dot{width:6px;height:6px;background:#7bed9f;border-radius:50%;flex-shrink:0;box-shadow:0 0 6px #7bed9f}
-.nav-wrap{position:sticky;top:0;z-index:100;padding:8px 0 0;background:transparent;margin-bottom:10px}
-.nav{background:var(--bg);border-radius:var(--rl);padding:.55rem .9rem;display:flex;gap:2px;flex-wrap:wrap;box-shadow:0 4px 16px rgba(68,34,224,.14),0 1px 4px rgba(0,0,0,.08)}
-.nav a{font-size:11.5px;font-weight:500;padding:5px 11px;border-radius:20px;color:var(--tx2);cursor:pointer;transition:.15s;white-space:nowrap}
-.nav a:hover{background:var(--bg3);color:var(--p);text-decoration:none}
-.nav a.on{background:var(--p);color:#fff;font-weight:700}
-.sec{background:var(--bg);border-radius:var(--rl);padding:1.5rem;margin-bottom:14px;box-shadow:var(--sh)}
-.sh{display:flex;align-items:baseline;gap:8px;margin-bottom:1.1rem;padding-bottom:.75rem;border-bottom:1px solid var(--bd);justify-content:space-between;flex-wrap:wrap}
-.st{font-size:15px;font-weight:800;color:var(--tx)}
-.ss{font-size:11px;color:var(--tx3);font-weight:400}
-.cb{display:inline-flex;align-items:center;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:800;margin-right:3px;line-height:1.55;letter-spacing:.01em}
-.bs{background:var(--skt-bg);color:var(--skt-t);border:1px solid var(--skt-bd)}
-.bk{background:var(--kt-bg);color:var(--kt-t);border:1px solid var(--kt-bd)}
-.bl{background:var(--lgu-bg);color:var(--lgu-t);border:1px solid var(--lgu-bd)}
-.og{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-@media(max-width:720px){.og{grid-template-columns:1fr 1fr}}
-.oc{border-radius:var(--r);padding:1rem 1.1rem;border:1px solid var(--bd);background:var(--bg2);position:relative;overflow:hidden;transition:.2s}
-.oc:hover{box-shadow:var(--sh-hover)}
-.oc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--r) var(--r) 0 0}
-.oc.cs::before{background:linear-gradient(90deg,var(--skt),#9044ee)}
-.oc.ck::before{background:linear-gradient(90deg,var(--kt),#ff6666)}
-.oc.cl::before{background:linear-gradient(90deg,var(--lgu),#ff55cc)}
-.oc.cg::before{background:linear-gradient(90deg,#6b7280,#94a3b8)}
-.ol{font-size:11px;color:var(--tx3);margin-bottom:6px}
-.ov{font-size:14px;font-weight:800;line-height:1.3;color:var(--tx)}
-.od{font-size:11px;color:var(--tx2);margin-top:5px;line-height:1.6}
-.tl{display:flex;flex-direction:column;gap:7px;margin-top:12px}
-.ti{display:flex;align-items:flex-start;gap:9px;padding:9px 13px;border-radius:var(--r);background:var(--bg3);border:1px solid var(--bd)}
-.tdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;margin-top:5px}
-.tt{font-size:12px;line-height:1.65}
-.cl2{font-size:12px;font-weight:700;color:var(--tx2);margin:1rem 0 7px;padding-bottom:5px;border-bottom:2px solid var(--bd);display:flex;align-items:center;gap:7px}
-.cl2:first-child{margin-top:0}
-.cl2::before{content:'';width:3px;height:13px;background:var(--p);border-radius:2px;display:inline-block}
-table.ct{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
-table.ct th{text-align:left;padding:9px 12px;font-weight:700;border-bottom:2px solid var(--bd2);font-size:11px}
-table.ct th:first-child{width:108px;background:var(--bg3);color:var(--tx2)}
-table.ct th.th-skt{background:var(--skt-bg);color:var(--skt-t)}
-table.ct th.th-kt{background:var(--kt-bg);color:var(--kt-t)}
-table.ct th.th-lgu{background:var(--lgu-bg);color:var(--lgu-t)}
-table.ct th:not(:first-child){width:calc((100% - 108px)/3)}
-table.ct td{padding:9px 12px;border-bottom:1px solid var(--bd);vertical-align:top;line-height:1.65}
-table.ct tr:last-child td{border-bottom:none}
-table.ct tr:hover td{background:var(--bg3)}
-table.ct td:first-child{font-weight:700;color:var(--tx2);font-size:11px}
-.na{color:var(--tx3);font-style:italic}
-.wt{color:var(--neg);font-weight:700}
-.ht2{color:var(--pos);font-weight:700}
-.m3{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--bd);border-radius:var(--rl);overflow:hidden}
-.mc{border-right:1px solid var(--bd)}
-.mc:last-child{border-right:none}
-.mch{padding:10px 14px;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:space-between;gap:6px}
-.mch.ms{background:var(--skt-bg);color:var(--skt-t)}
-.mch.mk{background:var(--kt-bg);color:var(--kt-t)}
-.mch.ml{background:var(--lgu-bg);color:var(--lgu-t)}
-.mlink{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,.7);border:1px solid currentColor;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:.15s}
-.mlink:hover{background:rgba(255,255,255,.95);text-decoration:none}
-.mcb{padding:13px 14px}
-.mblk{margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--bd)}
-.mblk:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
-.mbtit{font-size:11px;font-weight:800;color:var(--tx);margin-bottom:5px;display:flex;align-items:center;gap:5px}
-.mbdot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
-.mblist{font-size:11.5px;line-height:1.85;color:var(--tx2)}
-.mblist li{list-style:none;padding-left:.9rem;position:relative}
-.mblist li::before{content:'·';position:absolute;left:0;color:var(--tx3)}
-.vt{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
-.vt th{text-align:left;padding:8px 12px;font-size:11px;font-weight:700;border-bottom:2px solid var(--bd2)}
-.vt th:first-child{width:108px;background:var(--bg3);color:var(--tx2)}
-.vt td{padding:10px 12px;border-bottom:1px solid var(--bd);vertical-align:top;line-height:1.65;font-size:12px}
-.vt tr:last-child td{border-bottom:none}
-.vt tr:hover td{background:var(--bg3)}
-.vt td:first-child{font-weight:700;color:var(--tx2);font-size:11px}
-.vlink{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;padding:3px 8px;border-radius:20px;background:var(--pl);color:var(--p);border:1px solid rgba(68,34,224,.2);text-decoration:none;margin-top:5px;transition:.15s}
-.vlink:hover{background:var(--p);color:#fff;text-decoration:none}
-.ht{width:100%;border-collapse:collapse;font-size:12px}
-.ht th{text-align:left;padding:7px 12px;font-weight:700;background:var(--bg3);font-size:11px;color:var(--tx2);border-bottom:2px solid var(--bd2)}
-.ht td{padding:8px 12px;border-bottom:1px solid var(--bd);vertical-align:top;line-height:1.5}
-.ht tr:last-child td{border-bottom:none}
-.ht tr:hover td{background:var(--bg3)}
-.tb{display:inline-block;padding:2px 9px;border-radius:20px;font-size:10px;font-weight:800}
-.t신규{background:#dbeafe;color:#1d4ed8}.t변경{background:var(--warn-bg);color:var(--warn)}
-.t종료{background:var(--neg-bg);color:var(--neg)}.t재개{background:var(--pos-bg);color:var(--pos)}
-.tr2{display:flex;gap:5px;flex-wrap:wrap}
-.ntab,.ctab{padding:7px 16px;border-radius:20px;border:1.5px solid var(--bd2);font-size:12px;font-weight:700;cursor:pointer;background:var(--bg);color:var(--tx2);font-family:inherit;transition:.15s}
-.ntab:hover,.ctab:hover{background:var(--bg3)}
-.ntab.as{background:var(--skt-bg);color:var(--skt-t);border-color:var(--skt)}
-.ntab.ak{background:var(--kt-bg);color:var(--kt-t);border-color:var(--kt)}
-.ntab.al{background:var(--lgu-bg);color:var(--lgu-t);border-color:var(--lgu)}
-.ctab.cs{background:var(--skt-bg);color:var(--skt-t);border-color:var(--skt)}
-.ctab.ck{background:var(--kt-bg);color:var(--kt-t);border-color:var(--kt)}
-.ctab.cl{background:var(--lgu-bg);color:var(--lgu-t);border-color:var(--lgu)}
-.kw{padding:5px 13px;border-radius:20px;border:1.5px solid var(--bd2);font-size:12px;font-weight:600;cursor:pointer;background:var(--bg);color:var(--tx2);font-family:inherit;transition:.15s}
-.kw:hover:not(.on){background:var(--bg3)}
-.kw.on{background:var(--p);color:#fff;border-color:var(--p)}
-.nc{padding:14px 16px;border-radius:var(--r);border:1px solid var(--bd);margin-bottom:9px;background:var(--bg);transition:.2s}
-.nc:hover{box-shadow:var(--sh-hover);border-color:var(--bd2)}
-.nct{display:flex;align-items:center;gap:8px;margin-bottom:5px;flex-wrap:wrap}
-.ntitle{font-size:13px;font-weight:800}
-.nsum{font-size:12px;color:var(--tx2);line-height:1.7}
-.nmeta{font-size:11px;color:var(--tx3);margin-top:5px}
-.nb{padding:2px 9px;border-radius:20px;font-size:10px;font-weight:800}
-.nb신규{background:#dbeafe;color:#1d4ed8}.nb종료{background:var(--neg-bg);color:var(--neg)}.nb이슈{background:var(--warn-bg);color:var(--warn)}.nb변경{background:var(--pos-bg);color:var(--pos)}
-.rbw{background:linear-gradient(135deg,var(--bg2),var(--bg3));border:1px solid var(--bd);border-radius:var(--r);padding:14px 16px;margin-bottom:14px}
-.srcs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px}
-.srcbadge{font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;border:1px solid var(--bd2);background:var(--bg3);color:var(--tx2)}
-.srcbadge.act{background:var(--pl);color:var(--p);border-color:rgba(68,34,224,.25)}
-.rc{padding:12px 15px;border-radius:var(--r);border:1px solid var(--bd);margin-bottom:8px;background:var(--bg);transition:.2s}
-.rc:hover{box-shadow:var(--sh-hover)}
-.rct{display:flex;align-items:center;gap:6px;margin-bottom:5px;flex-wrap:wrap}
-.rtx{font-size:12px;line-height:1.75;color:var(--tx2)}
-.rsrc{font-size:11px;color:var(--tx3);margin-top:4px}
-.rbg{padding:2px 9px;border-radius:20px;font-size:10px;font-weight:800}
-.rbg.rpos{background:var(--pos-bg);color:var(--pos)}.rbg.rneg{background:var(--neg-bg);color:var(--neg)}.rbg.rneu{background:var(--neu-bg);color:var(--neu)}
-.rtag{font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px}
-.treal{background:var(--pos-bg);color:var(--pos);border:1px solid var(--pos-bd)}
-.tsrc{background:var(--pl);color:var(--p);border:1px solid rgba(68,34,224,.15)}
-.tch{position:relative;height:230px;margin:1rem 0}
-.tinfo{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:10px}
-.tleg{display:flex;gap:14px;flex-wrap:wrap}
-.tli{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--tx2)}
-.tld{width:10px;height:10px;border-radius:50%}
-.ntg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-@media(max-width:720px){.ntg{grid-template-columns:1fr}}
-.ntc{border-radius:var(--r);border:1px solid var(--bd);overflow:hidden;background:var(--bg);transition:.2s}
-.ntc:hover{box-shadow:var(--sh-hover);transform:translateY(-2px)}
-.nth{padding:10px 14px;font-size:12px;font-weight:800}
-.ntb{padding:12px 14px;font-size:12px;line-height:1.85;color:var(--tx2)}
-.ntb b{color:var(--tx);font-weight:700}
-.nttag{display:inline-block;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700;margin-bottom:7px}
-.pg{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-@media(max-width:720px){.pg{grid-template-columns:1fr}}
-.pc{border-radius:var(--r);border:2px solid var(--bd);padding:14px 16px 14px 20px;background:var(--bg);position:relative;overflow:hidden;transition:.2s}
-.pc:hover{box-shadow:var(--sh-hover);transform:translateY(-2px)}
-.pc::before{content:'';position:absolute;top:0;left:0;bottom:0;width:4px}
-.pc.ph{border-color:#5b21b6}.pc.ph::before{background:linear-gradient(180deg,#7c3aed,#a855f7)}
-.pc.pm{border-color:#0284c7}.pc.pm::before{background:linear-gradient(180deg,#0ea5e9,#38bdf8)}
-.pc.pl2{border-color:#059669}.pc.pl2::before{background:linear-gradient(180deg,#10b981,#34d399)}
-.pn{font-size:14px;font-weight:800;margin-bottom:3px}
-.pmeta{font-size:11px;color:var(--tx3);margin-bottom:8px}
-.pdesc{font-size:12px;color:var(--tx2);line-height:1.7;margin-bottom:8px}
-.ptags{display:flex;flex-wrap:wrap;gap:5px}
-.ptag{font-size:10px;padding:2px 8px;border-radius:20px;background:var(--bg3);border:1px solid var(--bd2);color:var(--tx2)}
-.ibh{background:#ede9fe;color:#5b21b6;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:800;display:inline-block;margin-bottom:7px}
-.ibm{background:#e0f2fe;color:#0369a1;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:800;display:inline-block;margin-bottom:7px}
-.ibl{background:#d1fae5;color:#065f46;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:800;display:inline-block;margin-bottom:7px}
-.swot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
-@media(max-width:720px){.swot-grid{grid-template-columns:1fr}}
-.swot-card{border-radius:var(--rl);overflow:hidden;box-shadow:var(--sh);transition:.2s}
-.swot-card:hover{box-shadow:var(--sh-hover)}
-.swot-hdr{padding:12px 16px;font-size:13px;font-weight:800;display:flex;align-items:center;gap:7px}
-.swot-hdr.sh-skt{background:linear-gradient(135deg,var(--skt),#8833cc);color:#fff}
-.swot-hdr.sh-kt{background:linear-gradient(135deg,var(--kt),#ff5555);color:#fff}
-.swot-hdr.sh-lgu{background:linear-gradient(135deg,var(--lgu),#ff55cc);color:#fff}
-.swot-ico{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
-.swot-body{background:var(--bg)}
-.swot-section{padding:10px 16px;border-bottom:1px solid var(--bd)}
-.swot-section:last-child{border-bottom:none}
-.swot-label{font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:6px;display:flex;align-items:center;gap:5px}
-.swot-label.str{color:var(--pos)}.swot-label.wk{color:var(--neg)}
-.swot-label::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;display:inline-block}
-.swot-items{display:flex;flex-direction:column;gap:4px}
-.swot-item{font-size:11.5px;color:var(--tx2);line-height:1.55;padding:4px 8px;border-radius:6px;display:flex;align-items:flex-start;gap:5px}
-.swot-item::before{content:'';width:4px;height:4px;border-radius:50%;flex-shrink:0;margin-top:5px}
-.swot-section.str .swot-item::before{background:var(--pos)}
-.swot-section.wk .swot-item::before{background:var(--neg)}
-.ins-list{display:flex;flex-direction:column;gap:8px}
-.ins-item{display:grid;grid-template-columns:32px 1fr;gap:10px;padding:12px 14px;border-radius:var(--r);border:1px solid var(--bd);background:var(--bg);align-items:start;transition:.2s}
-.ins-item:hover{box-shadow:var(--sh-hover);border-color:var(--bd2)}
-.ins-num{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--pm));color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0}
-.ins-txt{font-size:12px;line-height:1.75;color:var(--tx2);padding-top:6px}
-.ins-txt b{color:var(--tx);font-weight:700}
-.hidden{display:none}
-.upd-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:auto;flex-shrink:0}
-.upd-3m{background:#dbeafe;color:#1d4ed8}
-.upd-1m{background:#d1fae5;color:#065f46}
-.upd-chg{background:var(--warn-bg);color:var(--warn)}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans KR',sans-serif;background:#eceaf5;color:var(--tx);line-height:1.6;-webkit-font-smoothing:antialiased;}
+.page{max-width:1160px;margin:0 auto;padding:22px 16px 64px;}
+.hdr{background:linear-gradient(135deg,#120d32 0%,#1e1260 30%,#3617ce 65%,#5533ee 100%);border-radius:var(--rxl);padding:42px 36px 38px;margin-bottom:22px;position:relative;overflow:hidden;box-shadow:var(--sh);}
+.hdr::before{content:'';position:absolute;top:-50%;right:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(255,255,255,.08),transparent);border-radius:50%;}
+.hdr-l{position:relative;z-index:1;}
+.htag{display:inline-block;background:rgba(255,255,255,.15);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:12px;letter-spacing:.3px;}
+.hdr h1{font-size:28px;font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-.5px;}
+.hdr-meta{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.75);font-weight:500;}
+.hdr-dot{width:6px;height:6px;background:#4ade80;border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.5;}}
+.nav-wrap{position:sticky;top:0;z-index:100;background:#eceaf5;padding:8px 0 0;margin-bottom:10px;}
+.nav{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;background:var(--bg);border-radius:var(--rl);padding:8px;box-shadow:var(--sh);}
+.nav::-webkit-scrollbar{display:none;}
+.nav a{white-space:nowrap;padding:8px 16px;border-radius:10px;font-size:13px;font-weight:600;color:var(--tx2);text-decoration:none;transition:all .2s;cursor:pointer;}
+.nav a:hover{background:var(--bg3);color:var(--p);}
+.nav a.on{background:var(--p);color:#fff;font-weight:700;}
+.sec{background:var(--bg);border-radius:var(--rl);padding:28px;margin-bottom:18px;box-shadow:var(--sh);transition:box-shadow .3s;}
+.sec:hover{box-shadow:var(--sh-hover);}
+.sh{display:flex;align-items:baseline;gap:8px;margin-bottom:1.1rem;padding-bottom:.75rem;border-bottom:1px solid var(--bd);justify-content:space-between;flex-wrap:wrap;}
+.st{font-size:15px;font-weight:800;color:var(--tx);}
+.ss{font-size:11px;color:var(--tx3);font-weight:400;}
+.upd-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:auto;flex-shrink:0;}
+.upd-3m{background:#dbeafe;color:#1d4ed8;}
+.upd-1m{background:#d1fae5;color:#065f46;}
+.upd-chg{background:var(--warn-bg);color:var(--warn);}
+.og{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:1.6rem;}
+.oc{background:var(--bg2);border-radius:var(--r);padding:18px;border:1px solid var(--bd);transition:all .2s;}
+.oc:hover{transform:translateY(-2px);box-shadow:var(--sh);}
+.ol{font-size:11px;color:var(--tx3);margin-bottom:6px;font-weight:600;}
+.ov{font-size:15px;font-weight:700;color:var(--tx);margin-bottom:6px;}
+.od{font-size:12px;color:var(--tx2);line-height:1.5;}
+.cs{border-left:3px solid var(--skt);}
+.ck{border-left:3px solid var(--kt);}
+.cl{border-left:3px solid var(--lgu);}
+.cg{border-left:3px solid var(--tx3);}
+.cb{display:inline-block;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;margin-right:4px;}
+.bs{background:var(--skt-bg);color:var(--skt-t);}
+.bk{background:var(--kt-bg);color:var(--kt-t);}
+.bl{background:var(--lgu-bg);color:var(--lgu-t);}
+.tr-list{list-style:none;margin-top:1rem;}
+.tr-list li{padding:10px 0;border-bottom:1px solid var(--bd);font-size:13px;line-height:1.6;color:var(--tx2);}
+.tr-list li:last-child{border:none;}
+.tr-list li strong{color:var(--tx);font-weight:700;}
+table.ct{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px;margin-top:1rem;}
+table.ct th,table.ct td{padding:12px 10px;text-align:left;border-bottom:1px solid var(--bd);vertical-align:top;}
+table.ct th{font-weight:700;font-size:12px;position:sticky;top:0;z-index:10;}
+table.ct th.th-cat{width:20%;background:var(--bg3);color:var(--tx);}
+table.ct th.th-skt{width:26%;background:var(--skt-bg);color:var(--skt-t);}
+table.ct th.th-kt{width:26%;background:var(--kt-bg);color:var(--kt-t);}
+table.ct th.th-lgu{width:26%;background:var(--lgu-bg);color:var(--lgu-t);}
+table.ct td{color:var(--tx2);line-height:1.5;}
+table.ct td strong{color:var(--tx);font-weight:700;}
+.m3{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--bd);border-radius:var(--rl);overflow:hidden;margin-top:1rem;}
+.mch{padding:18px 16px;text-align:center;border-right:1px solid var(--bd);font-size:13px;line-height:1.6;}
+.mch:last-child{border-right:none;}
+.mch.ms{background:var(--skt-bg);color:var(--skt-t);}
+.mch.mk{background:var(--kt-bg);color:var(--kt-t);}
+.mch.ml{background:var(--lgu-bg);color:var(--lgu-t);}
+.mch strong{display:block;font-size:15px;margin-bottom:8px;font-weight:700;}
+.link-box{margin-top:1.4rem;padding:16px;background:var(--bg3);border-radius:var(--r);border:1px solid var(--bd);}
+.link-box a{display:block;padding:10px 0;font-size:13px;color:var(--p);text-decoration:none;font-weight:600;transition:color .2s;}
+.link-box a:hover{color:var(--pm);text-decoration:underline;}
+.ntabs{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap;}
+.ntab{padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;background:var(--bg3);color:var(--tx2);border:1px solid var(--bd);}
+.ntab.as{background:var(--skt-bg);color:var(--skt-t);border-color:var(--skt-bd);}
+.ntab.ak{background:var(--kt-bg);color:var(--kt-t);border-color:var(--kt-bd);}
+.ntab.al{background:var(--lgu-bg);color:var(--lgu-t);border-color:var(--lgu-bd);}
+.np{margin-top:1rem;}
+.np.hidden{display:none;}
+.ni{padding:14px;background:var(--bg2);border-radius:var(--r);margin-bottom:10px;border-left:3px solid var(--bd2);transition:all .2s;}
+.ni:hover{background:var(--bg3);border-left-color:var(--p);}
+.ni-t{font-size:14px;font-weight:700;color:var(--tx);margin-bottom:6px;}
+.ni-d{font-size:11px;color:var(--tx3);margin-bottom:8px;}
+.ni-s{font-size:12px;color:var(--tx2);line-height:1.6;}
+.ni-s::before{content:'• ';color:var(--p);font-weight:700;}
+.ctab{padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;background:var(--bg3);color:var(--tx2);border:1px solid var(--bd);transition:all .2s;}
+.ctab.cs{background:var(--skt-bg);color:var(--skt-t);border-color:var(--skt-bd);}
+.ctab.ck{background:var(--kt-bg);color:var(--kt-t);border-color:var(--kt-bd);}
+.ctab.cl{background:var(--lgu-bg);color:var(--lgu-t);border-color:var(--lgu-bd);}
+.sent{margin-top:1rem;}
+.sent.hidden{display:none;}
+.cmt{padding:12px;background:var(--bg2);border-radius:var(--r);margin-bottom:10px;border-left:3px solid var(--bd2);}
+.cmt-src{font-size:11px;color:var(--tx3);margin-bottom:4px;font-weight:600;}
+.cmt-txt{font-size:13px;color:var(--tx2);line-height:1.5;}
+.tr-chart{margin-top:1.4rem;background:var(--bg2);border-radius:var(--r);padding:20px;border:1px solid var(--bd);}
+.tr-chart canvas{max-height:360px;}
+.tr-legend{display:flex;gap:20px;margin-top:16px;flex-wrap:wrap;justify-content:center;}
+.tr-legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--tx2);}
+.tr-legend-dot{width:12px;height:12px;border-radius:50%;}
+.tr2{margin-top:1rem;}
+.kw-row{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;}
+.kw{padding:6px 12px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;background:var(--bg3);color:var(--tx2);border:1px solid var(--bd);transition:all .2s;}
+.kw.on{background:var(--p);color:#fff;border-color:var(--p);}
+.kw-detail{margin-top:10px;padding:14px;background:var(--bg2);border-radius:var(--r);border:1px solid var(--bd);}
+.kw-detail.hidden{display:none;}
+.kw-detail p{font-size:13px;color:var(--tx2);line-height:1.6;margin-bottom:8px;}
+.kw-detail p:last-child{margin-bottom:0;}
+.ai-insight{margin-top:1rem;padding:18px;background:linear-gradient(135deg,var(--pl),var(--bg4));border-radius:var(--r);border:1px solid var(--bd2);}
+.ai-insight p{font-size:13px;color:var(--tx);line-height:1.7;margin-bottom:10px;}
+.ai-insight p:last-child{margin-bottom:0;}
+.ai-insight strong{color:var(--p);font-weight:700;}
 </style>
 </head>
 <body>
 <div class="page">
-
 <div class="hdr">
-  <div class="hdr-l">
-    <div class="htag">Copyright by T 멤버십팀</div>
-    <h1>통신 3사 멤버십 현황 대시보드</h1>
-    <div class="hdr-meta"><span class="hdr-dot"></span><span id="lastUpdated">2026.04.21 기준</span></div>
-  </div>
+<div class="hdr-l">
+<div class="htag">Copyright by T 멤버십팀</div>
+<h1>통신 3사 멤버십 현황 대시보드</h1>
+<div class="hdr-meta"><span class="hdr-dot"></span><span id="lastUpdated">2026.04.22 기준</span></div>
+</div>
 </div>
 
 <div class="nav-wrap">
-<nav class="nav">
-  <a onclick="go('ov')" class="on" data-sec="ov">개요</a>
-  <a onclick="go('rg')" data-sec="rg">상시 혜택</a>
-  <a onclick="go('mo')" data-sec="mo">월별 혜택</a>
-  <a onclick="go('vp')" data-sec="vp">VIP 특화</a>
-  <a onclick="go('hs')" data-sec="hs">변경 이력</a>
-  <a onclick="go('nw')" data-sec="nw">뉴스</a>
-  <a onclick="go('sn')" data-sec="sn">고객 반응</a>
-  <a onclick="go('tr')" data-sec="tr">검색 트렌드</a>
-  <a onclick="go('nt')" data-sec="nt">비통신 멤버십</a>
-  <a onclick="go('pr')" data-sec="pr">제휴 제안</a>
-  <a onclick="go('ai')" data-sec="ai">AI 인사이트</a>
-</nav>
+<div class="nav">
+<a data-sec="ov" onclick="go('ov')">개요</a>
+<a data-sec="rg" onclick="go('rg')">상시 혜택</a>
+<a data-sec="mo" onclick="go('mo')">월별 혜택</a>
+<a data-sec="vp" onclick="go('vp')">VIP 특화</a>
+<a data-sec="hs" onclick="go('hs')">변경 이력</a>
+<a data-sec="nw" onclick="go('nw')">뉴스 스크랩</a>
+<a data-sec="sn" onclick="go('sn')">고객 반응</a>
+<a data-sec="tr" onclick="go('tr')">검색 트렌드</a>
+<a data-sec="nt" onclick="go('nt')">비통신 멤버십</a>
+<a data-sec="pr" onclick="go('pr')">제휴 제안</a>
+<a data-sec="ai" onclick="go('ai')">AI 인사이트</a>
+</div>
 </div>
 
-<!-- 개요 -->
 <div class="sec" id="ov">
-  <div class="sh"><span class="st">이번 달 핵심 동향</span><span class="ss">2026.04 기준</span><span class="upd-badge upd-1m">↻ 월 갱신</span></div>
-  <div class="og">
-    <div class="oc cs"><div class="ol"><span class="cb bs">SKT</span></div><div class="ov">0 week 신설</div><div class="od">0 day → 0 week 개편 2026.04.01<br>만 13~34세, 매월 첫째 주 5일</div></div>
-    <div class="oc ck"><div class="ol"><span class="cb bk">KT</span></div><div class="ov">고객보답 프로그램</div><div class="od">2026 한시 운영<br>데이터 100GB + OTT 6개월</div></div>
-    <div class="oc cl"><div class="ol"><span class="cb bl">LGU+</span></div><div class="ov">배민클럽 2개월 무료</div><div class="od">통신사 최초 2026.01~<br>유플투쁠 투쁠데이 경유</div></div>
-    <div class="oc cg"><div class="ol" style="font-size:11px;color:var(--tx3)">주요 변경</div><div class="ov" style="font-size:13px">롯데시네마 제휴 종료</div><div class="od"><span class="cb bs">SKT</span> 2026.02.01 종료<br>KT만 3사 중 유지</div></div>
-  </div>
-  <div class="tl">
-    <div class="ti"><div class="tdot" style="background:var(--skt)"></div><div class="tt"><span class="cb bs">SKT</span> 0 week 4월: 뚜레쥬르 브라우니 선착순 30만명 · 공차 50% · 노브랜드버거 1+1 · 요기요 8,000원 할인</div></div>
-    <div class="ti"><div class="tdot" style="background:var(--kt)"></div><div class="tt"><span class="cb bk">KT</span> 달달혜택 4월: 파파존스 방문포장 50% · 롯데마트 제타 3만원↑ 4,000원 할인 · 고객보답프로그램 2026 한시 운영</div></div>
-    <div class="ti"><div class="tdot" style="background:var(--lgu)"></div><div class="tt"><span class="cb bl">LGU+</span> 유플투쁠 2주년 4월 22일 스페셜데이 · 4월 28일 공차 VIP 30~50% · 5월 레고랜드 초청 예고</div></div>
-  </div>
+<div class="sh">
+<div><div class="st">개요</div><div class="ss">통신 3사 멤버십 핵심 동향</div></div>
+<span class="upd-badge upd-1m">↻ 월 갱신</span>
+</div>
+<div class="og">
+<div class="oc cs"><div class="ol"><span class="cb bs">SKT</span></div>
+<div class="ov">0 week 운영 중</div>
+<div class="od">0 day → 0 week 개편 2026.04.01<br>만 13~34세, 매월 첫째 주 5일</div></div>
+<div class="oc ck"><div class="ol"><span class="cb bk">KT</span></div>
+<div class="ov">달달혜택 강화</div>
+<div class="od">파파존스 50% 할인<br>롯데마트 제타 4,000원 할인</div></div>
+<div class="oc cl"><div class="ol"><span class="cb bl">LGU+</span></div>
+<div class="ov">유플투쁠 2주년</div>
+<div class="od">4/22 스페셜데이 전 등급 혜택<br>화담숲 초청 4월 진행</div></div>
+<div class="oc cg"><div class="ol" style="font-size:11px;color:var(--tx3)">주요 변경</div>
+<div class="ov" style="font-size:13px">0 week 체제 정착</div>
+<div class="od"><span class="cb bs">SKT</span> 0 day 종료<br>월별 청년 혜택 확대</div></div>
+</div>
+<div class="st" style="margin:1.6rem 0 .8rem;font-size:14px;">최근 트렌드</div>
+<ul class="tr-list">
+<li><strong>SKT</strong>: 0 week 4월 — 뚜레쥬르 브라우니 30만명 · 공차 50% · 노브랜드버거 1+1 · 요기요 8,000원↓</li>
+<li><strong>KT</strong>: 달달혜택 4월 — 파파존스 방문포장 50% · 롯데마트 제타 4,000원 할인 · 메가MGC커피 · 이디야</li>
+<li><strong>LGU+</strong>: 유플투쁠 4/22 스페셜데이 전 등급 대상 · 공차 28일 VIP 30~50% · 화담숲 장기고객 초청</li>
+</ul>
 </div>
 
-<!-- 상시 혜택 -->
 <div class="sec" id="rg">
-  <div class="sh"><span class="st">상시 혜택 비교</span><span class="ss">나무위키 직독 · 공홈 교차검증</span><span class="upd-badge upd-chg">⚡ 변경 시 업데이트</span></div>
-  <div class="cl2">영화관</div>
-  <table class="ct"><thead><tr><th>제휴처</th><th class="th-skt">SKT</th><th class="th-kt">KT</th><th class="th-lgu">LGU+</th></tr></thead><tbody>
-    <tr><td>CGV</td><td>전 고객 1매당 최대 4,000원 할인, 최대 5매</td><td>전 등급 최대 5,000원 할인 (본인+동반3인, 월3회)</td><td>최대 4,000원 할인</td></tr>
-    <tr><td>메가박스</td><td>전 고객 최대 4,000원 할인, 최대 5매</td><td>전 등급 최대 5,000원 할인, 특수관 가능</td><td class="na">기본 상시 없음</td></tr>
-    <tr><td>롯데시네마</td><td class="wt">2026.02.01 제휴 종료</td><td>전 등급 최대 5,000원 할인</td><td class="na">기본 상시 없음</td></tr>
-  </tbody></table>
-  <div class="cl2">베이커리</div>
-  <table class="ct"><thead><tr><th>제휴처</th><th class="th-skt">SKT</th><th class="th-kt">KT</th><th class="th-lgu">LGU+</th></tr></thead><tbody>
-    <tr><td>파리바게뜨</td><td>VIP/Gold: 100원(모바일) · Silver: 50원</td><td>VVIP/VIP/골드: 100원 · 일반: 50원</td><td>VIP↑: 10% 할인 · 이외: 5% 할인</td></tr>
-    <tr><td>뚜레쥬르</td><td>VIP/Gold: 150원 · Silver: 50원</td><td>VVIP/VIP/골드: 150원 · 일반: 100원</td><td>전 등급: 100원</td></tr>
-  </tbody></table>
-  <div class="cl2">패밀리레스토랑</div>
-  <table class="ct"><thead><tr><th>제휴처</th><th class="th-skt">SKT</th><th class="th-kt">KT</th><th class="th-lgu">LGU+</th></tr></thead><tbody>
-    <tr><td>아웃백</td><td>VIP/Gold: 15% 할인 · Silver: 5% 할인</td><td>VVIP/VIP/골드: 15% 할인 · 화이트/일반: 5% 할인</td><td class="na">상시 없음 (유플투쁠)</td></tr>
-    <tr><td>VIPS</td><td>VIP/Gold: 15% 할인 · Silver: 5% 할인</td><td>VVIP/VIP/골드: 15% 할인</td><td>VVIP/VIP: 10% 할인 · 우수: 5% 할인</td></tr>
-  </tbody></table>
-  <div class="cl2">피자</div>
-  <table class="ct"><thead><tr><th>제휴처</th><th class="th-skt">SKT</th><th class="th-kt">KT</th><th class="th-lgu">LGU+</th></tr></thead><tbody>
-    <tr><td>도미노</td><td>VIP: 30% 할인 · Gold/Silver: 20% 할인</td><td>VVIP/VIP: 20% 할인 · 일반: 15% 할인</td><td>VIP↑: 20% 할인 · 이외: 15% 할인 (상시)</td></tr>
-    <tr><td>피자헛</td><td>VIP: 30% 할인 · Gold/Silver: 20% 할인</td><td>전 등급: 15% 할인</td><td>VIP↑: 20% 할인 · 이외: 15% 할인 (상시)</td></tr>
-  </tbody></table>
-  <div class="cl2">카페·디저트</div>
-  <table class="ct"><thead><tr><th>제휴처</th><th class="th-skt">SKT</th><th class="th-kt">KT</th><th class="th-lgu">LGU+</th></tr></thead><tbody>
-    <tr><td>배스킨라빈스</td><td>VIP/Gold: 1,000원당 100원 · Silver: 50원</td><td class="na">상시 없음</td><td>전 등급: 쿼터(4맛) 4,000원 할인</td></tr>
-    <tr><td>스타벅스</td><td class="na">상시 없음 (VIP Pick 경유)</td><td class="ht2">전 등급 월1회 사이즈업 (상시, 3사 유일)</td><td class="na">상시 없음 (라이프콕: 할리스)</td></tr>
-  </tbody></table>
-  <div class="cl2">편의점</div>
-  <table class="ct"><thead><tr><th>제휴처</th><th class="th-skt">SKT</th><th class="th-kt">KT</th><th class="th-lgu">LGU+</th></tr></thead><tbody>
-    <tr><td>GS25</td><td>매주 화요일 프레시푸드 200원 (전 등급)</td><td>VVIP/VIP/골드: 100원 · 실버/일반: 50원 (1일1회)</td><td>VIP↑: 100원 · 이외: 50원 (1일1회)</td></tr>
-    <tr><td>CU</td><td>VIP/Gold: 100원 · Silver: 50원</td><td>오전5~9시 간편식 한정 200원</td><td class="na">기본 상시 없음</td></tr>
-    <tr><td>세븐일레븐</td><td>VIP/Gold: 100원 · Silver: 50원</td><td class="na">제휴 없음</td><td class="na">제휴 없음</td></tr>
-  </tbody></table>
+<div class="sh">
+<div><div class="st">상시 혜택</div><div class="ss">제휴사별 일상 할인 비교 (2026.04 기준)</div></div>
+<span class="upd-badge upd-chg">⚡ 변경 시 업데이트</span>
+</div>
+<table class="ct">
+<thead>
+<tr>
+<th class="th-cat">분류</th>
+<th class="th-skt">SKT</th>
+<th class="th-kt">KT</th>
+<th class="th-lgu">LGU+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>영화관</strong></td>
+<td>CGV/메가박스 전 고객 최대 4,000원↓ (11→1천/12→2천/13→3천/14↑→4천원), 최대 5매</td>
+<td>CGV/메가박스/롯데시네마 전 등급 최대 5,000원↓ (본인+동반3인, 월3회) / VVIP 초이스 2인 무료</td>
+<td>기본 없음 · 영화콕(VIP↑) <strong>연3회</strong></td>
+</tr>
+<tr>
+<td><strong>베이커리</strong></td>
+<td><strong>파리바게뜨</strong>: VIP/Gold 100원 · Silver 50원<br><strong>뚜레쥬르</strong>: VIP/Gold 150원 · Silver 50원</td>
+<td><strong>파리바게뜨</strong>: VVIP/VIP/골드 100원 · 일반 50원<br><strong>뚜레쥬르</strong>: VVIP/VIP/골드 150원 · 일반 100원</td>
+<td><strong>파리바게뜨</strong>: VIP↑ <strong>10%</strong> · 이외 <strong>5%</strong><br><strong>뚜레쥬르</strong>: <strong>전 등급 100원</strong></td>
+</tr>
+<tr>
+<td><strong>패밀리레스토랑</strong></td>
+<td><strong>아웃백</strong>: VIP/Gold 15% · Silver 5%<br><strong>VIPS</strong>: VIP/Gold 15% · Silver 5%</td>
+<td><strong>아웃백</strong>: VVIP/VIP/골드 15% · 화이트/일반 5%<br><strong>VIPS</strong>: VVIP/VIP/골드 15%</td>
+<td><strong>아웃백</strong>: 상시 없음<br><strong>VIPS</strong>: <strong>VVIP/VIP 10%</strong> · 우수 5%</td>
+</tr>
+<tr>
+<td><strong>피자</strong></td>
+<td><strong>도미노</strong>: VIP 30% · Gold/Silver 20%<br><strong>피자헛</strong>: VIP 30% · Gold/Silver 20%</td>
+<td><strong>도미노</strong>: VVIP/VIP 20% · 일반 15%<br><strong>피자헛</strong>: 전 등급 15%</td>
+<td><strong>도미노</strong>: <strong>VIP↑ 20% · 이외 15% 상시</strong><br><strong>피자헛</strong>: <strong>VIP↑ 20% · 이외 15% 상시</strong></td>
+</tr>
+<tr>
+<td><strong>카페·디저트</strong></td>
+<td><strong>배스킨라빈스</strong>: VIP/Gold <strong>1,000원당 100원</strong> · Silver 50원<br><strong>스타벅스</strong>: 상시 없음</td>
+<td><strong>배스킨라빈스</strong>: 상시 없음<br><strong>스타벅스</strong>: <strong>전 등급 월1회 사이즈업 (3사 유일)</strong></td>
+<td><strong>배스킨라빈스</strong>: 전 등급 쿼터 4,000원↓<br><strong>스타벅스</strong>: 상시 없음</td>
+</tr>
+<tr>
+<td><strong>편의점</strong></td>
+<td><strong>GS25</strong>: 전 등급 매주 화요일 프레시푸드 200원<br><strong>CU</strong>: VIP/Gold 100원 · Silver 50원<br><strong>세븐일레븐</strong>: VIP/Gold 100원 · Silver 50원</td>
+<td><strong>GS25</strong>: VVIP/VIP/골드 100원 · 실버/일반 50원 (오전5~9시 간편식 200원)<br><strong>CU</strong>: 오전5~9시 간편식 200원<br><strong>세븐일레븐</strong>: 없음</td>
+<td><strong>GS25</strong>: VIP↑ 100원 · 이외 50원 (매일)<br><strong>CU</strong>: 기본 없음<br><strong>세븐일레븐</strong>: 없음</td>
+</tr>
+</tbody>
+</table>
 </div>
 
-<!-- 월별 혜택 -->
 <div class="sec" id="mo">
-  <div class="sh"><span class="st">월별 혜택 프로그램</span><span class="ss">2026.04 기준 · 공식 링크 포함</span><span class="upd-badge upd-chg">⚡ 변경 시 업데이트</span></div>
-  <div class="m3">
-    <div class="mc">
-      <div class="mch ms"><span>SKT — T day + 0 week</span><a href="https://sktmembership.tworld.co.kr/mps/pc-bff/sktmembership/tday.do" target="_blank" class="mlink" style="color:var(--skt-t)">T day →</a></div>
-      <div class="mcb">
-        <div class="mblk"><div class="mbtit"><span class="mbdot" style="background:var(--skt)"></span>T day — 전 등급</div><ul class="mblist"><li>배달의민족×처갓집양념치킨</li><li>다운타우너 · 그리팅 · 아떼 · 매드포갈릭</li><li>VIP 찬스: 처갓집 1만6천원↑ 8,000원 할인</li></ul></div>
-        <div class="mblk"><div class="mbtit"><span class="mbdot" style="background:#6644ff"></span>0 week — 만 13~34세 · 첫째 주 5일</div><ul class="mblist"><li>뚜레쥬르 리얼 브라우니 선착순 30만명</li><li>공차 인기 음료 50% 할인</li><li>노브랜드버거 시그니처 세트 1+1</li><li>요기요 삼첩분식 1만8천원↑ 8,000원 할인</li></ul></div>
-        <div class="mblk"><div class="mbtit"><span class="mbdot" style="background:#9944ff"></span>VIP only 해피아워 — VIP 전용</div><ul class="mblist"><li>파리바게뜨 오후8시~자정 1만원↑ 4,000원 할인</li></ul></div>
-      </div>
-    </div>
-    <div class="mc">
-      <div class="mch mk"><span>KT — 달달혜택 + 고객보답</span><a href="https://event.kt.com/html/event/ongoing_event_view.html?page=1&searchCtg=ALL&sort=&pcEvtNo=13783" target="_blank" class="mlink" style="color:var(--kt-t)">달달혜택 →</a></div>
-      <div class="mcb">
-        <div class="mblk"><div class="mbtit"><span class="mbdot" style="background:var(--kt)"></span>달달초이스 (택1) — 4월 15일~30일</div><ul class="mblist"><li>뚜레쥬르 · 메가MGC커피 · 이디야커피</li><li>파파존스피자 방문포장 50% 할인</li><li>롯데마트 제타 3만원↑ 4,000원 할인</li></ul></div>
-        <div class="mblk"><div class="mbtit"><span class="mbdot" style="background:#ff4444"></span>달달스페셜 (중복 적용)</div><ul class="mblist"><li>요거트월드 · 다운타우너 포함</li><li>배민앱 × 롯데마트 제타 온라인몰 제휴</li></ul></div>
-        <div class="mblk"><div class="mbtit"><span class="mbdot" style="background:#bb0000"></span>고객보답 프로그램 (2026 한시)</div><ul class="mblist"><li>데이터 100GB 자동 (2~7월)</li><li>OTT 6개월 무료 (직접 신청)</li><li>보험 2년 + 로밍 50%</li></ul></div>
-      </div>
-    </div>
-    <div class="mc">
-      <div class="mch ml"><span>LGU+ — 유플투쁠</span><a href="https://www.lguplus.com/benefit/uplustobeul" target="_blank" class="mlink" style="color:var(--lgu-t)">유플투쁠 →</a></div>
-      <div class="mcb">
-        <div class="mblk"><div class="mbtit"><span class="mbdot" style="background:var(--lgu)"></span>투쁠데이 — 4월 28일 오전 11시 선착순</div><ul class="mblist"><li>공차 VIP·VVIP 1만원↑ 30~50% 할인 쿠폰</li><li>CGV 팝콘M+음료M 세트 무료</li><li>배민클럽 2개월 무료 (지속)</li></ul></div>
-        <div class="mblk"><div class="mbtit"><span class="mbdot" style="background:#dd44aa"></span>4월 22일 스페셜데이 — 2주년 전 등급</div><ul class="mblist"><li>다이소 2,000원 할인 · 공차 · 뚜레쥬르</li><li>9,900원 특가 항공권 제공</li></ul></div>
-        <div class="mblk"><div class="mbtit"><span class="mbdot" style="background:#ff55cc"></span>장기고객데이 — 4주차 목요일 · 5년↑ VIP</div><ul class="mblist"><li>4월 화담숲 초청 (완료)</li><li>5월 레고랜드 초청 예고</li></ul></div>
-      </div>
-    </div>
-  </div>
+<div class="sh">
+<div><div class="st">월별 혜택</div><div class="ss">2026년 4월 기준 특별 프로모션</div></div>
+<span class="upd-badge upd-chg">⚡ 변경 시 업데이트</span>
+</div>
+<div class="m3">
+<div class="mch ms">
+<strong>SKT</strong>
+<div><strong>T day</strong>: 배달의민족×처갓집양념치킨, 다운타우너, 그리팅, 아떼, 매드포갈릭</div>
+<div style="margin-top:10px;"><strong>0 week</strong> (2026.04.01 신설): 만 13~34세, 매월 첫째 주 5일</div>
+<div style="font-size:12px;margin-top:6px;">4월: 뚜레쥬르 브라우니 30만명, 공차 50%, 노브랜드버거 1+1, 요기요 8,000원↓</div>
+<div style="margin-top:10px;"><strong>VIP 찬스</strong>: T day 기간 VIP 추가 할인</div>
+<div><strong>VIP only 해피아워</strong>: 파리바게뜨 오후 8시~자정 1만원↑ 4,000원↓</div>
+</div>
+<div class="mch mk">
+<strong>KT</strong>
+<div><strong>달달초이스</strong> (택1): 매월 15일~말일</div>
+<div style="font-size:12px;margin-top:6px;">4월: 파파존스 방문포장 50% / 메가MGC커피 / 이디야커피 / 뚜레쥬르</div>
+<div style="margin-top:10px;"><strong>달달스페셜</strong> (중복): 롯데마트 제타 4,000원 할인 (3만원↑ 구매 시)</div>
+<div style="margin-top:10px;"><strong>고객보답</strong> (2026 한시): 데이터 100GB + OTT 6개월 + 보험 2년 + 로밍 50%</div>
+<div><strong>포인트 한도 폐지</strong>: 2025.05.08~</div>
+</div>
+<div class="mch ml">
+<strong>LGU+</strong>
+<div><strong>유플투쁠 2주년 스페셜</strong>: 4/22 전 등급 대상</div>
+<div style="font-size:12px;margin-top:6px;">다이소 2,000원 할인 / 공차 30~50% (28일 VIP 대상)</div>
+<div style="margin-top:10px;"><strong>장기고객데이</strong>: 4주차 목요일, 5년↑ VIP — 화담숲 초청 4월 진행</div>
+<div style="margin-top:10px;"><strong>유독 구독</strong>: VVIP/VIP, 넷플릭스·유튜브·디즈니+·티빙 등 4,000원↓</div>
+</div>
+</div>
+<div class="link-box">
+<a href="https://sktmembership.tworld.co.kr/mps/pc-bff/sktmembership/tday.do" target="_blank">📱 SKT T day+0week 공식 페이지</a>
+<a href="https://event.kt.com/html/event/ongoing_event_view.html?page=1&searchCtg=ALL&sort=&pcEvtNo=13783" target="_blank">📱 KT 달달혜택 공식 페이지</a>
+<a href="https://www.lguplus.com/benefit/uplustobeul" target="_blank">📱 LGU+ 유플투쁠 공식 페이지</a>
+</div>
 </div>
 
-<!-- VIP 특화 -->
 <div class="sec" id="vp">
-  <div class="sh"><span class="st">VIP 특화 혜택</span><span class="ss">공식 페이지 링크 포함</span><span class="upd-badge upd-chg">⚡ 변경 시 업데이트</span></div>
-  <table class="vt">
-    <thead><tr><th>구분</th><th class="th-skt"><span class="cb bs">SKT</span> VIP Pick</th><th class="th-kt"><span class="cb bk">KT</span> VIP·VVIP 초이스</th><th class="th-lgu"><span class="cb bl">LGU+</span> VIP콕</th></tr></thead>
-    <tbody>
-      <tr><td>제공 주기</td><td>월 1회 PICK<br><a href="https://sktmembership.tworld.co.kr/mps/pc-bff/program/vippick.do" target="_blank" class="vlink">VIP Pick →</a></td><td>연 최대 6회(VIP) / 12회(VVIP)<br><a href="https://membership.kt.com/mmbr/choice.do" target="_blank" class="vlink">KT 초이스 →</a></td><td>월 1회, 분기별 택1 (연 12회)<br><a href="https://www.lguplus.com/benefit/membership/vip" target="_blank" class="vlink">VIP콕 →</a></td></tr>
-      <tr><td>영화</td><td>CGV 무료관람 연3회<br>또는 CGV 1+1 연9회 (택1)</td><td>롯데시네마 2인 무료</td><td>영화콕: CGV 월1회 연3회</td></tr>
-      <tr><td>OTT·구독</td><td>T우주패스 9,900원 연3회<br>또는 4,900원 연9회</td><td class="na">—</td><td>구독콕: 네이버 플러스 1개월 등</td></tr>
-      <tr><td>생일</td><td class="na">—</td><td>VVIP: 꾸까·스벅케이크·롯시 택1<br>VIP: 던킨·할리스·롯시1+1 택1</td><td class="na">—</td></tr>
-    </tbody>
-  </table>
+<div class="sh">
+<div><div class="st">VIP 특화 혜택</div><div class="ss">등급별 전용 프로그램 비교</div></div>
+<span class="upd-badge upd-chg">⚡ 변경 시 업데이트</span>
+</div>
+<table class="ct">
+<thead>
+<tr>
+<th class="th-cat">프로그램</th>
+<th class="th-skt">SKT VIP Pick</th>
+<th class="th-kt">KT VIP·VVIP 초이스</th>
+<th class="th-lgu">LGU+ VIP콕</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>제공 횟수</strong></td>
+<td>월 1회 PICK + 별도 PLUS</td>
+<td>VIP: 연 최대 6회 / VVIP: 연 최대 12회</td>
+<td>월 1회, 연 12회, 분기별 택1</td>
+</tr>
+<tr>
+<td><strong>주요 혜택</strong></td>
+<td><strong>CGV</strong>: 무료관람 연3회 / 1+1 연9회 (택1)<br><strong>T우주패스</strong>: 9,900원 쿠폰 연3회 / 4,900원 쿠폰 연9회<br><strong>PLUS</strong>(횟수 미차감): CGV 특별관 연12회, JAJU, TMAP 렌터카 등</td>
+<td><strong>VIP 공통</strong>: 연 최대 6회<br><strong>VVIP 전용</strong>: VIPS 스테이크 무료, 도미노 3만원↓, 노보텔 조식 2인 무료<br><strong>생일혜택</strong>: VVIP(꾸까·스벅케이크·롯시 택1) · VIP(던킨·할리스·롯시1+1 택1)</td>
+<td><strong>영화콕</strong>: CGV 월1회 무료, <strong>연3회</strong><br><strong>라이프콕</strong>: 할리스 아메리카노 무료 등 ~30종<br><strong>구독콕</strong>: 네이버 플러스 멤버십 1개월 무료 등</td>
+</tr>
+</tbody>
+</table>
+<div class="link-box">
+<a href="https://sktmembership.tworld.co.kr/mps/pc-bff/program/vippick.do" target="_blank">📱 SKT VIP Pick 상세</a>
+<a href="https://membership.kt.com/mmbr/choice.do" target="_blank">📱 KT 초이스 상세</a>
+<a href="https://www.lguplus.com/benefit/membership/vip" target="_blank">📱 LGU+ VIP콕 상세</a>
+</div>
 </div>
 
-<!-- 변경 이력 -->
 <div class="sec" id="hs">
-  <div class="sh"><span class="st">변경 이력</span><span class="ss">공식 발표 기반</span><span class="upd-badge upd-1m">↻ 월 갱신 (주요 변경 즉시)</span></div>
-  <table class="ht">
-    <thead><tr><th>날짜</th><th>통신사</th><th>프로그램</th><th>변경 내용</th><th>유형</th><th>출처</th></tr></thead>
-    <tbody>
-      <tr><td>2026.04.01</td><td><span class="cb bs">SKT</span></td><td>0 week</td><td>0 day → 0 week 개편, 매월 첫째 주 5일로 확대</td><td><span class="tb t변경">변경</span></td><td><a href="https://news.sktelecom.com/223425" target="_blank">SKT 뉴스룸</a></td></tr>
-      <tr><td>2026.02.01</td><td><span class="cb bs">SKT</span></td><td>롯데시네마</td><td>SKT 멤버십 롯데시네마 제휴 종료</td><td><span class="tb t종료">종료</span></td><td>SKT 공식</td></tr>
-      <tr><td>2026.01.12</td><td><span class="cb bl">LGU+</span></td><td>유플투쁠</td><td>배민클럽 2개월 무료 신규 도입 (통신사 최초)</td><td><span class="tb t신규">신규</span></td><td><a href="https://www.lg.co.kr/media/release/29771" target="_blank">LG뉴스룸</a></td></tr>
-      <tr><td>2025.12</td><td><span class="cb bk">KT</span></td><td>달달혜택</td><td>달달초이스+달달스페셜+달달찬스 3종 구조로 강화</td><td><span class="tb t변경">변경</span></td><td><a href="https://www.todayeconomic.com/news/article.html?no=29897" target="_blank">투데이e코노믹</a></td></tr>
-      <tr><td>2025.07</td><td><span class="cb bs">SKT</span></td><td>GS25</td><td>화요일 프레시푸드 200원 할인 재개</td><td><span class="tb t재개">재개</span></td><td>SKT 공식</td></tr>
-    </tbody>
-  </table>
+<div class="sh">
+<div><div class="st">변경 이력</div><div class="ss">최근 3개월 주요 멤버십 정책 변화</div></div>
+<span class="upd-badge upd-1m">↻ 월 갱신 (주요 변경 즉시)</span>
+</div>
+<ul class="tr-list">
+<li><strong>2026.04.01</strong> <span class="cb bs">SKT</span> 0 day → 0 week 체제 전환 / 만 13~34세, 매월 첫째 주 5일 운영</li>
+<li><strong>2026.04.01</strong> <span class="cb bs">SKT</span> T day VIP 찬스 신설 / VIP only 해피아워 추가</li>
+<li><strong>2026.04.13</strong> <span class="cb bs">SKT</span> 숲캉스 데이 진행 — 10년↑ 고객 대상 에버랜드 포레스트 캠프 초청 (경쟁률 212:1)</li>
+<li><strong>2026.04.15</strong> <span class="cb bl">LGU+</span> 유플투쁠 2주년 기념 혜택 강화 / 4/22 스페셜데이 전 등급 대상</li>
+<li><strong>2026.04.15~30</strong> <span class="cb bk">KT</span> 달달혜택 — 파파존스 방문포장 50% / 롯데마트 제타 4,000원 할인</li>
+<li><strong>2026.02.01</strong> <span class="cb bs">SKT</span> 롯데시네마 제휴 종료 (KT만 3사 중 유지)</li>
+<li><strong>2026.01.17~</strong> <span class="cb bl">LGU+</span> 배민클럽 2개월 무료 제공 (통신사 최초, 유플투쁠 경유)</li>
+<li><strong>2025.05.08</strong> <span class="cb bk">KT</span> 멤버십 포인트 사용 한도 폐지</li>
+</ul>
 </div>
 
-<!-- 뉴스 -->
 <div class="sec" id="nw">
-  <div class="sh"><span class="st">뉴스 스크랩</span><span class="ss">공식 뉴스 채널 · 최근 3개월</span><span class="upd-badge upd-3m">↻ 주 단위 갱신</span></div>
-  <div class="tr2" style="margin-bottom:14px">
-    <button class="ntab as" id="ntab-skt" onclick="switchNews('skt',this)">SKT</button>
-    <button class="ntab" id="ntab-kt" onclick="switchNews('kt',this)">KT</button>
-    <button class="ntab" id="ntab-lgu" onclick="switchNews('lgu',this)">LGU+</button>
-  </div>
-  <div id="np-skt">
-    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">SKT, '숲캉스 데이' 통해 장기고객과 자연 속 힐링 함께한다</span></div><div class="nsum">10년 이상 이용 장기고객 대상 에버랜드 '포레스트 캠프' 초청 이벤트 진행. 응모 경쟁률 최대 212:1 기록.</div><div class="nmeta">2026.04.13 · <a href="https://news.sktelecom.com/223839" target="_blank">SK텔레콤 뉴스룸</a></div></div>
-    <div class="nc"><div class="nct"><span class="nb nb변경">변경</span><span class="ntitle">SKT, T멤버십 새단장 — 0 week 신설·VIP 전용 혜택 강화</span></div><div class="nsum">0 day를 0 week로 확대 개편. 만 13~34세 첫째 주 5일 운영. T day·해피아워에 VIP 전용 'VIP 찬스'·'VIP only' 신설.</div><div class="nmeta">2026.04.01 · <a href="https://news.sktelecom.com/223425" target="_blank">SK텔레콤 뉴스룸</a></div></div>
-    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">봄바람 타고 온 산뜻한 4월 T 멤버십 혜택 총정리</span></div><div class="nsum">0 week 업그레이드로 이용 기간·혜택 확대. 뚜레쥬르 브라우니 선착순 30만명, 공차 50%, 노브랜드버거 1+1, 요기요 8,000원 할인.</div><div class="nmeta">2026.04.01 · <a href="https://news.sktelecom.com/223388" target="_blank">SK텔레콤 뉴스룸</a></div></div>
-  </div>
-  <div id="np-kt" class="hidden">
-    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">파파존스, KT 멤버십 대상 방문포장 50% 할인 프로모션</span></div><div class="nsum">4월 30일까지 KT 멤버십 회원 대상 'KT 달달 혜택' 프로모션. 방문포장 주문 시 전 메뉴 50% 할인.</div><div class="nmeta">2026.04.20 · <a href="https://www.shinailbo.co.kr/news/articleView.html?idxno=5012637" target="_blank">신아일보</a></div></div>
-    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">KT, 생활 밀착형 멤버십 강화 — 4월 3주차 달달혜택</span></div><div class="nsum">달달초이스에 뚜레쥬르·메가MGC커피·이디야커피·파파존스·요거트월드·다운타우너 포함. 롯데마트 제타 3만원↑ 4,000원 할인 달달스페셜 추가.</div><div class="nmeta">2026.04.18 · <a href="https://www.theguru.co.kr/news/article.html?no=100722" target="_blank">더구루</a></div></div>
-    <div class="nc"><div class="nct"><span class="nb nb이슈">이슈</span><span class="ntitle">통신사 멤버십 × 외식업계 할인 경쟁 본격화</span></div><div class="nsum">3사가 외식·프랜차이즈 업계와 결합한 할인 경쟁 가열. 소비자 선택권 확대되나 혜택 복잡성 증가.</div><div class="nmeta">2026.04.19 · <a href="https://www.joongangenews.com/news/articleView.html?idxno=512651" target="_blank">중앙경제</a></div></div>
-  </div>
-  <div id="np-lgu" class="hidden">
-    <div class="nc"><div class="nct"><span class="nb nb이슈">이슈</span><span class="ntitle">"충성고객 잡아라" — 통신업계 멤버십 대전 치열</span></div><div class="nsum">LGU+ 유플투쁠 118만명이 2000만건 혜택 이용. CGV·다이소 등 생활밀착형 혜택 이용률 높아.</div><div class="nmeta">2026.04.16 · <a href="https://www.ebn.co.kr/news/articleView.html?idxno=1705620" target="_blank">EBN</a></div></div>
-    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">유플투쁠 4월 혜택 — 화담숲 초청·5월 레고랜드 예고</span></div><div class="nsum">유플투쁠 2주년, 4월 22일 전 등급 스페셜데이. 5월 레고랜드 초청 예고. 9,900원 특가 항공권도 4월 제공.</div><div class="nmeta">2026.04.15 · <a href="https://www.rapportian.com/news/articleView.html?idxno=234746" target="_blank">라포르시안</a></div></div>
-    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">공차, LG유플러스 유플투쁠 제휴 — 4월 28일 VIP 30~50% 할인</span></div><div class="nsum">4월 28일 유플투쁠 프로모션: VIP·VVIP 대상 1만원↑ 등급별 30~50% 할인 쿠폰 지급.</div><div class="nmeta">2026.04.15 · <a href="http://www.lawissue.co.kr/view.php?ud=202604151648365843204ead0791_12" target="_blank">로이슈</a></div></div>
-  </div>
+<div class="sh">
+<div><div class="st">뉴스 스크랩</div><div class="ss">통신사 공식 보도자료 및 언론 기사 (최근 3주)</div></div>
+<span class="upd-badge upd-3m">↻ 주 단위 갱신</span>
+</div>
+<div class="ntabs">
+<div class="ntab as" onclick="switchNews('skt',this)">SKT</div>
+<div class="ntab" onclick="switchNews('kt',this)">KT</div>
+<div class="ntab" onclick="switchNews('lgu',this)">LGU+</div>
+</div>
+<div id="np-skt" class="np">
+<div class="ni">
+<div class="ni-t">SKT, '숲캉스 데이' 통해 장기고객과 자연 속 힐링 함께한다</div>
+<div class="ni-d">2026-04-13</div>
+<div class="ni-s">10년 이상 이용 장기고객 대상 에버랜드 '포레스트 캠프' 초청 이벤트 진행 – 일반에 공개되지 않는 자연 체험 공간 초청으로 호평… 응모 경쟁률 최대 212:1 기록 – 'T 장기고객 프로그램'</div>
+</div>
+<div class="ni">
+<div class="ni-t">SKT, T멤버십 새단장해 고객 혜택·이용 편의성 강화한다</div>
+<div class="ni-d">2026-04-01</div>
+<div class="ni-s">'0 day'를 '0 week'로 확대… 이용 기간 · 혜택 늘리고 한 눈에 확인 가능하도록 개편 – 'T day'와 '해피아워'에는 VIP 전용 혜택 'VIP 찬스', 'VIP only' 신설</div>
+</div>
+<div class="ni">
+<div class="ni-t">고객을 만나는 날로 바뀐 SKT 창립기념일… 현장에서 답을 찾다</div>
+<div class="ni-d">2026-03-31</div>
+<div class="ni-s">"처음의 마음으로 고객을 만나고, 듣겠습니다." SK텔레콤은 창립 42주년을 맞아 '기념식' 대신 고객이 있는 현장으로 향했다. 지난 27일 진행된 이번 고객 방문 행사에는 CEO와 경영진, 고객신뢰위원회 위원 등 약 80여 명이</div>
+</div>
+<div class="ni">
+<div class="ni-t">T 멤버십으로 경험하는 설렘… '상위 1%의 소개팅'</div>
+<div class="ni-d">2026-03-18</div>
+<div class="ni-s">SK텔레콤이 지난 16일 공식 유튜브 채널을 통해 T 멤버십 이용률이 가장 높은 사람들의 만남을 그린 '상위 1%의 소개팅' 콘텐츠를 공개했다. 이번 콘텐츠는 최근 유행인 '연프(연애 리얼리티 프로그램)' 포맷을 차용해</div>
+</div>
+<div class="ni">
+<div class="ni-t">에이닷이 추천하고 T 멤버십으로 즐기는 '스마트한' 화이트데이</div>
+<div class="ni-d">2026-03-11</div>
+<div class="ni-s">화이트데이를 앞두고 데이트 코스 설계에 고심하는 이들이 늘고 있다. 사탕이나 초콜릿만으로는 아쉽고, 고물가 시대에 무작정 비싼 레스토랑을 예약하는 것도 부담스럽기 마련이다. 매년 반복되는 고민을 해결할 방법은 없을까? 올해 화이트데이는 '에이닷(A.)'과</div>
+</div>
+</div>
+<div id="np-kt" class="np hidden">
+<div class="ni">
+<div class="ni-t">파파존스, KT 멤버십 대상 방문포장 50% 할인 프로모션 진행</div>
+<div class="ni-d">2026-04-20</div>
+<div class="ni-s">피자 프랜차이즈 브랜드 '파파존스'가 오는 4월 30일까지 KT 멤버십 회원을 대상으로 'KT 달달 혜택' 프로모션을 운영한다. 해당 기간 동안 자사 온라인 채널을 통해 방문포장 주문 시 전 메뉴에 대해 50% 할인 혜택이...</div>
+</div>
+<div class="ni">
+<div class="ni-t">[주간 유통 나침반] 중동發 포장재 리스크, 홈플러스 위기 확산, 통신사...</div>
+<div class="ni-d">2026-04-19</div>
+<div class="ni-s">외식·프랜차이즈 업계가 통신사 멤버십과 결합한 할인 경쟁을 본격화하고 있다. SK텔레콤은 T멤버십과 'T day... KT는 '달달혜택'을 통해 뚜레쥬르, 메가MGC커피, 이디야커피, 파파존스피자, 요거트월드, 다운타우너 등을...</div>
+</div>
+<div class="ni">
+<div class="ni-t">[통신리뷰] '간식부터 생필품까지' KT, 생활 밀착형 멤버십 강화(4월3주...</div>
+<div class="ni-d">2026-04-18</div>
+<div class="ni-s">전 상품 배송비는 무료이며 KT멤버십 앱에서 이용 가능하다. 달달혜택은 15일부터 30일까지 운영한다. 고객이 하나의 혜택을 선택해 이용하는 '달달초이스'에는 △뚜레쥬르 △메가MGC커피 △이디야커피...</div>
+</div>
+<div class="ni">
+<div class="ni-t">롯데마트 이마트 홈플러스 대형마트 휴무일… 4월 셋째 주 일요일은?</div>
+<div class="ni-d">2026-04-18</div>
+<div class="ni-s">KT 월간 멤버십 프로그램 '달달혜택' 내 '달달스페셜'의 일환으로 마련됐다. KT 멤버십 회원에게는 3만원 이상 구매 시 4000원 즉시 할인 혜택이 제공된다. 쿠폰은 오는 30일까지 KT 멤버십 앱에서 발급받아 롯데마트...</div>
+</div>
+<div class="ni">
+<div class="ni-t">봄 나들이 특수 잡아라…외식·주류 '간편 소비' 경쟁</div>
+<div class="ni-d">2026-04-17</div>
+<div class="ni-s">파파존스는 통신사 멤버십과의 제휴를 통해 보다 직접적인 가격 혜택을 제시했다. KT 달달 혜택 프로모션을 통해 방문포장 주문 시 전 메뉴 50% 할인을 제공하며, 피자뿐 아니라 사이드 메뉴와 음료까지 혜택 범위를 확대한...</div>
+</div>
+</div>
+<div id="np-lgu" class="np hidden">
+<div class="ni">
+<div class="ni-t">"충성고객 잡아라"…통신업계, 멤버십 대전 치열</div>
+<div class="ni-d">2026-04-16</div>
+<div class="ni-s">LG유플러스는 매월 대표 멤버십 프로그램인 '유플투쁠' 혜택일 가운데 마지막 주 목요일을 '장기고객데이'로 지정해 5년 이상 이용 고객에게 식음료·문화 등 프리미엄 혜택을 제공하고 있다. 유플투쁠은 2024년 4월 시작...</div>
+</div>
+<div class="ni">
+<div class="ni-t">공차코리아, 무료 사이즈업 공차 데이 및 LG유플러스·배민 제휴 프로모...</div>
+<div class="ni-d">2026-04-15</div>
+<div class="ni-s">4월 28일 LG유플러스 유플투쁠 프로모션에서는 멤버십 VIP·VVIP 고객 대상 1만원 이상 결제 시 등급별 30~50% 할인 쿠폰(최대 5000원)을 지급한다. 쿠폰은 행사 당일 유플러스 멤버십 앱에서 확인 가능하며 5월 10일까지...</div>
+</div>
+<div class="ni">
+<div class="ni-t">유플투쁠 4월 혜택은?...'화담숲' 초청 이어 5월엔 레고랜드 초청</div>
+<div class="ni-d">2026-04-15</div>
+<div class="ni-s">2024년 4월부터 진행한 멤버십 프로그램 '유플투쁠'이 2주년을 맞이하면서 올해 4월 22일에는 멤버십 등급 상관없이 모든 등급에게 풍성한 혜택을 제공하는 스페셜데이를 진행한다. 스페셜데이에는 ▲다이소 2천원...</div>
+</div>
+<div class="ni">
+<div class="ni-t">공차, '무료 사이즈업' 공차데이→LG U+ '유플투쁠' 프로모션</div>
+<div class="ni-d">2026-04-15</div>
+<div class="ni-s">이와 함께 오는 28일 LG유플러스와 '유플투쁠' 프로모션을 실시한다. LG유플러스 멤버십 VIP·VVIP 고객을 대상으로 10,000원 이상 결제 시 사용 가능한 즉시 할인 쿠폰을 지급한다. 할인 혜택은 멤버십 등급에 따라 30~50...</div>
+</div>
+<div class="ni">
+<div class="ni-t">이통3사 멤버십 전면 강화…할인 넘어 '경험·편의' 경쟁 본격화</div>
+<div class="ni-d">2026-04-04</div>
+<div class="ni-s">이통3사가 멤버십 혜택을 전면 재편하며 고객 '락인' 전략을 강화하고 있다. 단순 할인 경쟁에서 벗어나... '유플투쁠' 2주년을 맞아 4월 한 달간 9900원 특가 항공권을 제공하고, 22일에는 전 고객 대상 '스페셜 데이'를...</div>
+</div>
+</div>
 </div>
 
-<!-- 고객 반응 -->
 <div class="sec" id="sn">
-  <div class="sh"><span class="st">고객 반응</span><span class="ss">최근 3개월 · 멤버십 혜택 관련 반응만 수집 · 주 단위 갱신</span></div>
-  <div class="tr2" style="margin-bottom:14px">
-    <button class="ctab cs" onclick="C('skt',this)">SKT</button>
-    <button class="ctab" onclick="C('kt',this)">KT</button>
-    <button class="ctab" onclick="C('lgu',this)">LGU+</button>
-  </div>
-  <div id="sent-skt">
-    <div class="srcs" style="margin-bottom:12px"><span class="srcbadge act">에펨코리아</span><span class="srcbadge act">루리웹 핫딜</span><span class="srcbadge act">뽐뿌</span><span class="srcbadge act">네이버카페</span></div>
-    <div class="tr2" style="margin-bottom:12px">
-      <button class="kw on" onclick="K('skt','vip',this)">#VIP 혜택 체감</button>
-      <button class="kw" onclick="K('skt','0week',this)">#0week 신설</button>
-      <button class="kw" onclick="K('skt','mega',this)">#메가커피 제휴</button>
-    </div>
-    <div id="skt-vip">
-      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">"우주패스 무료 3회, CGV 무료 3회는 쓸만함"</div><div class="rsrc">에펨코리아 · 2026.01.03 · <a href="https://www.fmkorea.com/9343276379" target="_blank">원문 보기</a> (추천 2)</div></div>
-      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">"KT보다 훨씬 나음 그래도.. KT는 영화 무료도 아니고 몇천원 할인임 ㅋㅋ"</div><div class="rsrc">에펨코리아 · 2026.01.03 · <a href="https://www.fmkorea.com/9343276379" target="_blank">원문 보기</a> (추천 2)</div></div>
-      <div class="rc"><div class="rct"><span class="rbg rneg">부정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">"우주패스 유튜브 프리미엄 말곤 쓰는 것도 없음 ㅋㅋㅋ"</div><div class="rsrc">에펨코리아 · 2026.01.03 · <a href="https://www.fmkorea.com/9343276379" target="_blank">원문 보기</a> (추천 2)</div></div>
-      <div class="rc"><div class="rct"><span class="rbg rneu">중립</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">"몇 년째 VIP인데 쓰는 적이 거의 없음 ㅋㅋ"</div><div class="rsrc">에펨코리아 · 2026.01.03 · <a href="https://www.fmkorea.com/9343276379" target="_blank">원문 보기</a></div></div>
-    </div>
-    <div id="skt-0week" class="hidden">
-      <div class="rc"><div class="rct"><span class="rbg rneg">부정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">네이버카페</span></div><div class="rtx">"오늘 혜택 좀 받으려고 T멤버십 앱에 들어갔는데 '0 day' 메뉴가 안 보이네요. 이제 완전히 '0 week' 체제로 바뀐 건지 궁금합니다."</div><div class="rsrc">네이버카페(부산홀릭) · <a href="http://cafe.naver.com/7dutyfree/51712" target="_blank">원문 보기</a></div></div>
-      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">네이버카페</span></div><div class="rtx">뚜레쥬르 T멤버십 리얼브라우니 무료 증정: "대상 만 18~34세 T멤버십 이용 고객님, T멤버십 내 0 week 페이지에서 쿠폰 다운로드"</div><div class="rsrc">네이버카페 · <a href="http://cafe.naver.com/naeripridecity/3692" target="_blank">원문 보기</a></div></div>
-      <div class="rc"><div class="rct"><span class="rbg rneu">중립</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">네이버카페</span></div><div class="rtx">"T데이에 들어가면 0 week 배너 누르심 됩니다ㅎㅎ 메인화면에 없길래 다른 곳에 숨겨져 있었네요."</div><div class="rsrc">네이버카페(꿀통) · <a href="http://cafe.naver.com/postmore/65680" target="_blank">원문 보기</a></div></div>
-    </div>
-    <div id="skt-mega" class="hidden">
-      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">뽐뿌</span></div><div class="rtx">"오 좋네요. 메가 당장 빼러갑니다. 감사"</div><div class="rsrc">뽐뿌 · 2025.03.10 · <a href="https://www.ppomppu.co.kr/zboard/view.php?id=phone&no=3842731" target="_blank">원문 보기</a></div></div>
-      <div class="rc"><div class="rct"><span class="rbg rneg">부정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">뽐뿌</span></div><div class="rtx">"위 혜택은 앱에서는 안된다고 되어있어서 그냥 유지해야겠네요 ㅠㅜ"</div><div class="rsrc">뽐뿌 · 2025.03.10 · <a href="https://www.ppomppu.co.kr/zboard/view.php?id=phone&no=3842731" target="_blank">원문 보기</a></div></div>
-    </div>
-  </div>
-  <div id="sent-kt" class="hidden">
-    <div class="srcs" style="margin-bottom:12px"><span class="srcbadge act">에펨코리아</span><span class="srcbadge act">루리웹 핫딜</span><span class="srcbadge act">네이버카페</span><span class="srcbadge act">뽐뿌</span></div>
-    <div class="tr2" style="margin-bottom:12px">
-      <button class="kw on" onclick="K('kt','reward',this)">#고객보답 반응</button>
-      <button class="kw" onclick="K('kt','daldal',this)">#달달혜택 반응</button>
-    </div>
-    <div id="kt-reward">
-      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">루리웹</span></div><div class="rtx">"디즈니가 낫습니다."</div><div class="rsrc">루리웹 핫딜 · 2026.02.01 · <a href="https://bbs.ruliweb.com/market/board/1020/read/101379" target="_blank">원문 보기</a> (추천 22)</div></div>
-      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">루리웹</span></div><div class="rtx">"회선별이에요. 제 명의 번호 2개인데 각자 다른 걸로 신청됐습니다"</div><div class="rsrc">루리웹 핫딜 · 2026.02.01 · <a href="https://bbs.ruliweb.com/market/board/1020/read/101379" target="_blank">원문 보기</a> (추천 7)</div></div>
-      <div class="rc"><div class="rct"><span class="rbg rneu">중립</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">루리웹</span></div><div class="rtx">"티빙 저 요금제는 720p 해상도라 별로, 디즈니플러스는 1080p에 동시 시청 2대"</div><div class="rsrc">루리웹 핫딜 · 2026.02.01 · <a href="https://bbs.ruliweb.com/market/board/1020/read/101379" target="_blank">원문 보기</a> (추천 17)</div></div>
-    </div>
-    <div id="kt-daldal" class="hidden">
-      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">네이버카페</span></div><div class="rtx">"KT 쓰시는 분들은 하나 챙겨볼 만한 거 나왔어요. 롯데마트 제타에서 KT 멤버십 대상으로 할인 프로모션 진행"</div><div class="rsrc">네이버카페 · <a href="http://cafe.naver.com/whawon05/45470" target="_blank">원문 보기</a></div></div>
-      <div class="rc"><div class="rct"><span class="rbg rneg">부정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">"진짜 갈 일 없는 두 개네"</div><div class="rsrc">에펨코리아 · 2026.03.30 · <a href="https://www.fmkorea.com/9650658554" target="_blank">원문 보기</a> (추천 1)</div></div>
-      <div class="rc"><div class="rct"><span class="rbg rneg">부정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">"ㄹㅇ 노맛임"</div><div class="rsrc">에펨코리아 · 2026.03.30 · <a href="https://www.fmkorea.com/9650658554" target="_blank">원문 보기</a> (추천 1)</div></div>
-      <div class="rc"><div class="rct"><span class="rbg rneu">중립</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">뽐뿌</span></div><div class="rtx">"KT 알뜰폰 사용자는 KT 멤버십 사용이 안 되나요..."</div><div class="rsrc">뽐뿌 · <a href="https://www.ppomppu.co.kr/zboard/view.php?id=phone&no=3880403" target="_blank">원문 보기</a></div></div>
-    </div>
-  </div>
-  <div id="sent-lgu" class="hidden">
-    <div class="srcs" style="margin-bottom:12px"><span class="srcbadge act">루리웹 핫딜</span><span class="srcbadge act">네이버카페</span><span class="srcbadge act">뽐뿌</span></div>
-    <div class="tr2" style="margin-bottom:12px">
-      <button class="kw on" onclick="K('lgu','baemin',this)">#배민클럽 2개월 무료</button>
-      <button class="kw" onclick="K('lgu','topbenefit',this)">#유플투쁠 인기 혜택</button>
-    </div>
-    <div id="lgu-baemin">
-      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">네이버카페</span></div><div class="rtx">"유플투쁠 혜택을 활용해 커피 한 잔의 여유를 즐기거나 간식을 저렴하게 구매하면 기분까지 좋아지니까요. 소소하지만 확실한 행복"</div><div class="rsrc">네이버카페 · <a href="http://cafe.naver.com/bluehlncg/2266" target="_blank">원문 보기</a></div></div>
-      <div class="rc"><div class="rct"><span class="rbg rneg">부정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">루리웹</span></div><div class="rtx">"배민은 구독하면 이득이 뭐지. 혜택이 없다시피 한 거 같던데."</div><div class="rsrc">루리웹 핫딜 · 2026.01.17 · <a href="https://bbs.ruliweb.com/market/board/1020/read/100989" target="_blank">원문 보기</a> (추천 35)</div></div>
-      <div class="rc"><div class="rct"><span class="rbg rneu">중립</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">뽐뿌</span></div><div class="rtx">"유플투쁠 하시는 분들 어떻게 쓰세요?"</div><div class="rsrc">뽐뿌 · <a href="https://www.ppomppu.co.kr/zboard/view.php?id=phone&no=3903659" target="_blank">원문 보기</a></div></div>
-    </div>
-    <div id="lgu-topbenefit" class="hidden">
-      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag treal">실제 데이터</span><span class="rtag tsrc">우먼타임스</span></div><div class="rtx">유플투쁠 누적 참여 건수 1,500만 돌파. 인기 제휴사 1위 CGV, 2위 컴포즈커피, 3위 다이소 순.</div><div class="rsrc">우먼타임스 · 2025.10.12 · <a href="https://www.womentimes.co.kr/news/articleView.html?idxno=91331" target="_blank">원문 보기</a></div></div>
-      <div class="rc"><div class="rct"><span class="rbg rneg">부정</span><span class="rtag treal">실제 기사</span><span class="rtag tsrc">소셜밸류</span></div><div class="rtx">인기 혜택이 선착순 마감 반복. 고객이 혜택을 실제로 수령하지 못하는 문제 지속.</div><div class="rsrc">소셜밸류 · 2026.02.01 · <a href="https://www.socialvalue.kr/news/view/1065576649347864" target="_blank">원문 보기</a></div></div>
-    </div>
-  </div>
+<div class="sh">
+<div><div class="st">고객 반응</div><div class="ss">커뮤니티·SNS 실제 반응 분석 (최근 3개월)</div></div>
+<span class="upd-badge upd-3m">↻ 주 단위 갱신</span>
+</div>
+<div class="ntabs">
+<div class="ctab cs" onclick="C('skt',this)">SKT</div>
+<div class="ctab" onclick="C('kt',this)">KT</div>
+<div class="ctab" onclick="C('lgu',this)">LGU+</div>
+</div>
+<div id="sent-skt" class="sent">
+<div style="font-size:13px;color:var(--pos);font-weight:700;margin:1rem 0 .6rem;">✅ 긍정 반응</div>
+<div class="cmt" style="border-left-color:var(--pos-bd);">
+<div class="cmt-src">네이버카페(배라맘)</div>
+<div class="cmt-txt">T데이 혜택 좋아요~~~ [T 멤버십] 4월 T day</div>
+</div>
+<div class="cmt" style="border-left-color:var(--pos-bd);">
+<div class="cmt-src">네이버카페(꿀 통)</div>
+<div class="cmt-txt">T데이에 들어가면 0 week 배너 누르심 됩니다ㅎㅎ 메인화면에 없길래 다른곳에 숨겨져있었네요.</div>
+</div>
+<div class="cmt" style="border-left-color:var(--pos-bd);">
+<div class="cmt-src">네이버카페(줍줍노트)</div>
+<div class="cmt-txt">[SKT] 청년 대상(만 34세) 뚜레쥬르 리얼브라우니 1개 공짜 — T멤버십 앱에서 0 week 혜택 탭 이동</div>
+</div>
+<div style="font-size:13px;color:var(--neg);font-weight:700;margin:1rem 0 .6rem;">❌ 부정 반응</div>
+<div class="cmt" style="border-left-color:var(--neg-bd);">
+<div class="cmt-src">네이버카페(부산홀릭)</div>
+<div class="cmt-txt">SKT 0 day 혜택이 아예 종료된 건가요? 오늘 혜택 좀 받으려고 T멤버십 앱에 들어갔는데 '0 day' 메뉴가 안 보이네요.</div>
+</div>
+<div style="font-size:13px;color:var(--neu);font-weight:700;margin:1rem 0 .6rem;">🔷 중립 반응</div>
+<div class="cmt" style="border-left-color:var(--bd2);">
+<div class="cmt-src">네이버카페(PC초보)</div>
+<div class="cmt-txt">오늘의 메뉴 : 찰순대 디저트 프렌치토스트 T멤버십 돈버는설문 10원...</div>
+</div>
+</div>
+<div id="sent-kt" class="sent hidden">
+<div style="font-size:13px;color:var(--pos);font-weight:700;margin:1rem 0 .6rem;">✅ 긍정 반응</div>
+<div class="cmt" style="border-left-color:var(--pos-bd);">
+<div class="cmt-src">네이버카페(실시간 보험상품비교)</div>
+<div class="cmt-txt">"KT 멤버십으로 장볼까"…롯데마트 제타, 4000원 할인 '달달혜택' — KT 쓰시는 분들은 하나 챙겨볼 만한 거 나왔어요</div>
+</div>
+<div style="font-size:13px;color:var(--neg);font-weight:700;margin:1rem 0 .6rem;">❌ 부정 반응</div>
+<div class="cmt" style="border-left-color:var(--neg-bd);">
+<div class="cmt-src">네이버카페(맘이베베)</div>
+<div class="cmt-txt">kt멤버쉽 메가커피되나요?? 그 엘지경우 gs편의점가면할인 이런거처럼 메가커피 몇프로 할인이런거있을까요???</div>
+</div>
+<div class="cmt" style="border-left-color:var(--neg-bd);">
+<div class="cmt-src">뽐뿌</div>
+<div class="cmt-txt">회사 법인폰이 KT인데 이거 KT 법인 아이디로 로그인해서 KT 멤버십 사용이 안되나요...</div>
+</div>
+<div style="font-size:13px;color:var(--neu);font-weight:700;margin:1rem 0 .6rem;">🔷 중립 반응</div>
+<div class="cmt" style="border-left-color:var(--bd2);">
+<div class="cmt-src">네이버카페([뉴스사사])</div>
+<div class="cmt-txt">4/16<직장인룰렛 KB봄꽃 kt sk혜택 신한솔매일룰렛 이마트빗코인>퀴즈답 및 출첵모음 — kt달달</div>
+</div>
+</div>
+<div id="sent-lgu" class="sent hidden">
+<div style="font-size:13px;color:var(--pos);font-weight:700;margin:1rem 0 .6rem;">✅ 긍정 반응</div>
+<div class="cmt" style="border-left-color:var(--pos-bd);">
+<div class="cmt-src">네이버카페(말못한직장인이야기)</div>
+<div class="cmt-txt">유플투쁠 4월 혜택 총정리 퀴즈 정답 및 2주년 기념 멤버십 할인 꿀팁 — 따스한 봄기운과 함께 4월이 찾아오면서 유플러스 멤버십의 핵심인 유플투쁠 혜택이 그 어느 때보다 풍성해졌다는 소식이에요.</div>
+</div>
+<div style="font-size:13px;color:var(--neu);font-weight:700;margin:1rem 0 .6rem;">🔷 중립 반응</div>
+<div class="cmt" style="border-left-color:var(--bd2);">
+<div class="cmt-src">네이버카페(중고나라)</div>
+<div class="cmt-txt">쉐이크쉑 유플투쁠 치즈프라이 무료쿠폰 300원 / 잼플 유플투쁠 VIP 1.5만원 첫 체험권 500원 / 오붓 유플투쁠 VIP 헬스 패스 10% 할인</div>
+</div>
+</div>
 </div>
 
-<!-- 검색 트렌드 -->
 <div class="sec" id="tr">
-  <div class="sh"><span class="st">검색어 트렌드</span><span class="ss">네이버 DataLab · 최근 3개월 · T멤버십 / KT멤버십 / U+멤버십 키워드 그룹 비교</span><span class="upd-badge upd-3m">↻ 주 단위 갱신</span></div>
-  <div class="tch"><canvas id="trendChart"></canvas></div>
-  <div class="tinfo">
-    <div>
-      <div class="tleg">
-        <div class="tli"><div class="tld" style="background:var(--skt)"></div><b>SKT</b> — T멤버십, T데이, 0week, VIP pick</div>
-        <div class="tli"><div class="tld" style="background:var(--kt)"></div><b>KT</b> — KT멤버십, 달달혜택, VIP초이스</div>
-        <div class="tli"><div class="tld" style="background:var(--lgu)"></div><b>LGU+</b> — U+멤버십, 유플투쁠, VIP콕</div>
-      </div>
-    </div>
-    <div style="text-align:right">
-      <a href="https://datalab.naver.com/keyword/trendDashbord.naver" target="_blank" style="font-size:11px;color:var(--p);font-weight:600">네이버 DataLab에서 직접 보기 →</a>
-      <div style="font-size:10px;color:var(--tx3);margin-top:4px">출처: 네이버 DataLab API · 2026.04.21 수집</div>
-    </div>
-  </div>
+<div class="sh">
+<div><div class="st">검색 트렌드</div><div class="ss">네이버 DataLab 기반 주간 검색량 지수 (최근 14주)</div></div>
+<span class="upd-badge upd-3m">↻ 주 단위 갱신</span>
+</div>
+<div class="tr-chart">
+<canvas id="trendChart"></canvas>
+</div>
+<div class="tr-legend">
+<div class="tr-legend-item"><div class="tr-legend-dot" style="background:#5B0F8A;"></div>SKT (T멤버십 외)</div>
+<div class="tr-legend-item"><div class="tr-legend-dot" style="background:#c41a1a;"></div>KT (KT멤버십 외)</div>
+<div class="tr-legend-item"><div class="tr-legend-dot" style="background:#b5006a;"></div>LGU+ (U+멤버십 외)</div>
+</div>
+<div style="font-size:11px;color:var(--tx3);margin-top:1rem;text-align:center;">출처: 네이버 DataLab API · 2026.04.22 09:43 수집</div>
 </div>
 
-<!-- 비통신 멤버십 -->
 <div class="sec" id="nt">
-  <div class="sh"><span class="st">비통신 멤버십 동향</span><span class="ss">웹 서칭 기반</span><span class="upd-badge upd-1m">↻ 월 갱신</span></div>
-  <div class="ntg">
-    <div class="ntc"><div class="nth" style="background:linear-gradient(135deg,#03c75a,#02a84c);color:#fff">네이버플러스 멤버십</div><div class="ntb"><span class="nttag" style="background:#e6f9ee;color:#1a7f3c">구독형 · 월 4,900원</span><br><b>핵심:</b> 네이버페이 최대 5% 적립, 넷플·Spotify 무료(택1), GS25 최대 20%, 롯데시네마 40%, 요기패스 X 무료 배달, 4인 패밀리 공유<br><br><b>주목:</b> 쇼핑+OTT+편의점 올인원. 매일 사용 가능한 편의점 혜택 강점</div></div>
-    <div class="ntc"><div class="nth" style="background:linear-gradient(135deg,#1a53d8,#0033a0);color:#fff">쿠팡 와우 멤버십</div><div class="ntb"><span class="nttag" style="background:#dbeafe;color:#1d4ed8">구독형 · 월 7,890원</span><br><b>핵심:</b> 로켓·쿠팡이츠 무료 배달 무제한, 쿠팡플레이 4K(HBO 독점), EPL·라리가·NBA 스포츠 생중계<br><br><b>주목:</b> 물류+OTT+스포츠 묶음 락인. MAU 이커머스 1위</div></div>
-    <div class="ntc"><div class="nth" style="background:linear-gradient(135deg,#333,#111);color:#fff">현대카드 멤버십 (M포인트)</div><div class="ntb"><span class="nttag" style="background:#f3f4f6;color:#374151">카드형 · 연회비 3만원~</span><br><b>핵심:</b> 스벅·CGV·VIPS 등 M포인트 결제, 최대 50만 선지급, 애플페이 독점, 슈퍼콘서트·컬처 경험<br><br><b>주목:</b> 라이프스타일 브랜딩 강점. 통신사와 중복 수혜 가능</div></div>
-    <div class="ntc"><div class="nth" style="background:linear-gradient(135deg,#ff6f0f,#e05000);color:#fff">당근 (당근머니·하나카드)</div><div class="ntb"><span class="nttag" style="background:#fff7ed;color:#9a3412">하이퍼로컬 · 체크카드형</span><br><b>핵심:</b> 우리동네 3% 적립, 당근페이 간편결제, MAU 2,000만↑<br><br><b>주목:</b> 하이퍼로컬+소상공인 연계. T멤버십 우리동네 시너지 가능</div></div>
-    <div class="ntc"><div class="nth" style="background:linear-gradient(135deg,#00c6ff,#0066cc);color:#fff">카카오페이 / 토스</div><div class="ntb"><span class="nttag" style="background:#eff6ff;color:#1d4ed8">금융 플랫폼형</span><br><b>핵심:</b> 카카오페이 MAU 2,402만·TPV 167.3조(2024), 토스 만보기·혜택탭, FacePay 서울 2만 매장 시범<br><br><b>주목:</b> 매일 접촉빈도 높은 락인. T멤버십 제휴 시너지 가능성</div></div>
-    <div class="ntc"><div class="nth" style="background:linear-gradient(135deg,#ff0066,#cc0044);color:#fff">올리브영 · 무신사</div><div class="ntb"><span class="nttag" style="background:#fff0f6;color:#9d174d">버티컬 커머스형</span><br><b>핵심:</b> 올리브영 전국 1,300점↑·앱 MAU 900만↑, 무신사 MAU 1,100만↑·20대 점유율 50%↑<br><br><b>주목:</b> T멤버십 제휴 최우선 후보. 현재 T우주패스 경유만</div></div>
-  </div>
+<div class="sh">
+<div><div class="st">비통신 멤버십</div><div class="ss">유통·금융사 멤버십 벤치마킹 포인트</div></div>
+<span class="upd-badge upd-1m">↻ 월 갱신</span>
 </div>
-
-<!-- 제휴 제안 -->
-<div class="sec" id="pr">
-  <div class="sh"><span class="st">T멤버십 신규 제휴 제안</span><span class="upd-badge upd-1m">↻ 월 갱신</span><span class="ss">고객 선호 + 가맹점 규모 + 매출 트렌드 종합</span></div>
-  <div class="pg">
-    <div class="pc ph"><span class="ibh">최고 임팩트</span><div class="pn">올리브영 — 상시 직제휴</div><div class="pmeta">현황: T우주패스 경유만 · 가맹점 1,300점↑ · 앱 MAU 900만↑</div><div class="pdesc">고객 투표 T day 1위 브랜드. 현재 T우주패스 경유만이라 상시로 인식 안 됨. KT·LGU+도 없으므로 독점 선점 기회.</div><div class="ptags"><span class="ptag">가맹점 1,300+</span><span class="ptag">앱 MAU 900만+</span><span class="ptag">2030 핵심</span><span class="ptag">3사 모두 미보유</span></div></div>
-    <div class="pc ph"><span class="ibh">최고 임팩트</span><div class="pn">스타벅스 — 상시 월1회</div><div class="pmeta">현황: T day 이벤트성만 · KT는 상시 사이즈업 보유</div><div class="pdesc">고객 투표 T day 1위 브랜드. KT가 전 등급 월1회 사이즈업을 유일하게 상시 보유. 상시 전환 시 KT와의 핵심 차별화 포인트 역전 가능.</div><div class="ptags"><span class="ptag">고객 투표 1위</span><span class="ptag">전국 1,950점+</span><span class="ptag">KT 역전 기회</span></div></div>
-    <div class="pc pm"><span class="ibm">중간 임팩트</span><div class="pn">무신사 — 패션 플랫폼 최초 제휴</div><div class="pmeta">현황: 3사 모두 미보유 · MAU 1,100만+</div><div class="pdesc">2030 패션 구매 1위 플랫폼. 0 week 타겟(만 13~34세)과 완벽 일치.</div><div class="ptags"><span class="ptag">MAU 1,100만+</span><span class="ptag">20대 점유율 50%+</span><span class="ptag">0 week 시너지</span></div></div>
-    <div class="pc pm"><span class="ibm">중간 임팩트</span><div class="pn">다이소 — 생활밀착형 최강자</div><div class="pmeta">현황: 3사 모두 미보유 · 전국 1,550점↑</div><div class="pdesc">전국 1,550개↑ 편의점급 접근성. 저물가 트렌드 수혜로 방문 빈도 지속 증가. 전 연령대 커버.</div><div class="ptags"><span class="ptag">전국 1,550점+</span><span class="ptag">가성비 트렌드</span><span class="ptag">전 연령대</span></div></div>
-    <div class="pc pl2"><span class="ibl">성장 기대</span><div class="pn">무신사 뷰티 / 화해</div><div class="pmeta">신규 · 올리브영 대안 채널 급성장</div><div class="pdesc">올리브영 대안 채널로 무신사 뷰티·화해 앱 급성장. 10~20대 뷰티 구매 경로 다각화.</div><div class="ptags"><span class="ptag">뷰티 신채널</span><span class="ptag">10-20대 유입</span></div></div>
-    <div class="pc pl2"><span class="ibl">성장 기대</span><div class="pn">당근 / 하이퍼로컬 연계</div><div class="pmeta">신규 · MAU 2,000만↑</div><div class="pdesc">MAU 2,000만↑, 지역 소상공인 연계 특화. T멤버십 우리동네 멤버십과 시너지.</div><div class="ptags"><span class="ptag">MAU 2,000만+</span><span class="ptag">소상공인 연계</span></div></div>
-  </div>
-</div>
-
-<!-- AI 인사이트 -->
-<div class="sec" id="ai">
-  <div class="sh"><span class="st">AI 인사이트</span><span class="upd-badge upd-1m">↻ 월 갱신</span><span class="ss">기준일: 2026.04.21</span></div>
-  <div class="swot-grid">
-    <div class="swot-card">
-      <div class="swot-hdr sh-skt"><div class="swot-ico">📱</div><span>SKT T멤버십</span></div>
-      <div class="swot-body">
-        <div class="swot-section str"><div class="swot-label str">강점</div><div class="swot-items"><div class="swot-item">고객 투표 기반 T day 운영</div><div class="swot-item">0 week 청년 세분화 타겟팅 선도</div><div class="swot-item">VIP Pick CGV 무료·우주패스 체계</div></div></div>
-        <div class="swot-section wk"><div class="swot-label wk">약점</div><div class="swot-items"><div class="swot-item">VIP 혜택 일상 활용도 낮음</div><div class="swot-item">롯데시네마 종료로 극장 접근성 저하</div><div class="swot-item">스타벅스 상시 미보유</div></div></div>
-      </div>
-    </div>
-    <div class="swot-card">
-      <div class="swot-hdr sh-kt"><div class="swot-ico">📶</div><span>KT 멤버십</span></div>
-      <div class="swot-body">
-        <div class="swot-section str"><div class="swot-label str">강점</div><div class="swot-items"><div class="swot-item">스타벅스 상시 월1회 사이즈업 (3사 유일)</div><div class="swot-item">롯데시네마 유일 유지</div><div class="swot-item">고객보답프로그램 체감 효과 우수</div></div></div>
-        <div class="swot-section wk"><div class="swot-label wk">약점</div><div class="swot-items"><div class="swot-item">달달혜택 월별 라인업 기대 충족 불안정</div><div class="swot-item">커뮤니티 부정 반응 3사 중 최다</div><div class="swot-item">고가 레스토랑 위주 구성 괴리</div></div></div>
-      </div>
-    </div>
-    <div class="swot-card">
-      <div class="swot-hdr sh-lgu"><div class="swot-ico">🌸</div><span>LGU+ 멤버십</span></div>
-      <div class="swot-body">
-        <div class="swot-section str"><div class="swot-label str">강점</div><div class="swot-items"><div class="swot-item">배민클럽 통신사 최초 도입</div><div class="swot-item">화담숲·뮤지컬 장기고객 체험형 차별화</div><div class="swot-item">유플투쁠 2주년, 누적 2000만건 혜택 이용</div></div></div>
-        <div class="swot-section wk"><div class="swot-label wk">약점</div><div class="swot-items"><div class="swot-item">선착순 시스템 미수령 불만 반복</div><div class="swot-item">U+one 앱 통합 이후 기술 오류 지속</div><div class="swot-item">영화관 상시 혜택 절대적 열위</div></div></div>
-      </div>
-    </div>
-  </div>
-  <div style="font-size:12px;font-weight:800;color:var(--tx);margin-bottom:12px;display:flex;align-items:center;gap:7px">
-    <span style="width:3px;height:15px;background:linear-gradient(180deg,var(--p),var(--pm));border-radius:2px;display:inline-block"></span>
-    핵심 인사이트 및 전략 시사점
-  </div>
-  <div class="ins-list">
-    <div class="ins-item"><div class="ins-num">1</div><div class="ins-txt"><b>3사 공통 딜레마:</b> 월별 이벤트 강화 vs 상시 혜택 동결. 고객은 "예측 가능하고 매일 쓸 수 있는 혜택"을 원하나 모든 통신사가 이벤트 의존도 증가 방향으로 이동 중</div></div>
-    <div class="ins-item"><div class="ins-num">2</div><div class="ins-txt"><b>올리브영 상시 직제휴가 가장 긴급:</b> 현재 T우주패스 경유로만 제공. KT·LGU+도 없으므로 독점 선점 기회의 창이 지금 열려 있음</div></div>
-    <div class="ins-item"><div class="ins-num">3</div><div class="ins-txt"><b>스타벅스 상시화로 KT 역전 가능:</b> 고객 투표 T day 1위 브랜드. KT가 유일하게 상시 보유한 스타벅스 사이즈업을 T멤버십도 상시 전환하면 핵심 역전 포인트 확보</div></div>
-    <div class="ins-item"><div class="ins-num">4</div><div class="ins-txt"><b>0 week 타겟과 혜택 정합성 강화 필요:</b> 만 13~34세 타겟팅 방향은 맞으나 무신사·올리브영·당근과의 연계가 미흡. 타겟-혜택 연결고리 강화 필요</div></div>
-    <div class="ins-item"><div class="ins-num">5</div><div class="ins-txt"><b>LGU+ 배민클럽 선례 벤치마킹:</b> "통신사 최초" 구독 제휴는 강력한 PR 효과와 타사 고객 유입 견인 효과 검증됨. SKT의 올리브영·무신사 최초 패션/뷰티 제휴가 동일 효과 기대</div></div>
-  </div>
-</div>
-
-</div>
-
-<script>
-const secIds=['ov','rg','mo','vp','hs','nw','sn','tr','nt','pr','ai'];
-function setActiveNav(id){document.querySelectorAll('.nav a').forEach(a=>{a.classList.toggle('on',a.dataset.sec===id)});}
-function onScroll(){const scrollY=window.scrollY+80;let current=secIds[0];secIds.forEach(id=>{const el=document.getElementById(id);if(el&&el.offsetTop<=scrollY)current=id;});setActiveNav(current);}
-window.addEventListener('scroll',onScroll,{passive:true});
-onScroll();
-function go(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'});setTimeout(()=>setActiveNav(id),400);}
-function switchNews(c,el){['skt','kt','lgu'].forEach(x=>{document.getElementById('np-'+x).classList.add('hidden');document.getElementById('ntab-'+x).className='ntab'});document.getElementById('np-'+c).classList.remove('hidden');el.className='ntab '+{skt:'as',kt:'ak',lgu:'al'}[c];}
-function C(c,el){['skt','kt','lgu'].forEach(x=>document.getElementById('sent-'+x).classList.add('hidden'));document.querySelectorAll('.ctab').forEach(b=>b.className='ctab');el.className='ctab '+{skt:'cs',kt:'ck',lgu:'cl'}[c];document.getElementById('sent-'+c).classList.remove('hidden');}
-function K(c,kw,el){const p=c+'-';document.querySelectorAll('[id^="'+p+'"]').forEach(d=>d.classList.add('hidden'));document.getElementById(p+kw)?.classList.remove('hidden');el.closest('.tr2').querySelectorAll('.kw').forEach(b=>b.classList.remove('on'));el.classList.add('on');}
-function todayStr(){const d=new Date();return d.getFullYear()+'.'+(d.getMonth()+1).toString().padStart(2,'0')+'.'+d.getDate().toString().padStart(2,'0')}
-document.getElementById('lastUpdated').textContent=todayStr()+' 기준';
-
-window.addEventListener('load',()=>{
-  const ctx=document.getElementById('trendChart')?.getContext('2d');
-  if(!ctx)return;
-  const labels=["1/19","1/26","2/02","2/09","2/16","2/23","3/02","3/09","3/16","3/23","3/30","4/06","4/13","4/20"];
-  const skt=[2.8,3.4,3.4,3.0,2.8,3.8,4.0,3.2,3.0,2.9,3.3,3.4,3.0,0.4];
-  const kt=[3.6,4.1,6.0,7.2,5.3,5.6,4.9,5.7,5.5,5.3,5.8,3.9,6.6,0.7];
-  const lgu=[71.6,3.6,41.0,53.7,20.2,1.7,1.4,22.2,100,47.2,28.6,32.2,25.6,2.9];
-  const yMax=Math.ceil(Math.max(...skt,...kt,...lgu)*1.1);
-  new Chart(ctx,{type:'line',data:{labels,datasets:[
-    {label:'SKT (T멤버십 외)',data:skt,borderColor:'#5B0F8A',backgroundColor:'rgba(91,15,138,.08)',tension:.4,pointRadius:4,pointHoverRadius:6,pointBackgroundColor:'#5B0F8A',borderWidth:2.5,fill:true},
-    {label:'KT (KT멤버십 외)',data:kt,borderColor:'#c41a1a',backgroundColor:'rgba(196,26,26,.07)',tension:.4,pointRadius:4,pointHoverRadius:6,pointBackgroundColor:'#c41a1a',borderWidth:2.5,fill:true},
-    {label:'LGU+ (U+멤버십 외)',data:lgu,borderColor:'#b5006a',backgroundColor:'rgba(181,0,106,.1)',tension:.4,pointRadius:4,pointHoverRadius:6,pointBackgroundColor:'#b5006a',borderWidth:2.5,fill:true},
-  ]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-    plugins:{legend:{display:false},tooltip:{backgroundColor:'rgba(26,18,64,.92)',titleColor:'#fff',bodyColor:'rgba(255,255,255,.8)',padding:10,
-      callbacks:{title:items=>'2026년 '+items[0].label+' 주간',label:item=>'  '+item.dataset.label+': '+item.parsed.y}}},
-    scales:{y:{min:0,max:yMax,grid:{color:'rgba(0,0,0,.04)'},ticks:{font:{size:11},color:'#aaa'},title:{display:true,text:'검색량 지수 (100 = 기간 내 최고값)',font:{size:10},color:'#bbb'}},
-      x:{grid:{display:false},ticks:{font:{size:11},color:'#aaa'}}}}});
-});
-</script>
-</body>
-</html>
+<table class="ct">
+<thead>
+<tr>
+<th class="th-cat">분야</th>
+<th colspan="3">주요 사례</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>유통</strong></td>
+<td colspan="3"><strong>신세계 SSG닷컴</strong>: 무료배송 + 쓱데이 7% 추가할인 + 이마트 전 상품 5% 할인<br><strong>쿠팡 로켓와우</strong>: 무료배송 + 와우회원 전용가 + 쿠팡플레이 무료</td>
+</tr>
+<tr>
+<td><strong>금융</strong></td>
+<td colspan="3"><strong>삼성카드 taptap O</strong>: 연회비 무료 + 전 가맹점 0.2% 무제한 적립<br><strong>KB국민 Liiv M</strong>: 이체수수료 면제 + 타행 ATM 수수료 월 10회 면제</td>
+</tr>
+<tr>
+<td><strong>OTT</strong></td>
+<td colspan="3"><strong>넷플릭스</strong>: 프로필 공유 제한 강화 → 가족 외 공유 불가<br><strong>디즈니+</strong>: 광고형 요금제 8,900원 출시 → 진입장벽 하락</td>
+</tr>
+</tbody>
+</table>
+<div class="ai-insight">
+<p><strong>✨ 인사이트</strong></p>
+<p>• <strong>유통 멤버십</strong>은 무료배송 + 할인율 강화로 재구매 유도 (SSG
