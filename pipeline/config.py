@@ -6,16 +6,18 @@ import os
 from pathlib import Path
 
 # ── 실행 환경 감지 ────────────────────────────────────────
-# GitHub Actions에서는 GITHUB_ACTIONS=true 환경변수가 자동 설정됨
 IS_GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS") == "true"
 
 if IS_GITHUB_ACTIONS:
-    # GitHub Actions: 레포 루트 기준
-    BASE_DIR   = Path(os.environ.get("GITHUB_WORKSPACE", "/github/workspace"))
-    DEPLOY_DIR = BASE_DIR / "deploy"
-    DATA_DIR   = BASE_DIR / "data"
-    LOG_DIR    = BASE_DIR / "logs"
-    SKILL_PATH = BASE_DIR / "SKILL_membership_dashboard_v3.md"
+    # GitHub Actions: GITHUB_WORKSPACE = 레포 루트
+    # 구조: tmembership-dashboard/pipeline/main.py
+    #        tmembership-dashboard/index.html  ← 레포 루트에 index.html
+    REPO_ROOT  = Path(os.environ.get("GITHUB_WORKSPACE", "/github/workspace"))
+    BASE_DIR   = REPO_ROOT
+    DEPLOY_DIR = REPO_ROOT          # index.html이 레포 루트에 있음
+    DATA_DIR   = REPO_ROOT / "data"
+    LOG_DIR    = REPO_ROOT / "logs"
+    SKILL_PATH = REPO_ROOT / "SKILL_membership_dashboard_v3.md"
 else:
     # 로컬 실행
     BASE_DIR   = Path.home() / "Downloads" / "tmembership"
@@ -24,8 +26,8 @@ else:
     LOG_DIR    = BASE_DIR / "logs"
     SKILL_PATH = BASE_DIR / "SKILL_membership_dashboard_v3.md"
 
-# ── API 키 (환경변수 우선, 없으면 직접 입력값) ────────────
-ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "여기에_로컬용_키_입력")
+# ── API 키 ────────────────────────────────────────────────
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
 DATALAB_CLIENT_ID     = os.environ.get("DATALAB_CLIENT_ID",     "kWZuYiDh4bePpyvvJ1Fx")
 DATALAB_CLIENT_SECRET = os.environ.get("DATALAB_CLIENT_SECRET", "We38EQBjzj")

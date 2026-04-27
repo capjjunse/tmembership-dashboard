@@ -19,8 +19,7 @@ jobs:
           python-version: '3.11'
 
       - name: 의존성 설치
-        run: |
-          pip install anthropic requests beautifulsoup4
+        run: pip install anthropic requests beautifulsoup4
 
       - name: 파이프라인 실행
         env:
@@ -29,13 +28,12 @@ jobs:
           DATALAB_CLIENT_SECRET: ${{ secrets.DATALAB_CLIENT_SECRET }}
           NAVER_SEARCH_CLIENT_ID: ${{ secrets.NAVER_SEARCH_CLIENT_ID }}
           NAVER_SEARCH_CLIENT_SECRET: ${{ secrets.NAVER_SEARCH_CLIENT_SECRET }}
-        run: |
-          python pipeline/main.py
+        run: python pipeline/main.py
 
       - name: 변경사항 커밋 & 푸시
         run: |
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
-          git add deploy/index.html
+          git add index.html
           git diff --staged --quiet || git commit -m "Auto update $(date +'%Y-%m-%d %H:%M') KST"
           git push
