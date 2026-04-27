@@ -2,7 +2,7 @@ name: T멤버십 대시보드 자동 갱신
 
 on:
   schedule:
-    - cron: '30 0 * * 1'  # 매주 월요일 09:30 KST (= UTC 00:30)
+    - cron: '30 0 * * 2'  # 매주 화요일 09:30 KST (= UTC 00:30)
   workflow_dispatch:        # 수동 실행 버튼 (테스트용)
 
 jobs:
