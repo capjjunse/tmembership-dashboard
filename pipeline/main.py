@@ -66,7 +66,8 @@ def run():
 
     log.info("  ▸ 고객 반응...")
     try:
-        collected["sentiment"] = fetch_all_sentiment()
+        # collected_at 전달 → API가 이달 핵심 동향 기반으로 키워드 자동 확장
+        collected["sentiment"] = fetch_all_sentiment(collected["collected_at"])
         for c, items in collected["sentiment"].items():
             log.info(f"    → {c.upper()}: {len(items)}건")
     except Exception as e:
@@ -92,7 +93,7 @@ def run():
 
     data_path = DATA_DIR / "collected_data.json"
     data_path.write_text(json.dumps(collected, ensure_ascii=False, indent=2), encoding="utf-8")
-    log.info(f"  수집 데이터 저장 완료")
+    log.info("  수집 데이터 저장 완료")
 
     # ── STEP 2: HTML 생성 ────────────────────────────────
     log.info("[2/3] Anthropic API로 HTML 생성")
@@ -104,7 +105,7 @@ def run():
         log.error(f"  HTML 생성 실패: {e}", exc_info=True)
         sys.exit(1)
 
-    # ── STEP 3: 저장 (git push는 GitHub Actions가 담당) ──
+    # ── STEP 3: 저장 ─────────────────────────────────────
     log.info("[3/3] HTML 저장")
     try:
         DEPLOY_DIR.mkdir(parents=True, exist_ok=True)
@@ -113,7 +114,6 @@ def run():
         log.info(f"  저장 완료: {html_path} ({len(html):,}자)")
 
         if not IS_GITHUB_ACTIONS:
-            # 로컬 실행 시에만 git push
             from generator import save_and_deploy
             url = save_and_deploy(html)
             log.info(f"  배포 완료: {url}")
