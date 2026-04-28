@@ -1,14 +1,15 @@
 """
-generator.py — 주간/월간 업데이트 분기
-- 매주: 트렌드, 뉴스, 고객반응, 월별혜택
-- 매월 첫째 주: 위 + 상시혜택, VIP특화, 변경이력, 비통신멤버십, AI인사이트, 개요
+generator.py — 주간/격주/월간 업데이트 분기
+- 매주:        트렌드, 뉴스, 고객반응, 월별혜택
+- 격주(홀수주): 변경이력, 비통신멤버십, AI인사이트
+- 매월 첫째 주: 위 전체 + 개요, 상시혜택, VIP특화
 """
 import json
 import re
 import subprocess
 import anthropic
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, date
 from config import ANTHROPIC_API_KEY, CLAUDE_MODEL, DEPLOY_DIR
 
 NETLIFY_URL = "https://profound-bienenstitch-f41a8a.netlify.app/"
@@ -17,6 +18,12 @@ NETLIFY_URL = "https://profound-bienenstitch-f41a8a.netlify.app/"
 def is_first_week_of_month() -> bool:
     """오늘이 이번 달 첫째 주(1~7일)인지 확인"""
     return datetime.today().day <= 7
+
+
+def is_odd_week() -> bool:
+    """오늘이 연중 홀수 번째 주인지 확인 (격주 업데이트용)"""
+    week_number = date.today().isocalendar()[1]  # ISO 주차 (1~53)
+    return week_number % 2 == 1
 
 
 def api_call(prompt: str, max_tokens: int = 4000) -> str:
@@ -143,128 +150,8 @@ def update_monthly(html: str, data: dict) -> str:
 
 
 # ════════════════════════════════════════════
-# 월간 업데이트 (첫째 주만)
+# 격주 업데이트 (홀수 주)
 # ════════════════════════════════════════════
-
-def update_overview(html: str, data: dict) -> str:
-    """개요 — 이번 달 핵심 동향"""
-    namu = data.get("namu", {})
-    news = data.get("news", {})
-    monthly = data.get("monthly", {})
-    prompt = f"""아래 수집 데이터로 대시보드 '이번 달 핵심 동향' 섹션 HTML을 생성해줘.
-기준일: {data['collected_at']}
-
-나무위키 상시혜택:
-SKT: {namu.get('skt', {}).get('text', '')[:1000]}
-KT: {namu.get('kt', {}).get('text', '')[:1000]}
-LGU+: {namu.get('lgu', {}).get('text', '')[:1000]}
-
-뉴스: {json.dumps(news, ensure_ascii=False)}
-월별혜택: {json.dumps(monthly, ensure_ascii=False)}
-
-출력 형식 (```없이 HTML만):
-<div class="og">
-  <div class="oc cs"><div class="ol"><span class="cb bs">SKT</span></div><div class="ov">핵심변경 1줄</div><div class="od">설명<br>날짜</div></div>
-  <div class="oc ck"><div class="ol"><span class="cb bk">KT</span></div><div class="ov">핵심변경 1줄</div><div class="od">설명</div></div>
-  <div class="oc cl"><div class="ol"><span class="cb bl">LGU+</span></div><div class="ov">핵심변경 1줄</div><div class="od">설명</div></div>
-  <div class="oc cg"><div class="ol" style="font-size:11px;color:var(--tx3)">주요 변경</div><div class="ov" style="font-size:13px">변경사항</div><div class="od">설명</div></div>
-</div>
-<div class="tl">
-  <div class="ti"><div class="tdot" style="background:var(--skt)"></div><div class="tt"><span class="cb bs">SKT</span> 상세내용</div></div>
-  <div class="ti"><div class="tdot" style="background:var(--kt)"></div><div class="tt"><span class="cb bk">KT</span> 상세내용</div></div>
-  <div class="ti"><div class="tdot" style="background:var(--lgu)"></div><div class="tt"><span class="cb bl">LGU+</span> 상세내용</div></div>
-</div>
-
-규칙: 이달 실제 변경/신설 혜택 기반. 이상/할인 표기 (↑/↓ 금지)."""
-    try:
-        response = clean_html(api_call(prompt, max_tokens=2000))
-        og = re.search(r'<div\s+class="og">[\s\S]+?</div>\s*<div\s+class="tl">', response)
-        tl = re.search(r'<div\s+class="tl">[\s\S]+?</div>', response)
-        if og and tl:
-            html = re.sub(r'<div\s+class="og">[\s\S]+?</div>\s*<div\s+class="tl">',
-                          og.group(0), html, count=1)
-            html = re.sub(r'<div\s+class="tl">[\s\S]+?</div>',
-                          tl.group(0), html, count=1)
-            print("  ✅ 개요(핵심동향)")
-        else:
-            print("  ⚠️ 개요 파싱 실패 — 기존 유지")
-    except Exception as e:
-        print(f"  ⚠️ 개요 실패: {e} — 기존 유지")
-    return html
-
-
-def update_regular_benefits(html: str, data: dict) -> str:
-    """상시혜택 — 나무위키 기반"""
-    namu = data.get("namu", {})
-    if not any(v.get("text") for v in namu.values()):
-        print("  ⚠️ 나무위키 데이터 없음 — 기존 유지")
-        return html
-    prompt = f"""아래 나무위키 데이터로 통신 3사 상시 혜택 비교 테이블 HTML을 생성해줘.
-기준일: {data['collected_at']}
-
-SKT 나무위키: {namu.get('skt', {}).get('text', '')[:3000]}
-KT 나무위키: {namu.get('kt', {}).get('text', '')[:3000]}
-LGU+ 나무위키: {namu.get('lgu', {}).get('text', '')[:3000]}
-
-출력 형식 (```없이 HTML만): 카테고리별 <div class="cl2">카테고리</div> + <table class="ct"> 구조.
-카테고리: 영화관, 베이커리, 패밀리레스토랑, 피자, 카페·디저트, 편의점
-각 테이블: thead(제휴처/SKT/KT/LGU+) + tbody(제휴처별 행)
-
-중요 규칙:
-- LGU+ CGV: 최대 4,000원 할인
-- SKT 롯데시네마: 2026.02.01 제휴 종료 (class="wt" 적용)
-- KT 롯데시네마: VVIP 초이스 표기 없이 전 등급 최대 5,000원 할인만
-- 이상/할인 표기 (↑이상 ↓할인 사용 금지, '이상'/'할인' 텍스트로)
-- 상시 없는 경우: <td class="na">기본 상시 없음</td>"""
-    try:
-        response = clean_html(api_call(prompt, max_tokens=4000))
-        # 첫 번째 cl2부터 상시혜택 섹션 끝까지 교체
-        m = re.search(r'<div\s+class="cl2">[\s\S]+?(?=</div>\s*<!--\s*월별)', response)
-        if m:
-            html = re.sub(r'<div\s+class="cl2">[\s\S]+?(?=</div>\s*<!--\s*월별)',
-                          m.group(0), html, count=1)
-            print("  ✅ 상시혜택")
-        else:
-            print("  ⚠️ 상시혜택 파싱 실패 — 기존 유지")
-    except Exception as e:
-        print(f"  ⚠️ 상시혜택 실패: {e} — 기존 유지")
-    return html
-
-
-def update_vip(html: str, data: dict) -> str:
-    """VIP 특화 혜택"""
-    namu = data.get("namu", {})
-    prompt = f"""아래 데이터로 VIP 특화 혜택 테이블 HTML을 생성해줘.
-기준일: {data['collected_at']}
-
-SKT: {namu.get('skt', {}).get('text', '')[:1500]}
-KT: {namu.get('kt', {}).get('text', '')[:1500]}
-LGU+: {namu.get('lgu', {}).get('text', '')[:1500]}
-
-출력 형식 (```없이 HTML만):
-<table class="vt">
-  <thead><tr><th>구분</th><th class="th-skt"><span class="cb bs">SKT</span> VIP Pick</th><th class="th-kt"><span class="cb bk">KT</span> VIP·VVIP 초이스</th><th class="th-lgu"><span class="cb bl">LGU+</span> VIP콕</th></tr></thead>
-  <tbody>
-    <tr><td>제공 주기</td><td>내용<br><a href="URL" target="_blank" class="vlink">링크 →</a></td><td>...</td><td>...</td></tr>
-    <tr><td>영화</td><td>...</td><td>...</td><td>...</td></tr>
-    <tr><td>OTT·구독</td><td>...</td><td>...</td><td>...</td></tr>
-    <tr><td>생일</td><td>...</td><td>...</td><td>...</td></tr>
-  </tbody>
-</table>
-
-규칙: KT 영화 항목에 VIP/VVIP 횟수 표기 없이 '롯데시네마 2인 무료'만. 이상/할인 텍스트 사용."""
-    try:
-        response = clean_html(api_call(prompt, max_tokens=2000))
-        m = re.search(r'<table\s+class="vt">[\s\S]+?</table>', response)
-        if m:
-            html = re.sub(r'<table\s+class="vt">[\s\S]+?</table>', m.group(0), html, count=1)
-            print("  ✅ VIP 특화")
-        else:
-            print("  ⚠️ VIP 파싱 실패 — 기존 유지")
-    except Exception as e:
-        print(f"  ⚠️ VIP 실패: {e} — 기존 유지")
-    return html
-
 
 def update_history(html: str, data: dict) -> str:
     """변경 이력 — 뉴스 기반으로 신규 이력 추가"""
@@ -280,8 +167,7 @@ def update_history(html: str, data: dict) -> str:
   ...
 </tbody>
 
-배지 클래스: t신규/t변경/t종료/t재개
-날짜 형식: YYYY.MM.DD"""
+배지 클래스: t신규/t변경/t종료/t재개. 날짜 형식: YYYY.MM.DD"""
     try:
         response = clean_html(api_call(prompt, max_tokens=2000))
         m = re.search(r'<tbody\s+id="hist-tbody">[\s\S]+?</tbody>', response)
@@ -302,10 +188,10 @@ def update_non_telecom(html: str, data: dict) -> str:
 출력 형식 (```없이 HTML만):
 <div class="ntg">
   <div class="ntc"><div class="nth" style="background:linear-gradient(135deg,#03c75a,#02a84c);color:#fff">네이버플러스 멤버십</div><div class="ntb"><span class="nttag" style="background:#e6f9ee;color:#1a7f3c">구독형 · 월 N원</span><br><b>핵심:</b> 내용<br><br><b>주목:</b> 내용</div></div>
-  ... (쿠팡 와우, 현대카드, 당근, 카카오페이/토스, 올리브영·무신사)
+  ... (쿠팡 와우, 현대카드, 당근, 카카오페이/토스, 올리브영·무신사 포함 총 6개)
 </div>
 
-6개 카드 모두 포함. 최신 가격/서비스 반영."""
+최신 가격/서비스 반영. 6개 카드 모두 포함."""
     try:
         response = clean_html(api_call(prompt, max_tokens=3000))
         m = re.search(r'<div\s+class="ntg">[\s\S]+?</div>\s*</div>', response)
@@ -346,12 +232,10 @@ def update_ai_insight(html: str, data: dict) -> str:
 </div>"""
     try:
         response = clean_html(api_call(prompt, max_tokens=3000))
-        # swot-grid 교체
         m_swot = re.search(r'<div\s+class="swot-grid">[\s\S]+?</div>\s*</div>\s*</div>', response)
         if m_swot:
             html = re.sub(r'<div\s+class="swot-grid">[\s\S]+?</div>\s*</div>\s*</div>',
                           m_swot.group(0), html, count=1)
-        # ins-list 교체
         m_ins = re.search(r'<div\s+class="ins-list">[\s\S]+?</div>\s*</div>', response)
         if m_ins:
             html = re.sub(r'<div\s+class="ins-list">[\s\S]+?</div>\s*</div>',
@@ -362,6 +246,124 @@ def update_ai_insight(html: str, data: dict) -> str:
             print("  ⚠️ AI 인사이트 파싱 실패 — 기존 유지")
     except Exception as e:
         print(f"  ⚠️ AI 인사이트 실패: {e} — 기존 유지")
+    return html
+
+
+# ════════════════════════════════════════════
+# 월간 업데이트 (첫째 주만)
+# ════════════════════════════════════════════
+
+def update_overview(html: str, data: dict) -> str:
+    """개요 — 이번 달 핵심 동향"""
+    namu = data.get("namu", {})
+    news = data.get("news", {})
+    monthly = data.get("monthly", {})
+    prompt = f"""아래 수집 데이터로 대시보드 '이번 달 핵심 동향' 섹션 HTML을 생성해줘.
+기준일: {data['collected_at']}
+
+나무위키: SKT {namu.get('skt',{}).get('text','')[:1000]} / KT {namu.get('kt',{}).get('text','')[:1000]} / LGU+ {namu.get('lgu',{}).get('text','')[:1000]}
+뉴스: {json.dumps(news, ensure_ascii=False)}
+월별혜택: {json.dumps(monthly, ensure_ascii=False)}
+
+출력 형식 (```없이 HTML만):
+<div class="og">
+  <div class="oc cs"><div class="ol"><span class="cb bs">SKT</span></div><div class="ov">핵심변경 1줄</div><div class="od">설명<br>날짜</div></div>
+  <div class="oc ck"><div class="ol"><span class="cb bk">KT</span></div><div class="ov">핵심변경 1줄</div><div class="od">설명</div></div>
+  <div class="oc cl"><div class="ol"><span class="cb bl">LGU+</span></div><div class="ov">핵심변경 1줄</div><div class="od">설명</div></div>
+  <div class="oc cg"><div class="ol" style="font-size:11px;color:var(--tx3)">주요 변경</div><div class="ov" style="font-size:13px">변경사항</div><div class="od">설명</div></div>
+</div>
+<div class="tl">
+  <div class="ti"><div class="tdot" style="background:var(--skt)"></div><div class="tt"><span class="cb bs">SKT</span> 상세</div></div>
+  <div class="ti"><div class="tdot" style="background:var(--kt)"></div><div class="tt"><span class="cb bk">KT</span> 상세</div></div>
+  <div class="ti"><div class="tdot" style="background:var(--lgu)"></div><div class="tt"><span class="cb bl">LGU+</span> 상세</div></div>
+</div>
+
+규칙: 이달 실제 변경/신설 혜택 기반. 이상/할인 표기 (↑/↓ 금지)."""
+    try:
+        response = clean_html(api_call(prompt, max_tokens=2000))
+        og = re.search(r'<div\s+class="og">[\s\S]+?</div>\s*<div\s+class="tl">', response)
+        tl = re.search(r'<div\s+class="tl">[\s\S]+?</div>', response)
+        if og and tl:
+            html = re.sub(r'<div\s+class="og">[\s\S]+?</div>\s*<div\s+class="tl">',
+                          og.group(0), html, count=1)
+            html = re.sub(r'<div\s+class="tl">[\s\S]+?</div>',
+                          tl.group(0), html, count=1)
+            print("  ✅ 개요(핵심동향)")
+        else:
+            print("  ⚠️ 개요 파싱 실패 — 기존 유지")
+    except Exception as e:
+        print(f"  ⚠️ 개요 실패: {e} — 기존 유지")
+    return html
+
+
+def update_regular_benefits(html: str, data: dict) -> str:
+    """상시혜택 — 나무위키 기반"""
+    namu = data.get("namu", {})
+    if not any(v.get("text") for v in namu.values()):
+        print("  ⚠️ 나무위키 데이터 없음 — 기존 유지")
+        return html
+    prompt = f"""아래 나무위키 데이터로 통신 3사 상시 혜택 비교 테이블 HTML을 생성해줘.
+기준일: {data['collected_at']}
+
+SKT: {namu.get('skt',{}).get('text','')[:3000]}
+KT: {namu.get('kt',{}).get('text','')[:3000]}
+LGU+: {namu.get('lgu',{}).get('text','')[:3000]}
+
+출력 형식 (```없이 HTML만): 카테고리별 <div class="cl2">카테고리</div> + <table class="ct"> 구조.
+카테고리: 영화관, 베이커리, 패밀리레스토랑, 피자, 카페·디저트, 편의점
+
+중요 규칙:
+- LGU+ CGV: 최대 4,000원 할인
+- SKT 롯데시네마: 2026.02.01 제휴 종료 (class="wt")
+- KT 롯데시네마: 전 등급 최대 5,000원 할인만 (VVIP 초이스 표기 제거)
+- '이상'/'할인' 텍스트 사용 (↑↓ 금지)
+- 상시 없는 경우: <td class="na">기본 상시 없음</td>"""
+    try:
+        response = clean_html(api_call(prompt, max_tokens=4000))
+        m = re.search(r'<div\s+class="cl2">[\s\S]+?(?=</div>\s*<!--\s*월별)', response)
+        if m:
+            html = re.sub(r'<div\s+class="cl2">[\s\S]+?(?=</div>\s*<!--\s*월별)',
+                          m.group(0), html, count=1)
+            print("  ✅ 상시혜택")
+        else:
+            print("  ⚠️ 상시혜택 파싱 실패 — 기존 유지")
+    except Exception as e:
+        print(f"  ⚠️ 상시혜택 실패: {e} — 기존 유지")
+    return html
+
+
+def update_vip(html: str, data: dict) -> str:
+    """VIP 특화 혜택"""
+    namu = data.get("namu", {})
+    prompt = f"""아래 데이터로 VIP 특화 혜택 테이블 HTML을 생성해줘.
+기준일: {data['collected_at']}
+
+SKT: {namu.get('skt',{}).get('text','')[:1500]}
+KT: {namu.get('kt',{}).get('text','')[:1500]}
+LGU+: {namu.get('lgu',{}).get('text','')[:1500]}
+
+출력 형식 (```없이 HTML만):
+<table class="vt">
+  <thead><tr><th>구분</th><th class="th-skt"><span class="cb bs">SKT</span> VIP Pick</th><th class="th-kt"><span class="cb bk">KT</span> VIP·VVIP 초이스</th><th class="th-lgu"><span class="cb bl">LGU+</span> VIP콕</th></tr></thead>
+  <tbody>
+    <tr><td>제공 주기</td><td>내용<br><a href="URL" target="_blank" class="vlink">링크 →</a></td><td>...</td><td>...</td></tr>
+    <tr><td>영화</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>OTT·구독</td><td>...</td><td>...</td><td>...</td></tr>
+    <tr><td>생일</td><td>...</td><td>...</td><td>...</td></tr>
+  </tbody>
+</table>
+
+규칙: KT 영화 → '롯데시네마 2인 무료'만 (횟수 표기 없음). 이상/할인 텍스트 사용."""
+    try:
+        response = clean_html(api_call(prompt, max_tokens=2000))
+        m = re.search(r'<table\s+class="vt">[\s\S]+?</table>', response)
+        if m:
+            html = re.sub(r'<table\s+class="vt">[\s\S]+?</table>', m.group(0), html, count=1)
+            print("  ✅ VIP 특화")
+        else:
+            print("  ⚠️ VIP 파싱 실패 — 기존 유지")
+    except Exception as e:
+        print(f"  ⚠️ VIP 실패: {e} — 기존 유지")
     return html
 
 
@@ -382,26 +384,39 @@ def generate_dashboard(collected: dict) -> str:
         raise FileNotFoundError(f"기준 HTML 없음: {html_path}")
 
     html = html_path.read_text(encoding="utf-8")
+
     is_monthly = is_first_week_of_month()
-    mode = "🗓️ 월간 전체 업데이트" if is_monthly else "📅 주간 업데이트"
+    is_biweekly = is_odd_week()
+
+    if is_monthly:
+        mode = "🗓️ 월간 전체 업데이트 (첫째 주)"
+    elif is_biweekly:
+        mode = "📋 격주 업데이트 (홀수 주)"
+    else:
+        mode = "📅 주간 업데이트"
+
     print(f"  기준 HTML: {len(html):,}자 | 모드: {mode}")
 
-    # ── 주간 업데이트 (매주) ──────────────────
+    # ── 주간 (매주) ───────────────────────────
     print("\n  [주간]")
     html = update_trend(html, collected)
     html = update_news(html, collected)
     html = update_sentiment(html, collected)
     html = update_monthly(html, collected)
 
-    # ── 월간 업데이트 (첫째 주만) ─────────────
-    if is_monthly:
-        print("\n  [월간 추가]")
-        html = update_overview(html, collected)
-        html = update_regular_benefits(html, collected)
-        html = update_vip(html, collected)
+    # ── 격주 (홀수 주 — 첫째 주 포함) ─────────
+    if is_monthly or is_biweekly:
+        print("\n  [격주]")
         html = update_history(html, collected)
         html = update_non_telecom(html, collected)
         html = update_ai_insight(html, collected)
+
+    # ── 월간 (첫째 주만) ──────────────────────
+    if is_monthly:
+        print("\n  [월간]")
+        html = update_overview(html, collected)
+        html = update_regular_benefits(html, collected)
+        html = update_vip(html, collected)
 
     html = update_date(html, collected["collected_at"])
     print(f"\n  최종 HTML: {len(html):,}자")
