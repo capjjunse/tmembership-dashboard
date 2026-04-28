@@ -101,7 +101,70 @@ def update_news(html: str, data: dict) -> str:
 
 
 def update_sentiment(html: str, data: dict) -> str:
-    print("  ✅ 고객반응 — 기존 유지 (안정성)")
+    """고객반응 — 수집된 데이터로 키워드탭 + 반응카드 업데이트"""
+    sentiment = data.get("sentiment", {})
+    if not any(sentiment.values()):
+        print("  ⚠️ 고객반응 없음 — 기존 유지")
+        return html
+
+    prompt = f"""아래 고객반응 수집 데이터로 대시보드 고객반응 섹션 HTML을 생성해줘.
+기준일: {data['collected_at']} (최근 4주 이내 데이터)
+
+데이터:
+{json.dumps(sentiment, ensure_ascii=False, indent=2)}
+
+출력 형식 (```없이 HTML만):
+<div id="sent-skt">
+  <div class="srcs" style="margin-bottom:12px">
+    <span class="srcbadge act">출처명1</span><span class="srcbadge act">출처명2</span>
+  </div>
+  <div class="tr2" style="margin-bottom:12px">
+    <button class="kw on" onclick="K('skt','kw1',this)">#키워드1</button>
+    <button class="kw" onclick="K('skt','kw2',this)">#키워드2</button>
+    <button class="kw" onclick="K('skt','kw3',this)">#키워드3</button>
+  </div>
+  <div id="skt-kw1">
+    <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag treal">실제 댓글</span><span class="rtag tsrc">출처</span></div><div class="rtx">댓글내용</div><div class="rsrc">출처 · 날짜 · <a href="URL" target="_blank">원문 보기</a></div></div>
+  </div>
+  <div id="skt-kw2" class="hidden">...</div>
+  <div id="skt-kw3" class="hidden">...</div>
+</div>
+<div id="sent-kt" class="hidden">
+  ... (같은 구조)
+</div>
+<div id="sent-lgu" class="hidden">
+  ... (같은 구조)
+</div>
+
+규칙:
+- 각 통신사 키워드 3개 유지 (keyword_history.json 기반)
+- 반응카드는 긍정→부정→중립 순서, 최대 5개
+- .rbg rpos/rneg/rneu 로 감성 구분
+- 데이터 없으면 "최근 4주 내 수집된 반응 없음" 표시
+- 모든 div 정확히 열고 닫기"""
+
+    try:
+        response = clean_html(api_call(prompt, max_tokens=5000))
+        if "<div" not in response:
+            print("  ⚠️ 고객반응 응답 파싱 실패 — 기존 유지")
+            return html
+
+        updated = False
+        for sid in ["sent-skt", "sent-kt", "sent-lgu"]:
+            m = re.search(
+                rf'<div\s+id="{sid}"[^>]*>[\s\S]+?(?=<div\s+id="sent-(?!{sid})|$)',
+                response, re.DOTALL
+            )
+            if m:
+                html = re.sub(
+                    rf'<div\s+id="{sid}"[^>]*>[\s\S]+?(?=<div\s+id="sent-(?!{sid})|<!--\s*검색)',
+                    m.group(0), html, count=1, flags=re.DOTALL
+                )
+                updated = True
+
+        print("  ✅ 고객반응" if updated else "  ⚠️ 고객반응 교체 실패 — 기존 유지")
+    except Exception as e:
+        print(f"  ⚠️ 고객반응 실패: {e} — 기존 유지")
     return html
 
 

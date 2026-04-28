@@ -1,6 +1,6 @@
 """
 collectors/benefit.py
-상시 혜택 + 월별 혜택 수집 (네이버 검색 API 통합)
+상시 혜택 + 월별 혜택 수집
 """
 import time
 import requests
@@ -16,8 +16,7 @@ NAMU_URLS = {
 }
 
 
-def naver_news_api(query: str, display: int = 3) -> str:
-    """네이버 뉴스 검색 API → 텍스트 반환"""
+def naver_news_api(query: str, display: int = 5) -> str:
     try:
         resp = requests.get(
             "https://openapi.naver.com/v1/search/news.json",
@@ -62,29 +61,17 @@ def fetch_all_namu() -> dict:
 
 
 def fetch_skt_monthly() -> dict:
+    """SKT 월별 혜택 — 네이버 뉴스 API로 수집"""
     month = datetime.today().month
-    for q in [f"{month}월 T멤버십", "T멤버십 혜택"]:
-        try:
-            url = f"https://news.sktelecom.com/?s={requests.utils.quote(q)}"
-            resp = requests.get(url, headers=REQUEST_HEADERS, timeout=REQUEST_TIMEOUT)
-            resp.raise_for_status()
-            soup = BeautifulSoup(resp.text, "html.parser")
-            latest = soup.select_one('[id^="post-"] h2 a, [id^="post-"] h3 a')
-            if not latest:
-                continue
-            art_resp = requests.get(latest["href"], headers=REQUEST_HEADERS, timeout=REQUEST_TIMEOUT)
-            art_soup = BeautifulSoup(art_resp.text, "html.parser")
-            content_el = art_soup.select_one(".entry-content")
-            time.sleep(REQUEST_DELAY)
-            return {
-                "carrier": "skt",
-                "title":   latest.get_text(strip=True),
-                "url":     latest["href"],
-                "content": content_el.get_text(separator="\n", strip=True)[:3000] if content_el else "",
-            }
-        except Exception as e:
-            print(f"    [WARN] SKT 월별혜택 ({q}): {e}")
-    return {"carrier": "skt", "title": "", "url": "", "content": ""}
+    content = naver_news_api(f"SKT T멤버십 T데이 {month}월 혜택", display=5)
+    if not content:
+        content = naver_news_api("T멤버십 0week T day 혜택", display=5)
+    return {
+        "carrier": "skt",
+        "title":   f"{month}월 T day + 0 week",
+        "url":     "https://sktmembership.tworld.co.kr/mps/pc-bff/sktmembership/tday.do",
+        "content": content,
+    }
 
 
 def fetch_kt_monthly() -> dict:
