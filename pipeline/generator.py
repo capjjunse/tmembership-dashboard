@@ -12,18 +12,15 @@ from pathlib import Path
 from datetime import datetime, date
 from config import ANTHROPIC_API_KEY, CLAUDE_MODEL, DEPLOY_DIR
 
-NETLIFY_URL = "https://profound-bienenstitch-f41a8a.netlify.app/"
+PAGES_URL = "https://capjjunse.github.io/tmembership-dashboard/"
 
 
 def is_first_week_of_month() -> bool:
-    """오늘이 이번 달 첫째 주(1~7일)인지 확인"""
     return datetime.today().day <= 7
 
 
 def is_odd_week() -> bool:
-    """오늘이 연중 홀수 번째 주인지 확인 (격주 업데이트용)"""
-    week_number = date.today().isocalendar()[1]  # ISO 주차 (1~53)
-    return week_number % 2 == 1
+    return date.today().isocalendar()[1] % 2 == 1
 
 
 def api_call(prompt: str, max_tokens: int = 4000) -> str:
@@ -154,7 +151,6 @@ def update_monthly(html: str, data: dict) -> str:
 # ════════════════════════════════════════════
 
 def update_history(html: str, data: dict) -> str:
-    """변경 이력 — 뉴스 기반으로 신규 이력 추가"""
     news = data.get("news", {})
     prompt = f"""아래 뉴스 데이터에서 멤버십 혜택 변경/신설/종료 이력을 찾아 변경이력 테이블 행을 생성해줘.
 기준일: {data['collected_at']}
@@ -164,10 +160,9 @@ def update_history(html: str, data: dict) -> str:
 출력 형식 (```없이 HTML만, 최근 5건):
 <tbody id="hist-tbody">
   <tr><td>날짜</td><td><span class="cb bs">SKT</span></td><td>프로그램</td><td>변경내용</td><td><span class="tb t변경">변경</span></td><td><a href="URL" target="_blank">출처</a></td></tr>
-  ...
 </tbody>
 
-배지 클래스: t신규/t변경/t종료/t재개. 날짜 형식: YYYY.MM.DD"""
+배지: t신규/t변경/t종료/t재개. 날짜: YYYY.MM.DD"""
     try:
         response = clean_html(api_call(prompt, max_tokens=2000))
         m = re.search(r'<tbody\s+id="hist-tbody">[\s\S]+?</tbody>', response)
@@ -182,7 +177,6 @@ def update_history(html: str, data: dict) -> str:
 
 
 def update_non_telecom(html: str, data: dict) -> str:
-    """비통신 멤버십 동향"""
     prompt = f"""기준일 {data['collected_at']} 기준 비통신 멤버십 최신 동향으로 HTML을 생성해줘.
 
 출력 형식 (```없이 HTML만):
@@ -206,7 +200,6 @@ def update_non_telecom(html: str, data: dict) -> str:
 
 
 def update_ai_insight(html: str, data: dict) -> str:
-    """AI 인사이트 — SWOT + 전략 시사점"""
     namu = data.get("namu", {})
     news = data.get("news", {})
     prompt = f"""아래 데이터로 통신 3사 멤버십 AI 인사이트 섹션 HTML을 생성해줘.
@@ -254,7 +247,6 @@ def update_ai_insight(html: str, data: dict) -> str:
 # ════════════════════════════════════════════
 
 def update_overview(html: str, data: dict) -> str:
-    """개요 — 이번 달 핵심 동향"""
     namu = data.get("namu", {})
     news = data.get("news", {})
     monthly = data.get("monthly", {})
@@ -297,7 +289,6 @@ def update_overview(html: str, data: dict) -> str:
 
 
 def update_regular_benefits(html: str, data: dict) -> str:
-    """상시혜택 — 나무위키 기반"""
     namu = data.get("namu", {})
     if not any(v.get("text") for v in namu.values()):
         print("  ⚠️ 나무위키 데이터 없음 — 기존 유지")
@@ -333,7 +324,6 @@ LGU+: {namu.get('lgu',{}).get('text','')[:3000]}
 
 
 def update_vip(html: str, data: dict) -> str:
-    """VIP 특화 혜택"""
     namu = data.get("namu", {})
     prompt = f"""아래 데이터로 VIP 특화 혜택 테이블 HTML을 생성해줘.
 기준일: {data['collected_at']}
@@ -384,7 +374,6 @@ def generate_dashboard(collected: dict) -> str:
         raise FileNotFoundError(f"기준 HTML 없음: {html_path}")
 
     html = html_path.read_text(encoding="utf-8")
-
     is_monthly = is_first_week_of_month()
     is_biweekly = is_odd_week()
 
@@ -397,21 +386,18 @@ def generate_dashboard(collected: dict) -> str:
 
     print(f"  기준 HTML: {len(html):,}자 | 모드: {mode}")
 
-    # ── 주간 (매주) ───────────────────────────
     print("\n  [주간]")
     html = update_trend(html, collected)
     html = update_news(html, collected)
     html = update_sentiment(html, collected)
     html = update_monthly(html, collected)
 
-    # ── 격주 (홀수 주 — 첫째 주 포함) ─────────
     if is_monthly or is_biweekly:
         print("\n  [격주]")
         html = update_history(html, collected)
         html = update_non_telecom(html, collected)
         html = update_ai_insight(html, collected)
 
-    # ── 월간 (첫째 주만) ──────────────────────
     if is_monthly:
         print("\n  [월간]")
         html = update_overview(html, collected)
@@ -424,6 +410,7 @@ def generate_dashboard(collected: dict) -> str:
 
 
 def save_and_deploy(html: str) -> str:
+    """로컬 실행 시 git push (GitHub Actions는 자체 push)"""
     DEPLOY_DIR.mkdir(parents=True, exist_ok=True)
     html_path = DEPLOY_DIR / "index.html"
     html_path.write_text(html, encoding="utf-8")
@@ -439,5 +426,5 @@ def save_and_deploy(html: str) -> str:
         if r.returncode != 0 and "nothing to commit" not in r.stdout + r.stderr:
             raise RuntimeError(f"git 실패: {r.stderr}")
 
-    print(f"  배포 완료 → {NETLIFY_URL}")
-    return NETLIFY_URL
+    print(f"  배포 완료 → {PAGES_URL}")
+    return PAGES_URL
