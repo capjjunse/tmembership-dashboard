@@ -1,23 +1,19 @@
 {
   "skt": [
     {
-      "keyword": "T멤버십 VIP찬스",
-      "added_at": "2026.04.28"
-    },
-    {
       "keyword": "0week",
       "added_at": "2026.04.28"
     },
     {
       "keyword": "메가커피 T멤버십",
       "added_at": "2026.04.28"
+    },
+    {
+      "keyword": "T멤버십 GS25",
+      "added_at": "2026.04.29"
     }
   ],
   "kt": [
-    {
-      "keyword": "KT멤버십 달달혜택",
-      "added_at": "2026.04.28"
-    },
     {
       "keyword": "KT 고객보답",
       "added_at": "2026.04.28"
@@ -25,13 +21,13 @@
     {
       "keyword": "파파존스 KT멤버십",
       "added_at": "2026.04.28"
+    },
+    {
+      "keyword": "KT멤버십 GS더프레시",
+      "added_at": "2026.04.29"
     }
   ],
   "lgu": [
-    {
-      "keyword": "유플투쁠 혜택",
-      "added_at": "2026.04.28"
-    },
     {
       "keyword": "유플투쁠 2주년",
       "added_at": "2026.04.28"
@@ -39,6 +35,10 @@
     {
       "keyword": "투쁠데이 공차",
       "added_at": "2026.04.28"
+    },
+    {
+      "keyword": "유플투쁠 CU",
+      "added_at": "2026.04.29"
     }
   ]
 }
