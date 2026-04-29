@@ -840,6 +840,95 @@ window.addEventListener('load',()=>{
     }
   });
 });
+
+// ── 동적 데이터 로더 (collected_data.json) ──────────────
+(function loadDynamicData() {
+  fetch('./collected_data.json?v=' + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      // 1. 기준일 업데이트
+      var dateEl = document.getElementById('lastUpdated');
+      if (dateEl && data.collected_at) {
+        dateEl.textContent = data.collected_at.split(' ')[0] + ' 기준';
+      }
+
+      // 2. 트렌드 차트 업데이트
+      if (data.trend && data.trend.labels && window.Chart) {
+        var ctx = document.getElementById('trendChart');
+        if (ctx && ctx._chart) {
+          var c = ctx._chart;
+          c.data.labels = data.trend.labels;
+          c.data.datasets[0].data = data.trend.skt;
+          c.data.datasets[1].data = data.trend.kt;
+          c.data.datasets[2].data = data.trend.lgu;
+          c.options.scales.y.max = Math.ceil(Math.max(...data.trend.skt, ...data.trend.kt, ...data.trend.lgu) * 1.1) + 1;
+          c.update();
+        }
+      }
+
+      // 3. 뉴스 업데이트
+      if (data.news) {
+        var newsMap = {skt: 'np-skt', kt: 'np-kt', lgu: 'np-lgu'};
+        Object.keys(newsMap).forEach(function(carrier) {
+          var items = data.news[carrier] || [];
+          if (!items.length) return;
+          var el = document.getElementById(newsMap[carrier]);
+          if (!el) return;
+          el.innerHTML = items.slice(0,3).map(function(item) {
+            var badge = 'nb신규';
+            var badgeText = '신규';
+            var title = item.title || '';
+            if (title.includes('종료') || title.includes('폐지')) { badge='nb종료'; badgeText='종료'; }
+            else if (title.includes('변경') || title.includes('개편') || title.includes('확대')) { badge='nb변경'; badgeText='변경'; }
+            else if (title.includes('이슈') || title.includes('오류')) { badge='nb이슈'; badgeText='이슈'; }
+            return '<div class="nc"><div class="nct"><span class="nb ' + badge + '">' + badgeText + '</span>' +
+              '<span class="ntitle">' + (item.title||'') + '</span></div>' +
+              '<div class="nsum">' + (item.summary||'') + '</div>' +
+              '<div class="nmeta">' + (item.date||'') + ' · <a href="' + (item.url||'#') + '" target="_blank">원문 보기</a></div></div>';
+          }).join('');
+        });
+      }
+
+      // 4. 월별혜택 업데이트
+      if (data.monthly) {
+        var m = data.monthly;
+        // SKT
+        var sktEl = document.querySelector('.mch.ms + .mcb');
+        if (sktEl && m.skt && m.skt.content) {
+          var lines = m.skt.content.split('\n').filter(function(l){ return l.trim().length > 10; }).slice(0,8);
+          sktEl.innerHTML = '<div class="mblk"><div class="mbtit"><span class="mbdot" style="background:var(--skt)"></span>T day + 0 week</div>' +
+            '<ul class="mblist">' + lines.map(function(l){ return '<li>' + l.trim().slice(0,60) + '</li>'; }).join('') + '</ul></div>';
+        }
+        // KT
+        var ktEl = document.querySelector('.mch.mk + .mcb');
+        if (ktEl && m.kt && m.kt.content) {
+          var lines = m.kt.content.split('\n').filter(function(l){ return l.trim().length > 10; }).slice(0,8);
+          ktEl.innerHTML = '<div class="mblk"><div class="mbtit"><span class="mbdot" style="background:var(--kt)"></span>달달혜택</div>' +
+            '<ul class="mblist">' + lines.map(function(l){ return '<li>' + l.trim().slice(0,60) + '</li>'; }).join('') + '</ul></div>';
+        }
+        // LGU
+        var lguEl = document.querySelector('.mch.ml + .mcb');
+        if (lguEl && m.lgu && m.lgu.content) {
+          var lines = m.lgu.content.split('\n').filter(function(l){ return l.trim().length > 10; }).slice(0,8);
+          lguEl.innerHTML = '<div class="mblk"><div class="mbtit"><span class="mbdot" style="background:var(--lgu)"></span>유플투쁠</div>' +
+            '<ul class="mblist">' + lines.map(function(l){ return '<li>' + l.trim().slice(0,60) + '</li>'; }).join('') + '</ul></div>';
+        }
+      }
+
+      // 5. 트렌드 출처 날짜 업데이트
+      if (data.collected_at) {
+        var srcEls = document.querySelectorAll('[class*="tinfo"] div, .tinfo div');
+        srcEls.forEach(function(el) {
+          if (el.textContent.includes('DataLab API')) {
+            el.textContent = '출처: 네이버 DataLab API · ' + data.collected_at + ' 수집';
+          }
+        });
+      }
+    })
+    .catch(function(e) {
+      console.log('collected_data.json 로드 실패 (첫 실행 시 정상):', e.message);
+    });
+})();
 </script>
 </body>
 </html>
