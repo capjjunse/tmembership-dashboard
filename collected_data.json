@@ -1,0 +1,442 @@
+{
+  "collected_at": "2026.04.29 06:55",
+  "trend": {
+    "collected_at": "2026.04.29 06:55",
+    "period": {
+      "start": "2026-01-26",
+      "end": "2026-04-27"
+    },
+    "labels": [
+      "1/26",
+      "2/02",
+      "2/09",
+      "2/16",
+      "2/23",
+      "3/02",
+      "3/09",
+      "3/16",
+      "3/23",
+      "3/30",
+      "4/06",
+      "4/13",
+      "4/20",
+      "4/27"
+    ],
+    "skt": [
+      3.4,
+      3.4,
+      3.0,
+      2.8,
+      3.8,
+      4.0,
+      3.2,
+      3.0,
+      2.9,
+      3.3,
+      3.4,
+      3.0,
+      2.6,
+      0.7
+    ],
+    "kt": [
+      4.1,
+      6.0,
+      7.2,
+      5.3,
+      5.6,
+      4.9,
+      5.7,
+      5.5,
+      5.3,
+      5.8,
+      3.9,
+      6.6,
+      4.4,
+      1.3
+    ],
+    "lgu": [
+      3.6,
+      41.0,
+      53.7,
+      20.2,
+      1.7,
+      1.4,
+      22.2,
+      100,
+      47.2,
+      28.6,
+      32.2,
+      25.6,
+      33.2,
+      0.5
+    ]
+  },
+  "news": {
+    "skt": [
+      {
+        "carrier": "skt",
+        "title": "SKT, 황금연휴·휴가 시즌 맞아 로밍 혜택 대폭 강화한다",
+        "url": "https://news.sktelecom.com/224176",
+        "date": "2026-04-23",
+        "summary": "– 기존 요금 그대로 데이터 최대 16GB 추가 제공… 여행 중 넉넉한 데이터 지원 – 최근 36개월 내 로밍 이용 내역 없는 2030 고객에겐 요금 70% 할인 혜택도 – 3천\n"
+      },
+      {
+        "carrier": "skt",
+        "title": "SKT, ‘숲캉스 데이’ 통해 장기고객과 자연 속 힐링 함께한다",
+        "url": "https://news.sktelecom.com/223839",
+        "date": "2026-04-13",
+        "summary": "– 10년 이상 이용 장기고객 대상 에버랜드 ‘포레스트 캠프’ 초청 이벤트 진행 – 일반에 공개되지 않는 자연 체험 공간 초청으로 호평… 응모 경쟁률 최대 212:1 기록 – ‘T 장기고객 프로그램’\n"
+      },
+      {
+        "carrier": "skt",
+        "title": "SKT, T멤버십 새단장해 고객 혜택·이용 편의성 강화한다",
+        "url": "https://news.sktelecom.com/223425",
+        "date": "2026-04-01",
+        "summary": "– ‘0 day’를 ‘0 week’로 확대… 이용 기간 · 혜택 늘리고 한 눈에 확인 가능하도록 개편 – ‘T day’와 ‘해피아워’에는 VIP 전용 혜택 ‘VIP 찬스’, ‘VIP only’ 신설 – 갤럭시\n"
+      },
+      {
+        "carrier": "skt",
+        "title": "봄바람 타고 온 산뜻한 4월 T 멤버십 혜택 총정리",
+        "url": "https://news.sktelecom.com/223388",
+        "date": "2026-04-01",
+        "summary": "포근한 봄바람이 일상에 스며드는 4월, 가벼워진 옷차림만큼 T 멤버십 혜택도 한층 더 산뜻하게 찾아왔다. 0 day에서 0 week로 업그레이드 이번 달 T 멤버십은 기존 ‘0 day’가 ‘0 week’로 새롭게 변화했다.\n"
+      },
+      {
+        "carrier": "skt",
+        "title": "고객을 만나는 날로 바뀐 SKT 창립기념일… 현장에서 답을 찾다",
+        "url": "https://news.sktelecom.com/223340",
+        "date": "2026-03-31",
+        "summary": "“처음의 마음으로 고객을 만나고, 듣겠습니다.” SK텔레콤은 창립 42주년을 맞아 ‘기념식’ 대신 고객이 있는 현장으로 향했다. 지난 27일 진행된 이번 고객 방문 행사에는 CEO와 경영진, 고객신뢰위원회 위원 등 약 80여 명이\n"
+      }
+    ],
+    "kt": [
+      {
+        "carrier": "kt",
+        "title": "“외식비 부담 낮춘다”…외식업게, 통신사 멤버십 프로모션 경쟁 ‘활...",
+        "url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065594833416407",
+        "date": "2026-04-28",
+        "summary": "이 회사는 4월 15일부터 30일까지 KT 멤버십 회원을 대상으로 온라인 채널 방문포장 주문 시 전 메뉴 50% 할인 혜택을 제공하는 ‘KT 달달 혜택’ 프로모션을 진행하고 있다. 피자를 비롯해 사이드 메뉴와 음료(최대 2잔)... "
+      },
+      {
+        "carrier": "kt",
+        "title": "파파존스, KT 멤버십 대상 방문포장 50% 할인 프로모션 진행",
+        "url": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5012637",
+        "date": "2026-04-20",
+        "summary": "피자 프랜차이즈 브랜드 '파파존스'가 오는 4월 30일까지 KT 멤버십 회원을 대상으로 'KT 달달 혜택' 프로모션을 운영한다. 해당 기간 동안 자사 온라인 채널을 통해 방문포장 주문 시 전 메뉴에 대해 50% 할인 혜택이... "
+      },
+      {
+        "carrier": "kt",
+        "title": "[주간 유통 나침반] 중동發 포장재 리스크, 홈플러스 위기 확산, 통신사...",
+        "url": "https://www.joongangenews.com/news/articleView.html?idxno=512651",
+        "date": "2026-04-19",
+        "summary": "외식·프랜차이즈 업계가 통신사 멤버십과 결합한 할인 경쟁을 본격화하고 있다. SK텔레콤은 T멤버십과 'T day... KT는 '달달혜택'을 통해 뚜레쥬르, 메가MGC커피, 이디야커피, 파파존스피자, 요거트월드, 다운타우너 등을... "
+      },
+      {
+        "carrier": "kt",
+        "title": "[통신리뷰] '간식부터 생필품까지' KT, 생활 밀착형 멤버십 강화(4월3주...",
+        "url": "https://www.theguru.co.kr/news/article.html?no=100722",
+        "date": "2026-04-18",
+        "summary": "전 상품 배송비는 무료이며 KT멤버십 앱에서 이용 가능하다. 달달혜택은 15일부터 30일까지 운영한다. 고객이 하나의 혜택을 선택해 이용하는 '달달초이스'에는 △뚜레쥬르 △메가MGC커피 △이디야커피... "
+      },
+      {
+        "carrier": "kt",
+        "title": "롯데마트 이마트 홈플러스 대형마트 휴무일… 4월 셋째 주 일요일은?",
+        "url": "https://www.newsclaim.co.kr/news/articleView.html?idxno=3061089",
+        "date": "2026-04-18",
+        "summary": "KT 월간 멤버십 프로그램 '달달혜택' 내 '달달스페셜'의 일환으로 마련됐다. KT 멤버십 회원에게는 3만원 이상 구매 시 4000원 즉시 할인 혜택이 제공된다. 쿠폰은 오는 30일까지 KT 멤버십 앱에서 발급받아 롯데마트... "
+      }
+    ],
+    "lgu": [
+      {
+        "carrier": "lgu",
+        "title": "\"오직 유플러스 고객만\"…LG U+, 화담숲 통대관으로 장기팬덤 사수",
+        "url": "https://www.financialpost.co.kr/news/articleView.html?idxno=257341",
+        "date": "2026-04-29",
+        "summary": "LG유플러스는 대표 멤버십 프로그램 '유플투쁠'을 중심으로 장기고객만을 위한 전용 혜택과 체험형 행사를 확대해 단순 할인 및 포인트 제공을 넘어 고객이 경험할 수 있는 콘텐츠를 선보이고 있다. LG유플러스는 행사... "
+      },
+      {
+        "carrier": "lgu",
+        "title": "\"올해는 장기고객에 보답하는 한 해\"... LG U+, '화담숲 초청데이' 성료",
+        "url": "http://www.thefirstmedia.net/news/articleView.html?idxno=198815",
+        "date": "2026-04-29",
+        "summary": "LG유플러스는 대표 멤버십 프로그램 '유플투쁠'을 중심으로 장기고객만을 위한 전용 혜택과 체험형 행사를 확대하고, 단순 할인이나 포인트 제공을 넘어 고객이 직접 경험할 수 있는 콘텐츠를 지속적으로 선보이고... "
+      },
+      {
+        "carrier": "lgu",
+        "title": "LG유플러스, 장기 고객 대상 '화담숲 초청데이' 성료",
+        "url": "http://www.metroseoul.co.kr/article/20260429500373",
+        "date": "2026-04-29",
+        "summary": "행사는 연중 상시 운영하는 '장기고객 초대 프로그램' 일환으로, 대표 멤버십 프로그램 '유플투쁠'을 통해 장기 고객을 위한 전용 혜택을 선보이고 있다. 또 단순 할인이나 포인트 제공에서 고객이 직접 경험할 수 있는... "
+      },
+      {
+        "carrier": "lgu",
+        "title": "LG유플러스, 장기고객 대상 '화담숲 데이' 성료…체험형 혜택 강화",
+        "url": "https://www.100ssd.co.kr/news/articleView.html?idxno=208775",
+        "date": "2026-04-29",
+        "summary": "LG유플러스는 대표 멤버십 프로그램 '유플투쁠'을 중심으로 장기고객만을 위한 전용 혜택과 체험형 행사를 확대하고 있다. LG유플러스는 오는 5월에도 레고랜드 '레고런' 행사를 통해 장기고객을 대상으로 한 참여형... "
+      },
+      {
+        "carrier": "lgu",
+        "title": "[#통신 풍향계] SKT 'NAB 올해의 제품상' 수상·KT '고객보호365TF' 발족·...",
+        "url": "https://www.newsworks.co.kr/news/articleView.html?idxno=839331",
+        "date": "2026-04-29",
+        "summary": "홍대애드샵플러스에서 공식 대학생 마케터 'Y퓨처리스트'를 포함한 청년 고객들과 첫 포럼을 개최했다.... 대표 멤버십 프로그램 '유플투쁠'을 중심으로 장기고객 전용 혜택과 체험형 행사를 확대하는 전략의 일부다.... "
+      }
+    ]
+  },
+  "sentiment": {
+    "skt": [
+      {
+        "source": "네이버카페(팀스카이 교육센터 | 피어슨뷰 공식 테...)",
+        "title": "Azure AutoML 실습 정리: 코딩 없이 머신러닝 모델 만들고 배포하기",
+        "url": "http://cafe.naver.com/teamskytestcenter/175",
+        "date": "",
+        "text": "이번 실습 설정 항목 설정 Primary metric R2 score Metric score threshold 0.9 Experiment timeout 15 minutes Compute... 이번 실습에서는 목표 점수를 0.9로 설정합니다. 즉, 모델 성능이 어느 정도 기준에 도달하면 학습을... "
+      },
+      {
+        "source": "네이버카페(유월드기출 - 채용정보, 국가기술자격...)",
+        "title": "2026년04월29일 정부지원 [수출 분야] 뉴스",
+        "url": "http://cafe.naver.com/uworldexam/237053",
+        "date": "",
+        "text": "2-0. (강원) 강원 호주 유통망 입점지원 사업 모집 공고문.pdf [공고URL] 바로가기 20. [강원] 독일... 2026년 일본 도쿄 추계 IT 주간 전시회(Japan IT Week Autumn) 한국관 참가기업 모집 공고 KOTRA와 한국정보보호산업협회는... "
+      },
+      {
+        "source": "네이버카페(1형 당뇨인의 슈거 트리)",
+        "title": "어제자 베타세포를 재생한 최신 치료제 뉴스",
+        "url": "http://cafe.naver.com/t1d/76569",
+        "date": "",
+        "text": "https://www.globenewswire.com/news-release/2026/04/27/3282109/0/en/biomea-fusion-announces-positive-52-week-results-from-phase-2-covalent-112-trial-in-type-1-diabetes-showing-c-peptide-improvement-and-durability-Following-12-Weeks-of-Icovamenib-Treatment.html?hl=ko-KR... "
+      },
+      {
+        "source": "네이버카페(디컴파일: 컴파일러 네이버 카페)",
+        "title": "스타레일 1주년 때 호요페어에서 풀렸던 설정",
+        "url": "http://cafe.naver.com/decompile/1184",
+        "date": "",
+        "text": "With this radiant light at its core, the divine creator established the cycle of time, designating this day as the start of the week, representing fresh starts and the rebirth of hope. To commemorate this light of genesis, the followers of... "
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[키워드 알림] 관심 키워드 등록하고, 앱push 알림 받자!",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=notice&no=1060",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[4월 한정 이벤트 진행 중] [당일 현금 즉시 입금] 업계 1위 아정당이 현금 사은품을 타업체보다 많이 줄 수밖에 없는 이유",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87704",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "@뽐뿌최강조건@SKT/KT/U+_최대지원금+추가지원@퀵/택배@[핫!특가=S26(구매챤스)/아이폰17(강추)/S25/S25FE(0원P)/플립6(0원),폴드6(챤스)/폴드7,플립7(강추)/아이폰15(0원)/가성비(-0원특가)=A17,와이드8,A36,점프4/키즈폰,퀀텀6,폴더폰][전국택배/퀵][재구매율 1위/고객만족우수판매점]",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87521",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "개인정보처리방침",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=regulation&page=1&divpage=1&no=49",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "청소년보호정책",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=regulation&page=2&divpage=1&no=5",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "불법촬영물등 신고",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=regulation&page=2&divpage=1&no=19",
+        "date": "",
+        "text": ""
+      }
+    ],
+    "kt": [
+      {
+        "source": "네이버카페(중고나라)",
+        "title": "갤럭시 S21 256GB 특S급 19만원 무잔상 무기스 중고폰 공기계 스마트폰 알뜰폰 대구중고폰 북부모바일",
+        "url": "http://cafe.naver.com/joonggonara/1128788156",
+        "date": "",
+        "text": "핑크 ✔통신사-SK KT LG 3사 호환가능 (유심기변가능) ➕ 필름+젤리케이스+유심핀 ⏩등급 상태 안내... \" 더더욱 좋은 품질로 보답 드릴것을 약속드려요 북부모바일서 고객님께 드리는약속/서비스 ✔구매시 15일간... "
+      },
+      {
+        "source": "네이버카페(중고나라)",
+        "title": "특가상품 갤럭시S22울트라 블랙 90일AS 당일발송 최저가판매 299000원",
+        "url": "http://cafe.naver.com/joonggonara/1128788129",
+        "date": "",
+        "text": "SK KT LG 알뜰폰/선불폰ALL가능 -거래방식:택배/직거래/퀵서비스 -필독- -저희는습득폰은판매하지않습니다... AS교환가능합니다 -구매후고객단순변심은불가합니다 -항상최상품으로 고객님께보답하겠습니다... "
+      },
+      {
+        "source": "네이버카페(중고나라)",
+        "title": "갤럭시 S23플러스 256기가 라벤더 특S급 38만원 무잔상 무기스 대구중고폰 북부모바일~",
+        "url": "http://cafe.naver.com/joonggonara/1128788095",
+        "date": "",
+        "text": "라벤더 ✔통신사-SK KT LG 3사 호환가능 (유심기변가능) ➕젤리케이스+유심핀+필름 ✔ 무료 배송 ⏩등급별... \" 더더욱 좋은 품질로 보답 드릴것을 약속드려요 북부모바일서 고객님께 드리는약속/서비스 ✔구매시... "
+      },
+      {
+        "source": "네이버카페(중고나라)",
+        "title": "갤럭시 S23 256기가 라벤더 특S급 35만원 무잔상 무기스 대구중고폰 북부모바일~",
+        "url": "http://cafe.naver.com/joonggonara/1128788037",
+        "date": "",
+        "text": "라벤더 ✔통신사-SK KT LG 3사 호환가능 (유심기변가능) ➕ 우레탄필름+젤리케이스+유심핀 ✔ 무료 배송... \" 더더욱 좋은 품질로 보답 드릴것을 약속드려요 북부모바일서 고객님께 드리는약속/서비스 ✔구매시 15일간... "
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[키워드 알림] 관심 키워드 등록하고, 앱push 알림 받자!",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=notice&no=1060",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[행복통신]LG,SK,KT/ @뽐뿌회원 추천 1위!! / #48만원+00만원추가/ 설치비전액지원/무조건!!뽐뿌현금1위/ 당일입금",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=12503",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[공식] 4월 29일 갤럭시S26 시리즈 기변특가 혜택 빠른상담 가능!",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87523",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "KT 고객보답티빙 베이직 3+3개월 이용권 질문",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=707&keyword=KT+%B0%ED%B0%B4%BA%B8%B4%E4&no=3913892",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "KT 고객보답디즈니로 하신분들 무슨 번호로 왓나요",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=707&keyword=KT+%B0%ED%B0%B4%BA%B8%B4%E4&no=3912920",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "KT 고객보답좋네요~",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=707&keyword=KT+%B0%ED%B0%B4%BA%B8%B4%E4&no=3912912",
+        "date": "",
+        "text": ""
+      }
+    ],
+    "lgu": [
+      {
+        "source": "네이버카페([화성에 반하다] 화성/수원/오산 부동...)",
+        "title": "유플투쁠 4월 혜택 총정리! 퀴즈 정답과 스몹 할인 꿀팁까지",
+        "url": "http://cafe.naver.com/1djr163/74121",
+        "date": "",
+        "text": "유플투쁠은 사용자들이 일상에서 체감할 수 있는 다양한 제휴 할인과 이벤트를 제공하는 서비스예요. 특히 2주년을 맞이하며 더욱 풍성한 혜택들이 추가되었다고 하니, 지금이 바로 확인해 볼 적기네요! 4월 퀴즈 정답... "
+      },
+      {
+        "source": "네이버카페([화성에 반하다] 화성/수원/오산 부동...)",
+        "title": "유플투쁠 4월 혜택 총정리! 퀴즈정답부터 스몹 할인까지 꿀팁 모음",
+        "url": "http://cafe.naver.com/1djr163/74072",
+        "date": "",
+        "text": "2주년 기념 특별 이벤트 놓치지 않기 최근 유플투쁠 2주년을 맞이해 더욱 풍성한 이벤트들이 진행되고 있어요. 기념일인 만큼 평소보다 혜택의 폭이 넓거나 특별한 리워드가 제공되는 경우가 많답니다. 평소에 멤버십을 잘... "
+      },
+      {
+        "source": "네이버카페(대한민국 모든 경품이벤트)",
+        "title": "2026-04-24(금) 발표 경품이벤트 196건!!",
+        "url": "http://cafe.naver.com/koreagift/26422",
+        "date": "",
+        "text": "- 30명 ㆍ응모기간ㆍ04-13~04-22 (04-24) ㆍ응모주소ㆍ메인페이지 | 이벤트주소 ● [LG유플러스] 유플투쁠, 2주년을 축하해 경품이벤트!! ㆍ경품번호ㆍ 인스타 04-24-109 ㆍ주최회사ㆍLG유플러스 ㆍ응모형태ㆍ댓글응모... "
+      },
+      {
+        "source": "네이버카페(호두맘 이야기)",
+        "title": "유플투쁠 4월 혜택 총정리, 최대 50% 할인에 퀴즈 정답 공유 (통신비 반값 꿀팁)",
+        "url": "http://cafe.naver.com/bluegrayyl5yl/28",
+        "date": "",
+        "text": "LG유플러스가 서비스 출시 2주년을 맞아 2026년 4월 한 달간 역대급 '유플투쁠' 프로모션을 진행합니다. 외식, 카페, 레저 등 일상 밀착형 혜택을 모았습니다. 핵심 혜택 요약 외식/카페: 도미노피자·파파존스 최대 50... "
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[키워드 알림] 관심 키워드 등록하고, 앱push 알림 받자!",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=notice&no=1060",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[LGU+천마통신]<LG사은품은 여기가 최고!> #47만원+00만원추가+설치비무료!! / 인터넷단독 33만원+설치비무료!! / 당일입금!!",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=54992",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "@뽐뿌최강조건@SKT/KT/U+_최대지원금+추가지원@퀵/택배@[핫!특가=S26(구매챤스)/아이폰17(강추)/S25/S25FE(0원P)/플립6(0원),폴드6(챤스)/폴드7,플립7(강추)/아이폰15(0원)/가성비(-0원특가)=A17,와이드8,A36,점프4/키즈폰,퀀텀6,폴더폰][전국택배/퀵][재구매율 1위/고객만족우수판매점]",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87521",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "개인정보처리방침",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=regulation&page=1&divpage=1&no=49",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "청소년보호정책",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=regulation&page=2&divpage=1&no=5",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "불법촬영물등 신고",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=regulation&page=2&divpage=1&no=19",
+        "date": "",
+        "text": ""
+      }
+    ]
+  },
+  "namu": {
+    "skt": {
+      "carrier": "skt",
+      "text": "",
+      "url": "https://namu.wiki/w/T%20Membership"
+    },
+    "kt": {
+      "carrier": "kt",
+      "text": "",
+      "url": "https://namu.wiki/w/KT%20%EB%A9%A4%EB%B2%84%EC%8B%AD"
+    },
+    "lgu": {
+      "carrier": "lgu",
+      "text": "",
+      "url": "https://namu.wiki/w/U%2B%EB%A9%A4%EB%B2%84%EC%8B%AD"
+    }
+  },
+  "monthly": {
+    "skt": {
+      "carrier": "skt",
+      "title": "4월 T day + 0 week",
+      "url": "https://sktmembership.tworld.co.kr/mps/pc-bff/sktmembership/tday.do",
+      "content": "이통3사 멤버십 전면 강화…할인 넘어 '경험·편의' 경쟁 본격화\nSK텔레콤은 4월부터 청년층 대상 멤버십 혜택 구조를 손질했다. 특정일에만 제공되던 '0 Day'를 매월 첫째... 연계된 혜택도 제공한다. 가족 고객은 '패밀리박스', 청년층은 'Y박스'를 통해 데이터 공유와 맞춤형 혜택을... \n\n[게시판] SKT, 'T멤버십 새단장' 고객 혜택 강화 ....LG유플러스, 유플투...\n개편 'T day'와 '해피아워'에는 VIP 전용 혜택 'VIP 찬스', 'VIP only' 신설 SK텔레콤이 고객들이 더 많은 혜택을 보다 편리하게 이용할 수 있도록 T멤버십 개편에 나선다. SKT는 △'0 day'를 '0 week'로 확대 △VIP 고객 전용... \n\nSKT, T멤버십 개편…이용 편의성 강화\nSK텔레콤은 1일 T멤버십 개편에 나선다고 밝혔다. 이를 통해 이용자들의 혜택 이용 편의성을 제고한다는... 개편으로 '0 week' 기간인 매월 첫째 주 5일 동안 혜택들을 자유롭게 이용할 수 있게 됐다. 오는 4월6일부터... \n\n알뜰폰엔 없는 ‘찐 VIP 대접’… 이통3사, 혜택 쏟아부으며 ‘집토끼’...\n전용 혜택 데이를 연중 릴레이로 이어간다. 또한 LG유플러스의 멤버십 프로그램 ‘유플투쁠’ 출시 2주년을 맞아 4월 한 달간 9900원 특가 항공권을 선보이고, 오는 22일에는 등급 무관 전 고객 대상 ‘스페셜 데이’를... \n\nSKT, T멤버십 전면 개편…이용 기간 및 범위 늘린다\n멤버십 개편에 나선다. 1일 SKT는 기존 '영 데이(0 day)'를 '영 위크(0 week)'로 확대하고, VIP 고객 전용 혜택... 4월 혜택에 대한 자세한 내용은 T 멤버십 홈페이지와 T멤버십 앱에서 확인할 수 있다. 한편 SKT는 지난... "
+    },
+    "kt": {
+      "carrier": "kt",
+      "title": "4월 달달혜택",
+      "url": "https://event.kt.com/html/event/ongoing_event_view.html?pcEvtNo=13783",
+      "content": "“외식비 부담 낮춘다”…외식업게, 통신사 멤버십 프로모션 경쟁 ‘활...\n추가 혜택이 더해졌다. 파파존스 역시 통신사 제휴 마케팅을 강화하고 있다. 이 회사는 4월 15일부터 30일까지 KT 멤버십 회원을 대상으로 온라인 채널 방문포장 주문 시 전 메뉴 50% 할인 혜택을 제공하는 ‘KT 달달 혜택’... \n\n파파존스, KT 멤버십 대상 방문포장 50% 할인 프로모션 진행\n피자 프랜차이즈 브랜드 '파파존스'가 오는 4월 30일까지 KT 멤버십 회원을 대상으로 'KT 달달 혜택' 프로모션을 운영한다. 해당 기간 동안 자사 온라인 채널을 통해 방문포장 주문 시 전 메뉴에 대해 50% 할인 혜택이... \n\n[통신리뷰] '간식부터 생필품까지' KT, 생활 밀착형 멤버십 강화(4월3주...\n◇'간식부터 생필품까지' KT, 생활 밀착형 멤버십 강화 KT가 고객의 일상 소비 패턴에 맞춰 식음료부터 생필품까지 다양한 혜택으로 구성한 '4월 고객 보답 프로그램'과 '달달혜택'을 마련했다. KT는 16일부터 고객 보답... \n\n롯데마트 이마트 홈플러스 대형마트 휴무일… 4월 셋째 주 일요일은?\n롯데마트 제타는 지난 15일부터 KT 고객을 대상으로 4월 멤버십 프로모션을 진행 중이다. KT 월간 멤버십 프로그램 '달달혜택' 내 '달달스페셜'의 일환으로 마련됐다. KT 멤버십 회원에게는 3만원 이상 구매 시 4000원 즉시... \n\n[오늘의 특가] 파파존스, KT 멤버십 '달달 혜택' 프로모션 진행. 방문포...\nⓒ한국파파존스㈜ 한국파파존스㈜(회장 서창우)가 봄나들이 시즌을 맞아 KT 멤버십 회원에게 풍성한 할인 혜택을 제공하는 'KT 달달 혜택' 프로모션을 진행한다고 15일 밝혔다. 이번 프로모션은 4월 15일(수)부터 30일... "
+    },
+    "lgu": {
+      "carrier": "lgu",
+      "title": "4월 유플투쁠",
+      "url": "https://www.lguplus.com/benefit/uplustobeul",
+      "content": "\"충성고객 잡아라\"…통신업계, 멤버십 대전 치열\n유플투쁠은 2024년 4월 시작 이후 약 118만명이 2000만건의 혜택을 이용했으며 CGV, 다이소 등 생활 밀착형 혜택 이용률이 높게 나타났다. 장준영 LG유플러스 마케팅그룹장(상무)은 \"차별화된 멤버십 경험을 지속... \n\n공차코리아, 무료 사이즈업 공차 데이 및 LG유플러스·배민 제휴 프로모...\n4월 28일 LG유플러스 유플투쁠 프로모션에서는 멤버십 VIP·VVIP 고객 대상 1만원 이상 결제 시 등급별 30~50% 할인 쿠폰(최대 5000원)을 지급한다. 쿠폰은 행사 당일 유플러스 멤버십 앱에서 확인 가능하며 5월 10일까지... \n\n유플투쁠 4월 혜택은?...'화담숲' 초청 이어 5월엔 레고랜드 초청\nLG유플러스는 봄을 맞아 기존 고객과 신규 고객들을 위한 혜택을 다양하게 마련했다. 먼저, 우리은행의... 상세 내용은 U+one 앱 내 유플투쁠 메뉴에서 확인 가능하다. 4월에는 론칭 기념으로 국내선은 9,900원부터... \n\n공차, '무료 사이즈업' 공차데이→LG U+ '유플투쁠' 프로모션\n사진=공차코리아 먼저 4월 21일 자사 단독 '공차 데이'를 진행한다. 이번 행사에서는 하루 동안 공차의 라지... 이와 함께 오는 28일 LG유플러스와 '유플투쁠' 프로모션을 실시한다. LG유플러스 멤버십 VIP·VVIP 고객을... \n\n이통3사 멤버십 전면 강화…할인 넘어 '경험·편의' 경쟁 본격화\nLG유플러스는 경험형 멤버십으로 차별화를 시도한다. 지난 3월 장기 고객 1000명을 대상으로... '유플투쁠' 2주년을 맞아 4월 한 달간 9900원 특가 항공권을 제공하고, 22일에는 전 고객 대상 '스페셜 데이'를 통해 다이소... "
+    }
+  }
+}
