@@ -170,7 +170,7 @@ def update_sentiment(html: str, data: dict) -> str:
 
 def update_monthly(html: str, data: dict) -> str:
     monthly = data.get("monthly", {})
-    if not any(v.get("content") for v in monthly.values()):
+    if not any(v.get("title") for v in monthly.values()):
         print("  ⚠️ 월별혜택 없음 — 건너뜀")
         return html
     prompt = f"""아래 월별혜택 데이터로 대시보드 월별혜택 섹션 HTML을 생성해줘.
