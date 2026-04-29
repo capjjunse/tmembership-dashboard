@@ -1,7 +1,7 @@
 """
 collectors/sentiment.py
 고객 반응 수집 — 멀티 소스 + 최근 4주 필터 + 슬라이딩 키워드 윈도우
-키워드 관리: 3개 유지, 새 동향 발견 시 가장 오래된 키워드 교체
+keyword_history.json → 레포 루트(DEPLOY_DIR)에 저장해서 GitHub Actions에서도 유지
 """
 import json
 import time
@@ -14,14 +14,31 @@ from pathlib import Path
 from config import (
     REQUEST_HEADERS, REQUEST_DELAY, REQUEST_TIMEOUT,
     NAVER_SEARCH_CLIENT_ID, NAVER_SEARCH_CLIENT_SECRET,
-    ANTHROPIC_API_KEY, CLAUDE_MODEL, DATA_DIR,
+    ANTHROPIC_API_KEY, CLAUDE_MODEL, DEPLOY_DIR,
 )
 
-# 최근 4주 기준
 CUTOFF_DATE = datetime.today() - timedelta(weeks=4)
 
-# 키워드 히스토리 파일 (실행마다 유지)
-KEYWORD_HISTORY_PATH = DATA_DIR / "keyword_history.json"
+# ★ DEPLOY_DIR(레포 루트)에 저장 — GitHub Actions에서 커밋으로 영속
+KEYWORD_HISTORY_PATH = DEPLOY_DIR / "keyword_history.json"
+
+DEFAULT_HISTORY = {
+    "skt": [
+        {"keyword": "T멤버십 VIP찬스", "added_at": "2026.04.28"},
+        {"keyword": "0week", "added_at": "2026.04.28"},
+        {"keyword": "메가커피 T멤버십", "added_at": "2026.04.28"},
+    ],
+    "kt": [
+        {"keyword": "KT멤버십 달달혜택", "added_at": "2026.04.28"},
+        {"keyword": "KT 고객보답", "added_at": "2026.04.28"},
+        {"keyword": "파파존스 KT멤버십", "added_at": "2026.04.28"},
+    ],
+    "lgu": [
+        {"keyword": "유플투쁠 혜택", "added_at": "2026.04.28"},
+        {"keyword": "유플투쁠 2주년", "added_at": "2026.04.28"},
+        {"keyword": "투쁠데이 공차", "added_at": "2026.04.28"},
+    ],
+}
 
 
 def is_within_4weeks(date_str: str) -> bool:
@@ -43,61 +60,35 @@ def is_within_4weeks(date_str: str) -> bool:
     return True
 
 
-# ── 키워드 히스토리 관리 ──────────────────────────────────
-
 def load_keyword_history() -> dict:
-    """저장된 키워드 히스토리 로드"""
-    default = {
-        "skt": [
-            {"keyword": "T멤버십 혜택", "added_at": "2026.01.01"},
-            {"keyword": "0week", "added_at": "2026.01.01"},
-            {"keyword": "메가커피 T멤버십", "added_at": "2026.01.01"},
-        ],
-        "kt": [
-            {"keyword": "KT멤버십 달달혜택", "added_at": "2026.01.01"},
-            {"keyword": "KT 고객보답", "added_at": "2026.01.01"},
-            {"keyword": "KT멤버십 혜택", "added_at": "2026.01.01"},
-        ],
-        "lgu": [
-            {"keyword": "유플투쁠 혜택", "added_at": "2026.01.01"},
-            {"keyword": "투쁠데이 후기", "added_at": "2026.01.01"},
-            {"keyword": "유플러스 멤버십", "added_at": "2026.01.01"},
-        ],
-    }
     try:
         if KEYWORD_HISTORY_PATH.exists():
-            return json.loads(KEYWORD_HISTORY_PATH.read_text(encoding="utf-8"))
-    except:
-        pass
-    return default
+            data = json.loads(KEYWORD_HISTORY_PATH.read_text(encoding="utf-8"))
+            print(f"    키워드 히스토리 로드: {KEYWORD_HISTORY_PATH}")
+            return data
+    except Exception as e:
+        print(f"    [WARN] 키워드 히스토리 로드 실패: {e}")
+    print(f"    키워드 히스토리 파일 없음 — 기본값 사용")
+    return DEFAULT_HISTORY
 
 
 def save_keyword_history(history: dict):
-    """키워드 히스토리 저장"""
     try:
-        DATA_DIR.mkdir(parents=True, exist_ok=True)
+        KEYWORD_HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
         KEYWORD_HISTORY_PATH.write_text(
             json.dumps(history, ensure_ascii=False, indent=2),
             encoding="utf-8"
         )
+        print(f"    키워드 히스토리 저장 완료: {KEYWORD_HISTORY_PATH}")
     except Exception as e:
         print(f"    [WARN] 키워드 히스토리 저장 실패: {e}")
 
 
 def get_new_keywords(collected_at: str, existing_keywords: dict) -> dict:
-    """
-    Anthropic API로 신규 키워드 후보 생성
-    기존 키워드와 다른 것만 반환
-    """
     try:
         import anthropic
         client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-
-        existing_flat = {
-            c: [k["keyword"] for k in kws]
-            for c, kws in existing_keywords.items()
-        }
-
+        existing_flat = {c: [k["keyword"] for k in kws] for c, kws in existing_keywords.items()}
         prompt = f"""T멤버십 대시보드 고객반응 수집용 신규 검색 키워드를 제안해줘.
 기준일: {collected_at}
 
@@ -107,14 +98,15 @@ def get_new_keywords(collected_at: str, existing_keywords: dict) -> dict:
 - LGU+: {existing_flat['lgu']}
 
 각 통신사별로 현재 키워드와 다른 신규 키워드를 1~2개 제안해줘.
-기준: 최근 1개월 내 신설/변경된 혜택, 이슈가 된 프로모션, 고객 관심도가 높은 키워드.
-예시: VIP찬스, 숲캉스데이, 파파존스 KT, 유플투쁠 2주년 등
+기준: 최근 1개월 내 신설/변경된 혜택, 이슈가 된 프로모션, 고객 관심도 높은 키워드.
+예시 SKT: VIP찬스, 숲캉스데이, T멤버십 로밍
+예시 KT: KT달달 파파존스, KT멤버십 배스킨
+예시 LGU+: 유플투쁠 레고랜드, LG유플 화담숲
 
 JSON만 출력:
 {{"skt": ["키워드1", "키워드2"],
   "kt":  ["키워드1", "키워드2"],
   "lgu": ["키워드1", "키워드2"]}}"""
-
         msg = client.messages.create(
             model=CLAUDE_MODEL,
             max_tokens=300,
@@ -130,39 +122,24 @@ JSON만 출력:
 
 
 def update_keyword_window(history: dict, new_candidates: dict, new_results: dict) -> dict:
-    """
-    슬라이딩 윈도우 키워드 업데이트
-    - 새 키워드로 수집된 동향이 있으면 → 가장 오래된 키워드 교체
-    - 없으면 → 기존 유지
-    """
     today = datetime.today().strftime("%Y.%m.%d")
     updated = {c: list(kws) for c, kws in history.items()}
-
     for carrier in ["skt", "kt", "lgu"]:
-        candidates = new_candidates.get(carrier, [])
-        for new_kw in candidates:
-            # 이미 있는 키워드면 건너뜀
+        for new_kw in new_candidates.get(carrier, []):
             existing_kws = [k["keyword"] for k in updated[carrier]]
             if new_kw in existing_kws:
                 continue
-
-            # 이 키워드로 수집된 결과가 있는지 확인
             kw_results = new_results.get(carrier, {}).get(new_kw, [])
             if not kw_results:
-                print(f"    [{carrier.upper()}] '{new_kw}' — 수집 결과 없음, 유지")
+                print(f"    [{carrier.upper()}] '{new_kw}' — 수집 결과 없음")
                 continue
-
-            # 가장 오래된 키워드 제거 + 새 키워드 추가
             oldest = updated[carrier][0]["keyword"]
             updated[carrier].pop(0)
             updated[carrier].append({"keyword": new_kw, "added_at": today})
-            print(f"    [{carrier.upper()}] 키워드 교체: '{oldest}' → '{new_kw}' (새 동향 {len(kw_results)}건)")
-            break  # 한 번에 하나씩만 교체
-
+            print(f"    [{carrier.upper()}] 키워드 교체: '{oldest}' → '{new_kw}' ({len(kw_results)}건)")
+            break
     return updated
 
-
-# ── 소스별 크롤러 ─────────────────────────────────────────
 
 def naver_cafe_search(query: str, display: int = 5) -> list:
     try:
@@ -197,7 +174,6 @@ def naver_cafe_search(query: str, display: int = 5) -> list:
 
 
 def naver_web_search(query: str, site: str = "", display: int = 5) -> list:
-    """네이버 웹 검색 API — 사이트 지정 가능"""
     try:
         q = f"site:{site} {query}" if site else query
         resp = requests.get(
@@ -222,7 +198,7 @@ def naver_web_search(query: str, site: str = "", display: int = 5) -> list:
         time.sleep(REQUEST_DELAY)
         return results
     except Exception as e:
-        print(f"    [WARN] 웹 검색 ({query} @ {site}): {e}")
+        print(f"    [WARN] 웹검색 ({query}@{site}): {e}")
         return []
 
 
@@ -280,7 +256,6 @@ def fetch_arca(keyword: str) -> list:
 
 
 def collect_by_keyword(keyword: str) -> list:
-    """단일 키워드로 전 소스 수집"""
     results = []
     results += naver_cafe_search(keyword, display=4)
     results += fetch_ppomppu(keyword)
@@ -293,44 +268,33 @@ def collect_by_keyword(keyword: str) -> list:
     return results
 
 
-# ── 메인 수집 함수 ────────────────────────────────────────
-
 def fetch_all_sentiment(collected_at: str = "") -> dict:
     output = {"skt": [], "kt": [], "lgu": []}
 
     # 1. 키워드 히스토리 로드
     history = load_keyword_history()
     current_keywords = {c: [k["keyword"] for k in kws] for c, kws in history.items()}
-    print(f"    현재 키워드 — SKT: {current_keywords['skt']} | KT: {current_keywords['kt']} | LGU: {current_keywords['lgu']}")
+    print(f"    현재 키워드 — SKT: {current_keywords['skt']}")
+    print(f"                  KT:  {current_keywords['kt']}")
+    print(f"                  LGU: {current_keywords['lgu']}")
 
-    # 2. 신규 키워드 후보 생성 (API)
+    # 2. 신규 키워드 후보 생성
     new_candidates = get_new_keywords(collected_at, history)
 
-    # 3. 기존 키워드 + 신규 후보 키워드로 수집
+    # 3. 기존 + 신규 후보 키워드로 수집
     all_results_by_kw = {"skt": {}, "kt": {}, "lgu": {}}
-
-    carrier_map = {
-        "skt": ["T멤버십", "T데이", "0week", "SKT"],
-        "kt":  ["KT멤버십", "달달혜택", "KT"],
-        "lgu": ["유플투쁠", "유플러스", "LG유플"],
-    }
-
     for carrier in ["skt", "kt", "lgu"]:
-        # 기존 키워드 수집
         for kw in current_keywords[carrier]:
             results = collect_by_keyword(kw)
             all_results_by_kw[carrier][kw] = results
             output[carrier] += results
-
-        # 신규 후보 키워드 수집
         for kw in new_candidates.get(carrier, []):
             if kw not in current_keywords[carrier]:
                 results = collect_by_keyword(kw)
                 all_results_by_kw[carrier][kw] = results
-                # 신규 키워드 결과는 output에는 포함 (슬라이딩 후 반영)
                 output[carrier] += results
 
-    # 4. 슬라이딩 윈도우 업데이트
+    # 4. 슬라이딩 윈도우 업데이트 + 저장
     updated_history = update_keyword_window(history, new_candidates, all_results_by_kw)
     save_keyword_history(updated_history)
 
@@ -345,5 +309,6 @@ def fetch_all_sentiment(collected_at: str = "") -> dict:
                 if is_within_4weeks(item.get("date", "")):
                     unique.append(item)
         output[c] = unique[:10]
+        print(f"    {c.upper()} 고객반응 수집: {len(output[c])}건")
 
     return output
