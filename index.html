@@ -889,30 +889,28 @@ window.addEventListener('load',()=>{
         });
       }
 
-      // 4. 월별혜택 업데이트
+      // 4. 월별혜택 업데이트 (API 정리 items 사용)
       if (data.monthly) {
         var m = data.monthly;
-        // SKT
-        var sktEl = document.querySelector('.mch.ms + .mcb');
-        if (sktEl && m.skt && m.skt.content) {
-          var lines = m.skt.content.split('\n').filter(function(l){ return l.trim().length > 10; }).slice(0,8);
-          sktEl.innerHTML = '<div class="mblk"><div class="mbtit"><span class="mbdot" style="background:var(--skt)"></span>T day + 0 week</div>' +
-            '<ul class="mblist">' + lines.map(function(l){ return '<li>' + l.trim().slice(0,60) + '</li>'; }).join('') + '</ul></div>';
-        }
-        // KT
-        var ktEl = document.querySelector('.mch.mk + .mcb');
-        if (ktEl && m.kt && m.kt.content) {
-          var lines = m.kt.content.split('\n').filter(function(l){ return l.trim().length > 10; }).slice(0,8);
-          ktEl.innerHTML = '<div class="mblk"><div class="mbtit"><span class="mbdot" style="background:var(--kt)"></span>달달혜택</div>' +
-            '<ul class="mblist">' + lines.map(function(l){ return '<li>' + l.trim().slice(0,60) + '</li>'; }).join('') + '</ul></div>';
-        }
-        // LGU
-        var lguEl = document.querySelector('.mch.ml + .mcb');
-        if (lguEl && m.lgu && m.lgu.content) {
-          var lines = m.lgu.content.split('\n').filter(function(l){ return l.trim().length > 10; }).slice(0,8);
-          lguEl.innerHTML = '<div class="mblk"><div class="mbtit"><span class="mbdot" style="background:var(--lgu)"></span>유플투쁠</div>' +
-            '<ul class="mblist">' + lines.map(function(l){ return '<li>' + l.trim().slice(0,60) + '</li>'; }).join('') + '</ul></div>';
-        }
+        var carriers = [
+          {key:'skt', sel:'.mch.ms + .mcb', dot:'var(--skt)', label:'T day + 0 week'},
+          {key:'kt',  sel:'.mch.mk + .mcb', dot:'var(--kt)',  label:'달달혜택'},
+          {key:'lgu', sel:'.mch.ml + .mcb', dot:'var(--lgu)', label:'유플투쁠'},
+        ];
+        carriers.forEach(function(c) {
+          var el = document.querySelector(c.sel);
+          var d = m[c.key];
+          if (!el || !d) return;
+          var items = (d.items && d.items.length > 0) ? d.items : null;
+          if (!items && d.content) {
+            // items 없으면 content에서 fallback
+            items = d.content.split('\n').filter(function(l){ return l.trim().length > 8 && l.trim().length < 60; }).slice(0,6);
+          }
+          if (!items || !items.length) return;
+          var title = d.title || c.label;
+          el.innerHTML = '<div class="mblk"><div class="mbtit"><span class="mbdot" style="background:' + c.dot + '"></span>' + title + '</div>' +
+            '<ul class="mblist">' + items.map(function(item){ return '<li>' + String(item).trim() + '</li>'; }).join('') + '</ul></div>';
+        });
       }
 
       // 5. 트렌드 출처 날짜 업데이트
