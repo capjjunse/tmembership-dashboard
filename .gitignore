@@ -1,0 +1,10 @@
+# GitHub Actions가 자동으로 업데이트하는 파일들
+# 로컬에서는 추적하지 않음 (충돌 방지)
+pipeline/__pycache__/
+pipeline/collectors/__pycache__/
+pipeline/pipeline/
+*.pyc
+*.pyo
+data/
+logs/
+*.bak
