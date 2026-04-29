@@ -1,41 +1,47 @@
 """
-collectors/news.py
-뉴스 크롤링 — 갱신일 기준 최근 3개월 이내만 수집
+collectors/news.py — 뉴스 크롤링, 날짜 YYYY-MM-DD 통일, 최신순 정렬
 """
 import time
 import requests
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
+from email.utils import parsedate
 from config import REQUEST_HEADERS, REQUEST_DELAY, REQUEST_TIMEOUT
 from config import NAVER_SEARCH_CLIENT_ID, NAVER_SEARCH_CLIENT_SECRET
 
+CUTOFF = datetime.today() - timedelta(days=90)
 
-def is_within_3months(date_str: str) -> bool:
-    """날짜 문자열이 오늘 기준 최근 3개월 이내인지 확인"""
+
+def normalize_date(date_str: str) -> str:
+    """다양한 날짜 형식 → YYYY-MM-DD"""
     if not date_str:
-        return True  # 날짜 없으면 일단 포함
-    cutoff = datetime.today() - timedelta(days=90)
-    # 다양한 날짜 포맷 처리
+        return ""
     for fmt in ["%Y-%m-%d", "%Y.%m.%d", "%Y/%m/%d"]:
         try:
-            d = datetime.strptime(date_str[:10], fmt)
-            return d >= cutoff
+            return datetime.strptime(date_str[:10], fmt).strftime("%Y-%m-%d")
         except:
             continue
-    # RFC 2822 포맷 (Mon, 20 Apr 2026 형식)
+    # RFC 2822: Thu, 16 Apr 2026 ...
     try:
-        from email.utils import parsedate
         parsed = parsedate(date_str)
         if parsed:
-            d = datetime(*parsed[:6])
-            return d >= cutoff
+            return datetime(*parsed[:6]).strftime("%Y-%m-%d")
     except:
         pass
-    return True  # 파싱 실패 시 포함
+    return date_str[:10]
+
+
+def is_within_3months(date_str: str) -> bool:
+    normalized = normalize_date(date_str)
+    if not normalized:
+        return True
+    try:
+        return datetime.strptime(normalized, "%Y-%m-%d") >= CUTOFF
+    except:
+        return True
 
 
 def naver_news_search(query: str, display: int = 10) -> list:
-    """네이버 뉴스 검색 API — 최근 3개월 이내만 반환"""
     try:
         resp = requests.get(
             "https://openapi.naver.com/v1/search/news.json",
@@ -47,11 +53,9 @@ def naver_news_search(query: str, display: int = 10) -> list:
             timeout=REQUEST_TIMEOUT,
         )
         resp.raise_for_status()
-        items = resp.json().get("items", [])
         results = []
-        for item in items:
+        for item in resp.json().get("items", []):
             pub_date = item.get("pubDate", "")
-            # 3개월 이내 필터링
             if not is_within_3months(pub_date):
                 continue
             title = BeautifulSoup(item.get("title", ""), "html.parser").get_text()
@@ -59,10 +63,11 @@ def naver_news_search(query: str, display: int = 10) -> list:
             results.append({
                 "title":   title,
                 "url":     item.get("link", ""),
-                "date":    pub_date[:16],
+                "date":    normalize_date(pub_date),  # ← YYYY-MM-DD 통일
                 "summary": desc[:200],
             })
         time.sleep(REQUEST_DELAY)
+        results.sort(key=lambda x: x["date"], reverse=True)
         return results
     except Exception as e:
         print(f"    [WARN] 네이버 뉴스 API ({query}): {e}")
@@ -70,14 +75,11 @@ def naver_news_search(query: str, display: int = 10) -> list:
 
 
 def fetch_skt_news() -> list:
-    """SKT 뉴스룸 — WordPress REST API, 3개월 이내만"""
     results = []
     seen = set()
     cutoff = (datetime.today() - timedelta(days=90)).strftime("%Y-%m-%d")
-
     for kw in ["T멤버십", "0week", "T day"]:
         try:
-            # after 파라미터로 3개월 이내만 요청
             url = (
                 f"https://news.sktelecom.com/wp-json/wp/v2/posts"
                 f"?search={requests.utils.quote(kw)}"
@@ -90,8 +92,7 @@ def fetch_skt_news() -> list:
                 link = post.get("link", "")
                 if link in seen:
                     continue
-                # 날짜 재확인
-                post_date = post.get("date", "")[:10]
+                post_date = normalize_date(post.get("date", "")[:10])
                 if not is_within_3months(post_date):
                     continue
                 seen.add(link)
@@ -107,17 +108,16 @@ def fetch_skt_news() -> list:
             time.sleep(REQUEST_DELAY)
         except Exception as e:
             print(f"    [WARN] SKT 뉴스 ({kw}): {e}")
+    results.sort(key=lambda x: x["date"], reverse=True)
     return results[:5]
 
 
 def fetch_kt_news() -> list:
-    """KT 뉴스 — 네이버 검색 API, 3개월 이내만"""
     items = naver_news_search("KT멤버십 달달혜택", display=10)
     return [{"carrier": "kt", **item} for item in items[:5]]
 
 
 def fetch_lg_news() -> list:
-    """LGU+ 뉴스 — 네이버 검색 API, 3개월 이내만"""
     items = naver_news_search("유플러스 유플투쁠 멤버십", display=10)
     return [{"carrier": "lgu", **item} for item in items[:5]]
 

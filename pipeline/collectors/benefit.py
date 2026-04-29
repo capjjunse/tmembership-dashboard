@@ -1,6 +1,5 @@
 """
-collectors/benefit.py
-상시 혜택 + 월별 혜택 수집
+collectors/benefit.py — 상시 혜택 + 월별 혜택 수집
 """
 import time
 import requests
@@ -28,9 +27,8 @@ def naver_news_api(query: str, display: int = 5) -> str:
             timeout=REQUEST_TIMEOUT,
         )
         resp.raise_for_status()
-        items = resp.json().get("items", [])
         parts = []
-        for item in items:
+        for item in resp.json().get("items", []):
             title = BeautifulSoup(item.get("title", ""), "html.parser").get_text()
             desc  = BeautifulSoup(item.get("description", ""), "html.parser").get_text()
             parts.append(f"{title}\n{desc}")
@@ -61,11 +59,10 @@ def fetch_all_namu() -> dict:
 
 
 def fetch_skt_monthly() -> dict:
-    """SKT 월별 혜택 — 네이버 뉴스 API로 수집"""
     month = datetime.today().month
-    content = naver_news_api(f"SKT T멤버십 T데이 {month}월 혜택", display=5)
+    content = naver_news_api(f"SKT T멤버십 T데이 {month}월 혜택 0week", display=5)
     if not content:
-        content = naver_news_api("T멤버십 0week T day 혜택", display=5)
+        content = naver_news_api(f"T멤버십 {month}월 혜택", display=5)
     return {
         "carrier": "skt",
         "title":   f"{month}월 T day + 0 week",
