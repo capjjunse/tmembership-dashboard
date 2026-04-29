@@ -5,6 +5,11 @@ on:
     - cron: '30 0 * * 2'  # 매주 화요일 09:30 KST (= UTC 00:30)
   workflow_dispatch:        # 수동 실행 버튼 (테스트용)
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   update-dashboard:
     runs-on: ubuntu-latest
@@ -34,6 +39,6 @@ jobs:
         run: |
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
-          git add index.html
+          git add index.html keyword_history.json
           git diff --staged --quiet || git commit -m "Auto update $(date +'%Y-%m-%d %H:%M') KST"
           git push
