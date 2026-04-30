@@ -889,26 +889,35 @@ window.addEventListener('load',()=>{
         });
       }
 
-      // 4. 월별혜택 업데이트 (API 정리 items 사용)
+      // 4. 월별혜택 업데이트 (API items 사용 + 링크 교체)
       if (data.monthly) {
         var m = data.monthly;
-        var carriers = [
-          {key:'skt', sel:'.mch.ms + .mcb', dot:'var(--skt)', label:'T day + 0 week'},
-          {key:'kt',  sel:'.mch.mk + .mcb', dot:'var(--kt)',  label:'달달혜택'},
-          {key:'lgu', sel:'.mch.ml + .mcb', dot:'var(--lgu)', label:'유플투쁠'},
+        var carrierCfg = [
+          {key:'skt', hdrSel:'.mch.ms', mcbSel:'.mch.ms + .mcb', dot:'var(--skt)', label:'T day + 0 week',
+           url:'https://sktmembership.tworld.co.kr/mps/pc-bff/program/tday.do'},
+          {key:'kt',  hdrSel:'.mch.mk', mcbSel:'.mch.mk + .mcb', dot:'var(--kt)',  label:'달달혜택',
+           url:'https://membership.kt.com/discount/benefit/DaldalBenefit.do'},
+          {key:'lgu', hdrSel:'.mch.ml', mcbSel:'.mch.ml + .mcb', dot:'var(--lgu)', label:'유플투쁠',
+           url:'https://www.lguplus.com/benefit-plus'},
         ];
-        carriers.forEach(function(c) {
-          var el = document.querySelector(c.sel);
+        carrierCfg.forEach(function(c) {
           var d = m[c.key];
-          if (!el || !d) return;
-          var items = (d.items && d.items.length > 0) ? d.items : null;
-          if (!items && d.content) {
-            // items 없으면 content에서 fallback
-            items = d.content.split('\n').filter(function(l){ return l.trim().length > 8 && l.trim().length < 60; }).slice(0,6);
+          if (!d) return;
+
+          // 링크 URL 교체
+          var hdrEl = document.querySelector(c.hdrSel);
+          if (hdrEl) {
+            var link = hdrEl.querySelector('a.mlink');
+            if (link) link.href = d.url || c.url;
           }
+
+          // 혜택 내용 업데이트
+          var mcbEl = document.querySelector(c.mcbSel);
+          if (!mcbEl) return;
+          var items = (d.items && d.items.length > 0) ? d.items : null;
           if (!items || !items.length) return;
           var title = d.title || c.label;
-          el.innerHTML = '<div class="mblk"><div class="mbtit"><span class="mbdot" style="background:' + c.dot + '"></span>' + title + '</div>' +
+          mcbEl.innerHTML = '<div class="mblk"><div class="mbtit"><span class="mbdot" style="background:' + c.dot + '"></span>' + title + '</div>' +
             '<ul class="mblist">' + items.map(function(item){ return '<li>' + String(item).trim() + '</li>'; }).join('') + '</ul></div>';
         });
       }
