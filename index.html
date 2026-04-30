@@ -889,15 +889,15 @@ window.addEventListener('load',()=>{
         });
       }
 
-      // 4. 월별혜택 업데이트 (API items 사용 + 링크 교체)
+      // 4. 월별혜택 업데이트 (sections 구조 + 링크 교체)
       if (data.monthly) {
         var m = data.monthly;
         var carrierCfg = [
-          {key:'skt', hdrSel:'.mch.ms', mcbSel:'.mch.ms + .mcb', dot:'var(--skt)', label:'T day + 0 week',
+          {key:'skt', hdrSel:'.mch.ms', mcbSel:'.mch.ms + .mcb',
            url:'https://sktmembership.tworld.co.kr/mps/pc-bff/program/tday.do'},
-          {key:'kt',  hdrSel:'.mch.mk', mcbSel:'.mch.mk + .mcb', dot:'var(--kt)',  label:'달달혜택',
+          {key:'kt',  hdrSel:'.mch.mk', mcbSel:'.mch.mk + .mcb',
            url:'https://membership.kt.com/discount/benefit/DaldalBenefit.do'},
-          {key:'lgu', hdrSel:'.mch.ml', mcbSel:'.mch.ml + .mcb', dot:'var(--lgu)', label:'유플투쁠',
+          {key:'lgu', hdrSel:'.mch.ml', mcbSel:'.mch.ml + .mcb',
            url:'https://www.lguplus.com/benefit-plus'},
         ];
         carrierCfg.forEach(function(c) {
@@ -911,14 +911,27 @@ window.addEventListener('load',()=>{
             if (link) link.href = d.url || c.url;
           }
 
-          // 혜택 내용 업데이트
+          // 혜택 내용 업데이트 — sections 우선, fallback items
           var mcbEl = document.querySelector(c.mcbSel);
           if (!mcbEl) return;
-          var items = (d.items && d.items.length > 0) ? d.items : null;
-          if (!items || !items.length) return;
-          var title = d.title || c.label;
-          mcbEl.innerHTML = '<div class="mblk"><div class="mbtit"><span class="mbdot" style="background:' + c.dot + '"></span>' + title + '</div>' +
-            '<ul class="mblist">' + items.map(function(item){ return '<li>' + String(item).trim() + '</li>'; }).join('') + '</ul></div>';
+
+          var sections = d.sections;
+          var items = d.items;
+
+          if (sections && sections.length > 0) {
+            // sections 배열로 렌더링 (섹션별 분리)
+            mcbEl.innerHTML = sections.map(function(sec) {
+              if (!sec.items || !sec.items.length) return '';
+              return '<div class="mblk">' +
+                '<div class="mbtit"><span class="mbdot" style="background:' + (sec.dot || 'var(--p)') + '"></span>' + sec.title + '</div>' +
+                '<ul class="mblist">' + sec.items.map(function(item){ return '<li>' + String(item).trim() + '</li>'; }).join('') + '</ul>' +
+                '</div>';
+            }).filter(Boolean).join('');
+          } else if (items && items.length > 0) {
+            // fallback: items 단순 렌더링
+            mcbEl.innerHTML = '<div class="mblk"><div class="mbtit"><span class="mbdot" style="background:var(--p)"></span>' + (d.title||'') + '</div>' +
+              '<ul class="mblist">' + items.map(function(item){ return '<li>' + String(item).trim() + '</li>'; }).join('') + '</ul></div>';
+          }
         });
       }
 
