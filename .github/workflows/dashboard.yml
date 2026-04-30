@@ -3,7 +3,7 @@ name: T멤버십 대시보드 자동 갱신
 on:
   schedule:
     - cron: '30 0 * * 2'  # 매주 화요일 09:30 KST (= UTC 00:30)
-  workflow_dispatch:        # 수동 실행 버튼 (테스트용)
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -24,7 +24,10 @@ jobs:
           python-version: '3.11'
 
       - name: 의존성 설치
-        run: pip install anthropic requests beautifulsoup4
+        run: |
+          pip install anthropic requests beautifulsoup4 playwright
+          playwright install chromium
+          playwright install-deps chromium
 
       - name: 파이프라인 실행
         env:
@@ -33,6 +36,8 @@ jobs:
           DATALAB_CLIENT_SECRET: ${{ secrets.DATALAB_CLIENT_SECRET }}
           NAVER_SEARCH_CLIENT_ID: ${{ secrets.NAVER_SEARCH_CLIENT_ID }}
           NAVER_SEARCH_CLIENT_SECRET: ${{ secrets.NAVER_SEARCH_CLIENT_SECRET }}
+          KT_USERNAME: ${{ secrets.KT_USERNAME }}
+          KT_PASSWORD: ${{ secrets.KT_PASSWORD }}
         run: python pipeline/main.py
 
       - name: 변경사항 커밋 & 푸시
