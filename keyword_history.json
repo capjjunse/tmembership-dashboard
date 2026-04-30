@@ -1,23 +1,19 @@
 {
   "skt": [
     {
-      "keyword": "T멤버십 배스킨라빈스",
-      "added_at": "2026.04.29"
-    },
-    {
       "keyword": "T멤버십 스타벅스",
       "added_at": "2026.04.29"
     },
     {
       "keyword": "T멤버십 CU",
       "added_at": "2026.04.30"
+    },
+    {
+      "keyword": "T멤버십 GS25",
+      "added_at": "2026.04.30"
     }
   ],
   "kt": [
-    {
-      "keyword": "KT멤버십 투썸플레이스",
-      "added_at": "2026.04.29"
-    },
     {
       "keyword": "KT멤버십 메가커피",
       "added_at": "2026.04.29"
@@ -25,19 +21,23 @@
     {
       "keyword": "KT멤버십 스타벅스",
       "added_at": "2026.04.30"
+    },
+    {
+      "keyword": "KT멤버십 CU",
+      "added_at": "2026.04.30"
     }
   ],
   "lgu": [
-    {
-      "keyword": "유플투쁠 스타벅스",
-      "added_at": "2026.04.29"
-    },
     {
       "keyword": "유플투쁠 배스킨라빈스",
       "added_at": "2026.04.29"
     },
     {
       "keyword": "유플투쁠 GS25",
+      "added_at": "2026.04.30"
+    },
+    {
+      "keyword": "유플투쁠 CU",
       "added_at": "2026.04.30"
     }
   ]
