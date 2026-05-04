@@ -944,6 +944,130 @@ window.addEventListener('load',()=>{
           }
         });
       }
+
+      // 6. 변경이력 업데이트
+      if (data.history && data.history.length > 0) {
+        var tbody = document.getElementById('hist-tbody');
+        if (tbody) {
+          tbody.innerHTML = data.history.map(function(h) {
+            var typeClass = 't' + (h.type || '변경');
+            var carrierClass = h.carrier === 'SKT' ? 'bs' : h.carrier === 'KT' ? 'bk' : 'bl';
+            return '<tr>' +
+              '<td>' + (h.date||'') + '</td>' +
+              '<td><span class="cb ' + carrierClass + '">' + (h.carrier||'') + '</span></td>' +
+              '<td>' + (h.program||'') + '</td>' +
+              '<td>' + (h.content||'') + '</td>' +
+              '<td><span class="tb ' + typeClass + '">' + (h.type||'변경') + '</span></td>' +
+              '<td>' + (h.source_url ? '<a href="' + h.source_url + '" target="_blank">' + (h.source||'링크') + '</a>' : (h.source||'-')) + '</td>' +
+              '</tr>';
+          }).join('');
+        }
+      }
+
+      // 7. 비통신 멤버십 업데이트
+      if (data.non_telecom && data.non_telecom.length > 0) {
+        var ntg = document.querySelector('.ntg');
+        if (ntg) {
+          ntg.innerHTML = data.non_telecom.map(function(n) {
+            return '<div class="ntc">' +
+              '<div class="nth" style="background:' + (n.color||'var(--p)') + ';color:#fff">' + (n.name||'') + '</div>' +
+              '<div class="ntb">' +
+                '<span class="nttag" style="background:' + (n.tag_bg||'#eee') + ';color:' + (n.tag_color||'#333') + '">' + (n.type||'') + '</span><br>' +
+                '<b>핵심:</b> ' + (n.core||'') + '<br><br>' +
+                '<b>주목:</b> ' + (n.highlight||'') +
+              '</div>' +
+            '</div>';
+          }).join('');
+        }
+      }
+
+      // 8. AI 인사이트 업데이트
+      if (data.ai_insight) {
+        var ai = data.ai_insight;
+
+        // SWOT
+        if (ai.swot) {
+          var swotGrid = document.querySelector('.swot-grid');
+          if (swotGrid) {
+            var carriers = [
+              {key:'skt', cls:'sh-skt', icon:'📱', name:'SKT T멤버십'},
+              {key:'kt',  cls:'sh-kt',  icon:'📶', name:'KT 멤버십'},
+              {key:'lgu', cls:'sh-lgu', icon:'🌸', name:'LGU+ 멤버십'},
+            ];
+            swotGrid.innerHTML = carriers.map(function(c) {
+              var s = ai.swot[c.key] || {};
+              var str = (s.strengths||[]).map(function(i){ return '<div class="swot-item">' + i + '</div>'; }).join('');
+              var wk  = (s.weaknesses||[]).map(function(i){ return '<div class="swot-item">' + i + '</div>'; }).join('');
+              return '<div class="swot-card">' +
+                '<div class="swot-hdr ' + c.cls + '"><div class="swot-ico">' + c.icon + '</div><span>' + c.name + '</span></div>' +
+                '<div class="swot-body">' +
+                  '<div class="swot-section str"><div class="swot-label str">강점</div><div class="swot-items">' + str + '</div></div>' +
+                  '<div class="swot-section wk"><div class="swot-label wk">약점</div><div class="swot-items">' + wk + '</div></div>' +
+                '</div></div>';
+            }).join('');
+          }
+        }
+
+        // 인사이트 리스트
+        if (ai.insights) {
+          var insList = document.querySelector('.ins-list');
+          if (insList) {
+            insList.innerHTML = ai.insights.map(function(ins, i) {
+              return '<div class="ins-item">' +
+                '<div class="ins-num">' + (i+1) + '</div>' +
+                '<div class="ins-txt"><b>' + (ins.title||'') + ':</b> ' + (ins.content||'') + '</div>' +
+              '</div>';
+            }).join('');
+          }
+        }
+
+        // AI 인사이트 날짜
+        if (ai.updated_at) {
+          var aiDate = document.getElementById('aiInsightDate');
+          if (aiDate) aiDate.textContent = ai.updated_at;
+        }
+      }
+
+      // 9. 개요 핵심동향 업데이트
+      if (data.overview) {
+        var ov = data.overview;
+
+        // og 카드들
+        if (ov.highlights) {
+          var og = document.querySelector('.og');
+          if (og) {
+            og.innerHTML = ov.highlights.map(function(h) {
+              var cls = h.badge === 'bs' ? 'cs' : h.badge === 'bk' ? 'ck' : 'cl';
+              return '<div class="oc ' + cls + '">' +
+                '<div class="ol"><span class="cb ' + h.badge + '">' + h.carrier + '</span></div>' +
+                '<div class="ov">' + (h.summary||'') + '</div>' +
+                '<div class="od">' + (h.detail||'') + '</div>' +
+              '</div>';
+            }).join('');
+          }
+        }
+
+        // 타임라인
+        if (ov.timeline) {
+          var tl = document.querySelector('.tl');
+          if (tl) {
+            tl.innerHTML = ov.timeline.map(function(t) {
+              var dotColor = t.badge === 'bs' ? 'var(--skt)' : t.badge === 'bk' ? 'var(--kt)' : 'var(--lgu)';
+              return '<div class="ti">' +
+                '<div class="tdot" style="background:' + dotColor + '"></div>' +
+                '<div class="tt"><span class="cb ' + t.badge + '">' + t.carrier + '</span> ' + (t.content||'') + '</div>' +
+              '</div>';
+            }).join('');
+          }
+        }
+      }
+
+      // MCP 점검 시각 표시
+      if (data.mcp_checked_at) {
+        var mcpEl = document.getElementById('mcpCheckedAt');
+        if (mcpEl) mcpEl.textContent = 'MCP 점검: ' + data.mcp_checked_at;
+      }
+
     })
     .catch(function(e) {
       console.log('collected_data.json 로드 실패 (첫 실행 시 정상):', e.message);
