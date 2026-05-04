@@ -2,58 +2,292 @@
   "collected_at": "2026.04.30 07:21",
   "mcp_checked_at": "2026.05.04 (월간 전체 점검)",
   "trend": {
-    "labels": ["1/26","2/02","2/09","2/16","2/23","3/02","3/09","3/16","3/23","3/30","4/06","4/13","4/20","4/27"],
-    "skt": [3.4,3.4,3.0,2.8,3.8,4.0,3.2,3.0,2.9,3.3,3.4,3.0,2.6,1.4],
-    "kt": [4.1,6.0,7.2,5.3,5.6,4.9,5.7,5.5,5.3,5.8,3.9,6.6,4.4,2.2],
-    "lgu": [3.6,41.0,53.7,20.2,1.7,1.4,22.2,100,47.2,28.6,32.2,25.6,33.2,0.7]
+    "labels": [
+      "1/26",
+      "2/02",
+      "2/09",
+      "2/16",
+      "2/23",
+      "3/02",
+      "3/09",
+      "3/16",
+      "3/23",
+      "3/30",
+      "4/06",
+      "4/13",
+      "4/20",
+      "4/27"
+    ],
+    "skt": [
+      3.4,
+      3.4,
+      3.0,
+      2.8,
+      3.8,
+      4.0,
+      3.2,
+      3.0,
+      2.9,
+      3.3,
+      3.4,
+      3.0,
+      2.6,
+      1.4
+    ],
+    "kt": [
+      4.1,
+      6.0,
+      7.2,
+      5.3,
+      5.6,
+      4.9,
+      5.7,
+      5.5,
+      5.3,
+      5.8,
+      3.9,
+      6.6,
+      4.4,
+      2.2
+    ],
+    "lgu": [
+      3.6,
+      41.0,
+      53.7,
+      20.2,
+      1.7,
+      1.4,
+      22.2,
+      100,
+      47.2,
+      28.6,
+      32.2,
+      25.6,
+      33.2,
+      0.7
+    ]
   },
   "news": {
     "skt": [
-      {"carrier":"skt","title":"SKT, 황금연휴·휴가 시즌 맞아 로밍 혜택 대폭 강화한다","url":"https://news.sktelecom.com/224176","date":"2026-04-23","summary":"기존 요금 그대로 데이터 최대 16GB 추가 제공. 최근 36개월 내 로밍 이용 내역 없는 2030 고객에겐 요금 70% 할인 혜택."},
-      {"carrier":"skt","title":"SKT, '숲캉스 데이' 통해 장기고객과 자연 속 힐링 함께한다","url":"https://news.sktelecom.com/223839","date":"2026-04-13","summary":"10년 이상 이용 장기고객 대상 에버랜드 '포레스트 캠프' 초청 이벤트. 응모 경쟁률 최대 212:1."},
-      {"carrier":"skt","title":"SKT, T멤버십 새단장해 고객 혜택·이용 편의성 강화한다","url":"https://news.sktelecom.com/223425","date":"2026-04-01","summary":"0 day를 0 week로 확대. T day와 해피아워에 VIP 전용 혜택 VIP 찬스, VIP only 신설."},
-      {"carrier":"skt","title":"봄바람 타고 온 산뜻한 4월 T 멤버십 혜택 총정리","url":"https://news.sktelecom.com/223388","date":"2026-04-01","summary":"0 day에서 0 week로 업그레이드. 4월 T멤버십 혜택 총정리."},
-      {"carrier":"skt","title":"5월 T 멤버십 혜택 총정리: 신규 제휴사·해피아워·T week·0 week","url":"https://news.sktelecom.com/224466","date":"2026-05-01","summary":"더벤티·루덴시아 신규 제휴 추가. 투루카 카셰어링 65% 할인 이벤트 5.4~5.31."}
+      {
+        "carrier": "skt",
+        "title": "SKT, 황금연휴·휴가 시즌 맞아 로밍 혜택 대폭 강화한다",
+        "url": "https://news.sktelecom.com/224176",
+        "date": "2026-04-23",
+        "summary": "기존 요금 그대로 데이터 최대 16GB 추가 제공. 최근 36개월 내 로밍 이용 내역 없는 2030 고객에겐 요금 70% 할인 혜택."
+      },
+      {
+        "carrier": "skt",
+        "title": "SKT, '숲캉스 데이' 통해 장기고객과 자연 속 힐링 함께한다",
+        "url": "https://news.sktelecom.com/223839",
+        "date": "2026-04-13",
+        "summary": "10년 이상 이용 장기고객 대상 에버랜드 '포레스트 캠프' 초청 이벤트. 응모 경쟁률 최대 212:1."
+      },
+      {
+        "carrier": "skt",
+        "title": "SKT, T멤버십 새단장해 고객 혜택·이용 편의성 강화한다",
+        "url": "https://news.sktelecom.com/223425",
+        "date": "2026-04-01",
+        "summary": "0 day를 0 week로 확대. T day와 해피아워에 VIP 전용 혜택 VIP 찬스, VIP only 신설."
+      },
+      {
+        "carrier": "skt",
+        "title": "봄바람 타고 온 산뜻한 4월 T 멤버십 혜택 총정리",
+        "url": "https://news.sktelecom.com/223388",
+        "date": "2026-04-01",
+        "summary": "0 day에서 0 week로 업그레이드. 4월 T멤버십 혜택 총정리."
+      },
+      {
+        "carrier": "skt",
+        "title": "5월 T 멤버십 혜택 총정리: 신규 제휴사·해피아워·T week·0 week",
+        "url": "https://news.sktelecom.com/224466",
+        "date": "2026-05-01",
+        "summary": "더벤티·루덴시아 신규 제휴 추가. 투루카 카셰어링 65% 할인 이벤트 5.4~5.31."
+      }
     ],
     "kt": [
-      {"carrier":"kt","title":"외식업계, 통신사 멤버십 프로모션 경쟁 활발","url":"https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065594833416407","date":"2026-04-28","summary":"KT 멤버십 달달혜택 프로모션. 파파존스 방문포장 50% 할인 이벤트."},
-      {"carrier":"kt","title":"파파존스, KT 멤버십 대상 방문포장 50% 할인 프로모션","url":"https://www.shinailbo.co.kr/news/articleView.html?idxno=5012637","date":"2026-04-20","summary":"4월 30일까지 KT 멤버십 회원 대상 전 메뉴 50% 할인."},
-      {"carrier":"kt","title":"KT, 생활 밀착형 멤버십 강화","url":"https://www.theguru.co.kr/news/article.html?no=100722","date":"2026-04-18","summary":"달달초이스: 뚜레쥬르, 메가MGC커피, 이디야커피 등. 달달스페셜 중복 이용 가능."},
-      {"carrier":"kt","title":"외식·테마파크 할인…KT, 5월 달달혜택 공개","url":"https://www.digitaltoday.co.kr/news/articleView.html?idxno=564329","date":"2026-05-01","summary":"5월 패밀리 컬렉션 — 빕스 40%, 롯데월드·서울랜드 할인. 달달초이스 팀홀튼·던킨·파리바게뜨 등."},
-      {"carrier":"kt","title":"KT 고객보답 프로그램","url":"https://membership.kt.com","date":"2026-04-01","summary":"매월 2회 새로운 혜택 제공. 데이터·OTT·보험 등 다양한 혜택 선보임."}
+      {
+        "carrier": "kt",
+        "title": "외식업계, 통신사 멤버십 프로모션 경쟁 활발",
+        "url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065594833416407",
+        "date": "2026-04-28",
+        "summary": "KT 멤버십 달달혜택 프로모션. 파파존스 방문포장 50% 할인 이벤트."
+      },
+      {
+        "carrier": "kt",
+        "title": "파파존스, KT 멤버십 대상 방문포장 50% 할인 프로모션",
+        "url": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5012637",
+        "date": "2026-04-20",
+        "summary": "4월 30일까지 KT 멤버십 회원 대상 전 메뉴 50% 할인."
+      },
+      {
+        "carrier": "kt",
+        "title": "KT, 생활 밀착형 멤버십 강화",
+        "url": "https://www.theguru.co.kr/news/article.html?no=100722",
+        "date": "2026-04-18",
+        "summary": "달달초이스: 뚜레쥬르, 메가MGC커피, 이디야커피 등. 달달스페셜 중복 이용 가능."
+      },
+      {
+        "carrier": "kt",
+        "title": "외식·테마파크 할인…KT, 5월 달달혜택 공개",
+        "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=564329",
+        "date": "2026-05-01",
+        "summary": "5월 패밀리 컬렉션 — 빕스 40%, 롯데월드·서울랜드 할인. 달달초이스 팀홀튼·던킨·파리바게뜨 등."
+      },
+      {
+        "carrier": "kt",
+        "title": "KT 고객보답 프로그램",
+        "url": "https://membership.kt.com",
+        "date": "2026-04-01",
+        "summary": "매월 2회 새로운 혜택 제공. 데이터·OTT·보험 등 다양한 혜택 선보임."
+      }
     ],
     "lgu": [
-      {"carrier":"lgu","title":"장기고객 잡는 LG유플러스…화담숲에 3천명 초청 행사","url":"https://www.thepublic.kr/news/articleView.html?idxno=302986","date":"2026-04-29","summary":"유플투쁠 중심으로 장기고객 전용 혜택과 체험형 행사 확대. 뮤지컬 무료 관람 등 경험형 콘텐츠 강화."},
-      {"carrier":"lgu","title":"LG U+, 장기고객 대상 화담숲 초청데이 성료","url":"https://www.ekoreanews.co.kr/news/articleView.html?idxno=85808","date":"2026-04-29","summary":"단순 할인을 넘어 고객이 직접 경험할 수 있는 콘텐츠 지속 선보임."},
-      {"carrier":"lgu","title":"LG유플러스, 장기고객 3천명 화담숲 통대관 초청","url":"https://www.nextdaily.co.kr/news/articleView.html?idxno=248948","date":"2026-04-29","summary":"5년 이상 장기 고객에게 월별 특별 선물, 인기 뮤지컬 무료 관람 등 혜택 제공."},
-      {"carrier":"lgu","title":"오직 유플러스 고객만…LG U+, 장기팬덤 사수","url":"https://www.financialpost.co.kr/news/articleView.html?idxno=257341","date":"2026-04-29","summary":"장기고객만을 위한 전용 혜택과 체험형 행사 확대 지속."},
-      {"carrier":"lgu","title":"LG유플러스 5월 유플투쁠 혜택 공개","url":"https://www.lguplus.com/benefit-plus","date":"2026-05-01","summary":"공차·피자헛·스타벅스·파리바게뜨·CGV 등 30종+ 일별 선착순 혜택."}
+      {
+        "carrier": "lgu",
+        "title": "장기고객 잡는 LG유플러스…화담숲에 3천명 초청 행사",
+        "url": "https://www.thepublic.kr/news/articleView.html?idxno=302986",
+        "date": "2026-04-29",
+        "summary": "유플투쁠 중심으로 장기고객 전용 혜택과 체험형 행사 확대. 뮤지컬 무료 관람 등 경험형 콘텐츠 강화."
+      },
+      {
+        "carrier": "lgu",
+        "title": "LG U+, 장기고객 대상 화담숲 초청데이 성료",
+        "url": "https://www.ekoreanews.co.kr/news/articleView.html?idxno=85808",
+        "date": "2026-04-29",
+        "summary": "단순 할인을 넘어 고객이 직접 경험할 수 있는 콘텐츠 지속 선보임."
+      },
+      {
+        "carrier": "lgu",
+        "title": "LG유플러스, 장기고객 3천명 화담숲 통대관 초청",
+        "url": "https://www.nextdaily.co.kr/news/articleView.html?idxno=248948",
+        "date": "2026-04-29",
+        "summary": "5년 이상 장기 고객에게 월별 특별 선물, 인기 뮤지컬 무료 관람 등 혜택 제공."
+      },
+      {
+        "carrier": "lgu",
+        "title": "오직 유플러스 고객만…LG U+, 장기팬덤 사수",
+        "url": "https://www.financialpost.co.kr/news/articleView.html?idxno=257341",
+        "date": "2026-04-29",
+        "summary": "장기고객만을 위한 전용 혜택과 체험형 행사 확대 지속."
+      },
+      {
+        "carrier": "lgu",
+        "title": "LG유플러스 5월 유플투쁠 혜택 공개",
+        "url": "https://www.lguplus.com/benefit-plus",
+        "date": "2026-05-01",
+        "summary": "공차·피자헛·스타벅스·파리바게뜨·CGV 등 30종+ 일별 선착순 혜택."
+      }
     ]
   },
   "sentiment": {
     "skt": [
-      {"source":"네이버카페","title":"T멤버십 CU 할인 후기","url":"http://cafe.naver.com/sweetcitymom/76794","date":"","text":"t멤버십 cu할인 9천원 혜택. 오픈행사 3만이상 계란, 1.5만이상 롤휴지 증정."},
-      {"source":"네이버카페","title":"밀키트 할인받는 법 (2026.4)","url":"http://cafe.naver.com/dasajadeal/57","date":"","text":"T멤버십 포함 통신사 멤버십 활용 밀키트 할인 방법 정리."},
-      {"source":"네이버카페","title":"CU 퍼플+T멤버십+토스 조합으로 건기식 1,000원 결제","url":"http://cafe.naver.com/skybluezw4rh/14536475","date":"","text":"t멤버십1천 - 토스5천원 토탈 1,000원 결제. 건기식 17종 구매."},
-      {"source":"뽐뿌","title":"SKT 50기가 데이터 차별대우 민원 후기","url":"https://www.ppomppu.co.krview.php?id=phone&no=3878749","date":"","text":"SKT 데이터 차별 관련 과기정통부 민원 11일만에 결과."},
-      {"source":"뽐뿌","title":"Skt 고인물 유저 특징","url":"https://www.ppomppu.co.krview.php?id=phone&no=3772431","date":"","text":"SKT 장기 이용 고객들의 멤버십 혜택 이용 패턴 공유."}
+      {
+        "source": "네이버카페",
+        "title": "T멤버십 CU 할인 후기",
+        "url": "http://cafe.naver.com/sweetcitymom/76794",
+        "date": "",
+        "text": "t멤버십 cu할인 9천원 혜택. 오픈행사 3만이상 계란, 1.5만이상 롤휴지 증정."
+      },
+      {
+        "source": "네이버카페",
+        "title": "밀키트 할인받는 법 (2026.4)",
+        "url": "http://cafe.naver.com/dasajadeal/57",
+        "date": "",
+        "text": "T멤버십 포함 통신사 멤버십 활용 밀키트 할인 방법 정리."
+      },
+      {
+        "source": "네이버카페",
+        "title": "CU 퍼플+T멤버십+토스 조합으로 건기식 1,000원 결제",
+        "url": "http://cafe.naver.com/skybluezw4rh/14536475",
+        "date": "",
+        "text": "t멤버십1천 - 토스5천원 토탈 1,000원 결제. 건기식 17종 구매."
+      },
+      {
+        "source": "뽐뿌",
+        "title": "SKT 50기가 데이터 차별대우 민원 후기",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&no=3878749",
+        "date": "",
+        "text": "SKT 데이터 차별 관련 과기정통부 민원 11일만에 결과."
+      },
+      {
+        "source": "뽐뿌",
+        "title": "Skt 고인물 유저 특징",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&no=3772431",
+        "date": "",
+        "text": "SKT 장기 이용 고객들의 멤버십 혜택 이용 패턴 공유."
+      }
     ],
     "kt": [
-      {"source":"네이버카페","title":"KT 달달혜택 T멤버십 혜택 비교 후기","url":"http://cafe.naver.com/onepieceholicplus/6001352","date":"","text":"KT달달 혜택과 T멤버십 T day 혜택 비교. 쉐이크쉑, 뚜레쥬르 등 이용 후기."},
-      {"source":"네이버카페","title":"파파존스 KT 멤버십 50% 할인 프로모션 안내","url":"http://cafe.naver.com/sbiznews/14079","date":"","text":"파파존스, KT 멤버십 대상 방문포장 50% 할인 프로모션 진행."},
-      {"source":"뽐뿌","title":"KT 공홈 아이폰16 사전예약 후 해지 후기","url":"https://www.ppomppu.co.krview.php?id=phone&no=3814680","date":"","text":"KT 멤버십 혜택 관련 번호이동 후기."},
-      {"source":"뽐뿌","title":"SKT 내맘대로멤버십 VIP 아웃백","url":"https://www.ppomppu.co.krview.php?id=phone&no=3403705","date":"","text":"통신사 멤버십 VIP 혜택 비교. 아웃백 할인 비교."}
+      {
+        "source": "네이버카페",
+        "title": "KT 달달혜택 T멤버십 혜택 비교 후기",
+        "url": "http://cafe.naver.com/onepieceholicplus/6001352",
+        "date": "",
+        "text": "KT달달 혜택과 T멤버십 T day 혜택 비교. 쉐이크쉑, 뚜레쥬르 등 이용 후기."
+      },
+      {
+        "source": "네이버카페",
+        "title": "파파존스 KT 멤버십 50% 할인 프로모션 안내",
+        "url": "http://cafe.naver.com/sbiznews/14079",
+        "date": "",
+        "text": "파파존스, KT 멤버십 대상 방문포장 50% 할인 프로모션 진행."
+      },
+      {
+        "source": "뽐뿌",
+        "title": "KT 공홈 아이폰16 사전예약 후 해지 후기",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&no=3814680",
+        "date": "",
+        "text": "KT 멤버십 혜택 관련 번호이동 후기."
+      },
+      {
+        "source": "뽐뿌",
+        "title": "SKT 내맘대로멤버십 VIP 아웃백",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&no=3403705",
+        "date": "",
+        "text": "통신사 멤버십 VIP 혜택 비교. 아웃백 할인 비교."
+      }
     ],
     "lgu": [
-      {"source":"네이버카페","title":"유플투쁠 4월 혜택 총정리 및 2주년 기념 멤버십 꿀팁","url":"http://cafe.naver.com/malmotstory/1337","date":"","text":"유플투쁠 혜택 상세 정리. 비발디파크·롯데월드 50% 할인 포함."},
-      {"source":"네이버카페","title":"LG유플러스 유플투쁠 2주년 경품이벤트","url":"http://cafe.naver.com/koreagift/26422","date":"","text":"유플투쁠 2주년 맞아 경품 이벤트 진행 중."},
-      {"source":"네이버카페","title":"4월 유플투쁠 출석체크 이벤트","url":"http://cafe.naver.com/hotdealplayground/501171","date":"","text":"유플러스 유플투쁠 4월 혜택 및 출석체크 이벤트 안내."}
+      {
+        "source": "네이버카페",
+        "title": "유플투쁠 4월 혜택 총정리 및 2주년 기념 멤버십 꿀팁",
+        "url": "http://cafe.naver.com/malmotstory/1337",
+        "date": "",
+        "text": "유플투쁠 혜택 상세 정리. 비발디파크·롯데월드 50% 할인 포함."
+      },
+      {
+        "source": "네이버카페",
+        "title": "LG유플러스 유플투쁠 2주년 경품이벤트",
+        "url": "http://cafe.naver.com/koreagift/26422",
+        "date": "",
+        "text": "유플투쁠 2주년 맞아 경품 이벤트 진행 중."
+      },
+      {
+        "source": "네이버카페",
+        "title": "4월 유플투쁠 출석체크 이벤트",
+        "url": "http://cafe.naver.com/hotdealplayground/501171",
+        "date": "",
+        "text": "유플러스 유플투쁠 4월 혜택 및 출석체크 이벤트 안내."
+      }
     ]
   },
   "namu": {
-    "skt": {"carrier":"skt","text":"","url":"https://namu.wiki/w/T%20Membership"},
-    "kt": {"carrier":"kt","text":"","url":"https://namu.wiki/w/KT%20%EB%A9%A4%EB%B2%84%EC%8B%AD"},
-    "lgu": {"carrier":"lgu","text":"","url":"https://namu.wiki/w/U%2B%EB%A9%A4%EB%B2%84%EC%8B%AD"}
+    "skt": {
+      "carrier": "skt",
+      "text": "",
+      "url": "https://namu.wiki/w/T%20Membership"
+    },
+    "kt": {
+      "carrier": "kt",
+      "text": "",
+      "url": "https://namu.wiki/w/KT%20%EB%A9%A4%EB%B2%84%EC%8B%AD"
+    },
+    "lgu": {
+      "carrier": "lgu",
+      "text": "",
+      "url": "https://namu.wiki/w/U%2B%EB%A9%A4%EB%B2%84%EC%8B%AD"
+    }
   },
   "monthly": {
     "skt": {
@@ -183,57 +417,223 @@
     }
   },
   "history": [
-    {"date":"2026.05.01","carrier":"SKT","program":"T멤버십","content":"더벤티·루덴시아 신규 제휴사 추가","type":"신규","source_url":"https://news.sktelecom.com/224466","source":"SKT 뉴스룸"},
-    {"date":"2026.05.01","carrier":"SKT","program":"T멤버십 이벤트","content":"투루카 카셰어링 65% 할인 이벤트 (5.4~5.31)","type":"신규","source_url":"https://news.sktelecom.com/224466","source":"SKT 뉴스룸"},
-    {"date":"2026.04.01","carrier":"SKT","program":"T day","content":"VIP 전용 VIP 찬스, VIP only 해피아워 신설 + 0week 도입","type":"신규","source_url":"https://news.sktelecom.com/223425","source":"SKT 뉴스룸"},
-    {"date":"2026.05.01","carrier":"KT","program":"달달혜택","content":"5월 패밀리 컬렉션 테마 — 빕스·롯데월드·서울랜드 등 가족 혜택 강화","type":"변경","source_url":"https://www.digitaltoday.co.kr/news/articleView.html?idxno=564329","source":"디지털투데이"},
-    {"date":"2026.02.01","carrier":"SKT","program":"T멤버십 상시","content":"롯데시네마 상시 제휴 종료 → CGV·메가박스 2관 체제","type":"종료","source_url":"https://sktmembership.tworld.co.kr","source":"SKT T멤버십 공식"}
+    {
+      "date": "2026.05.01",
+      "carrier": "SKT",
+      "program": "T멤버십",
+      "content": "더벤티·루덴시아 신규 제휴사 추가",
+      "type": "신규",
+      "source_url": "https://news.sktelecom.com/224466",
+      "source": "SKT 뉴스룸"
+    },
+    {
+      "date": "2026.05.01",
+      "carrier": "SKT",
+      "program": "T멤버십 이벤트",
+      "content": "투루카 카셰어링 65% 할인 이벤트 (5.4~5.31)",
+      "type": "신규",
+      "source_url": "https://news.sktelecom.com/224466",
+      "source": "SKT 뉴스룸"
+    },
+    {
+      "date": "2026.04.01",
+      "carrier": "SKT",
+      "program": "T day",
+      "content": "VIP 전용 VIP 찬스, VIP only 해피아워 신설 + 0week 도입",
+      "type": "신규",
+      "source_url": "https://news.sktelecom.com/223425",
+      "source": "SKT 뉴스룸"
+    },
+    {
+      "date": "2026.05.01",
+      "carrier": "KT",
+      "program": "달달혜택",
+      "content": "5월 패밀리 컬렉션 테마 — 빕스·롯데월드·서울랜드 등 가족 혜택 강화",
+      "type": "변경",
+      "source_url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=564329",
+      "source": "디지털투데이"
+    },
+    {
+      "date": "2026.02.01",
+      "carrier": "SKT",
+      "program": "T멤버십 상시",
+      "content": "롯데시네마 상시 제휴 종료 → CGV·메가박스 2관 체제",
+      "type": "종료",
+      "source_url": "https://sktmembership.tworld.co.kr",
+      "source": "SKT T멤버십 공식"
+    }
   ],
   "non_telecom": [
-    {"name":"네이버플러스 멤버십","type":"구독형 · 월 4,900원","color":"linear-gradient(135deg,#03c75a,#02a84c)","tag_bg":"#e6f9ee","tag_color":"#1a7f3c","core":"네이버쇼핑 최대 5% 적립, 네이버페이 결제 시 추가 혜택","highlight":"멤버십패스로 CU 10% 할인·롯데시네마 예매권·쏘카 50% 할인 등 오프라인 제휴 확대 중"},
-    {"name":"쿠팡 로켓와우","type":"구독형 · 월 7,890원","color":"linear-gradient(135deg,#ff6b00,#ff9500)","tag_bg":"#fff3e6","tag_color":"#cc5500","core":"로켓배송 무료, 로켓프레시, 쿠팡이츠 무료배달","highlight":"쿠팡이츠 배달 번들 강화로 외식·생활 전방위 커버. 월 구독료 인상 후에도 회원 수 증가세 유지"},
-    {"name":"현대카드 MEMBERSHIP","type":"카드 연계형","color":"linear-gradient(135deg,#1a1a2e,#16213e)","tag_bg":"#e8e8f0","tag_color":"#1a1a2e","core":"The Pink·Black·Purple 등급별 공항라운지, 호텔·골프 혜택","highlight":"프리미엄 라이프스타일 타깃. 통신사 멤버십과 상호보완적 포지션"},
-    {"name":"당근 로컬 커머스","type":"무료 플랫폼","color":"linear-gradient(135deg,#ff6f0f,#ff9500)","tag_bg":"#fff0e6","tag_color":"#cc5500","core":"동네 소상공인 쿠폰북, 동네걷기 리워드","highlight":"MAU 2천만 플랫폼이 오프라인 일상 혜택 침투 중. T멤버십 소상공인 가맹점 영역과 직접 경쟁"},
-    {"name":"카카오페이·토스 리워드","type":"금융 연계형","color":"linear-gradient(135deg,#3a1cba,#6c3fff)","tag_bg":"#ede6ff","tag_color":"#4a00cc","core":"결제 시 포인트 적립, 출석 리워드, 제휴 할인","highlight":"금융 플랫폼 기반 일상 혜택 확장. 간편결제 확산으로 접점 증가"},
-    {"name":"올리브영·무신사 멤버십","type":"버티컬 커머스형","color":"linear-gradient(135deg,#00c73c,#009e30)","tag_bg":"#e6f9ee","tag_color":"#007a25","core":"올리브영: 등급별 적립·쿠폰, 무신사: 무신사포인트 적립","highlight":"뷰티·패션 버티컬에서 MZ세대 록인. 통신사 멤버십의 해당 카테고리 접점 잠식"}
+    {
+      "name": "네이버플러스 멤버십",
+      "type": "구독형 · 월 4,900원",
+      "color": "linear-gradient(135deg,#03c75a,#02a84c)",
+      "tag_bg": "#e6f9ee",
+      "tag_color": "#1a7f3c",
+      "core": "네이버쇼핑 최대 5% 적립, 네이버페이 결제 시 추가 혜택",
+      "highlight": "멤버십패스로 CU 10% 할인·롯데시네마 예매권·쏘카 50% 할인 등 오프라인 제휴 확대 중"
+    },
+    {
+      "name": "쿠팡 로켓와우",
+      "type": "구독형 · 월 7,890원",
+      "color": "linear-gradient(135deg,#ff6b00,#ff9500)",
+      "tag_bg": "#fff3e6",
+      "tag_color": "#cc5500",
+      "core": "로켓배송 무료, 로켓프레시, 쿠팡이츠 무료배달",
+      "highlight": "쿠팡이츠 배달 번들 강화로 외식·생활 전방위 커버. 월 구독료 인상 후에도 회원 수 증가세 유지"
+    },
+    {
+      "name": "현대카드 MEMBERSHIP",
+      "type": "카드 연계형",
+      "color": "linear-gradient(135deg,#1a1a2e,#16213e)",
+      "tag_bg": "#e8e8f0",
+      "tag_color": "#1a1a2e",
+      "core": "The Pink·Black·Purple 등급별 공항라운지, 호텔·골프 혜택",
+      "highlight": "프리미엄 라이프스타일 타깃. 통신사 멤버십과 상호보완적 포지션"
+    },
+    {
+      "name": "당근 로컬 커머스",
+      "type": "무료 플랫폼",
+      "color": "linear-gradient(135deg,#ff6f0f,#ff9500)",
+      "tag_bg": "#fff0e6",
+      "tag_color": "#cc5500",
+      "core": "동네 소상공인 쿠폰북, 동네걷기 리워드",
+      "highlight": "MAU 2천만 플랫폼이 오프라인 일상 혜택 침투 중. T멤버십 소상공인 가맹점 영역과 직접 경쟁"
+    },
+    {
+      "name": "카카오페이·토스 리워드",
+      "type": "금융 연계형",
+      "color": "linear-gradient(135deg,#3a1cba,#6c3fff)",
+      "tag_bg": "#ede6ff",
+      "tag_color": "#4a00cc",
+      "core": "결제 시 포인트 적립, 출석 리워드, 제휴 할인",
+      "highlight": "금융 플랫폼 기반 일상 혜택 확장. 간편결제 확산으로 접점 증가"
+    },
+    {
+      "name": "올리브영·무신사 멤버십",
+      "type": "버티컬 커머스형",
+      "color": "linear-gradient(135deg,#00c73c,#009e30)",
+      "tag_bg": "#e6f9ee",
+      "tag_color": "#007a25",
+      "core": "올리브영: 등급별 적립·쿠폰, 무신사: 무신사포인트 적립",
+      "highlight": "뷰티·패션 버티컬에서 MZ세대 록인. 통신사 멤버십의 해당 카테고리 접점 잠식"
+    }
   ],
   "ai_insight": {
     "updated_at": "2026.05.04",
     "swot": {
       "skt": {
-        "strengths": ["VIP 찬스·VIP Only 해피아워로 최상위 등급 혜택 차별화 강화","0week 도입으로 MZ세대(만13~34세) 전용 프로그램 신설","더벤티·루덴시아 등 신규 제휴사 지속 추가로 생활밀착형 혜택 확대","T멤버십 앱 MAU 660만 — 압도적 고객 기반"],
-        "weaknesses": ["2026.02 롯데시네마 상시 제휴 종료로 영화관 2개(CGV·메가박스)만 운영","KT 달달스페셜 대비 같은 달 중복 혜택 구조 부재","T day 혜택 선착순 구조로 빠른 사람만 챙긴다는 불공평 인식"]
+        "strengths": [
+          "VIP 찬스·VIP Only 해피아워로 최상위 등급 혜택 차별화 강화",
+          "0week 도입으로 MZ세대(만13~34세) 전용 프로그램 신설",
+          "더벤티·루덴시아 등 신규 제휴사 지속 추가로 생활밀착형 혜택 확대",
+          "T멤버십 앱 MAU 660만 — 압도적 고객 기반"
+        ],
+        "weaknesses": [
+          "2026.02 롯데시네마 상시 제휴 종료로 영화관 2개(CGV·메가박스)만 운영",
+          "KT 달달스페셜 대비 같은 달 중복 혜택 구조 부재",
+          "T day 혜택 선착순 구조로 빠른 사람만 챙긴다는 불공평 인식"
+        ]
       },
       "kt": {
-        "strengths": ["달달초이스+달달스페셜+달달찬스 3종 구조로 혜택 다양성 최상","5월 패밀리 컬렉션 등 월별 테마 마케팅으로 화제성 확보","롯데시네마 3관(CGV·롯데·메가) 상시 운영으로 영화 혜택 최강","Y혜택으로 만34세 이하 MZ세대 타깃 별도 운영"],
-        "weaknesses": ["달달혜택 15일 공개 → 말일 이용 — 월 상반기 혜택 공백","공식 페이지 외부 접근 차단으로 정보 접근성 낮음","고객보답 프로그램 혜택 신청 기간 놓치는 고객 불만"]
+        "strengths": [
+          "달달초이스+달달스페셜+달달찬스 3종 구조로 혜택 다양성 최상",
+          "5월 패밀리 컬렉션 등 월별 테마 마케팅으로 화제성 확보",
+          "롯데시네마 3관(CGV·롯데·메가) 상시 운영으로 영화 혜택 최강",
+          "Y혜택으로 만34세 이하 MZ세대 타깃 별도 운영"
+        ],
+        "weaknesses": [
+          "달달혜택 15일 공개 → 말일 이용 — 월 상반기 혜택 공백",
+          "공식 페이지 외부 접근 차단으로 정보 접근성 낮음",
+          "고객보답 프로그램 혜택 신청 기간 놓치는 고객 불만"
+        ]
       },
       "lgu": {
-        "strengths": ["유플투쁠 일별 30종+ 선착순 혜택으로 풍성한 월별 콘텐츠","스타벅스·CGV·파리바게뜨 등 인기 브랜드 매월 포함","장기고객데이로 5년 이상 VIP 고객 별도 우대","2주년 맞아 혜택 규모 확대 추세"],
-        "weaknesses": ["선착순 구조 — 빠른 응답 못 하면 혜택 소진","투쁠데이 일정이 매월 바뀌어 예측 어려움","오전 11시 선착순 — 직장인 이용 불편"]
+        "strengths": [
+          "유플투쁠 일별 30종+ 선착순 혜택으로 풍성한 월별 콘텐츠",
+          "스타벅스·CGV·파리바게뜨 등 인기 브랜드 매월 포함",
+          "장기고객데이로 5년 이상 VIP 고객 별도 우대",
+          "2주년 맞아 혜택 규모 확대 추세"
+        ],
+        "weaknesses": [
+          "선착순 구조 — 빠른 응답 못 하면 혜택 소진",
+          "투쁠데이 일정이 매월 바뀌어 예측 어려움",
+          "오전 11시 선착순 — 직장인 이용 불편"
+        ]
       }
     },
     "insights": [
-      {"title":"MZ세대 타깃 3사 경쟁 격화","content":"SKT 0week(만13~34세), KT Y혜택(만34세↓), LGU+ 스타벅스·편의점 중심 혜택 — 3사 모두 MZ세대 록인 경쟁 중. T멤버십은 0week로 가장 명확한 별도 프로그램 보유."},
-      {"title":"가족 혜택 테마 부상","content":"KT 5월 패밀리 컬렉션(빕스·롯데월드·서울랜드), LGU+ 아쿠아플라넷·웅진플레이도시 — 가정의 달 맞아 가족 단위 혜택 강화. T멤버십도 5월 가족 이벤트 대응 필요."},
-      {"title":"롯데시네마 공백 모니터링 필요","content":"SKT 롯데시네마 상시 종료 후 CGV·메가박스 2관 체제. KT는 3관 유지로 영화 혜택 체감 열위 지속. 재제휴 또는 메가박스 혜택 상향으로 대응 검토 필요."},
-      {"title":"비통신 멤버십 오프라인 침투 경계","content":"네이버플러스 멤버십패스(CU·롯데시네마 제휴), 당근 로컬 쿠폰북이 T멤버십 소상공인·편의점 영역 잠식 중. 차별화된 소상공인 혜택 강화 검토 필요."},
-      {"title":"VIP 등급 혜택 체감 강화 추세","content":"SKT VIP Only 찬스(테마파크 추첨), KT VVIP 초이스(롯데시네마 2인 무료), LGU+ 장기고객데이 — 최상위 등급 고객 록인 경쟁. 등급별 혜택 차별화가 해지 방어 핵심 레버."}
+      {
+        "title": "MZ세대 타깃 3사 경쟁 격화",
+        "content": "SKT 0week(만13~34세), KT Y혜택(만34세↓), LGU+ 스타벅스·편의점 중심 혜택 — 3사 모두 MZ세대 록인 경쟁 중. T멤버십은 0week로 가장 명확한 별도 프로그램 보유."
+      },
+      {
+        "title": "가족 혜택 테마 부상",
+        "content": "KT 5월 패밀리 컬렉션(빕스·롯데월드·서울랜드), LGU+ 아쿠아플라넷·웅진플레이도시 — 가정의 달 맞아 가족 단위 혜택 강화. T멤버십도 5월 가족 이벤트 대응 필요."
+      },
+      {
+        "title": "롯데시네마 공백 모니터링 필요",
+        "content": "SKT 롯데시네마 상시 종료 후 CGV·메가박스 2관 체제. KT는 3관 유지로 영화 혜택 체감 열위 지속. 재제휴 또는 메가박스 혜택 상향으로 대응 검토 필요."
+      },
+      {
+        "title": "비통신 멤버십 오프라인 침투 경계",
+        "content": "네이버플러스 멤버십패스(CU·롯데시네마 제휴), 당근 로컬 쿠폰북이 T멤버십 소상공인·편의점 영역 잠식 중. 차별화된 소상공인 혜택 강화 검토 필요."
+      },
+      {
+        "title": "VIP 등급 혜택 체감 강화 추세",
+        "content": "SKT VIP Only 찬스(테마파크 추첨), KT VVIP 초이스(롯데시네마 2인 무료), LGU+ 장기고객데이 — 최상위 등급 고객 록인 경쟁. 등급별 혜택 차별화가 해지 방어 핵심 레버."
+      }
     ]
   },
   "overview": {
     "updated_at": "2026.05.04",
     "highlights": [
-      {"carrier":"SKT","badge":"bs","summary":"0week·VIP Only 찬스 신설 — MZ·VIP 투트랙 강화","detail":"4월부터 만13~34세 대상 0week, VIP Only 해피아워·VIP 찬스 신설. 더벤티·루덴시아 신규 제휴로 생활밀착형 혜택 확장. 5월 투루카 카셰어링 65% 이벤트."},
-      {"carrier":"KT","badge":"bk","summary":"5월 패밀리 컬렉션 — 가족 테마 달달혜택 강화","detail":"5월 달달혜택 테마 패밀리 컬렉션 — 빕스·롯데월드·서울랜드·에버랜드 등 가족 외식·테마파크 혜택 집중. 달달초이스 7개 브랜드, Y혜택 MZ 타깃 병행."},
-      {"carrier":"LGU+","badge":"bl","summary":"유플투쁠 2주년 — 월별 30종+ 일별 선착순 혜택","detail":"5월 공차·피자헛·스타벅스·파리바게뜨·배스킨라빈스·CGV 등 30종+ 혜택. 투쁠데이 일별 선착순 구조. 5월 29일 장기고객데이 예정."}
+      {
+        "carrier": "SKT",
+        "badge": "bs",
+        "summary": "0week·VIP Only 찬스 신설 — MZ·VIP 투트랙 강화",
+        "detail": "4월부터 만13~34세 대상 0week, VIP Only 해피아워·VIP 찬스 신설. 더벤티·루덴시아 신규 제휴로 생활밀착형 혜택 확장. 5월 투루카 카셰어링 65% 이벤트."
+      },
+      {
+        "carrier": "KT",
+        "badge": "bk",
+        "summary": "5월 패밀리 컬렉션 — 가족 테마 달달혜택 강화",
+        "detail": "5월 달달혜택 테마 패밀리 컬렉션 — 빕스·롯데월드·서울랜드·에버랜드 등 가족 외식·테마파크 혜택 집중. 달달초이스 7개 브랜드, Y혜택 MZ 타깃 병행."
+      },
+      {
+        "carrier": "LGU+",
+        "badge": "bl",
+        "summary": "유플투쁠 2주년 — 월별 30종+ 일별 선착순 혜택",
+        "detail": "5월 공차·피자헛·스타벅스·파리바게뜨·배스킨라빈스·CGV 등 30종+ 혜택. 투쁠데이 일별 선착순 구조. 5월 29일 장기고객데이 예정."
+      }
     ],
     "timeline": [
-      {"carrier":"SKT","badge":"bs","content":"더벤티·루덴시아 신규 제휴 추가 (2026.05)"},
-      {"carrier":"SKT","badge":"bs","content":"롯데시네마 상시 제휴 종료 → CGV·메가박스 2관 체제 (2026.02)"},
-      {"carrier":"SKT","badge":"bs","content":"0week·VIP Only 찬스·해피아워 신설 (2026.04)"},
-      {"carrier":"KT","badge":"bk","content":"5월 달달혜택 패밀리 컬렉션 테마 운영 (2026.05)"},
-      {"carrier":"LGU+","badge":"bl","content":"유플투쁠 2주년 — 혜택 규모 확대 지속 (2026)"}
+      {
+        "carrier": "SKT",
+        "badge": "bs",
+        "content": "더벤티·루덴시아 신규 제휴 추가 (2026.05)"
+      },
+      {
+        "carrier": "SKT",
+        "badge": "bs",
+        "content": "롯데시네마 상시 제휴 종료 → CGV·메가박스 2관 체제 (2026.02)"
+      },
+      {
+        "carrier": "SKT",
+        "badge": "bs",
+        "content": "0week·VIP Only 찬스·해피아워 신설 (2026.04)"
+      },
+      {
+        "carrier": "KT",
+        "badge": "bk",
+        "content": "5월 달달혜택 패밀리 컬렉션 테마 운영 (2026.05)"
+      },
+      {
+        "carrier": "LGU+",
+        "badge": "bl",
+        "content": "유플투쁠 2주년 — 혜택 규모 확대 지속 (2026)"
+      }
     ]
-  }
+  },
+  "mcp_push_auto": "자동 push 테스트 성공 — 2026.05.04 13:43"
 }
