@@ -24,10 +24,7 @@ jobs:
           python-version: '3.11'
 
       - name: 의존성 설치
-        run: |
-          pip install anthropic requests beautifulsoup4 playwright
-          playwright install chromium
-          playwright install-deps chromium
+        run: pip install anthropic requests beautifulsoup4
 
       - name: 파이프라인 실행
         env:
@@ -36,8 +33,6 @@ jobs:
           DATALAB_CLIENT_SECRET: ${{ secrets.DATALAB_CLIENT_SECRET }}
           NAVER_SEARCH_CLIENT_ID: ${{ secrets.NAVER_SEARCH_CLIENT_ID }}
           NAVER_SEARCH_CLIENT_SECRET: ${{ secrets.NAVER_SEARCH_CLIENT_SECRET }}
-          KT_USERNAME: ${{ secrets.KT_USERNAME }}
-          KT_PASSWORD: ${{ secrets.KT_PASSWORD }}
         run: python pipeline/main.py
 
       - name: 변경사항 커밋 & 푸시
