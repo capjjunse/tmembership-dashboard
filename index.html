@@ -734,7 +734,7 @@ table.ct td:first-child{font-weight:700;color:var(--tx2);font-size:11px}
       <div class="tli"><div class="tld" style="background:#c41a1a"></div>KT (KT멤버십 외)</div>
       <div class="tli"><div class="tld" style="background:#b5006a"></div>LGU+ (U+멤버십 외)</div>
     </div>
-    <div class="tnote">출처: 네이버 DataLab API · 2026.04.27 수집<br>검색량 지수 (100 = 기간 내 최고값)</div>
+    <div class="tnote">출처: 네이버 DataLab API · 2026.05.04 수집<br>검색량 지수 (100 = 기간 내 최고값)</div>
   </div>
   <div style="margin-top:12px">
     <div style="font-size:11px;color:var(--tx2);font-weight:700;margin-bottom:6px">수집 키워드</div>
@@ -902,10 +902,10 @@ function K(c,kw,el){const p=c+'-';document.querySelectorAll('[id^="'+p+'"]').for
 window.addEventListener('load',()=>{
   const ctx=document.getElementById('trendChart')?.getContext('2d');
   if(!ctx)return;
-  const labels=['1/26','2/02','2/09','2/16','2/23','3/02','3/09','3/16','3/23','3/30','4/06','4/13','4/20','4/27'];
-  const skt=[3.4,3.4,3.0,2.8,3.8,4.0,3.2,3.0,2.9,3.3,3.4,3.0,2.6,1.4];
-  const kt=[4.1,6.0,7.2,5.3,5.6,4.9,5.7,5.5,5.3,5.8,3.9,6.6,4.4,2.2];
-  const lgu=[3.6,41.0,53.7,20.2,1.7,1.4,22.2,100,47.2,28.6,32.2,25.6,33.2,0.7];
+  const labels=["2/02", "2/09", "2/16", "2/23", "3/02", "3/09", "3/16", "3/23", "3/30", "4/06", "4/13", "4/20", "4/27", "5/04"];
+  const skt=[3.4, 3.0, 2.8, 3.8, 4.0, 3.2, 3.0, 2.9, 3.3, 3.4, 3.0, 2.6, 2.9, 0.6];
+  const kt=[6.0, 7.2, 5.3, 5.6, 4.9, 5.7, 5.5, 5.3, 5.8, 3.9, 6.6, 4.4, 5.3, 0.8];
+  const lgu=[41.0, 53.7, 20.2, 1.7, 1.4, 22.2, 100, 47.2, 28.6, 32.2, 25.6, 33.2, 1.6, 0.2];
   const yMax=Math.ceil(Math.max(...skt,...kt,...lgu)*1.1);
   new Chart(ctx,{type:'line',data:{labels,datasets:[
     {label:'SKT',data:skt,borderColor:'#5B0F8A',backgroundColor:'rgba(91,15,138,.08)',tension:.4,pointRadius:4,pointHoverRadius:6,pointBackgroundColor:'#5B0F8A',borderWidth:2.5,fill:true},
