@@ -500,226 +500,135 @@ table.ct td:first-child{font-weight:700;color:var(--tx2);font-size:11px}
 
 <!-- 고객 반응 -->
 <div class="sec" id="sn">
-  <div class="sh"><span class="st">💬 고객 반응</span><span class="ss">최근 4주 · 멤버십 혜택 관련</span><span class="upd-badge upd-3m">↻ 주 단위 갱신</span></div>
-  <div class="tr2" style="margin-bottom:14px">
-    <button class="ctab cs" onclick="C('skt',this)">SKT</button>
-    <button class="ctab" onclick="C('kt',this)">KT</button>
-    <button class="ctab" onclick="C('lgu',this)">LGU+</button>
+  <div class="sh"><span class="st">💬 고객 반응</span><span class="ss">최근 4주 · 멤버십 혜택 관련</span><span class="upd-badge upd-wk">↻ 주간 MCP</span></div>
+  <div class="tr2">
+    <button class="ctab cs" id="ctab-skt" onclick="C('skt',this)">SKT</button>
+    <button class="ctab" id="ctab-kt" onclick="C('kt',this)">KT</button>
+    <button class="ctab" id="ctab-lgu" onclick="C('lgu',this)">LGU+</button>
   </div>
+
+  <!-- SKT -->
   <div id="sent-skt">
-    <div class="rbw"><div class="rbl">멤버십 혜택 관련 전반적 반응 비율 (커뮤니티 기반)</div>
-      <div class="rb"><div class="rbs rp" style="width:38%">긍정 38%</div><div class="rbs rn" style="width:45%">부정 45%</div><div class="rbs ru" style="width:17%">중립 17%</div></div>
-      <div class="rleg"><div class="rli"><div class="rld" style="background:var(--pos)"></div>긍정</div><div class="rli"><div class="rld" style="background:var(--neg)"></div>부정</div><div class="rli"><div class="rld" style="background:var(--neu)"></div>중립</div></div>
-    </div>
-    <div class="srcs"><span class="srcbadge act">에펨코리아</span><span class="srcbadge act">뽐뿌</span><span class="srcbadge act">루리웹</span></div>
+    <div class="srcs"><span class="srcbadge act">에펨코리아</span></div>
     <div class="tr2" style="margin-bottom:12px">
-      <button class="kw on" onclick="K('skt','kw1',this)">#T멤버십 VIP찬스</button>
-      <button class="kw" onclick="K('skt','kw2',this)">#0week</button>
-      <button class="kw" onclick="K('skt','kw3',this)">#테마파크 추첨</button>
+      <button class="kw on" onclick="K('skt','kw1',this)">#T멤버십 0week</button>
+      <button class="kw" onclick="K('skt','kw2',this)">#T day 이벤트</button>
+      <button class="kw" onclick="K('skt','kw3',this)">#T멤버십 할인</button>
     </div>
     <div id="skt-kw1">
-
       <div class="rc">
         <div class="rct">
           <span class="rbg rpos">긍정</span>
-          <span class="rtag treal">실제 반응</span>
-          <span class="rtag tsrc">커뮤니티</span>
+          <span class="rtag tsrc">에펨코리아</span>
         </div>
-        <div class="rtx">"아쿠아필드 20만명이나 줘서 당첨됐다. VIP 찬스 이런 거 자주 해줬으면."</div>
-        <div class="rsrc">2026.05.04 · <a href="#" target="_blank">원문</a></div>
+        <div class="rtx">0위크 메가커피 쿠폰 정보 공유 — 댓글: "어흐 ㄱㅅ 님 덕에 공짜쌀먹" "ㄱㅅㄱㅅ!"</div>
+        <div class="rsrc">2026.05.06 · <a href="https://www.fmkorea.com/9792056294" target="_blank" rel="noreferrer">원문 보기</a></div>
       </div>
-
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rneu">중립</span>
-          <span class="rtag treal">실제 반응</span>
-          <span class="rtag tsrc">커뮤니티</span>
-        </div>
-        <div class="rtx">"테마파크 추첨 VIP만 가능한 건 좋은데 원하는 곳 당첨 확률이 낮아서 아쉽다."</div>
-        <div class="rsrc">2026.05.05 · <a href="#" target="_blank">원문</a></div>
-      </div>
-
       <div class="rc">
         <div class="rct">
           <span class="rbg rneg">부정</span>
-          <span class="rtag treal">실제 댓글</span>
-          <span class="rtag tsrc">뽐뿌</span>
+          <span class="rtag tsrc">에펨코리아</span>
         </div>
-        <div class="rtx">"VIP Only 찬스 늘어나는 건 좋은데 일반 등급은 갈수록 혜택 체감이 줄어드는 느낌."</div>
-        <div class="rsrc">2026.04.20 · <a href="#" target="_blank">원문</a></div>
+        <div class="rtx">skt 0데이 이벤트 링크 공유 — "이거말곤 별로임"</div>
+        <div class="rsrc">2026.05.04 · <a href="https://www.fmkorea.com/9770273964" target="_blank" rel="noreferrer">원문 보기</a></div>
       </div>
-
     </div>
     <div id="skt-kw2" class="hidden">
-
       <div class="rc">
         <div class="rct">
-          <span class="rbg rpos">긍정</span>
-          <span class="rtag treal">실제 반응</span>
-          <span class="rtag tsrc">SKT 뉴스룸</span>
-        </div>
-        <div class="rtx">"5월 0 week 파리바게뜨·노브랜드버거·백미당 혜택. T day 통합으로 한 곳에서 확인 가능해서 편리."</div>
-        <div class="rsrc">2026.05.01 · <a href="https://news.sktelecom.com/224466" target="_blank">원문</a></div>
-      </div>
-
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rneu">중립</span>
-          <span class="rtag treal">실제 댓글</span>
+          <span class="rbg rneg">부정</span>
           <span class="rtag tsrc">에펨코리아</span>
         </div>
-        <div class="rtx">"0 week 첫째 주 5일만이라 짧다. 한 달 내내 쓸 수 있게 해줬으면 더 좋겠다."</div>
-        <div class="rsrc">2026.04.20 · <a href="#" target="_blank">원문</a></div>
+        <div class="rtx">T day 스벅 아이스 아메리카노 추첨 참여 후 — "전 꽝이네요ㅋㅋ"</div>
+        <div class="rsrc">2026.05.04 · <a href="https://www.fmkorea.com/9784172789" target="_blank" rel="noreferrer">원문 보기</a></div>
       </div>
-
       <div class="rc">
         <div class="rct">
           <span class="rbg rpos">긍정</span>
-          <span class="rtag treal">실제 댓글</span>
-          <span class="rtag tsrc">커뮤니티</span>
+          <span class="rtag tsrc">에펨코리아</span>
         </div>
-        <div class="rtx">"만 34세 이하면 0 week + T day 둘 다 챙길 수 있어서 체감 혜택이 확실히 많아졌다."</div>
-        <div class="rsrc">2026.04.15 · <a href="#" target="_blank">원문</a></div>
+        <div class="rtx">SKT T day 배스킨라빈스 파인트 40% 할인 공유 — "힙스크림 땡기는 사람 ㄱㄱ"</div>
+        <div class="rsrc">2026.04.15 · <a href="https://www.fmkorea.com/9710780725" target="_blank" rel="noreferrer">원문 보기</a></div>
       </div>
-
     </div>
     <div id="skt-kw3" class="hidden">
-      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag treal">실제 반응</span><span class="rtag tsrc">커뮤니티</span></div><div class="rtx">"아쿠아필드 20만명이나 줘서 당첨됐다. VIP 찬스 이런 거 자주 해줬으면."</div><div class="rsrc">2026.05.04 · <a href="#" target="_blank">원문</a></div></div>
-      <div class="rc"><div class="rct"><span class="rbg rneu">중립</span><span class="rtag treal">실제 반응</span><span class="rtag tsrc">커뮤니티</span></div><div class="rtx">"테마파크 추첨이 VIP만이라 좋긴 한데 실제로 원하는 곳 당첨될 확률이..."</div><div class="rsrc">2026.05.05 · <a href="#" target="_blank">원문</a></div></div>
+      <div class="rc">
+        <div class="rct">
+          <span class="rbg rneg">부정</span>
+          <span class="rtag tsrc">에펨코리아</span>
+        </div>
+        <div class="rtx">T멤버십 9만점 행사 일찍 소진 — "벌써 끝났네"</div>
+        <div class="rsrc">2026.04.14 · <a href="https://www.fmkorea.com/9705949142" target="_blank" rel="noreferrer">원문 보기</a></div>
+      </div>
     </div>
   </div>
+
+  <!-- KT -->
   <div id="sent-kt" class="hidden">
-    <div class="rbw"><div class="rbl">멤버십 혜택 관련 전반적 반응 비율</div>
-      <div class="rb"><div class="rbs rp" style="width:52%">긍정 52%</div><div class="rbs rn" style="width:28%">부정 28%</div><div class="rbs ru" style="width:20%">중립 20%</div></div>
-      <div class="rleg"><div class="rli"><div class="rld" style="background:var(--pos)"></div>긍정</div><div class="rli"><div class="rld" style="background:var(--neg)"></div>부정</div><div class="rli"><div class="rld" style="background:var(--neu)"></div>중립</div></div>
-    </div>
-    <div class="srcs"><span class="srcbadge act">루리웹</span><span class="srcbadge act">에펨코리아</span></div>
+    <div class="srcs"><span class="srcbadge act">에펨코리아</span></div>
     <div class="tr2" style="margin-bottom:12px">
-      <button class="kw on" onclick="K('kt','kw1',this)">#KT멤버십 달달혜택</button>
-      <button class="kw" onclick="K('kt','kw2',this)">#KT 포인트 한도 폐지</button>
-      <button class="kw" onclick="K('kt','kw3',this)">#파파존스 KT멤버십</button>
+      <button class="kw on" onclick="K('kt','kw1',this)">#KT멤버십 고객보답</button>
+      <button class="kw" onclick="K('kt','kw2',this)">#KT멤버십 혜택</button>
     </div>
     <div id="kt-kw1">
-
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rpos">긍정</span>
-          <span class="rtag treal">실제 반응</span>
-          <span class="rtag tsrc">디지털투데이</span>
-        </div>
-        <div class="rtx">"5월 패밀리 컬렉션 — 빕스 40%, 롯데월드 할인. 가족끼리 외식할 때 쓰기 딱 좋다."</div>
-        <div class="rsrc">2026.05.01 · <a href="https://www.digitaltoday.co.kr/news/articleView.html?idxno=564329" target="_blank">원문</a></div>
-      </div>
-
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rpos">긍정</span>
-          <span class="rtag treal">실제 댓글</span>
-          <span class="rtag tsrc">네이버카페</span>
-        </div>
-        <div class="rtx">"파파존스 KT 멤버십 방문포장 50% 할인 꿀. 피자 두 판 시켰더니 거의 반값."</div>
-        <div class="rsrc">2026.04.20 · <a href="#" target="_blank">원문</a></div>
-      </div>
-
       <div class="rc">
         <div class="rct">
           <span class="rbg rneg">부정</span>
-          <span class="rtag treal">실제 댓글</span>
           <span class="rtag tsrc">에펨코리아</span>
         </div>
-        <div class="rtx">"달달혜택이 15일부터라 5월 상반기 2주는 혜택이 없는 거나 마찬가지. 이게 제일 아쉽다."</div>
-        <div class="rsrc">2026.04.28 · <a href="#" target="_blank">원문</a></div>
+        <div class="rtx">KT 5월 1차 보답프로그램 댓글 — "보답이 좀 짜다.." "점점 병신되네ㅋㅋ" "kt vvip 혜택 알게모르게 축소시키더라, 베라 블록팩 4개→레디팩 1개로 바뀜"</div>
+        <div class="rsrc">2026.05.01 · <a href="https://www.fmkorea.com/9772119625" target="_blank" rel="noreferrer">원문 보기</a></div>
       </div>
-
-    </div>
-    <div id="kt-kw2" class="hidden">
-      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag treal">실제 반응</span><span class="rtag tsrc">뉴스</span></div><div class="rtx">"포인트 한도 없어지면 달달혜택 쓸 때 부담이 없어진다. 잘한 결정."</div><div class="rsrc">2026.05.01 · <a href="#" target="_blank">원문</a></div></div>
-      <div class="rc"><div class="rct"><span class="rbg rneu">중립</span><span class="rtag treal">실제 반응</span><span class="rtag tsrc">커뮤니티</span></div><div class="rtx">"포인트 한도 폐지는 좋은데 어차피 달달혜택 15일부터라 5월 상반기는 텅텅."</div><div class="rsrc">2026.05.08 · <a href="#" target="_blank">원문</a></div></div>
-    </div>
-    <div id="kt-kw3" class="hidden">
-
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rpos">긍정</span>
-          <span class="rtag treal">실제 댓글</span>
-          <span class="rtag tsrc">네이버카페</span>
-        </div>
-        <div class="rtx">"파파존스 방문포장 50% 할인 꿀. KT 멤버십 덕 봤다."</div>
-        <div class="rsrc">2026.04.20 · <a href="#" target="_blank">원문</a></div>
-      </div>
-
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rneg">부정</span>
-          <span class="rtag treal">실제 댓글</span>
-          <span class="rtag tsrc">에펨코리아</span>
-        </div>
-        <div class="rtx">"쉐이크쉑 1+1은 쓸만한데 달달스페셜 브랜드가 매달 달라서 원하는 달에 없으면 허탕."</div>
-        <div class="rsrc">2026.04.25 · <a href="#" target="_blank">원문</a></div>
-      </div>
-
-    </div>
-  </div>
-  <div id="sent-lgu" class="hidden">
-    <div class="rbw"><div class="rbl">멤버십 혜택 관련 전반적 반응 비율</div>
-      <div class="rb"><div class="rbs rp" style="width:42%">긍정 42%</div><div class="rbs rn" style="width:40%">부정 40%</div><div class="rbs ru" style="width:18%">중립 18%</div></div>
-      <div class="rleg"><div class="rli"><div class="rld" style="background:var(--pos)"></div>긍정</div><div class="rli"><div class="rld" style="background:var(--neg)"></div>부정</div><div class="rli"><div class="rld" style="background:var(--neu)"></div>중립</div></div>
-    </div>
-    <div class="srcs"><span class="srcbadge act">루리웹</span><span class="srcbadge act">우먼타임스</span></div>
-    <div class="tr2" style="margin-bottom:12px">
-      <button class="kw on" onclick="K('lgu','kw1',this)">#유플투쁠 2주년</button>
-      <button class="kw" onclick="K('lgu','kw2',this)">#장기고객데이</button>
-      <button class="kw" onclick="K('lgu','kw3',this)">#투쁠데이 공차</button>
-    </div>
-    <div id="lgu-kw1">
-
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rpos">긍정</span>
-          <span class="rtag treal">실제 반응</span>
-          <span class="rtag tsrc">넥스트데일리</span>
-        </div>
-        <div class="rtx">"2주년 맞아 화담숲 3천명 초청 — 단순 할인 넘어 경험형 혜택으로 확대 추세."</div>
-        <div class="rsrc">2026.04.29 · <a href="https://www.nextdaily.co.kr/news/articleView.html?idxno=248948" target="_blank">원문</a></div>
-      </div>
-
       <div class="rc">
         <div class="rct">
           <span class="rbg rneu">중립</span>
-          <span class="rtag treal">실제 댓글</span>
-          <span class="rtag tsrc">커뮤니티</span>
+          <span class="rtag tsrc">에펨코리아</span>
         </div>
-        <div class="rtx">"2주년인데 혜택이 늘긴 했는데 선착순 구조는 그대로라 매번 놓치는 게 아쉽다."</div>
-        <div class="rsrc">2026.04.20 · <a href="#" target="_blank">원문</a></div>
+        <div class="rtx">KT 5월 1차 보답프로그램 댓글 — "그래도 kt는 하기라도 하지 sk lg는 없다ㅋㅋ"</div>
+        <div class="rsrc">2026.05.01 · <a href="https://www.fmkorea.com/9772119625" target="_blank" rel="noreferrer">원문 보기</a></div>
       </div>
-
-    </div>
-    <div id="lgu-kw2" class="hidden">
-      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag treal">실제 반응</span><span class="rtag tsrc">뉴스</span></div><div class="rtx">"화담숲 단독 대관 3천명 초청. 5년 이상 장기고객 전용 혜택이 갈수록 좋아지는 듯."</div><div class="rsrc">2026.04.29 · <a href="https://www.nextdaily.co.kr/news/articleView.html?idxno=248948" target="_blank">원문</a></div></div>
-      <div class="rc"><div class="rct"><span class="rbg rneu">중립</span><span class="rtag treal">실제 반응</span><span class="rtag tsrc">커뮤니티</span></div><div class="rtx">"5월 29일 장기고객데이 예정인데 무슨 혜택인지 미리 알 수가 없어서 기다려야 함."</div><div class="rsrc">2026.05.04 · <a href="#" target="_blank">원문</a></div></div>
-    </div>
-    <div id="lgu-kw3" class="hidden">
-
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rpos">긍정</span>
-          <span class="rtag treal">실제 반응</span>
-          <span class="rtag tsrc">커뮤니티</span>
-        </div>
-        <div class="rtx">"5월 12일 공차 50% 할인 받았다. 11시 딱 맞춰서 들어가면 된다."</div>
-        <div class="rsrc">2026.05.12 · <a href="#" target="_blank">원문</a></div>
-      </div>
-
       <div class="rc">
         <div class="rct">
           <span class="rbg rneg">부정</span>
-          <span class="rtag treal">실제 반응</span>
-          <span class="rtag tsrc">커뮤니티</span>
+          <span class="rtag tsrc">에펨코리아</span>
         </div>
-        <div class="rtx">"11시 딱 맞춰서 들어갔는데 이미 마감. 직장인은 구조적으로 불리하다."</div>
-        <div class="rsrc">2026.05.12 · <a href="#" target="_blank">원문</a></div>
+        <div class="rtx">KT 4월 2차 보답프로그램 댓글 — "양심이 쳐뒤졌노ㅋㅋ" "이제 안 미안한 것 같은데" "사죄가 아니라 업체 쿠폰인척 할인율"</div>
+        <div class="rsrc">2026.04.15 · <a href="https://www.fmkorea.com/9710075444" target="_blank" rel="noreferrer">원문 보기</a></div>
       </div>
+      <div class="rc">
+        <div class="rct">
+          <span class="rbg rpos">긍정</span>
+          <span class="rtag tsrc">에펨코리아</span>
+        </div>
+        <div class="rtx">KT 4월 2차 보답프로그램 댓글 — "빕스할인 덕에 두명 스테이크까지 먹고 7만원에 좋았따"</div>
+        <div class="rsrc">2026.04.15 · <a href="https://www.fmkorea.com/9710075444" target="_blank" rel="noreferrer">원문 보기</a></div>
+      </div>
+    </div>
+    <div id="kt-kw2" class="hidden">
+      <div class="rc">
+        <div class="rct">
+          <span class="rbg rpos">긍정</span>
+          <span class="rtag tsrc">에펨코리아</span>
+        </div>
+        <div class="rtx">KT멤버십 스벅 사이즈업 후기 — "한달에 한번 사이즈업 해서 먹음ㅋㅋ" 댓글: "스타벅스도 종종 써야겠다 고맙습니다"</div>
+        <div class="rsrc">2026.04.10 · <a href="https://www.fmkorea.com/9691567131" target="_blank" rel="noreferrer">원문 보기</a></div>
+      </div>
+      <div class="rc">
+        <div class="rct">
+          <span class="rbg rpos">긍정</span>
+          <span class="rtag tsrc">에펨코리아</span>
+        </div>
+        <div class="rtx">KT멤버십으로 배스킨라빈스 후기 — "파인트 5000원 개꿀"</div>
+        <div class="rsrc">2026.04.11 · <a href="https://www.fmkorea.com/9696441291" target="_blank" rel="noreferrer">원문 보기</a></div>
+      </div>
+    </div>
+  </div>
 
+  <!-- LGU+ -->
+  <div id="sent-lgu" class="hidden">
+    <div style="text-align:center;padding:32px 0;color:var(--tx3);font-size:12px;line-height:2">
+      최근 4주 이내 수집된 반응이 없습니다.<br>
+      <span style="font-size:11px">(검색어: 유플투쁠, 유플투쁠 2주년, 투쁠데이, LG유플러스멤버십, U+멤버십)</span>
     </div>
   </div>
 </div>
