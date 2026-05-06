@@ -916,6 +916,53 @@ window.addEventListener('load',()=>{
     scales:{y:{min:0,max:yMax,grid:{color:'rgba(0,0,0,.04)'},ticks:{font:{size:11},color:'#aaa'},title:{display:true,text:'검색량 지수 (100 = 기간 내 최고값)',font:{size:10},color:'#bbb'}},
       x:{grid:{display:false},ticks:{font:{size:11},color:'#aaa'}}}}});
 });
+
+// ── collected_data.json 로드 → 고객반응 실제 데이터 렌더링 ──
+(function() {
+  fetch('./collected_data.json?v=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (!data.sentiment) return;
+
+      var carriers = ['skt', 'kt', 'lgu'];
+      carriers.forEach(function(c) {
+        var items = data.sentiment[c];
+        if (!items || !items.length) return;
+
+        // 키워드 탭 컨테이너 찾기
+        var sentEl = document.getElementById('sent-' + c);
+        if (!sentEl) return;
+
+        // 기존 rc 카드들 제거하고 실제 수집 데이터로 교체
+        var existingRcs = sentEl.querySelectorAll('.rc');
+        existingRcs.forEach(function(el) { el.remove(); });
+
+        // 실제 수집 데이터 렌더링
+        items.slice(0, 5).forEach(function(item) {
+          var div = document.createElement('div');
+          div.className = 'rc';
+          var src = item.source || '';
+          var title = item.title || '';
+          var text = item.text || '';
+          var url = item.url || '';
+          var date = item.date || '';
+
+          div.innerHTML =
+            '<div class="rct">' +
+              '<span class="rtag tsrc">' + src + '</span>' +
+            '</div>' +
+            '<div class="rtx">' + (text || title) + '</div>' +
+            '<div class="rsrc">' + (date || '') +
+              (url ? ' · <a href="' + url + '" target="_blank" rel="noreferrer">원문 보기</a>' : '') +
+            '</div>';
+          sentEl.appendChild(div);
+        });
+      });
+    })
+    .catch(function(e) {
+      console.log('collected_data.json 로드 실패:', e.message);
+    });
+})();
 </script>
 </body>
 </html>
