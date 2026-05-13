@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>통신 3사 멤버십 현황 대시보드</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
@@ -211,21 +211,23 @@ table.ct td:first-child{font-weight:700;color:var(--tx2);font-size:11px}
 .ins-txt{font-size:12px;line-height:1.75;color:var(--tx2);padding-top:6px}
 .ins-txt b{color:var(--tx);font-weight:700}
 .hidden{display:none}
-</style>
+
+.page{max-width:1160px;margin:0 auto;padding:22px 28px 64px}
+.vt th.th-skt{background:var(--skt);color:#fff;border-top:2px solid var(--skt)}
+.vt th.th-kt{background:var(--kt);color:#fff;border-top:2px solid var(--kt)}
+.vt th.th-lgu{background:var(--lgu);color:#fff;border-top:2px solid var(--lgu)}</style>
 </head>
 <body>
 <div class="page">
 
-<!-- 헤더 -->
 <div class="hdr">
   <div class="hdr-l">
     <div class="htag">Copyright by T 멤버십팀</div>
     <h1>통신 3사 멤버십 현황 대시보드</h1>
-    <div class="hdr-meta"><span class="hdr-dot"></span><span id="lastUpdated">2026.05.05 기준</span></div>
+    <div class="hdr-meta"><span class="hdr-dot"></span><span id="lastUpdated">2026.05.12 기준</span></div>
   </div>
 </div>
 
-<!-- 네비게이션 -->
 <div class="nav-wrap">
   <nav class="nav">
     <a data-sec="ov" onclick="go('ov')">개요</a>
@@ -241,108 +243,132 @@ table.ct td:first-child{font-weight:700;color:var(--tx2);font-size:11px}
   </nav>
 </div>
 
+
+
+<div class="main">
+
 <!-- 개요 -->
 <div class="sec" id="ov">
-  <div class="sh"><span class="st">📊 이달의 핵심 동향</span><span class="upd-badge upd-1m">↻ 월 갱신</span></div>
+  <div class="sh"><span class="st">📊 이달의 핵심 동향</span><span class="upd-badge upd-1m">↻ 주 갱신</span></div>
   <div class="og">
-    <div class="oc cs"><div class="ol"><span class="cb bs">SKT</span></div>
-      <div class="ov">더벤티·루덴시아 신규 제휴</div>
-      <div class="od">5월 신규 제휴사 추가<br>투루카 카셰어링 65% 할인 이벤트 (5.4~5.31)</div></div>
-    <div class="oc ck"><div class="ol"><span class="cb bk">KT</span></div>
-      <div class="ov">5월 패밀리 컬렉션</div>
-      <div class="od">빕스·롯데월드·서울랜드 등 가족 혜택 강화<br>포인트 한도 폐지 2026.05.08~</div></div>
-    <div class="oc cl"><div class="ol"><span class="cb bl">LGU+</span></div>
-      <div class="ov">유플투쁠 2주년</div>
-      <div class="od">30종+ 일별 선착순 혜택<br>5월 29일 장기고객데이 예정</div></div>
-    <div class="oc cg"><div class="ol" style="font-size:11px;color:var(--tx3)">5월 이벤트</div>
+    <div class="oc cs">
+      <div class="ol"><span class="cb bs">SKT</span></div>
+      <div class="ov">VIP Pick T우주패스 혜택 변경 예고</div>
+      <div class="od"><span>8월 1일부터 9,900원 쿠폰 폐지</span><span>4,900원+5,000원 2종으로 분리 적용</span></div>
+    </div>
+    <div class="oc ck">
+      <div class="ol"><span class="cb bk">KT</span></div>
+      <div class="ov">가정의달 패밀리 혜택</div>
+      <div class="od"><span>패밀리박스 쿠폰팩 + 퀴즈 이벤트</span><span>달달혜택 패밀리컬렉션 (5.15~)</span></div>
+    </div>
+    <div class="oc cl">
+      <div class="ol"><span class="cb bl">LGU+</span></div>
+      <div class="ov">6월 신규 제휴사 &amp; 유플투쁠 2주년</div>
+      <div class="od"><span>26년 6월 신규 제휴사 안내 (05.11 공지)</span><span>5.28 장기고객 CGV·뮤지컬·윌라</span></div>
+    </div>
+    <div class="oc cg">
+      <div class="ol" style="font-size:11px;color:var(--tx3)">5월 이벤트</div>
       <div class="ov" style="font-size:13px">고향사랑기부제</div>
-      <div class="od">위기브 10만원 기부시 14만5천원 혜택<br>5.6~6.30 진행</div></div>
+      <div class="od"><span>위기브 10만원 기부시 14만5천원 혜택</span><span>5.6~6.30 진행</span></div>
+    </div>
   </div>
   <div class="tl">
-    <div class="ti"><div class="tdot" style="background:var(--skt)"></div><div class="tt"><span class="cb bs">SKT</span> 더벤티·루덴시아 신규 제휴 추가 (2026.05) + 투루카 카셰어링 65% 이벤트 (5.4~5.31)</div></div>
-    <div class="ti"><div class="tdot" style="background:var(--skt)"></div><div class="tt"><span class="cb bs">SKT</span> 0week·VIP Only 찬스·VIP only 해피아워 신설 (2026.04.01)</div></div>
-    <div class="ti"><div class="tdot" style="background:var(--skt)"></div><div class="tt"><span class="cb bs">SKT</span> 롯데시네마 상시 제휴 종료 → CGV·메가박스 2관 체제 (2026.02.01)</div></div>
-    <div class="ti"><div class="tdot" style="background:var(--kt)"></div><div class="tt"><span class="cb bk">KT</span> 5월 달달혜택 패밀리 컬렉션 + 포인트 한도 폐지 예정 (2026.05.08)</div></div>
-    <div class="ti"><div class="tdot" style="background:var(--lgu)"></div><div class="tt"><span class="cb bl">LGU+</span> 유플투쁠 2주년 — 5월 30종+ 혜택, 장기고객데이 5.29 예정</div></div>
+    <div class="ti"><div class="tdot" style="background:var(--skt)"></div><div class="tt"><span class="cb bs">SKT</span> VIP Pick T우주패스 변경 — 9,900원 쿠폰 폐지, 4,900원+5,000원 2종 분리 <span style="font-size:10px;padding:1px 6px;border-radius:20px;background:#fff7e6;color:#b35c00;border:0.5px solid #f5c060">8월 1일 적용</span></div></div>
+    <div class="ti"><div class="tdot" style="background:var(--skt)"></div><div class="tt"><span class="cb bs">SKT</span> 루덴시아 신규 제휴 (주중 50%, 주말 35%, 4.24~) / 무탄 종료 <span style="font-size:10px;padding:1px 6px;border-radius:20px;background:#fef2f2;color:#b91c1c;border:0.5px solid #fca5a5">5.31 종료</span></div></div>
+    <div class="ti"><div class="tdot" style="background:var(--skt)"></div><div class="tt"><span class="cb bs">SKT</span> 매드포갈릭 할인율 하향 (V/G 20%→15%, S 10%→5%) <span style="font-size:10px;padding:1px 6px;border-radius:20px;background:#fff7e6;color:#b35c00;border:0.5px solid #f5c060">6월 1일 적용</span></div></div>
+    <div class="ti"><div class="tdot" style="background:var(--kt)"></div><div class="tt"><span class="cb bk">KT</span> 달달혜택 패밀리컬렉션 (5.15~) + 패밀리박스 가정의달 쿠폰팩</div></div>
+    <div class="ti"><div class="tdot" style="background:var(--lgu)"></div><div class="tt"><span class="cb bl">LGU+</span> 26년 6월 신규 제휴사 + 일부 제휴사 혜택 종료 예정 (05.11 공지)</div></div>
   </div>
 </div>
-
 <!-- 상시 혜택 -->
 <div class="sec" id="rg">
   <div class="sh"><span class="st">🎫 상시 혜택 비교</span><span class="upd-badge upd-chg">⚡ 변경 시 업데이트</span></div>
-  <div class="cl2">영화관</div>
-  <table class="ct"><thead><tr><th>제휴처</th><th class="th-skt"><span class="cb bs">SKT</span></th><th class="th-kt"><span class="cb bk">KT</span></th><th class="th-lgu"><span class="cb bl">LGU+</span></th></tr></thead>
-  <tbody>
-    <tr><td>CGV</td><td>전 고객 최대 4,000원 할인 (11,000원 이상 구매 시)</td><td>전 등급 최대 5,000원 할인 (본인+동반3인, 월3회)</td><td>전 등급 2D영화 최대 4,000원 할인</td></tr>
-    <tr><td>메가박스</td><td>전 고객 최대 4,000원 할인</td><td>전 등급 최대 5,000원 할인</td><td class="na">미제공</td></tr>
-    <tr><td>롯데시네마</td><td class="wt">2026.02.01 종료</td><td>전 등급 최대 5,000원 할인</td><td class="na">미제공</td></tr>
-  </tbody></table>
-  <div class="cl2">베이커리</div>
-  <table class="ct"><thead><tr><th>제휴처</th><th class="th-skt"><span class="cb bs">SKT</span></th><th class="th-kt"><span class="cb bk">KT</span></th><th class="th-lgu"><span class="cb bl">LGU+</span></th></tr></thead>
-  <tbody>
-    <tr><td>파리바게뜨</td><td>VIP/Gold: 100원 · Silver: 50원</td><td>VVIP/VIP/골드: 100원 · 일반: 50원</td><td class="ht2">VIP 이상: 10% · 이외: 5%</td></tr>
-    <tr><td>뚜레쥬르</td><td>VIP/Gold: 150원 · Silver: 50원</td><td>VVIP/VIP/골드: 150원 · 일반: 100원</td><td class="ht2">전 등급 100원</td></tr>
-  </tbody></table>
-  <div class="cl2">패밀리레스토랑</div>
-  <table class="ct"><thead><tr><th>제휴처</th><th class="th-skt"><span class="cb bs">SKT</span></th><th class="th-kt"><span class="cb bk">KT</span></th><th class="th-lgu"><span class="cb bl">LGU+</span></th></tr></thead>
-  <tbody>
-    <tr><td>아웃백</td><td>VIP/Gold: 15% · Silver: 5%</td><td>VVIP/VIP/골드: 15% · 화이트/일반: 5%</td><td class="na">미제공</td></tr>
-    <tr><td>VIPS</td><td>VIP/Gold: 15% · Silver: 5%</td><td>VVIP/VIP/골드: 15%</td><td>VVIP/VIP: 10% · 우수: 5%</td></tr>
-  </tbody></table>
-  <div class="cl2">피자</div>
-  <table class="ct"><thead><tr><th>제휴처</th><th class="th-skt"><span class="cb bs">SKT</span></th><th class="th-kt"><span class="cb bk">KT</span></th><th class="th-lgu"><span class="cb bl">LGU+</span></th></tr></thead>
-  <tbody>
-    <tr><td>도미노</td><td>VIP: 30% · Gold/Silver: 20%</td><td>VVIP/VIP: 20% · 일반: 15%</td><td class="ht2">VIP 이상: 20% / 이외: 15% 상시</td></tr>
-    <tr><td>피자헛</td><td>VIP: 30% · Gold/Silver: 20%</td><td>전 등급: 15%</td><td class="ht2">VIP 이상: 20% / 이외: 15% 상시</td></tr>
-  </tbody></table>
-  <div class="cl2">카페·디저트</div>
-  <table class="ct"><thead><tr><th>제휴처</th><th class="th-skt"><span class="cb bs">SKT</span></th><th class="th-kt"><span class="cb bk">KT</span></th><th class="th-lgu"><span class="cb bl">LGU+</span></th></tr></thead>
-  <tbody>
-    <tr><td>배스킨라빈스</td><td>VIP/Gold: 1,000원당 100원 · Silver: 50원</td><td class="na">미제공</td><td>전 등급: 쿼터 4,000원 할인</td></tr>
-    <tr><td>스타벅스</td><td class="na">미제공</td><td class="ht2">전 등급 월1회 사이즈업 (3사 유일)</td><td class="na">미제공</td></tr>
-  </tbody></table>
-  <div class="cl2">편의점</div>
-  <table class="ct"><thead><tr><th>제휴처</th><th class="th-skt"><span class="cb bs">SKT</span></th><th class="th-kt"><span class="cb bk">KT</span></th><th class="th-lgu"><span class="cb bl">LGU+</span></th></tr></thead>
-  <tbody>
-    <tr><td>GS25</td><td>전 등급: 매주 화요일 프레시푸드 200원</td><td>VVIP/VIP/골드: 100원 · 실버/일반: 50원</td><td>VIP 이상: 100원 / 이외: 50원 (매일)</td></tr>
-    <tr><td>CU</td><td>VIP/Gold: 100원 · Silver: 50원</td><td>오전5~9시 간편식 200원</td><td class="na">기본 없음</td></tr>
-    <tr><td>세븐일레븐</td><td>VIP/Gold: 100원 · Silver: 50원</td><td class="na">미제공</td><td class="na">미제공</td></tr>
-  </tbody></table>
-</div>
 
+  <div class="cl2">🎬 영화관</div>
+  <table class="ct">
+    <thead><tr><th>제휴처</th><th class="th-skt"><span class="cb bs">SKT</span></th><th class="th-kt"><span class="cb bk">KT</span></th><th class="th-lgu"><span class="cb bl">LGU+</span></th></tr></thead>
+    <tbody>
+      <tr><td>CGV</td><td>전 고객 최대 4,000원 할인 (11,000원↑)</td><td>전 등급 최대 5,000원 할인 (동반 3인, 월3회)</td><td>VVIP/VIP만 2D영화 최대 4,000원 할인</td></tr>
+      <tr><td>메가박스</td><td>전 고객 최대 4,000원 할인</td><td>전 등급 최대 5,000원 할인</td><td class="wt">2026.01.01 종료</td></tr>
+      <tr><td>롯데시네마</td><td class="wt">2026.02.01 종료</td><td>전 등급 최대 5,000원 할인</td><td class="na">미제공</td></tr>
+    </tbody>
+  </table>
+
+  <div class="cl2">🥐 베이커리</div>
+  <table class="ct">
+    <thead><tr><th>제휴처</th><th class="th-skt"><span class="cb bs">SKT</span></th><th class="th-kt"><span class="cb bk">KT</span></th><th class="th-lgu"><span class="cb bl">LGU+</span></th></tr></thead>
+    <tbody>
+      <tr><td>파리바게뜨</td><td>VIP/Gold: 모바일 100원·플라스틱 50원 · Silver: 50원</td><td>VVIP/VIP/골드: 100원 · 일반: 50원</td><td>VVIP/VIP: 100원 · 이외: 50원</td></tr>
+      <tr><td>뚜레쥬르</td><td>VIP/Gold: 150원 · Silver: 50원</td><td>VVIP/VIP/골드: 150원 · 일반: 100원</td><td>VVIP: 150원 · VIP: 100원 · 우수: 50원</td></tr>
+    </tbody>
+  </table>
+
+  <div class="cl2">🍽️ 패밀리레스토랑</div>
+  <table class="ct">
+    <thead><tr><th>제휴처</th><th class="th-skt"><span class="cb bs">SKT</span></th><th class="th-kt"><span class="cb bk">KT</span></th><th class="th-lgu"><span class="cb bl">LGU+</span></th></tr></thead>
+    <tbody>
+      <tr><td>루덴시아 <span style="font-size:10px;color:var(--pos);font-weight:700">NEW</span></td><td class="ht2">주중 50% · 주말 35% (2026.04.24 신규)</td><td class="na">미제공</td><td class="na">미제공</td></tr>
+      <tr><td>아웃백</td><td>VIP/Gold: 15% · Silver: 5%</td><td>VVIP/VIP/골드: 15% · 화이트/일반: 5%</td><td class="na">미제공</td></tr>
+      <tr><td>VIPS</td><td>VIP/Gold: 15% · Silver: 5%</td><td>VVIP/VIP: 15% · Gold/일반: 5%</td><td>VIP: 15% · 우수: 5%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="cl2">🍕 피자</div>
+  <table class="ct">
+    <thead><tr><th>제휴처</th><th class="th-skt"><span class="cb bs">SKT</span></th><th class="th-kt"><span class="cb bk">KT</span></th><th class="th-lgu"><span class="cb bl">LGU+</span></th></tr></thead>
+    <tbody>
+      <tr><td>도미노</td><td>VIP: 30% · Gold/Silver: 20%</td><td>VVIP/VIP: 20% · Gold/일반: 15%</td><td class="na">미제공</td></tr>
+      <tr><td>피자헛</td><td>VIP: 30% · Gold/Silver: 20%</td><td>전 등급: 15%</td><td>전 등급: 15%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="cl2">☕ 카페·디저트</div>
+  <table class="ct">
+    <thead><tr><th>제휴처</th><th class="th-skt"><span class="cb bs">SKT</span></th><th class="th-kt"><span class="cb bk">KT</span></th><th class="th-lgu"><span class="cb bl">LGU+</span></th></tr></thead>
+    <tbody>
+      <tr><td>배스킨라빈스</td><td>VIP: 싱글레귤러 50% · G/S: 30%</td><td class="na">미제공</td><td>쿼터 4,000원 할인</td></tr>
+      <tr><td>스타벅스</td><td class="na">미제공</td><td class="na">미제공</td><td class="na">미제공</td></tr>
+    </tbody>
+  </table>
+
+  <div class="cl2">🏪 편의점</div>
+  <table class="ct">
+    <thead><tr><th>제휴처</th><th class="th-skt"><span class="cb bs">SKT</span></th><th class="th-kt"><span class="cb bk">KT</span></th><th class="th-lgu"><span class="cb bl">LGU+</span></th></tr></thead>
+    <tbody>
+      <tr><td>GS25</td><td>전 등급: 매주 화요일 FF 200원</td><td>VVIP/VIP/골드: 100원 · 실버/일반: 50원 (일 최대 2만원)</td><td>VVIP/VIP: 100원 · 우수: 50원 (일 최대 2만원, 월 10만원)</td></tr>
+      <tr><td>CU</td><td>VIP/Gold: 100원 · Silver: 50원</td><td>오전5~9시 간편식 200원 (일 1회, 월 2만원 한도)</td><td class="na">미제공</td></tr>
+      <tr><td>세븐일레븐</td><td>VIP/Gold: 100원 · Silver: 50원</td><td class="na">미제공</td><td class="na">미제공</td></tr>
+    </tbody>
+  </table>
+</div>
 <!-- 월별 혜택 -->
 <div class="sec" id="mo">
-  <div class="sh"><span class="st">🎁 이달의 월별 혜택</span><span class="ss">2026년 5월</span><span class="upd-badge upd-chg">⚡ 변경 시 업데이트</span></div>
+  <div class="sh"><span class="st">🎁 이달의 월별 혜택</span><span class="ss">2026년 5월</span><span class="upd-badge upd-chg">⚡ 주별 확인</span></div>
   <div class="m3">
     <div class="mc">
       <div class="mch ms"><span>SKT — T day + 0 week</span><a href="https://sktmembership.tworld.co.kr/mps/pc-bff/program/tday.do" target="_blank" class="mlink">T day →</a></div>
       <div class="mcb">
         <div class="mblk">
-          <div class="mbtit"><span class="mbdot" style="background:var(--skt)"></span>T day — 전 등급 (Week 혜택 5.4~5.8)</div>
+          <div class="mbtit"><span class="mbdot" style="background:var(--skt)"></span>T day — 2주차 (5.13~5.15)</div>
           <ul class="mblist">
-            <li>파리바게뜨 1,000원당 200원/P 할인·적립</li>
-            <li>노브랜드버거 시그니처세트 구매시 콤보 증정</li>
-            <li>백미당 아이스크림 1+1</li>
-            <li>얼라이브 40,000원 이상 22,000원 할인</li>
-            <li>하프클럽 장바구니 20% + 온리하프 35% 할인</li>
-            <li>CGV 영화티켓 8,500원 + 매점할인쿠폰</li>
+            <li>버거킹 와퍼 단품 40% 할인 (VIP 55%)</li>
+            <li>뚜레쥬르 1,000원당 300원/P 할인·적립</li>
+            <li>공차 인기음료 6종(L) 50% 할인·적립</li>
+            <li>이니스프리 5,000원 추가 할인 + 뷰티포인트 2,000P</li>
           </ul>
         </div>
         <div class="mblk">
-          <div class="mbtit"><span class="mbdot" style="background:#9944ff"></span>VIP Only 찬스 (5.4~5.8) — VIP 전용</div>
+          <div class="mbtit"><span class="mbdot" style="background:#9944ff"></span>VIP Only 찬스 (5.13~15) — VIP 전용</div>
           <ul class="mblist">
-            <li>럭키찬스 테마파크 6종 입장권/할인권 추첨</li>
-            <li>아쿠아필드 20만명 · 인스파이어 5,000명</li>
-            <li>롯데월드 아쿠아리움 500명 · 서울스카이 200명</li>
-            <li>응모 후 즉시 당첨 결과 확인</li>
+            <li>버거킹 와퍼 단품 55% 할인</li>
           </ul>
         </div>
         <div class="mblk">
           <div class="mbtit"><span class="mbdot" style="background:#ff6600"></span>5월 이벤트</div>
           <ul class="mblist">
-            <li>더벤티·루덴시아 신규 제휴사 추가</li>
-            <li>투루카 카셰어링 65% 할인 (5.4~5.31)</li>
-            <li>고향사랑기부제 14만5천원 혜택 (5.6~6.30)</li>
+            <li>루덴시아 신규 제휴 (주중 50%, 주말 35%)</li>
+            <li>투루카 카셰어링 65% (5.4~5.31)</li>
+            <li>고향사랑기부제 위기브 (5.6~6.30)</li>
           </ul>
         </div>
       </div>
@@ -351,36 +377,27 @@ table.ct td:first-child{font-weight:700;color:var(--tx2);font-size:11px}
       <div class="mch mk"><span>KT — 달달혜택</span><a href="https://membership.kt.com/discount/benefit/DaldalBenefit.do" target="_blank" class="mlink">달달혜택 →</a></div>
       <div class="mcb">
         <div class="mblk">
-          <div class="mbtit"><span class="mbdot" style="background:var(--kt)"></span>달달초이스 (택1) — 5월 15일~말일</div>
+          <div class="mbtit"><span class="mbdot" style="background:var(--kt)"></span>달달초이스 (택1) — 5.15~말일</div>
           <ul class="mblist">
-            <li>팀홀튼 할인</li>
-            <li>던킨 할인</li>
-            <li>이니스프리 할인</li>
-            <li>파리바게뜨 할인</li>
-            <li>메가MGC커피 할인</li>
-            <li>도미노피자 할인</li>
-            <li>롯데시네마 할인</li>
+            <li>롯데마트 모바일 금액권 6천원</li>
+            <li>파스쿠찌 홀케이크 1만원 할인 (3.1만원↑)</li>
+            <li style="color:var(--tx3);font-size:10px">※ 전체 라인업 5.15 이후 공개</li>
           </ul>
         </div>
         <div class="mblk">
-          <div class="mbtit"><span class="mbdot" style="background:#ff4444"></span>달달스페셜 — 패밀리 컬렉션 (중복 적용)</div>
+          <div class="mbtit"><span class="mbdot" style="background:#ff4444"></span>달달스페셜 — 패밀리컬렉션 (5.15~)</div>
           <ul class="mblist">
-            <li>빕스 40% 할인 (15~21일)</li>
-            <li>명륜진사갈비 5,000원 할인</li>
-            <li>더플레이스 40% 할인 (15~25일)</li>
-            <li>쉐이크쉑 쉑버거 1+1</li>
-            <li>롯데면세점·아고다·그리팅·원스토어 할인</li>
-            <li>통화가능알리미 고객 스타벅스 무료음료</li>
+            <li>빕스 40% (15~21일) / 명륜진사갈비 5,000원</li>
+            <li>더플레이스 40% (15~25일) / 쉐이크쉑 1+1</li>
+            <li>롯데면세점·아고다·그리팅·원스토어</li>
+            <li>스타벅스 무료음료</li>
           </ul>
         </div>
         <div class="mblk">
-          <div class="mbtit"><span class="mbdot" style="background:#bb0000"></span>달달찬스 (추첨) · Y혜택 (만34세 이하)</div>
+          <div class="mbtit"><span class="mbdot" style="background:#bb0000"></span>달달찬스 · Y혜택</div>
           <ul class="mblist">
-            <li>롯데시네마 가족관람권 200명</li>
-            <li>네이버페이 1만원권 기프티쇼 300명</li>
-            <li>플레이타임 키즈카페 이용권 200명</li>
-            <li>메가박스 짱구 초코비 수납함 (Y혜택)</li>
-            <li>스타벅스 사이즈업 쿠폰 (Y혜택)</li>
+            <li>블루보틀 커피 당첨 이벤트 (5.4~5.31)</li>
+            <li>Y혜택: 스타벅스 사이즈업 쿠폰</li>
           </ul>
         </div>
       </div>
@@ -391,274 +408,181 @@ table.ct td:first-child{font-weight:700;color:var(--tx2);font-size:11px}
         <div class="mblk">
           <div class="mbtit"><span class="mbdot" style="background:var(--lgu)"></span>투쁠데이 — 오전 11시 선착순</div>
           <ul class="mblist">
-            <li>공차 최대 50% 할인 (12일)</li>
-            <li>카카오웹툰 최대 5천 캐시 (12일)</li>
-            <li>아쿠아플라넷 40% 할인 (12일)</li>
-            <li>피자헛 55% 할인+리치 (14일)</li>
-            <li>배달의민족×이삭토스트 8,000원 할인 (14일)</li>
-            <li>배스킨라빈스·CGV 할인 (20·28일)</li>
-            <li>다이소·서울랜드 할인 (21·22일)</li>
+            <li>5.12 공차 50% / 카카오웹툰 / 아쿠아플라넷 40%</li>
+            <li>5.14 피자헛 55% / 배민×이삭토스트 / 씨네Q</li>
+            <li>5.20 배스킨·CGV / 5.21 다이소·쿠팡이츠×GS25</li>
+            <li>5.22 이마트24·매드포갈릭·스파크랜드·서울랜드</li>
           </ul>
         </div>
         <div class="mblk">
           <div class="mbtit"><span class="mbdot" style="background:#dd44aa"></span>스페셜데이 — 전 등급</div>
           <ul class="mblist">
-            <li>스타벅스 (18·20일)</li>
-            <li>파리바게뜨·컬리 (19일)</li>
-            <li>쿠팡이츠×GS25 (21일)</li>
-            <li>이마트24·매드포갈릭 (22일)</li>
-            <li>스파크랜드·롯데렌터카 (22일)</li>
+            <li>5.18 스타벅스·카카오페이지·그리팅·교보문고</li>
+            <li>5.19 파리바게뜨·컬리·하프클럽</li>
+            <li>5.20 배스킨·CGV·스타벅스·밀리의서재</li>
           </ul>
         </div>
         <div class="mblk">
-          <div class="mbtit"><span class="mbdot" style="background:#ff55cc"></span>장기고객데이 — 5년 이상 VIP · 4주차 목요일</div>
+          <div class="mbtit"><span class="mbdot" style="background:#ff55cc"></span>장기고객데이 — 5년 이상 VIP · 5.28(목)</div>
           <ul class="mblist">
-            <li>5월 29일(목) 예정</li>
-            <li>외식·문화 혜택 제공 예정</li>
+            <li>CGV 관람권 / NOL티켓 / 윌라 1개월 무료</li>
           </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
-
 <!-- VIP 특화 -->
 <div class="sec" id="vp">
   <div class="sh"><span class="st">👑 VIP 특화 혜택</span><span class="upd-badge upd-chg">⚡ 변경 시 업데이트</span></div>
   <table class="vt">
-    <thead><tr>
-      <th>구분</th>
-      <th class="th-skt"><span class="cb bs">SKT</span> VIP Pick</th>
-      <th class="th-kt"><span class="cb bk">KT</span> VIP·VVIP 초이스</th>
-      <th class="th-lgu"><span class="cb bl">LGU+</span> VIP콕</th>
-    </tr></thead>
+    <thead>
+      <tr>
+        <th>구분</th>
+        <th class="th-skt"><span class="cb bs">SKT</span> VIP Pick</th>
+        <th class="th-kt"><span class="cb bk">KT</span> VIP·VVIP 초이스</th>
+        <th class="th-lgu"><span class="cb bl">LGU+</span> VIP콕</th>
+      </tr>
+    </thead>
     <tbody>
-      <tr><td>제공 주기</td>
+      <tr>
+        <td>제공 주기</td>
         <td>월 1회 PICK + 별도 PLUS<br><a href="https://sktmembership.tworld.co.kr/mps/pc-bff/program/vippick.do" target="_blank" class="vlink">VIP Pick →</a></td>
-        <td>VIP: 연 최대 6회 / VVIP: 연 최대 12회<br><a href="https://membership.kt.com/mmbr/choice.do" target="_blank" class="vlink">초이스 →</a></td>
-        <td>월 1회 (연 12회), 분기별 택1<br><a href="https://www.lguplus.com/benefit-plus" target="_blank" class="vlink">VIP콕 →</a></td>
+        <td>VIP: 연 최대 6회<br>VVIP: 연 최대 12회<br><a href="https://membership.kt.com/mmbr/choice.do" target="_blank" class="vlink">초이스 →</a></td>
+        <td>월 1회 (연 12회)<br>분기별 택1<br><a href="https://www.lguplus.com/benefit-plus" target="_blank" class="vlink">VIP콕 →</a></td>
       </tr>
-      <tr><td>영화</td>
-        <td>CGV 무료관람 연3회 / 1+1 연9회 택1</td>
-        <td>롯데시네마 2인 무료 (VVIP 초이스)</td>
-        <td>CGV 월1회 무료, <b>연3회</b></td>
+      <tr>
+        <td>영화</td>
+        <td>CGV 무료관람 연3회 /<br>1+1 연9회 택1</td>
+        <td>롯데시네마 2인 무료<br>(VVIP 초이스)</td>
+        <td>CGV 월1회 무료<br>연3회</td>
       </tr>
-
-      <tr><td>OTT·구독</td>
-        <td>T우주패스 9,900원 쿠폰 연3회 / 4,900원 연9회</td>
-        <td>VVIP 전용: VIPS 스테이크 무료, 도미노 3만원 할인</td>
-        <td>넷플릭스·유튜브·디즈니+·티빙 4,000원 할인 (유독)</td>
+      <tr>
+        <td>OTT·구독</td>
+        <td>T우주패스 9,900원 연3회 /<br>4,900원 연9회<br><span style="font-size:10px;padding:1px 6px;border-radius:20px;background:#fff7e6;color:#b35c00;border:0.5px solid #f5c060">8월 1일 변경 예정</span></td>
+        <td>VVIP 전용:<br>VIPS 스테이크 무료<br>도미노 3만원 할인</td>
+        <td>넷플릭스·유튜브<br>디즈니+·티빙<br>4,000원 할인 (유독)</td>
       </tr>
-      <tr><td>생일</td>
+      <tr>
+        <td>생일</td>
         <td class="na">미제공</td>
-        <td>VVIP: 꾸까·스벅케이크·롯시 택1 / VIP: 던킨·할리스·롯시1+1 택1</td>
+        <td>VVIP: 꾸까·스벅케이크·롯시 택1<br>VIP: 던킨·할리스·롯시1+1 택1</td>
         <td class="na">미제공</td>
       </tr>
     </tbody>
   </table>
 </div>
-
 <!-- 변경 이력 -->
 <div class="sec" id="hs">
-  <div class="sh"><span class="st">📋 혜택 변경 이력</span><span class="upd-badge upd-1m">↻ 월 갱신 (주요 변경 즉시)</span></div>
+  <div class="sh"><span class="st">📋 혜택 변경 이력</span><span class="upd-badge upd-chg">⚡ 변경 즉시 갱신</span></div>
   <table class="ht">
-    <thead><tr><th>날짜</th><th>통신사</th><th>프로그램</th><th>내용</th><th>유형</th><th>출처</th></tr></thead>
+    <thead><tr><th>날짜</th><th>통신사</th><th>프로그램</th><th>내용</th><th>유형</th></tr></thead>
     <tbody>
-      <tr><td>2026.05.01</td><td><span class="cb bs">SKT</span></td><td>T멤버십</td><td>더벤티·루덴시아 신규 제휴사 추가</td><td><span class="tb t신규">신규</span></td><td><a href="https://news.sktelecom.com/224466" target="_blank">SKT 뉴스룸</a></td></tr>
-      <tr><td>2026.05.01</td><td><span class="cb bs">SKT</span></td><td>T멤버십 이벤트</td><td>투루카 카셰어링 65% 할인 (5.4~5.31)</td><td><span class="tb t신규">신규</span></td><td><a href="https://news.sktelecom.com/224466" target="_blank">SKT 뉴스룸</a></td></tr>
-      <tr><td>2026.04.01</td><td><span class="cb bs">SKT</span></td><td>T day · 0 week</td><td>0 day → 0 week 확대 + VIP Only 찬스·VIP only 해피아워 신설</td><td><span class="tb t신규">신규</span></td><td><a href="https://news.sktelecom.com/223425" target="_blank">SKT 뉴스룸</a></td></tr>
-      <tr><td>2026.05.01</td><td><span class="cb bk">KT</span></td><td>달달혜택</td><td>5월 패밀리 컬렉션 — 빕스·롯데월드·서울랜드 등 가족 혜택 강화</td><td><span class="tb t변경">변경</span></td><td><a href="https://www.digitaltoday.co.kr/news/articleView.html?idxno=564329" target="_blank">디지털투데이</a></td></tr>
-      <tr><td>2026.02.01</td><td><span class="cb bs">SKT</span></td><td>T멤버십 상시</td><td>롯데시네마 상시 제휴 종료 → CGV·메가박스 2관 체제</td><td><span class="tb t종료">종료</span></td><td><a href="https://sktmembership.tworld.co.kr" target="_blank">SKT T멤버십</a></td></tr>
+      <tr><td>2026.05.12</td><td><span class="cb bl">LGU+</span></td><td>U+멤버십 상시</td><td>VIPS 상시 할인율 확인 (VIP 15%, 우수 5%) / 도미노 상시 미제공 확인</td><td><span class="tb t신규">확인</span></td></tr>
+      <tr><td>2026.05.11</td><td><span class="cb bl">LGU+</span></td><td>U+멤버십 상시</td><td>26년 6월 신규 제휴사 추가 + 일부 제휴사 혜택 종료 예정</td><td><span class="tb t신규">신규</span></td></tr>
+      <tr><td>2026.04.30</td><td><span class="cb bs">SKT</span></td><td>VIP Pick</td><td>T우주패스 9,900원 쿠폰 → 4,900원+5,000원 2종 분리 (8월 1일 적용)</td><td><span class="tb t변경">변경</span></td></tr>
+      <tr><td>2026.04.27</td><td><span class="cb bs">SKT</span></td><td>T멤버십 상시</td><td>루덴시아 신규 제휴 — 주중 50%, 주말 35% (4.24~)</td><td><span class="tb t신규">신규</span></td></tr>
+      <tr><td>2026.04.27</td><td><span class="cb bs">SKT</span></td><td>T멤버십 상시</td><td>매드포갈릭 할인율 하향 — V/G 20%→15%, S 10%→5% (6.1 적용)</td><td><span class="tb t변경">변경</span></td></tr>
+      <tr><td>2026.04.27</td><td><span class="cb bs">SKT</span></td><td>T멤버십 상시</td><td>무탄 제휴 종료 (5.31)</td><td><span class="tb t종료">종료</span></td></tr>
+      <tr><td>2026.02.01</td><td><span class="cb bs">SKT</span></td><td>T멤버십 상시</td><td>롯데시네마 상시 제휴 종료 → CGV·메가박스 2관 체제 전환</td><td><span class="tb t종료">종료</span></td></tr>
+      <tr><td>2026.01.01</td><td><span class="cb bl">LGU+</span></td><td>U+멤버십 상시</td><td>메가박스 상시 제휴 종료 → CGV 단관 체제 전환</td><td><span class="tb t종료">종료</span></td></tr>
     </tbody>
   </table>
 </div>
-
 <!-- 뉴스 -->
 <div class="sec" id="nw">
-  <div class="sh"><span class="st">📰 뉴스 스크랩</span><span class="upd-badge upd-3m">↻ 주 단위 갱신</span></div>
+  <div class="sh"><span class="st">📰 뉴스 스크랩</span><span class="upd-badge upd-wk">↻ 주간 갱신</span></div>
   <div class="tr2" style="margin-bottom:14px">
     <button class="ntab as" id="ntab-skt" onclick="switchNews('skt',this)">SKT</button>
     <button class="ntab" id="ntab-kt" onclick="switchNews('kt',this)">KT</button>
     <button class="ntab" id="ntab-lgu" onclick="switchNews('lgu',this)">LGU+</button>
   </div>
   <div id="np-skt">
-    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">5월 T 멤버십 혜택 총정리: 신규 제휴사·해피아워·T week·0 week·가정의 달 가족 이벤트</span></div><div class="nsum">더벤티·루덴시아 신규 제휴 추가. 투루카 카셰어링 65% 할인 이벤트 5.4~5.31. 고향사랑기부제 이벤트 5.6~6.30 진행.</div><div class="nmeta">2026-05-01 · <a href="https://news.sktelecom.com/224466" target="_blank">SKT 뉴스룸</a></div></div>
-    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">SKT, T멤버십 새단장해 고객 혜택·이용 편의성 강화한다</span></div><div class="nsum">0 day → 0 week 확대. T day와 해피아워에 VIP 전용 혜택 'VIP 찬스', 'VIP only' 신설. 갤럭시 S26 개통 고객 대상 클럽 갤럭시 S26 운영.</div><div class="nmeta">2026-04-01 · <a href="https://news.sktelecom.com/223425" target="_blank">SKT 뉴스룸</a></div></div>
-    <div class="nc"><div class="nct"><span class="nb nb이슈">이슈</span><span class="ntitle">SKT, 황금연휴·휴가 시즌 맞아 로밍 혜택 대폭 강화한다</span></div><div class="nsum">기존 요금 그대로 데이터 최대 16GB 추가 제공. 최근 36개월 내 로밍 이용 내역 없는 2030 고객 요금 70% 할인.</div><div class="nmeta">2026-04-23 · <a href="https://news.sktelecom.com/224176" target="_blank">SKT 뉴스룸</a></div></div>
+    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">5월 T멤버십 혜택 총정리 — 루덴시아·더벤티 신규, 가정의달 테마파크 특별전, VIP Pick 혜택</span></div><div class="nsum">5월 신규 제휴사로 루덴시아·더벤티 추가. 투루카 65% 할인, 고향사랑기부제 이벤트 포함. 가정의달 맞아 가족 혜택 강화.</div><div class="nmeta">2026-05-01 · <a href="https://news.sktelecom.com/224466" target="_blank">SKT 뉴스룸</a></div></div>
+    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">SKT T멤버십 새단장 — 0 week 확대·VIP 찬스·VIP only 신설</span></div><div class="nsum">0 day를 0 week로 확대해 5일간 이용 가능. T day에 VIP 전용 찬스·only 신설. 갤럭시 S26 개통 고객 맞춤 클럽 갤럭시 S26 운영.</div><div class="nmeta">2026-04-01 · <a href="https://news.sktelecom.com/223425" target="_blank">SKT 뉴스룸</a></div></div>
+    <div class="nc"><div class="nct"><span class="nb nb이슈">이슈</span><span class="ntitle">SKT·KT·LGU+ 갤럭시 S26 사전예약 혜택 경쟁</span></div><div class="nsum">3사가 갤럭시 S26 사전예약 기간 멤버십 혜택 강화. SKT는 클럽 갤럭시 S26 패키지 선보이며 체험형 마케팅 전략 구사.</div><div class="nmeta">2026-02-26 · <a href="https://www.thelec.kr/news/articleView.html?idxno=52782" target="_blank">디일렉</a></div></div>
   </div>
   <div id="np-kt" class="hidden">
-    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">외식·테마파크 할인…KT, 5월 달달혜택 공개</span></div><div class="nsum">5월 패밀리 컬렉션 — 빕스 40%, 명륜진사갈비 5,000원 할인, 쉐이크쉑 1+1. 달달초이스 팀홀튼·던킨·파리바게뜨·롯데시네마 등. Y혜택 만34세 이하 별도 운영.</div><div class="nmeta">2026-05-01 · <a href="https://www.digitaltoday.co.kr/news/articleView.html?idxno=564329" target="_blank">디지털투데이</a></div></div>
-    <div class="nc"><div class="nct"><span class="nb nb변경">변경</span><span class="ntitle">외식업계, 통신사 멤버십 프로모션 경쟁 활발</span></div><div class="nsum">KT 멤버십 달달혜택 프로모션. 파파존스 방문포장 50% 할인 이벤트 등 외식 제휴 확대.</div><div class="nmeta">2026-04-28 · <a href="https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065594833416407" target="_blank">메가이코노미</a></div></div>
-    <div class="nc"><div class="nct"><span class="nb nb이슈">이슈</span><span class="ntitle">KT, 생활 밀착형 멤버십 강화</span></div><div class="nsum">달달초이스 뚜레쥬르·메가MGC커피·이디야커피 등. 달달스페셜 중복 이용 가능 구조 유지. 포인트 한도 폐지 예정.</div><div class="nmeta">2026-04-18 · <a href="https://www.theguru.co.kr/news/article.html?no=100722" target="_blank">더구루</a></div></div>
+    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">KT, 5월 달달혜택 패밀리컬렉션 — 빕스·롯데월드·서울랜드 가족 혜택</span></div><div class="nsum">가정의달 테마로 패밀리컬렉션 구성. 빕스 40%, 더플레이스 40%, 쉐이크쉑 1+1 등 5.15부터 이용 가능. 달달찬스 블루보틀 이벤트.</div><div class="nmeta">2026-05-01 · <a href="https://membership.kt.com" target="_blank">KT멤버십</a></div></div>
+    <div class="nc"><div class="nct"><span class="nb nb이슈">이슈</span><span class="ntitle">통신사 멤버십 '더 내고 덜 받는' 구조 — VIP 등급 기준 상향 논란</span></div><div class="nsum">3사 모두 VVIP 등급 기준을 연 200만원으로 높이면서 실질 혜택은 축소. KT VVIP 취득에 연 200만원 이상 납부 조건, 고객 부담 증가 우려.</div><div class="nmeta">2025-01-14 · <a href="https://zdnet.co.kr/view/?no=20250113135558" target="_blank">ZDNet Korea</a></div></div>
+    <div class="nc"><div class="nct"><span class="nb nb이슈">이슈</span><span class="ntitle">알뜰폰 돌풍에 맞선 통신 3사의 비책 — 멤버십 혜택 확대 경쟁</span></div><div class="nsum">SKT 173개·KT 121개·LGU+ 125개 브랜드 제휴. T day·달달혜택·유플투쁠 등 월 정기 프로그램으로 집토끼 이탈 방어 전략.</div><div class="nmeta">2024-11-01 · <a href="https://www.insightkorea.co.kr/news/articleView.html?idxno=213010" target="_blank">인사이트코리아</a></div></div>
   </div>
   <div id="np-lgu" class="hidden">
-    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">LG유플러스, 장기고객 3천명 화담숲 통대관 초청</span></div><div class="nsum">5년 이상 장기 고객에게 월별 특별 선물, 인기 뮤지컬 무료 관람 등 혜택. 유플투쁠 2주년 맞아 체험형 혜택 확대.</div><div class="nmeta">2026-04-29 · <a href="https://www.nextdaily.co.kr/news/articleView.html?idxno=248948" target="_blank">넥스트데일리</a></div></div>
-    <div class="nc"><div class="nct"><span class="nb nb이슈">이슈</span><span class="ntitle">오직 유플러스 고객만…LG U+, 장기팬덤 사수</span></div><div class="nsum">장기고객만을 위한 전용 혜택과 체험형 행사 확대. 화담숲·뮤지컬 등 경험형 콘텐츠 강화 지속.</div><div class="nmeta">2026-04-29 · <a href="https://www.financialpost.co.kr/news/articleView.html?idxno=257341" target="_blank">파이낸셜포스트</a></div></div>
-    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">LG유플러스 5월 유플투쁠 혜택 공개</span></div><div class="nsum">공차·피자헛·스타벅스·파리바게뜨·CGV 등 30종+ 일별 선착순 혜택. 5월 29일 장기고객데이 예정.</div><div class="nmeta">2026-05-01 · <a href="https://www.lguplus.com/benefit-plus" target="_blank">LGU+ 공식</a></div></div>
+    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">LGU+ 5월 유플투쁠 — 공차·CGV·배스킨·장기고객데이 CGV·윌라</span></div><div class="nsum">5월 일별 선착순 혜택 50종+ 공개. 5.12 공차 50%, 5.14 피자헛 55%, 5.28 장기고객데이 CGV·NOL티켓·윌라 1개월 무료.</div><div class="nmeta">2026-05-01 · <a href="https://www.lguplus.com/benefit-plus" target="_blank">LGU+ 유플투쁠</a></div></div>
+    <div class="nc"><div class="nct"><span class="nb nb신규">신규</span><span class="ntitle">LGU+, 26년 6월 신규 제휴사 + 일부 제휴사 혜택 종료 예정 (05.11 공지)</span></div><div class="nsum">LGU+가 6월 신규 제휴사 안내 및 일부 혜택 종료 예정 공지. 3사 중 가장 빠른 다음달 제휴사 선제 공개.</div><div class="nmeta">2026-05-11 · <a href="https://www.lguplus.com/support/service/notice" target="_blank">LGU+ 공지</a></div></div>
+    <div class="nc"><div class="nct"><span class="nb nb이슈">이슈</span><span class="ntitle">LGU+ 장기팬덤 사수 전략 — 화담숲 단독 초청 등 경험형 혜택 차별화</span></div><div class="nsum">단순 할인이 아닌 장기고객 전용 단독 체험 혜택으로 락인. 오직 유플러스 고객만의 경험 제공으로 관계 기반 멤버십 전략 뚜렷.</div><div class="nmeta">2026-04-29 · <a href="https://www.financialpost.co.kr/news/articleView.html?idxno=257341" target="_blank">파이낸셜포스트</a></div></div>
   </div>
 </div>
-
 <!-- 고객 반응 -->
 <div class="sec" id="sn">
-  <div class="sh"><span class="st">💬 고객 반응</span><span class="ss">최근 4주 · 멤버십 혜택 관련</span><span class="upd-badge upd-wk">↻ 주간 MCP</span></div>
+  <div class="sh"><span class="st">💬 고객 반응</span><span class="ss">최근 4주 · 에펨코리아 기반</span><span class="upd-badge upd-wk">↻ 주간 MCP</span></div>
   <div class="tr2">
     <button class="ctab cs" id="ctab-skt" onclick="C('skt',this)">SKT</button>
     <button class="ctab" id="ctab-kt" onclick="C('kt',this)">KT</button>
     <button class="ctab" id="ctab-lgu" onclick="C('lgu',this)">LGU+</button>
   </div>
-
-  <!-- SKT -->
   <div id="sent-skt">
     <div class="rbw" style="margin-top:12px">
-      <div class="rbl">멤버십 혜택 관련 전반적 반응 비율 (에펨코리아 기반)</div>
+      <div class="rbl">멤버십 혜택 관련 전반적 반응 비율</div>
       <div class="rb">
-        <div class="rbs rp" style="width:40%">긍정 40%</div>
-        <div class="rbs rn" style="width:40%">부정 40%</div>
-        <div class="rbs ru" style="width:20%">중립 20%</div>
-      </div>
-      <div class="rleg">
-        <div class="rli"><div class="rld" style="background:var(--pos)"></div>긍정</div>
-        <div class="rli"><div class="rld" style="background:var(--neg)"></div>부정</div>
-        <div class="rli"><div class="rld" style="background:var(--neu)"></div>중립</div>
-      </div>
-    </div>
-    <div class="srcs"><span class="srcbadge act">에펨코리아</span></div>
-    <div class="tr2" style="margin-bottom:12px">
-      <button class="kw on" onclick="K('skt','kw1',this)">#T멤버십 0week</button>
-      <button class="kw" onclick="K('skt','kw2',this)">#T day 이벤트</button>
-      <button class="kw" onclick="K('skt','kw3',this)">#T멤버십 할인</button>
-    </div>
-    <div id="skt-kw1">
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rpos">긍정</span>
-          <span class="rtag tsrc">에펨코리아</span>
-        </div>
-        <div class="rtx">0위크 메가커피 쿠폰 정보 공유 — 댓글: "어흐 ㄱㅅ 님 덕에 공짜쌀먹" "ㄱㅅㄱㅅ!"</div>
-        <div class="rsrc">2026.05.06 · <a href="https://www.fmkorea.com/9792056294" target="_blank" rel="noreferrer">원문 보기</a></div>
-      </div>
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rneg">부정</span>
-          <span class="rtag tsrc">에펨코리아</span>
-        </div>
-        <div class="rtx">skt 0데이 이벤트 링크 공유 — "이거말곤 별로임"</div>
-        <div class="rsrc">2026.05.04 · <a href="https://www.fmkorea.com/9770273964" target="_blank" rel="noreferrer">원문 보기</a></div>
-      </div>
-    </div>
-    <div id="skt-kw2" class="hidden">
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rneg">부정</span>
-          <span class="rtag tsrc">에펨코리아</span>
-        </div>
-        <div class="rtx">T day 스벅 아이스 아메리카노 추첨 참여 후 — "전 꽝이네요ㅋㅋ"</div>
-        <div class="rsrc">2026.05.04 · <a href="https://www.fmkorea.com/9784172789" target="_blank" rel="noreferrer">원문 보기</a></div>
-      </div>
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rpos">긍정</span>
-          <span class="rtag tsrc">에펨코리아</span>
-        </div>
-        <div class="rtx">SKT T day 배스킨라빈스 파인트 40% 할인 공유 — "힙스크림 땡기는 사람 ㄱㄱ"</div>
-        <div class="rsrc">2026.04.15 · <a href="https://www.fmkorea.com/9710780725" target="_blank" rel="noreferrer">원문 보기</a></div>
-      </div>
-    </div>
-    <div id="skt-kw3" class="hidden">
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rneg">부정</span>
-          <span class="rtag tsrc">에펨코리아</span>
-        </div>
-        <div class="rtx">T멤버십 9만점 행사 일찍 소진 — "벌써 끝났네"</div>
-        <div class="rsrc">2026.04.14 · <a href="https://www.fmkorea.com/9705949142" target="_blank" rel="noreferrer">원문 보기</a></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- KT -->
-  <div id="sent-kt" class="hidden">
-    <div class="rbw" style="margin-top:12px">
-      <div class="rbl">멤버십 혜택 관련 전반적 반응 비율 (에펨코리아 기반)</div>
-      <div class="rb">
-        <div class="rbs rp" style="width:45%">긍정 45%</div>
-        <div class="rbs rn" style="width:40%">부정 40%</div>
+        <div class="rbs rp" style="width:55%">긍정 55%</div>
+        <div class="rbs rn" style="width:30%">부정 30%</div>
         <div class="rbs ru" style="width:15%">중립 15%</div>
       </div>
-      <div class="rleg">
-        <div class="rli"><div class="rld" style="background:var(--pos)"></div>긍정</div>
-        <div class="rli"><div class="rld" style="background:var(--neg)"></div>부정</div>
-        <div class="rli"><div class="rld" style="background:var(--neu)"></div>중립</div>
-      </div>
+      <div class="rleg"><div class="rli"><div class="rld" style="background:var(--pos)"></div>긍정</div><div class="rli"><div class="rld" style="background:var(--neg)"></div>부정</div><div class="rli"><div class="rld" style="background:var(--neu)"></div>중립</div></div>
     </div>
     <div class="srcs"><span class="srcbadge act">에펨코리아</span></div>
     <div class="tr2" style="margin-bottom:12px">
-      <button class="kw on" onclick="K('kt','kw1',this)">#KT멤버십 고객보답</button>
-      <button class="kw" onclick="K('kt','kw2',this)">#KT멤버십 혜택</button>
+      <button class="kw on" onclick="K('skt','kw1',this)">#T멤버십 T day</button>
+      <button class="kw" onclick="K('skt','kw2',this)">#0week 혜택</button>
+      <button class="kw" onclick="K('skt','kw3',this)">#VIP Pick</button>
     </div>
-    <div id="kt-kw1">
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rneg">부정</span>
-          <span class="rtag tsrc">에펨코리아</span>
-        </div>
-        <div class="rtx">KT 5월 1차 보답프로그램 댓글 — "보답이 좀 짜다.." "점점 병신되네ㅋㅋ" "kt vvip 혜택 알게모르게 축소시키더라, 베라 블록팩 4개→레디팩 1개로 바뀜"</div>
-        <div class="rsrc">2026.05.01 · <a href="https://www.fmkorea.com/9772119625" target="_blank" rel="noreferrer">원문 보기</a></div>
-      </div>
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rneu">중립</span>
-          <span class="rtag tsrc">에펨코리아</span>
-        </div>
-        <div class="rtx">KT 5월 1차 보답프로그램 댓글 — "그래도 kt는 하기라도 하지 sk lg는 없다ㅋㅋ"</div>
-        <div class="rsrc">2026.05.01 · <a href="https://www.fmkorea.com/9772119625" target="_blank" rel="noreferrer">원문 보기</a></div>
-      </div>
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rneg">부정</span>
-          <span class="rtag tsrc">에펨코리아</span>
-        </div>
-        <div class="rtx">KT 4월 2차 보답프로그램 댓글 — "양심이 쳐뒤졌노ㅋㅋ" "이제 안 미안한 것 같은데" "사죄가 아니라 업체 쿠폰인척 할인율"</div>
-        <div class="rsrc">2026.04.15 · <a href="https://www.fmkorea.com/9710075444" target="_blank" rel="noreferrer">원문 보기</a></div>
-      </div>
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rpos">긍정</span>
-          <span class="rtag tsrc">에펨코리아</span>
-        </div>
-        <div class="rtx">KT 4월 2차 보답프로그램 댓글 — "빕스할인 덕에 두명 스테이크까지 먹고 7만원에 좋았따"</div>
-        <div class="rsrc">2026.04.15 · <a href="https://www.fmkorea.com/9710075444" target="_blank" rel="noreferrer">원문 보기</a></div>
-      </div>
+    <div id="skt-kw1">
+      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">버거킹 13~15일 T멤버십 와퍼 55% 할인 공유 — "갈 일 없어도 가야겠는걸"</div><div class="rsrc">2026.05.12 · <a href="https://www.fmkorea.com/9816271602" target="_blank" rel="noreferrer">원문 보기</a></div></div>
+      <div class="rc"><div class="rct"><span class="rbg rneg">부정</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">T day 스벅 아이스 아메리카노 추첨 참여 — "전 꽝이네요ㅋㅋ"</div><div class="rsrc">2026.05.04 · <a href="https://www.fmkorea.com/9784172789" target="_blank" rel="noreferrer">원문 보기</a></div></div>
     </div>
-    <div id="kt-kw2" class="hidden">
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rpos">긍정</span>
-          <span class="rtag tsrc">에펨코리아</span>
-        </div>
-        <div class="rtx">KT멤버십 스벅 사이즈업 후기 — "한달에 한번 사이즈업 해서 먹음ㅋㅋ" 댓글: "스타벅스도 종종 써야겠다 고맙습니다"</div>
-        <div class="rsrc">2026.04.10 · <a href="https://www.fmkorea.com/9691567131" target="_blank" rel="noreferrer">원문 보기</a></div>
-      </div>
-      <div class="rc">
-        <div class="rct">
-          <span class="rbg rpos">긍정</span>
-          <span class="rtag tsrc">에펨코리아</span>
-        </div>
-        <div class="rtx">KT멤버십으로 배스킨라빈스 후기 — "파인트 5000원 개꿀"</div>
-        <div class="rsrc">2026.04.11 · <a href="https://www.fmkorea.com/9696441291" target="_blank" rel="noreferrer">원문 보기</a></div>
-      </div>
+    <div id="skt-kw2" class="hidden">
+      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">SKT 0week 메가커피 쿠폰 공유 — "님 덕에 공짜쌀먹" "ㄱㅅㄱㅅ!"</div><div class="rsrc">2026.05.06 · <a href="https://www.fmkorea.com/9792056294" target="_blank" rel="noreferrer">원문 보기</a></div></div>
+      <div class="rc"><div class="rct"><span class="rbg rneg">부정</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">skt 0데이 이벤트 링크 — "이거말곤 별로임"</div><div class="rsrc">2026.05.04 · <a href="https://www.fmkorea.com/9770273964" target="_blank" rel="noreferrer">원문 보기</a></div></div>
+    </div>
+    <div id="skt-kw3" class="hidden">
+      <div class="rc"><div class="rct"><span class="rbg rneu">중립</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">VIP Pick T우주패스 이용법 공유 — "알뜰폰 쓰는데 커피가 더 부럽네" "와 개꿀팁 ㄱㅅ"</div><div class="rsrc">2026.04.15 · <a href="https://www.fmkorea.com/9712143053" target="_blank" rel="noreferrer">원문 보기</a></div></div>
     </div>
   </div>
-
-  <!-- LGU+ -->
+  <div id="sent-kt" class="hidden">
+    <div class="rbw" style="margin-top:12px">
+      <div class="rbl">멤버십 혜택 관련 전반적 반응 비율</div>
+      <div class="rb">
+        <div class="rbs rp" style="width:40%">긍정 40%</div>
+        <div class="rbs rn" style="width:45%">부정 45%</div>
+        <div class="rbs ru" style="width:15%">중립 15%</div>
+      </div>
+      <div class="rleg"><div class="rli"><div class="rld" style="background:var(--pos)"></div>긍정</div><div class="rli"><div class="rld" style="background:var(--neg)"></div>부정</div><div class="rli"><div class="rld" style="background:var(--neu)"></div>중립</div></div>
+    </div>
+    <div class="srcs"><span class="srcbadge act">에펨코리아</span></div>
+    <div class="tr2" style="margin-bottom:12px">
+      <button class="kw on" onclick="K('kt','kw1',this)">#KT멤버십 고객감사</button>
+      <button class="kw" onclick="K('kt','kw2',this)">#KT멤버십 티켓팅</button>
+      <button class="kw" onclick="K('kt','kw3',this)">#KT멤버십 보답프로그램</button>
+    </div>
+    <div id="kt-kw1">
+      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">5월 KT 고객감사 메가커피 2잔 무료 — "U플러스는 고객감사 안하나ㅡ.ㅡ"</div><div class="rsrc">2026.05.08 · <a href="https://www.fmkorea.com/9800753363" target="_blank" rel="noreferrer">원문 보기</a></div></div>
+      <div class="rc"><div class="rct"><span class="rbg rpos">긍정</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">5월 KT멤버십 커피2잔 — "쭈차뿔라 공짜 2잔?!"</div><div class="rsrc">2026.05.07 · <a href="https://www.fmkorea.com/9795918182" target="_blank" rel="noreferrer">원문 보기</a></div></div>
+    </div>
+    <div id="kt-kw2" class="hidden">
+      <div class="rc"><div class="rct"><span class="rbg rneg">부정</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">KT멤버십 롤파크 티켓구매 — "카드결제 됐는데 품절, 매크로 아니냐" "올해부턴 걍 불가능이다"</div><div class="rsrc">2026.05.01 · <a href="https://www.fmkorea.com/9772989347" target="_blank" rel="noreferrer">원문 보기</a></div></div>
+    </div>
+    <div id="kt-kw3" class="hidden">
+      <div class="rc"><div class="rct"><span class="rbg rneg">부정</span><span class="rtag tsrc">에펨코리아</span></div><div class="rtx">KT멤버십 5월 1차 보답프로그램 — "보답이 짜다.." "VVIP 혜택 축소, 베라 레디팩 1개" "그래도 kt는 하기라도 하지"</div><div class="rsrc">2026.05.01 · <a href="https://www.fmkorea.com/9772119625" target="_blank" rel="noreferrer">원문 보기</a></div></div>
+    </div>
+  </div>
   <div id="sent-lgu" class="hidden">
-    <div style="text-align:center;padding:32px 0;color:var(--tx3);font-size:12px;line-height:2">
+    <div style="text-align:center;padding:32px 0;color:var(--tx2);font-size:12px;line-height:2">
       최근 4주 이내 수집된 반응이 없습니다.<br>
-      <span style="font-size:11px">(검색어: 유플투쁠, 유플투쁠 2주년, 투쁠데이, LG유플러스멤버십, U+멤버십)</span>
+      <span style="font-size:11px;color:var(--tx3)">(검색어: 유플투쁠, 투쁠데이, 장기고객데이, U+멤버십 등 전 키워드 소진)</span>
     </div>
   </div>
 </div>
-
 <!-- 검색 트렌드 -->
 <div class="sec" id="tr">
   <div class="sh"><span class="st">📈 검색어 트렌드</span><span class="upd-badge upd-3m">↻ 주 단위 갱신</span></div>
@@ -669,7 +593,7 @@ table.ct td:first-child{font-weight:700;color:var(--tx2);font-size:11px}
       <div class="tli"><div class="tld" style="background:#c41a1a"></div>KT (KT멤버십 외)</div>
       <div class="tli"><div class="tld" style="background:#b5006a"></div>LGU+ (U+멤버십 외)</div>
     </div>
-    <div class="tnote">출처: 네이버 DataLab API · 2026.05.04 수집<br>검색량 지수 (100 = 기간 내 최고값)</div>
+    <div class="tnote">출처: 네이버 DataLab API · 2026.05.12 21:11 수집<br>검색량 지수 (100 = 기간 내 최고값)</div>
   </div>
   <div style="margin-top:12px">
     <div style="font-size:11px;color:var(--tx2);font-weight:700;margin-bottom:6px">수집 키워드</div>
@@ -686,7 +610,6 @@ table.ct td:first-child{font-weight:700;color:var(--tx2);font-size:11px}
     </div>
   </div>
 </div>
-
 <!-- 비통신 멤버십 -->
 <div class="sec" id="nt">
   <div class="sh"><span class="st">🏪 비통신 멤버십 동향</span><span class="upd-badge upd-1m">↻ 월 갱신</span></div>
@@ -760,7 +683,6 @@ table.ct td:first-child{font-weight:700;color:var(--tx2);font-size:11px}
 
   </div>
 </div>
-
 <!-- AI 인사이트 -->
 <div class="sec" id="ai">
   <div class="sh"><span class="st">🤖 AI 인사이트</span><span class="ss">2026년 5월 기준</span><span class="upd-badge upd-1m">↻ 월 갱신</span></div>
@@ -768,62 +690,97 @@ table.ct td:first-child{font-weight:700;color:var(--tx2);font-size:11px}
     <div class="swot-card">
       <div class="swot-hdr sh-skt"><div class="swot-ico">📱</div><span>SKT T멤버십</span></div>
       <div class="swot-body">
-        <div class="swot-section str"><div class="swot-label str">강점</div><div class="swot-items">
-          <div class="swot-item">VIP Only 찬스·해피아워로 최상위 등급 혜택 차별화 강화</div>
-          <div class="swot-item">0 week(만13~34세) 전용 프로그램 신설로 MZ세대 타깃</div>
-          <div class="swot-item">더벤티·루덴시아 등 신규 제휴사 지속 추가</div>
-          <div class="swot-item">T멤버십 앱 MAU 660만 — 압도적 고객 기반</div>
-        </div></div>
-        <div class="swot-section wk"><div class="swot-label wk">약점</div><div class="swot-items">
-          <div class="swot-item">2026.02 롯데시네마 상시 종료 → CGV·메가박스 2관 체제</div>
-          <div class="swot-item">KT 달달스페셜 대비 같은 달 중복 혜택 구조 부재</div>
-          <div class="swot-item">T day 선착순 구조로 빠른 사람만 챙긴다는 인식</div>
-        </div></div>
+        <div class="swot-section str">
+          <div class="swot-label str">강점</div>
+          <div class="swot-items">
+            <div class="swot-item">VIP Only 찬스·해피아워로 최상위 등급 혜택 차별화 강화</div>
+            <div class="swot-item">0 week(만13~34세) 신설 — MZ세대 타깃 가장 명확</div>
+            <div class="swot-item">루덴시아·더벤티 등 신규 제휴 지속 추가. 제휴사 173개 업계 최다</div>
+            <div class="swot-item">T멤버십 앱 MAU 660만 — 압도적 고객 기반</div>
+          </div>
+        </div>
+        <div class="swot-section wk">
+          <div class="swot-label wk">약점</div>
+          <div class="swot-items">
+            <div class="swot-item">롯데시네마 종료 → CGV·메가박스 2관, KT 3관 대비 영화 혜택 열위</div>
+            <div class="swot-item">VIP Pick T우주패스 8월 축소 예정 → 커뮤니티 부정 반응 예상</div>
+            <div class="swot-item">T day 선착순·추첨 구조 — "빠른 사람만 혜택" 형평성 불만</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="swot-card">
-      <div class="swot-hdr sh-kt"><div class="swot-ico">📶</div><span>KT 멤버십</span></div>
+      <div class="swot-hdr sh-kt"><div class="swot-ico">📡</div><span>KT 멤버십</span></div>
       <div class="swot-body">
-        <div class="swot-section str"><div class="swot-label str">강점</div><div class="swot-items">
-          <div class="swot-item">달달초이스+달달스페셜+달달찬스 3종 구조로 혜택 다양성 최상</div>
-          <div class="swot-item">5월 패밀리 컬렉션 등 월별 테마 마케팅으로 화제성 확보</div>
-          <div class="swot-item">롯데시네마 3관(CGV·롯데·메가) 상시 운영 — 영화 혜택 최강</div>
-          <div class="swot-item">Y혜택으로 만34세 이하 MZ세대 별도 타깃 운영</div>
-        </div></div>
-        <div class="swot-section wk"><div class="swot-label wk">약점</div><div class="swot-items">
-          <div class="swot-item">달달혜택 15일 공개~말일 이용 — 월 상반기 혜택 공백</div>
-          <div class="swot-item">공식 페이지 외부 접근 차단으로 정보 접근성 낮음</div>
-          <div class="swot-item">고객보답 프로그램 신청 기간 놓치는 고객 불만</div>
-        </div></div>
+        <div class="swot-section str">
+          <div class="swot-label str">강점</div>
+          <div class="swot-items">
+            <div class="swot-item">달달초이스+스페셜+찬스 3종 구조 — 혜택 다양성 업계 최상</div>
+            <div class="swot-item">패밀리컬렉션 등 월별 테마 마케팅으로 화제성 확보</div>
+            <div class="swot-item">롯데시네마 포함 3관 영화 혜택 — 영화 혜택 업계 최강</div>
+            <div class="swot-item">CGV 상시 이용횟수 월3회→일1회 확대 (2026.05.01~)</div>
+          </div>
+        </div>
+        <div class="swot-section wk">
+          <div class="swot-label wk">약점</div>
+          <div class="swot-items">
+            <div class="swot-item">달달초이스 15일 이후 공개 — 월 상반기 혜택 공백</div>
+            <div class="swot-item">공식 페이지 외부 접근 차단 — 정보 접근성 낮음</div>
+            <div class="swot-item">멤버십 티켓팅 경쟁 과열 — 선착순 구조 불만 증가</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="swot-card">
       <div class="swot-hdr sh-lgu"><div class="swot-ico">🌸</div><span>LGU+ 멤버십</span></div>
       <div class="swot-body">
-        <div class="swot-section str"><div class="swot-label str">강점</div><div class="swot-items">
-          <div class="swot-item">유플투쁠 일별 30종+ 선착순 혜택으로 풍성한 콘텐츠</div>
-          <div class="swot-item">스타벅스·CGV·파리바게뜨 등 인기 브랜드 매월 포함</div>
-          <div class="swot-item">장기고객데이로 5년 이상 VIP 별도 우대</div>
-          <div class="swot-item">2주년 맞아 혜택 규모 확대 추세</div>
-        </div></div>
-        <div class="swot-section wk"><div class="swot-label wk">약점</div><div class="swot-items">
-          <div class="swot-item">선착순 구조 — 빠른 응답 못 하면 혜택 소진</div>
-          <div class="swot-item">투쁠데이 일정이 매월 바뀌어 예측 어려움</div>
-          <div class="swot-item">오전 11시 선착순 — 직장인 이용 불편</div>
-        </div></div>
+        <div class="swot-section str">
+          <div class="swot-label str">강점</div>
+          <div class="swot-items">
+            <div class="swot-item">유플투쁠 일별 50종+ 선착순 혜택 — 콘텐츠 풍성함 최상</div>
+            <div class="swot-item">장기고객데이 경험형 혜택 — 화담숲 단독 초청 등 차별화</div>
+            <div class="swot-item">6월 신규 제휴사 오늘(5.11) 선제 공개 — 3사 중 가장 빠름</div>
+          </div>
+        </div>
+        <div class="swot-section wk">
+          <div class="swot-label wk">약점</div>
+          <div class="swot-items">
+            <div class="swot-item">오전 11시 선착순 — 직장인 이용 불편, 선점 경쟁 피로</div>
+            <div class="swot-item">에펨코리아 고객 반응 거의 없음 — 인지도·화제성 낮음</div>
+            <div class="swot-item">우리동네 멤버십 일부 지점 종료 — 로컬 혜택 축소</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   <div class="ins-list">
-    <div class="ins-item"><div class="ins-num">1</div><div class="ins-txt"><b>MZ세대 타깃 3사 경쟁 격화:</b> SKT 0week(만13~34세), KT Y혜택(만34세 이하), LGU+ 스타벅스·편의점 중심 혜택 — 3사 모두 MZ세대 록인 경쟁 중. T멤버십은 0week로 가장 명확한 별도 프로그램 보유.</div></div>
-    <div class="ins-item"><div class="ins-num">2</div><div class="ins-txt"><b>가족 혜택 테마 부상:</b> KT 5월 패밀리 컬렉션(빕스·롯데월드·서울랜드), LGU+ 아쿠아플라넷·웅진플레이도시 — 가정의 달 맞아 가족 단위 혜택 강화. T멤버십도 5월 가족 이벤트 대응 필요.</div></div>
-    <div class="ins-item"><div class="ins-num">3</div><div class="ins-txt"><b>롯데시네마 공백 모니터링 필요:</b> SKT 롯데시네마 상시 종료 후 CGV·메가박스 2관 체제. KT는 3관 유지로 영화 혜택 체감 열위 지속. 재제휴 또는 메가박스 혜택 상향 검토 필요.</div></div>
-    <div class="ins-item"><div class="ins-num">4</div><div class="ins-txt"><b>비통신 멤버십 오프라인 침투 경계:</b> 네이버플러스 멤버십패스(CU·롯데시네마 제휴), 당근 로컬 쿠폰북이 T멤버십 소상공인·편의점 영역 잠식 중. 차별화된 소상공인 혜택 강화 검토 필요.</div></div>
-    <div class="ins-item"><div class="ins-num">5</div><div class="ins-txt"><b>VIP 등급 혜택 체감 강화 추세:</b> SKT VIP Only 찬스(테마파크 추첨), KT VVIP 초이스(롯데시네마 2인 무료), LGU+ 장기고객데이 — 최상위 등급 고객 록인 경쟁. 등급별 혜택 차별화가 해지 방어 핵심 레버.</div></div>
+    <div class="ins-item">
+      <div class="ins-num">1</div>
+      <div class="ins-txt"><b>SKT VIP Pick T우주패스 8월 축소 — 사전 고객 소통 필요:</b> 9,900원 쿠폰 폐지로 실질 혜택 축소. 발표 후 커뮤니티 반응 모니터링 필요. 8월 전 대체 혜택 보완 또는 기존 고객 대상 사전 안내 강화 권장.</div>
+    </div>
+    <div class="ins-item">
+      <div class="ins-num">2</div>
+      <div class="ins-txt"><b>KT CGV 상시 이용횟수 확대 (월3회→일1회) — T멤버십 대비 열위 심화 우려:</b> KT가 CGV 상시 혜택을 강화하면서 영화관 혜택 KT 우위 더욱 굳어짐. SKT 메가박스 혜택 상향 또는 CGV 조건 개선 검토 시급.</div>
+    </div>
+    <div class="ins-item">
+      <div class="ins-num">3</div>
+      <div class="ins-txt"><b>네이버플러스 CU·GS25 편의점 직접 할인 — 통신사 편의점 혜택 잠식:</b> 네이버플러스가 CU 5%+배민 제휴로 T멤버십 일상 영역 직접 경쟁. 편의점·외식 배달 영역에서 비통신 멤버십과의 차별화 전략 필요.</div>
+    </div>
+    <div class="ins-item">
+      <div class="ins-num">4</div>
+      <div class="ins-txt"><b>가정의달 3사 경쟁 — KT 패밀리컬렉션·SKT 테마파크·LGU+ 아쿠아플라넷:</b> 5월 가족 단위 외식·레저 혜택이 3사 공통 화두. KT가 빕스·더플레이스·쉐이크쉑 묶어 패밀리컬렉션 구성. 제휴 비용 증가 추세 모니터링 필요.</div>
+    </div>
+    <div class="ins-item">
+      <div class="ins-num">5</div>
+      <div class="ins-txt"><b>LGU+ 6월 신규 제휴사 선제 공개 — 고객 기대 관리 전략 긍정적:</b> 전월 말 공개 패턴에서 당월 초 조기 공개로 변화. 고객 관점에서 다음 달 혜택 미리 계획 가능. SKT·KT도 유사 전략 도입 검토 여지 있음.</div>
+    </div>
   </div>
 </div>
 
 </div>
+
+</div>
+
 <script>
 const secIds=['ov','rg','mo','vp','hs','nw','sn','tr','nt','ai'];
 function setActiveNav(id){document.querySelectorAll('.nav a').forEach(a=>{a.classList.toggle('on',a.dataset.sec===id)});}
@@ -837,10 +794,10 @@ function K(c,kw,el){const p=c+'-';document.querySelectorAll('[id^="'+p+'"]').for
 window.addEventListener('load',()=>{
   const ctx=document.getElementById('trendChart')?.getContext('2d');
   if(!ctx)return;
-  const labels=["2/02", "2/09", "2/16", "2/23", "3/02", "3/09", "3/16", "3/23", "3/30", "4/06", "4/13", "4/20", "4/27", "5/04"];
-  const skt=[3.4, 3.0, 2.8, 3.8, 4.0, 3.2, 3.0, 2.9, 3.3, 3.4, 3.0, 2.6, 2.9, 0.6];
-  const kt=[6.0, 7.2, 5.3, 5.6, 4.9, 5.7, 5.5, 5.3, 5.8, 3.9, 6.6, 4.4, 5.3, 0.8];
-  const lgu=[41.0, 53.7, 20.2, 1.7, 1.4, 22.2, 100, 47.2, 28.6, 32.2, 25.6, 33.2, 1.6, 0.2];
+  const labels = ["2/09", "2/16", "2/23", "3/02", "3/09", "3/16", "3/23", "3/30", "4/06", "4/13", "4/20", "4/27", "5/04", "5/11"];
+  const skt=[3.1, 2.9, 3.9, 4.1, 3.3, 3.0, 2.9, 3.3, 3.5, 3.0, 2.7, 3.0, 2.8, 0.4];
+  const kt=[7.3, 5.4, 5.7, 5.0, 5.8, 5.6, 5.4, 5.9, 3.9, 6.8, 4.5, 5.4, 4.3, 0.6];
+  const lgu=[54.1, 20.0, 1.2, 0.8, 21.1, 100, 42.3, 4.6, 30.1, 18.4, 31.5, 1.1, 28.4, 4.6];
   const yMax=Math.ceil(Math.max(...skt,...kt,...lgu)*1.1);
   new Chart(ctx,{type:'line',data:{labels,datasets:[
     {label:'SKT',data:skt,borderColor:'#5B0F8A',backgroundColor:'rgba(91,15,138,.08)',tension:.4,pointRadius:4,pointHoverRadius:6,pointBackgroundColor:'#5B0F8A',borderWidth:2.5,fill:true},
@@ -853,5 +810,11 @@ window.addEventListener('load',()=>{
       x:{grid:{display:false},ticks:{font:{size:11},color:'#aaa'}}}}});
 });
 </script>
+</body>
+</html
+
+
+
+>
 </body>
 </html>
