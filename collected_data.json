@@ -1,13 +1,12 @@
 {
-  "collected_at": "2026.06.16 06:05",
+  "collected_at": "2026.06.23 04:40",
   "trend": {
-    "collected_at": "2026.06.16 06:05",
+    "collected_at": "2026.06.23 04:40",
     "period": {
-      "start": "2026-03-16",
-      "end": "2026-06-15"
+      "start": "2026-03-23",
+      "end": "2026-06-22"
     },
     "labels": [
-      "3/16",
       "3/23",
       "3/30",
       "4/06",
@@ -20,59 +19,67 @@
       "5/25",
       "6/01",
       "6/08",
-      "6/15"
+      "6/15",
+      "6/22"
     ],
     "skt": [
-      3.0,
-      2.9,
-      3.3,
-      3.4,
-      3.0,
-      2.6,
-      2.9,
-      2.8,
-      2.7,
-      2.5,
-      2.4,
-      2.9,
-      2.6,
-      0.4
+      6.1,
+      6.9,
+      7.2,
+      6.3,
+      5.6,
+      6.2,
+      5.8,
+      5.7,
+      5.3,
+      5.2,
+      6.2,
+      5.4,
+      5.6,
+      0.6
     ],
     "kt": [
-      5.5,
-      5.3,
-      5.8,
-      3.9,
-      6.6,
-      4.4,
-      5.3,
-      4.2,
-      5.2,
-      4.0,
-      4.2,
-      4.0,
-      3.5,
-      1.2
+      11.2,
+      12.2,
+      8.2,
+      14.1,
+      9.3,
+      11.1,
+      9.0,
+      11.1,
+      8.5,
+      8.8,
+      8.6,
+      7.5,
+      9.2,
+      0.8
     ],
     "lgu": [
       100,
-      47.2,
-      28.6,
-      32.2,
-      25.6,
-      33.2,
-      1.6,
-      28.4,
-      33.8,
-      33.0,
-      8.7,
-      1.3,
-      32.9,
-      6.6
+      60.7,
+      68.3,
+      54.2,
+      70.3,
+      3.4,
+      60.2,
+      71.7,
+      69.9,
+      18.4,
+      2.8,
+      69.8,
+      65.2,
+      3.0
     ]
   },
   "news": {
     "skt": [
+      {
+        "carrier": "skt",
+        "title": "여름방학을 더 가볍고 알차게, 대학생을 위한 SKT 혜택 모아보기",
+        "url": "https://news.sktelecom.com/226659",
+        "date": "2026-06-17",
+        "summary": "밤샘 시험공부와 끝없는 과제에 치이던 6월이 지나고, 대학생들이 손꼽아 기다리던 여름방학이 마침내 시작됐다. 해외여행부터 미뤄둔 문화생활, 독서와 취미 활동까지 하고 싶은 일들은 많지만, 방학 계획이 많아질수록 비용 부담도 함께 커진다.\n"
+      },
       {
         "carrier": "skt",
         "title": "20대 고객의 목소리가 실제 서비스 변화로 연결되는 현장… ‘CX 캠퍼스’",
@@ -100,16 +107,23 @@
         "url": "https://news.sktelecom.com/225691",
         "date": "2026-06-01",
         "summary": "초여름의 열기가 시작되는 6월, T 멤버십이 다양한 혜택을 준비했다. T day & 0 week & 해피아워 6월 1일부터 5일까지 진행되는 T day Week 1은 식음료, 뷰티, 일상 라이프까지 다양한 분야의\n"
-      },
-      {
-        "carrier": "skt",
-        "title": "‘AX 전환은 함께 만드는 변화’…SKT ‘AX 챌린지’ 해커톤 현장",
-        "url": "https://news.sktelecom.com/225332",
-        "date": "2026-05-28",
-        "summary": "SK텔레콤이 전사 차원의 AX(AI Transformation)를 추진하며, 구성원들의 AI 활용 역량 확대에 나서고 있다. 고객 대상 AI 서비스 고도화와 함께, 업무 전반에 AI를 접목하려는 시도도 이어지고 있다. 이러한 변화 속에서 열린\n"
       }
     ],
     "kt": [
+      {
+        "carrier": "kt",
+        "title": "기업들, 월드컵 응원전-브랜드데이-캠페인-이벤트 진행",
+        "url": "http://www.wsobi.com/news/articleView.html?idxno=313986",
+        "date": "2026-06-19",
+        "summary": "달달혜택으로 KT멤버십 고객은 VIPS 채끝스테이크 무료 배달의민족 X 노모어피자 최대 1만원 할인 더벤티 아이스 아메리카노 1천원 할인(2매) 공차 50% 할인 버거킹 최대 50% 할인 롯데시네마 7천원 영화예매권 중 선택해... "
+      },
+      {
+        "carrier": "kt",
+        "title": "[커피음료 트렌드] 메가MGC커피, 손흥민 선수와 함께한 TVCF 공개... '즐거...",
+        "url": "https://www.ibabynews.com/news/articleView.html?idxno=152109",
+        "date": "2026-06-16",
+        "summary": "오는 16일부터 30일까지 KT 멤버십 회원을 대상으로 'KT 달달혜택' 프로모션이 진행된다. 총 15일간 공차의 인기 음료 구매 시 50%(최대 5,000원) 할인 혜택을 받을 수 있다. 행사 대상 음료는 ▲블랙 밀크티 + 펄 ▲브라운슈가... "
+      },
       {
         "carrier": "kt",
         "title": "KT, '멤버십·IPTV' 경쟁력 강화...가입자 반등 추진",
@@ -130,233 +144,75 @@
         "url": "https://www.financialpost.co.kr/news/articleView.html?idxno=262620",
         "date": "2026-06-15",
         "summary": "'달달혜택'은 ▲외식 ▲커피 ▲영화 등 선호도 높은 브랜드로 구성했다. KT멤버십 고객은 ▲VIPS 채끝스테이크 무료 ▲배달의민족·노모어피자 최대 1만원 할인 ▲더벤티 아이스 아메리카노 1000원 할인(2매) ▲공차 50... "
-      },
-      {
-        "carrier": "kt",
-        "title": "KT, 고객서비스 강화···\"'다국어 AI 상담사' 도입, 월드컵 시즌 고객...",
-        "url": "https://www.ngonews.kr/news/articleView.html?idxno=231177",
-        "date": "2026-06-15",
-        "summary": "달달혜택은 외식·커피·영화 등 선호도 높은 브랜드로 구성됐다. KT멤버십 고객은 ▲VIPS 채끝스테이크 무료 ▲배달의민족 X 노모어피자 최대 1만원 할인 ▲더벤티 아이스 아메리카노 1천원 할인(2매) ▲공차 50% 할인... "
-      },
-      {
-        "carrier": "kt",
-        "title": "KT, 월드컵 맞아 6월 멤버십 혜택 강화",
-        "url": "https://www.todayeconomic.com/news/article.html?no=30962",
-        "date": "2026-06-15",
-        "summary": "외식과 영화 중심의 ‘달달혜택’도 함께 제공된다. KT는 빕스 무료 혜택, 버거킹 할인, 롯데시네마... KT는 월드컵 특수와 여름 휴가철 소비가 겹치는 6월 고객 이용 패턴을 고려해 멤버십 혜택 범위를 넓혔다. KT는 멤버십... "
       }
     ],
     "lgu": [
       {
         "carrier": "lgu",
-        "title": "[유통레이더] NS홈쇼핑, 유한킴벌리, 교촌치킨, 오리온, 오설록, 에이피...",
-        "url": "https://daily.hankooki.com/news/articleView.html?idxno=1376893",
-        "date": "2026-06-16",
-        "summary": "또한 시야쥬, 반원아틀리에, 클리오 등 인기 브랜드의 패션·뷰티 상품을 원플러스원(1+1)으로 구매할 수... 손잡고 멤버십 고객을 위한 '유플투쁠' 프로모션을 오는 30일까지 진행한다. LG유플러스 멤버십 VVIP 및 VIP 등급... "
+        "title": "아웃백, LG유플러스 멤버십 고객 대상 6월 할인 프로모션 운영",
+        "url": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5032430",
+        "date": "2026-06-20",
+        "summary": "대상은 LG유플러스 멤버십 VVIP·VIP 고객으로, 등급에 따라 결제 금액의 25% 또는 20%를 할인받을 수 있다. 쿠폰은 'U+ONE' 앱 내 '유플투쁠' 이벤트 페이지에서 발급받아 사용할 수 있으며, 할인은 주문 금액 기준 최대... "
       },
       {
         "carrier": "lgu",
-        "title": "배스킨라빈스, 6월 '슈퍼 배라위크'→아웃백, '유플투쁠' 프로모션",
-        "url": "https://www.slist.kr/news/articleView.html?idxno=745578",
-        "date": "2026-06-16",
-        "summary": "캐주얼 다이닝 레스토랑 아웃백 스테이크하우스(이하 아웃백)가 LG유플러스와 손잡고 멤버십 고객을 위한 6월 '유플투쁠' 프로모션을 16~30일 진행한다. 사진=아웃백 LG유플러스 멤버십 VVIP 및 VIP 등급 고객이라면 누구나... "
+        "title": "[오늘의 특가] 쿠팡, 여름 쇼핑족 겨냥 '쿠패세' 개최… 인기 브랜드 총...",
+        "url": "https://www.ibabynews.com/news/articleView.html?idxno=152183",
+        "date": "2026-06-19",
+        "summary": "LG유플러스 멤버십 대상 6월 '유플투쁠' 프로모션 포스터. ⓒ아웃백 스테이크하우스 다이닝브랜즈그룹의... 외장형 캡처카드 게임 캡처 4K X, 스트리밍 제어 장비 스트림덱 MK.2, 스트림덱 플러스 화이트 에디션, 마이크... "
       },
       {
         "carrier": "lgu",
-        "title": "유통·외식업계, 여름 맞이 할인 프로모션 확대…멤버십·숙박 혜택 강화",
-        "url": "http://www.kdfnews.com/news/articleView.html?idxno=184284",
+        "title": "아웃백, LG유플러스 멤버십 대상 6월 '유플투쁠' 프로모션 진행",
+        "url": "http://www.queen.co.kr/news/articleView.html?idxno=458650",
         "date": "2026-06-16",
-        "summary": "아웃백 스테이크하우스는 LG유플러스와 손잡고 16일부터 30일까지 멤버십 고객 대상 '유플투쁠' 프로모션을 운영한다. LG유플러스 VIP·VVIP 고객은 이달 말까지 결제 금액의 20~25% 할인 혜택을 받을 수 있다.... "
+        "summary": "LG유플러스 멤버십 대상 6월 '유플투쁠' 프로모션 포스터 아웃백 스테이크하우스가 LG유플러스와 제휴해 6월 16일부터 30일까지 멤버십 고객을 위한 '유플투쁠' 프로모션을 진행한다. LG유플러스 VVIP·VIP 고객은... "
       },
       {
         "carrier": "lgu",
-        "title": "던킨 다이닝브랜즈그룹 外(유통家 이모저모)",
-        "url": "https://www.newsclaim.co.kr/news/articleView.html?idxno=3066600",
+        "title": "[커피음료 트렌드] 메가MGC커피, 손흥민 선수와 함께한 TVCF 공개... '즐거...",
+        "url": "https://www.ibabynews.com/news/articleView.html?idxno=152109",
         "date": "2026-06-16",
-        "summary": "LG유플러스 멤버십 25% 할인= 다이닝브랜즈그룹(대표 송호섭)의 아웃백 스테이크하우스가 LG유플러스 멤버십 고객을 위한 '6월 유플투쁠'을 진행합니다. 16일 하루 동안 'U+ONE' 앱에서 쿠폰을 다운로드하면, VVIP·VIP 등급... "
+        "summary": "이어 19일에는 LG유플러스와 '유플투쁠' 프로모션을 실시한다. LG유플러스 멤버십 VIP·VVIP 회원을 대상으로 공차에서 10,000원 이상 결제 시, 즉시 할인 혜택을 제공하는 멤버십 쿠폰을 지급한다. 할인율은 등급에 따라 30~50... "
       },
       {
         "carrier": "lgu",
-        "title": "아웃백, '유플투쁠' 행사…곰돌이 푸 메뉴와 할인 동시 적용",
-        "url": "http://www.dailysmart.co.kr/news/articleView.html?idxno=125582",
+        "title": "[유통 브리핑] 아웃백·교촌치킨·맘스터치",
+        "url": "http://www.niceeconomy.co.kr/news/articleView.html?idxno=90061",
         "date": "2026-06-16",
-        "summary": "아웃백은 LG유플러스 멤버십 고객을 대상으로 '유플투쁠' 프로모션을 6월 16일부터 30일까지 진행한다고 16일 밝혔다. 이번 행사는 VVIP와 VIP 고객을 대상으로 운영된다. 등급에 따라 결제 금액의 25% 또는 20% 할인 혜택이... "
+        "summary": "◇아웃백, LG유플러스 멤버십 대상 6월 '유플투쁠' 프로모션 진행 아웃백 스테이크하우스(이하 아웃백)가 LG유플러스 멤버십 고객을 위한 6월 '유플투쁠' 프로모션을 6월 16일부터 30일까지 진행한다고 16일 밝혔다. 이번... "
       }
     ]
   },
   "sentiment": {
     "skt": [
       {
-        "source": "네이버카페(PSG KOREA : 파리 생제르맹 대한민국 ...)",
-        "title": "다들 집앞에 gs25 있어? 혹시나 해서 도움이 될까해서",
-        "url": "http://cafe.naver.com/lesparisiens/134700",
+        "source": "네이버카페(100 HOT 핫딜 연구소)",
+        "title": "도미노피자... SKT 고객 혜택 확대 - 이벤트 프로모션",
+        "url": "http://cafe.naver.com/100hot/373",
         "date": "",
-        "text": "집앞 gs25 오픈채팅방에 있길래 가져와봤어 필요한 사람 있을까봐 뭐 이렇대ㅎ 홍보하려는 gs25 직원 아니고 gs25로 밀려라! 라는 다른 브랜드 편의점 직원도 아니고ㅋㅋ gs25 t멤버십 할인 왜 안돼...흑흑ㅎㅎ"
+        "text": "SKT T 멤버십, KT 멤버십에 이어 LG유플러스까지 도입하며 국내 이동통신 3사 전체로 고객 혜택 범위를... 혜택은 스타벅스 무료 커피 쿠폰이었으며, 파리바게뜨, 뚜레쥬르, 도미노피자 등의 일상 소비... "
       },
       {
-        "source": "네이버카페(최강선불폰 앤텔레콤)",
-        "title": "SKT 일시정지 해제 안 되면 선불폰으로 당일 해결 | 요금 못 내도 본인 명의 개통되는 이유",
-        "url": "http://cafe.naver.com/marketceo/6769",
+        "source": "네이버카페(몽르(김정민곽지영))",
+        "title": "투썸플레이스, 한글 자모로 새 심벌 만든 리브랜딩",
+        "url": "http://cafe.naver.com/mr666/117037",
         "date": "",
-        "text": "gl/0ycxX 이마트24에서 모두의원칩 구매 — 8,800원 GS25·CU에는 없다. 반드시 이마트24 또는 지하철... 있다면 멤버십앱 사용. 태블릿 소유자 번호 입력란에 2926625 입력 유심 번호(ICCID) 입력 + 요금제 선택 통화... "
-      },
-      {
-        "source": "네이버카페(셀러대학 (위탁판매 도매 온채널 온라...)",
-        "title": "5/26 이커머스 뉴스 공유",
-        "url": "http://cafe.naver.com/selleruniv/3981",
-        "date": "",
-        "text": "브랜드는 검색·멤버십·빠른배송 중심 전략이 중요해졌다. 카테고리별 ROAS 점검도 필요하다. -출처... CU는 장보기 특화점을 올해 500개로 늘리고, GS25 신선 강화 매장은 일반점 대비 매출 160%를 기록했다.... "
-      },
-      {
-        "source": "네이버카페(월급쟁이 재테크 연구 (예금,적금,절약...)",
-        "title": "[비타민다올] 3인 가족 한 달 60만 원 살기 / 260525 / 무지출 13회 / 배민클럽 1만원쿠폰 / 알쓸엘잡즉당 ...",
-        "url": "http://cafe.naver.com/onepieceholicplus/6033824",
-        "date": "",
-        "text": "kr/9dpb4k (5) LG전자멤버십 알쓸엘잡 퀴즈풀고 스타벅스, 배달의민족 등 ( 추첨 1,300명 ) ✅ 퀴즈 정답 4번 https://event.ext.membership.lge.co.kr/quiz-2026-may-w4 (5) 카카오페이 GS25 아이스아메리카노XL 250원... "
-      },
-      {
-        "source": "뽐뿌",
-        "title": "[키워드 알림] 관심 키워드 등록하고, 앱push 알림 받자!",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=notice&no=1060",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "[행복통신]LG,SK,KT/ @뽐뿌회원 추천 1위!! / #48만원+00만원추가/ 설치비전액지원/무조건!!뽐뿌현금1위/ 당일입금",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=12503",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "온누리 상품권 증정!! A175 사은품 30만! 퀀텀6 사은품5만 SK 유심만 개통해도 사은품 55만 !! KT 기기변경 온누리 상품권 사은품 별도~",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87814",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "[롯데카드] 통신비 매월 최대 3만원 할인!",
-        "url": "https://www.ppomppu.co.krzboard.php?id=sponsor&no=87808&sn=on&ss=off&sc=off&search_type=name&keyword=%B7%D4%B5%A5%C4%AB%B5%E5_%C0%CC%BA%A5%C6%AE",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "갤노트20 사전예약 혜택 판매처별 정리(통신사향)",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=708&keyword=T%B8%E2%B9%F6%BD%CA+GS25&no=3625711",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "KT멤버십 GS25/이마트24 안좋아지네요...",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=708&keyword=T%B8%E2%B9%F6%BD%CA+GS25&no=3615794",
-        "date": "",
-        "text": ""
-      }
-    ],
-    "kt": [
-      {
-        "source": "네이버카페(99퍼센트 | 재테크 1만 카페 | 미국 주...)",
-        "title": "군산선불폰 방문 및 온라인 개통 방법",
-        "url": "http://cafe.naver.com/navercafez/474275",
-        "date": "",
-        "text": "24, CU, GS 25 편의점 엘지 유플러스 - 모델 : 모두의 유심 원칩 - 가격 : 8,800원 - 특징 : 검은 색상 포장지... 1) 앱 설치 스마트폰에 있는 스토어에 들어가서 [앤텔레콤 멤버십]을 검색하고 KT는 K 망을 LG는 L 망 설치 2)... "
-      },
-      {
-        "source": "네이버카페(폰심당｜알뜰폰통신사요금제/선불폰유...)",
-        "title": "앤텔레콤 태블릿 소유자 회원번호 2278006 뜻과 입력 방법 총정리",
-        "url": "http://cafe.naver.com/freelegend1/2193",
-        "date": "",
-        "text": "통신망 제품명 구입처 가격 KT(K망) 바로유심 이마트24·CU·GS25·세븐일레븐 8,800원 LG(L망) 원칩 이마트24 8... 단계 진행 내용 1 앤텔레콤 멤버십 앱 설치 (바로유심=K망, 원칩=L망) 2 신규개통 메뉴 선택 3 태블릿 소유자... "
-      },
-      {
-        "source": "네이버카페(세폰모-선불폰 유심 알뜰폰 서브폰 중...)",
-        "title": "완주선불폰 편의점 유심 앤텔레콤 셀프 개통",
-        "url": "http://cafe.naver.com/lanvinn/2682",
-        "date": "",
-        "text": "CU·GS25·이마트24 같은 편의점에서 KT망 바로유심(8,800원)을 구매하실 수 있고, LG U+망이 필요하신 분들은... ① 플레이스토어 또는 앱스토어에서 [앤텔레콤 멤버십] 앱을 설치합니다. KT망·LG망 앱이 구분되어... "
-      },
-      {
-        "source": "네이버카페(폰심당｜알뜰폰통신사요금제/선불폰유...)",
-        "title": "선불폰 뜻, 유심 구매부터 개통 절차까지 한방 정리",
-        "url": "http://cafe.naver.com/freelegend1/2192",
-        "date": "",
-        "text": "KT 통신망으로 쓸 거예요 → 바로유심 (8,800원) 이마트24·CU·GS25·세븐일레븐 LG 통신망으로 쓸 거예요... 단계 항목 내용 1 앱 설치 앱스토어·플레이스토어에서 '앤텔레콤 멤버십' 검색 (KT는 K망, LG는 L망) 2 신규개통 앱... "
-      },
-      {
-        "source": "뽐뿌",
-        "title": "[키워드 알림] 관심 키워드 등록하고, 앱push 알림 받자!",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=notice&no=1060",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "[행복통신]LG,SK,KT/ @뽐뿌회원 추천 1위!! / #48만원+00만원추가/ 설치비전액지원/무조건!!뽐뿌현금1위/ 당일입금",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=12503",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "온누리 상품권 증정!! A175 사은품 30만! 퀀텀6 사은품5만 SK 유심만 개통해도 사은품 55만 !! KT 기기변경 온누리 상품권 사은품 별도~",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87814",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "[롯데카드] 통신비 매월 최대 3만원 할인!",
-        "url": "https://www.ppomppu.co.krzboard.php?id=sponsor&no=87808&sn=on&ss=off&sc=off&search_type=name&keyword=%B7%D4%B5%A5%C4%AB%B5%E5_%C0%CC%BA%A5%C6%AE",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "kt 멤버십과 토스 보험간 연계에 대한 질의응답 등 공유입니다. 잘못된 내용은 정정 환...",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=708&keyword=KT%B8%E2%B9%F6%BD%CA+CU&no=3597725",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "검색해보니 \\'T멤버십+하나SK체크카드로 SK를 터는 방법\\'이 있어 따라해볼까 합니다...",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=708&keyword=KT%B8%E2%B9%F6%BD%CA+CU&no=2850028",
-        "date": "",
-        "text": ""
-      }
-    ],
-    "lgu": [
-      {
-        "source": "네이버카페(스펙업｜취업,대학생,인턴,대기업,GSA...)",
-        "title": "유플투쁠 퀴즈 정답 2026 6월｜참여 방법·혜택 확인하기",
-        "url": "http://cafe.naver.com/specup/7844440",
-        "date": "",
-        "text": "연령별로는 10·20대 고객에게 스타벅스·컴포즈 커피 등이, 30대 이상에서는 파리바게뜨·아웃백 등 외식·푸드 혜택이 인기를 끌었습니다. 항목 내용 서비스명 유플투쁠 (LG유플러스 멤버십) 오픈 시간 매일 오전 11시... "
-      },
-      {
-        "source": "네이버카페(놀멍 배멍)",
-        "title": "유플투쁠 혜택 총정리! LG유플러스 멤버십 꿀팁 모르면 손해",
-        "url": "http://cafe.naver.com/898900/1784",
-        "date": "",
-        "text": "유플투쁠 혜택 총정리! LG유플러스 멤버십 꿀팁 모르면 손해 LG유플러스 고객이라면 꼭 알아야 할 유플투쁠... 네, VIP/VVIP 고객은 VIP콕 혜택을 통해 스타벅스 아메리카노, 네이버 멤버십, 영화 무료 예매 등 추가 혜택을... "
+        "text": "커피, 케이크, 디저트, 공간, 앱 주문, 멤버십은 대부분 대형 브랜드가 다 갖고 있습니다. 이런 상황에서 투썸이 단순히 “프리미엄 커피 브랜드”라고만 말하면 스타벅스, 폴바셋, 할리스, 메가커피, 개인 카페들과... "
       },
       {
         "source": "네이버카페(스펙업｜취업,대학생,인턴,대기업,GSA...)",
         "title": "유플투쁠 6월 파리바게트 할인 총정리｜최대 혜택 받기",
         "url": "http://cafe.naver.com/specup/7839191",
         "date": "",
-        "text": "https://forms.gle/MaKrZQ5NVSNqKBAt6 유플러스 쓰시면서 유플투쁠 혜택 제대로 챙기고 계신가요? 매달 파리바게트, 스타벅스, 아웃백 등 인기 F&B 브랜드 할인이 올라오는데, 놓치면 다음 달까지 기다려야 해서 타이밍이 정말... "
+        "text": "매달 파리바게트, 스타벅스, 아웃백 등 인기 F&B 브랜드 할인이 올라오는데, 놓치면 다음 달까지 기다려야... 타 통신사 고객이라면 KT 멤버십, T 멤버십(SKT) 각각의 파리바게트 제휴 혜택을 별도로 확인해보세요.... "
       },
       {
-        "source": "네이버카페(꿀템할인정보)",
-        "title": "✨놓치면 후회! 5월의 핫딜 소식 총정리✨",
-        "url": "http://cafe.naver.com/fishjangbi/1576",
+        "source": "네이버카페(인생폰- 휴대폰 성지 시세표 카페 갤럭...)",
+        "title": "SK 포켓피스 이 혜택 다 챙기고 있나요 — 실속 정리 공개합니다",
+        "url": "http://cafe.naver.com/wngmldo/543292",
         "date": "",
-        "text": "자세히 보기 * **매드포갈릭, LG유플러스와 '유플투쁠' 프로모션 최대 2만 5천 원 쿠폰 증정!** 매드포갈릭이... 금융 & 기타 * **스타벅스 상품권, '탱크데이' 이후 중고 거래가 5%→12% 할인!** 이슈가 있었던 '탱크데이... "
+        "text": "기반 멤버십 부가 서비스다. 월정액 구간에 따라 제공되는 혜택 등급이 달라지는 구조로, 낮은 등급부터... 식음료 제휴 혜택은 스타벅스, 배스킨라빈스, 뚜레쥬르 등 주요 프랜차이즈와의 제휴 쿠폰이 매월 지급된다.... "
       },
       {
         "source": "뽐뿌",
@@ -374,8 +230,152 @@
       },
       {
         "source": "뽐뿌",
-        "title": "삼성(감사행사),25FE (번이 -20만,기변 0원),A17 (-26만), 갤S26, 아이폰17 , 차비폰 [부가X, 제휴카드X] ,아이폰13 중고 공부폰(최초), 택배발송,인터넷 가입 최대지원 1544-7225",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87777",
+        "title": "NO부가!! NO상조!! / [SKT] S26 26.4만/아이폰17 37.7만/플립7 46.5만/S25엣지 27.6만/와이드8 -35만/A17 -24만/스타일폴더2 -20만 / 전상품/전유형진행-[최고의가격][정확하고 빠른안내 02-444-0419][카카오톡 @빵삼텔레콤][빠른개통/발송]",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87520",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[롯데카드] 통신비 매월 최대 3만원 할인!",
+        "url": "https://www.ppomppu.co.krzboard.php?id=sponsor&no=87808&sn=on&ss=off&sc=off&search_type=name&keyword=%B7%D4%B5%A5%C4%AB%B5%E5_%C0%CC%BA%A5%C6%AE",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "SK텔레콤에서 유심해킹으로 문제가 생겼을때",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=709&keyword=T%B8%E2%B9%F6%BD%CA+%BD%BA%C5%B8%B9%F7%BD%BA&no=3853212",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "저만의 S25 울트라 자급제 구매 방법 정리",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=709&keyword=T%B8%E2%B9%F6%BD%CA+%BD%BA%C5%B8%B9%F7%BD%BA&no=3824214",
+        "date": "",
+        "text": ""
+      }
+    ],
+    "kt": [
+      {
+        "source": "네이버카페(폰심당｜알뜰폰통신사요금제/선불폰유...)",
+        "title": "LG 선불폰 셀프개통 방법, 유심 구매부터 개통까지 10분 완성",
+        "url": "http://cafe.naver.com/freelegend1/2269",
+        "date": "",
+        "text": "망구분 제품명 구입처 가격 KT망 KT 바로유심 이마트24, CU, GS25, 세븐일레븐 8,800원 LG망 LG 모두의 원칩... ※ 개통 가능 시간: 오전 08:00 ~ 오후 21:50 (평일·주말·공휴일 동일) 단계 내용 1 앤텔레콤 멤버십 앱 설치... "
+      },
+      {
+        "source": "네이버카페(앤텔레콤 선불폰 선불유심 알뜰폰 _선...)",
+        "title": "미성동 난곡동 선불폰: 앤텔레콤 요금제, 방문/온라인 개통 완벽 가이드",
+        "url": "http://cafe.naver.com/unintelecom/4043",
+        "date": "",
+        "text": "K망: 이마트24, CU, GS25 편의점에서 구매 가능한 KT 바로유심 L망: 이마트24 편의점에서 구매 가능한 LG 모두의... 개통 완료 및 요금 충전: 개통이 완료되면, 앤텔레콤 멤버십 앱이나 담당자를 통해 요금을 충전하면 바로 사용... "
+      },
+      {
+        "source": "네이버카페(이심전심모바일 : 앤텔레콤/선불폰/알...)",
+        "title": "삼평동선불폰 개통하려는데 편의점 바로유심 사서 업무폰 공기계에 써도 되나요?",
+        "url": "http://cafe.naver.com/junkfoodc/1064",
+        "date": "",
+        "text": "참고로 잔여 데이터 확인이나 충전 관리를 자주 해야 한다면 앤텔레콤 멤버십 앱을 함께 설치해 두는 것이... KT 바로유심은 CU, GS25, 이마트24, 세븐일레븐에서 구매할 수 있다. 가격은 8,800원이다. Q. 바로유심과 LG... "
+      },
+      {
+        "source": "네이버카페(재벌 따라 잡기 | 재따잡)",
+        "title": "☀️ 재따잡 모닝 브리핑 (2026년 6월 23일 화요일)",
+        "url": "http://cafe.naver.com/sogo70424/1478",
+        "date": "",
+        "text": "갈랐다 KT가 7월 17일 온라인 쇼핑 서비스 '핫딜'을 종료한다. 멤버십 포인트 5% 사용·적립과 타임딜을... CU·GS25·이마트24·번개장터·당근은 재미와 보상으로 방문 빈도와 체류 시간을 늘리며 고객 이탈을 줄이는 마케팅을... "
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[키워드 알림] 관심 키워드 등록하고, 앱push 알림 받자!",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=notice&no=1060",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[LGU+천마통신]<LG사은품은 여기가 최고!> #47만원+00만원추가+설치비무료!! / 인터넷단독 40만원+설치비무료!! / 당일입금!!",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=54992",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "@삼성 패스티벌@SKT/KT/U+_지원금대폭추가@즉시출고@[핫!특가=S26(강추)/아이폰17(강추),16E(0원/페이백)/S25/S25FE(0원/페이백)플립6(0원)/폴드6(강추)/폴드7,플립7(강추)/가성비(0원/페이백)=A17,와이드8,퀀텀6,키즈폰,효도폰][전국택배/퀵][재구매율 1위/고객만족우수판매점]",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87521",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[롯데카드] 통신비 매월 최대 3만원 할인!",
+        "url": "https://www.ppomppu.co.krzboard.php?id=sponsor&no=87808&sn=on&ss=off&sc=off&search_type=name&keyword=%B7%D4%B5%A5%C4%AB%B5%E5_%C0%CC%BA%A5%C6%AE",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "KT멤버십 GS25/이마트24 안좋아지네요...",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=709&keyword=KT%B8%E2%B9%F6%BD%CA+GS25&no=3615794",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "KT, 5월 '가정의 달' 맞아 멤버십 혜택 강화",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=709&keyword=KT%B8%E2%B9%F6%BD%CA+GS25&no=3513123",
+        "date": "",
+        "text": ""
+      }
+    ],
+    "lgu": [
+      {
+        "source": "네이버카페(핫딜맘 놀이터)",
+        "title": "오늘 할 일 체크해보아요",
+        "url": "http://cafe.naver.com/hotdealplayground/516383",
+        "date": "",
+        "text": "11시 유플투쁠(다이소/CU) - 오전 11시 엘포앱 메가 100원딜 (세븐 3만 - 2.7만 / 파스쿠찌) - 오후 12시 네이버 응원 세일 쿠폰 - 오후 6시 엘포앱 파바2천권 100원딜 ** 하나페이 랜덤박스 즉당! JTBC 코카콜라 선착! 알파쇼핑... "
+      },
+      {
+        "source": "네이버카페(공취사│공기업,공공기관,공무원,민경...)",
+        "title": "유플투쁠 피자헛 퀴즈 정답ㅣ6월 피자헛·CGV·아웃백 혜택 총정리",
+        "url": "http://cafe.naver.com/uccplus/2400280",
+        "date": "",
+        "text": "ㆍ CU (6/23): 콜라보 상품 최대 65% 할인 Q. 유플투쁠 쿠폰은 어떻게 받나요? A. U+ONE 앱(구 LG유플러스 멤버십 앱)에서 해당 날짜 오전 11시부터 유플투쁠 이벤트 페이지에 접속해 쿠폰을 발급받으면 됩니다.... "
+      },
+      {
+        "source": "네이버카페(월급쟁이 재테크 연구 (예금,적금,절약...)",
+        "title": "[히응히읗] 4인가구 한달 80만원 살기 / 야채가게 / 우체국쇼핑 / 요기요 뚜레쥬르 / 네플스 올리브유 / 쿠...",
+        "url": "http://cafe.naver.com/onepieceholicplus/6065916",
+        "date": "",
+        "text": "부수입 및 득템 - CU 프라페 - 한투 마이쭈 - 유플투쁠 CGV 팝콘 - 대리결제 네페포 현금화 14,000원 - 한화손보 룰렛 스벅 아메 - 월재연 네페포 만원 이벤트 공유 1. [배라앱] 매일 룰렛돌리고 싱글레귤러, 할쿠 등... "
+      },
+      {
+        "source": "네이버카페(월급쟁이 재테크 연구 (예금,적금,절약...)",
+        "title": "[히응히읗] 4인가구 한달 80만원 살기 / 배민클럽 / 네플스 고잉키즈 / 공모주 대신 스펙주 수익 / 맘큐 / ...",
+        "url": "http://cafe.naver.com/onepieceholicplus/6053800",
+        "date": "",
+        "text": "그래도 시켜줘서 고맙다 쿠팡아,,, 부수입 및 득템 - 한투 승부차기 성공 - 유플투쁠 아모레몰... [KB스타뱅킹] 모바일신분증 등록하면 CU 2천원 전원 (~7/31) https://obank.kbstar.com/quics?page=C041244&scheme=kbbank... "
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[키워드 알림] 관심 키워드 등록하고, 앱push 알림 받자!",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=notice&no=1060",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[위즈 _ 23년 동안 운영 중입니다!] [기본 현금 48만원+추가혜택 @@ 드립니다]  [매일!! 현금 최대지급!!][가정집,상가,회사]",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=12629",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[뽐뿌인증]6월23일(화) 삼성전자 페스티벌 받고! 투게더폰 할인까지!",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87738",
         "date": "",
         "text": ""
       },
