@@ -1,13 +1,12 @@
 {
-  "collected_at": "2026.08.18 01:57",
+  "collected_at": "2026.08.25 01:59",
   "trend": {
-    "collected_at": "2026.08.18 01:57",
+    "collected_at": "2026.08.25 01:59",
     "period": {
-      "start": "2026-05-18",
-      "end": "2026-08-17"
+      "start": "2026-05-25",
+      "end": "2026-08-24"
     },
     "labels": [
-      "5/18",
       "5/25",
       "6/01",
       "6/08",
@@ -20,28 +19,28 @@
       "7/27",
       "8/03",
       "8/10",
-      "8/17"
+      "8/17",
+      "8/24"
     ],
     "skt": [
-      7.6,
       7.4,
       8.8,
       7.8,
       8.0,
-      7.0,
+      7.1,
       8.0,
       8.0,
-      7.6,
+      7.7,
       7.2,
       9.7,
-      12.1,
+      12.2,
       9.7,
+      8.6,
       1.2
     ],
     "kt": [
-      12.1,
-      12.6,
-      12.2,
+      12.7,
+      12.3,
       10.7,
       13.2,
       8.9,
@@ -52,23 +51,24 @@
       19.6,
       15.9,
       16.1,
-      2.4
+      15.0,
+      1.6
     ],
     "lgu": [
-      100,
       26.3,
       3.9,
-      99.8,
-      93.3,
+      100,
+      93.4,
       49.4,
       6.5,
-      81.9,
-      82.5,
+      82.0,
+      82.6,
       11.8,
       3.4,
-      84.2,
-      56.0,
-      18.7
+      84.3,
+      56.1,
+      86.0,
+      3.6
     ]
   },
   "news": {
@@ -113,70 +113,142 @@
     "lgu": [
       {
         "carrier": "lgu",
-        "title": "치킨·피자 제값 주고 사 먹으면 바보… 외식비 폭탄에 통신사가 던진 ...",
-        "url": "https://www.wikitree.co.kr/articles/1152665",
-        "date": "2026-08-15",
-        "summary": "LG유플러스, '유플투쁠'로 외식·워터파크 혜택 총출동 LG유플러스도 월간 멤버십 프로그램 '유플투쁠'을 앞세워 여름 성수기 혜택을 크게 늘렸다. 8월 한 달간 외식·식음료·쇼핑·문화·레저를 합쳐 총 52종의... "
+        "title": "\"빙수·피자·편의점까지 반값 할인\"…'알토란' 같아진 통신사 멤버십",
+        "url": "https://n.news.naver.com/mnews/article/015/0005323140?sid=101",
+        "date": "2026-08-21",
+        "summary": "LG유플러스도 월간 멤버십 프로그램 '유플투쁠'을 앞세워 외식 브랜드와 제휴를 확대하고 있다. 이달에는 투썸플레이스 아메리카노 1잔 무료, 아쿠아필드 최대 40% 할인, CGV 팝콘·음료 세트 무료 등의 행사를... "
       },
       {
         "carrier": "lgu",
-        "title": "“피자 반값·아이스크림 30% 할인”…통신사 멤버십, 외식비 부담 낮춘...",
-        "url": "https://n.news.naver.com/mnews/article/022/0004151101?sid=101",
-        "date": "2026-08-15",
-        "summary": "LG유플러스도 월간 멤버십 프로그램 ‘유플투쁠’을 앞세워 외식 브랜드와 제휴를 확대하고 있다. 지난 7월에는 피자헛 프리미엄 피자를 55% 할인하고 파스타를 무료로 제공하는 행사를 진행했다. 공차는 1만원 이상... "
+        "title": "아웃백, LG유플러스 VVIP·VIP 대상 '유플투쁠' 프로모션 진행",
+        "url": "https://www.thepublic.kr/news/articleView.html?idxno=315608",
+        "date": "2026-08-21",
+        "summary": "'유플투쁠'은 LG유플러스 멤버십 고객을 대상으로 제휴 브랜드 할인과 쿠폰 등을 제공하는 프로그램이다. 행사마다 할인율과 사용 기간, 적용 조건이 다르다. 더퍼블릭"
       },
       {
         "carrier": "lgu",
-        "title": "\"10년 썼더니 롯데월드가 내 것\"…요금 할인은 옛말",
-        "url": "https://n.news.naver.com/mnews/article/374/0000527658?sid=101",
-        "date": "2026-08-15",
-        "summary": "현재는 10년 이상 이용한 VVIP 고객을 대상으로 '유플투쁠' 인기 쿠폰 6종을 선착순 제한 없이 제공하고 있습니다. 통상 인기 멤버십 혜택이 조기에 소진될 수 있다는 점을 감안해 장기고객에게 별도의 우선 혜택을 주는... "
+        "title": "[똑똑한소비] 뚜레쥬르 가을 신제품 4종·웅진식품 빅토리아 기획팩…버...",
+        "url": "https://www.ekn.kr/web/view.php?key=20260820023494798",
+        "date": "2026-08-20",
+        "summary": "정상가 대비 최대 35% 할인가에 살 수 있고 네이버 플러스 멤버십 고객에게는 적립금 페이백을 제공한다.... 함께 멤버십 고객 대상 8월 '유플투쁠' 프로모션을 진행한다. 20일부터 31일까지다. 대상은 LG유플러스 멤버십... "
       },
       {
         "carrier": "lgu",
-        "title": "[커피·음료 트렌드] GS더프레시, 근거리 와인몰로 부상… '차별화 와인...",
-        "url": "https://www.ibabynews.com/news/articleView.html?idxno=153685",
-        "date": "2026-08-13",
-        "summary": "같은 날 LG유플러스와는 '유플투쁠 프로모션'을 진행한다. LG유플러스 VIP·VVIP 회원을 대상으로 13일 단 하루, 10,000원 이상 결제 시 사용 가능한 즉시 할인 멤버십 쿠폰을 지급한다. 할인율은 등급에 따라 30~50%로 상이하며... "
+        "title": "SSG닷컴 다이닝브랜즈그룹 外(여기 유통 이슈)",
+        "url": "https://www.newsclaim.co.kr/news/articleView.html?idxno=3072616",
+        "date": "2026-08-20",
+        "summary": "LG유플러스 멤버십 할인= 다이닝브랜즈그룹(대표 송호섭)의 아웃백 스테이크하우스가 LG유플러스와... 8월 '유플투쁠'을 진행합니다. VVIP 및 VIP 고객을 대상으로 최대 25% 할인 혜택을 제공합니다. 할인 쿠폰은 20일... "
       },
       {
         "carrier": "lgu",
-        "title": "공차, 공차데이·카드 할인 행사…\"점보 사이즈 무료 업그레이드 등\"",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=477073",
-        "date": "2026-08-13",
-        "summary": "LG유플러스 VIP(브이아이피)·VVIP(브이브이아이피) 회원에게는 같은 날 '유플투쁠 프로모션' 혜택이 적용된다. 1만원 이상 결제할 때 사용할 수 있는 즉시 할인 멤버십 쿠폰으로 등급에 따라 30~50% 할인되며 최대 할인액은... "
+        "title": "아웃백, LG유플러스 멤버십 쿠폰 발급…VVIP·VIP 대상 최대 25% 할인",
+        "url": "https://www.financialpost.co.kr/news/articleView.html?idxno=271302",
+        "date": "2026-08-20",
+        "summary": "다이닝브랜즈그룹의 캐주얼 다이닝 레스토랑 아웃백 스테이크하우스(이하 아웃백)가 LG유플러스와 손잡고 멤버십 고객을 위한 8월 '유플투쁠' 프로모션을 8월 20일부터 31일까지 진행한다고 20일 밝혔다. 이번 프로모션은... "
       }
     ]
   },
   "sentiment": {
     "skt": [
       {
+        "source": "네이버카페(고요한 아침)",
+        "title": "T멤버십 스타벅스 쿠폰 이벤트 하네요^^",
+        "url": "https://cafe.naver.com/singorstar/249",
+        "date": "",
+        "text": "T멤버십 T day에서 스타벅스 쿠폰 5종 랜덤 추첨 이벤트를 하고 있더라구요. T멤버십 쓰시는 분들은 한번 확인해보세요^^"
+      },
+      {
+        "source": "네이버카페(9알뜰신잡h21)",
+        "title": "스타벅스 쿠폰 어디서 다운받지 T멤버십 앱 활용법 알려드립니다",
+        "url": "https://cafe.naver.com/sibigu0021/1282",
+        "date": "",
+        "text": "T멤버십 앱 활용법 스타벅스 쿠폰을 다운로드하기 위해서는 T멤버십 앱을 먼저 설치해야 합니다. 앱을 다운로드한 후, 회원가입 과정을 통해 필요한 개인 정보를 입력하고 인증 절차를 거쳐 계정을 활성화합니다. 가입이... "
+      },
+      {
+        "source": "네이버카페(9알뜰신잡h21)",
+        "title": "T멤버십 쿠폰 놓쳤다면 손해 스타벅스와 피자 할인 모두 정리해드립니다",
+        "url": "https://cafe.naver.com/sibigu0021/98",
+        "date": "",
+        "text": "이 글에서는 T멤버십 쿠폰을 효과적으로 활용하지 못했을 때의 손해와, 스타벅스 및 피자 할인 혜택에 대해 자세히 살펴보겠습니다. 쿠폰 미사용의 금전적 손해 스타벅스와 피자 업계는 고객의 재방문을 유도하기 위해... "
+      },
+      {
+        "source": "네이버카페(9알뜰신잡h7)",
+        "title": "T멤버십 쿠폰 놓쳤다면 손해 스타벅스와 피자 할인 모두 정리해드립니다",
+        "url": "https://cafe.naver.com/sibigu007/1503",
+        "date": "",
+        "text": "본 글에서는 T멤버십 쿠폰 활용의 중요성과 스타벅스 및 피자 업계에서 제공하는 할인 혜택에 대해 자세히 설명드리겠습니다. 스타벅스 할인 혜택 스타벅스는 다양한 음료와 디저트를 제공하는 인기 브랜드로, 고객들이... "
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[키워드 알림] 관심 키워드 등록하고, 앱push 알림 받자!",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=notice&no=1060",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[8월 한정 이벤트 진행 중] [당일 현금 즉시 입금] 업계 1위 아정당이 현금 사은품을 타업체보다 많이 줄 수밖에 없는 이유",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87704",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "[득템단] 8월24일 특가시작! / SK, KT, LG 번이기간특가! /  유심만 단독개통 최대40만원 지급! / 기기값즉시할인(제휴카드X, 기기반납X, 할부48개월X) / 택배진행 / 인터넷,티비 단독,결합 문의주세요!",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87741",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "SK텔레콤에서 유심해킹으로 문제가 생겼을때",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=T%B8%E2%B9%F6%BD%CA+%BD%BA%C5%B8%B9%F7%BD%BA&no=3853212",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "저만의 S25 울트라 자급제 구매 방법 정리",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=T%B8%E2%B9%F6%BD%CA+%BD%BA%C5%B8%B9%F7%BD%BA&no=3824214",
+        "date": "",
+        "text": ""
+      },
+      {
+        "source": "뽐뿌",
+        "title": "kt 공홈 아이폰16 사전예약후 해지후기",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=T%B8%E2%B9%F6%BD%CA+%BD%BA%C5%B8%B9%F7%BD%BA&no=3814680",
+        "date": "",
+        "text": ""
+      }
+    ],
+    "kt": [
+      {
+        "source": "네이버카페(정가를 거부하는 사람들 (알뜰폰, 절약, 재테크))",
+        "title": "CU GET 아이스아메리카노 XL 신한쏠페이100원행사 CU적립시 kt알뜰통신사 할인 ....",
+        "url": "https://cafe.naver.com/wjdrkrjqn/187839",
+        "date": "",
+        "text": "CU GET 아이스아메리카노 XL 신한쏠페이100원행사 참여하려고 보니 저는 CU 멤버십적립에 kt알뜰통신사 제휴 할인이 자동으로 세팅되있어서 적립하면 할인이 자동으로 되버리거든요~ 저같은 경우는 100원 결제가... "
+      },
+      {
+        "source": "네이버카페(월급쟁이 재테크 연구 (예금,적금,절약,보험,주식,ETF,부동산))",
+        "title": "[라하니] 6월 1일 #맘마미아가계부 #k뱅크ai퀴즈 #우리은행 #신한은행 #카카오....",
+        "url": "https://cafe.naver.com/onepieceholicplus/6042724",
+        "date": "",
+        "text": "사용했어요 - cu컵라면3개 + 김밥 4,000원 (6,000 - 2천 모상) *돌발지출... 패스 #lg전자멤버십 1) 1주차 즉당 퀴즈 정답 4번 2) 배너 첫번째 뜨던... 찾기 #kt닷컴 혜택알림 신청하고 카카오페이 1천 추첨 치료받고 와서 뭐... "
+      },
+      {
         "source": "네이버카페(● 짠돌이카페 ● 짠돌이부자되기(재테크,절약,보험료줄이기))",
-        "title": "SKT T멤버십 VIP 바코드 100원에 구해요(GS25 사용)",
-        "url": "https://cafe.naver.com/engmstudy/3098173",
+        "title": "내일 CU에서 사용할 KT멤버십 바코드 등급 무관하게 200원에 구합니다(1천P 사....",
+        "url": "https://cafe.naver.com/engmstudy/3106691",
         "date": "",
-        "text": "감사합니다"
-      },
-      {
-        "source": "네이버카페(중고나라)",
-        "title": "T멤버십으로 받은 GS25 츄파춥스 2개 교환권 200원에 판매합니다",
-        "url": "https://cafe.naver.com/joonggonara/1121631594",
-        "date": "",
-        "text": "- 다른 상품과 함께 결제하면 GS25 츄파춥스 2개만 혜택을 받으실 수 있습니다. - 같이 결제하는 다른 상품에 T 멤버십 할인/적립 등 다른 혜택이 적용되지 않습니다. - 매장 상황에 따라 혜택 상품의 재고가 없을 수... "
-      },
-      {
-        "source": "네이버카페(월급쟁이 재테크 연구카페(예금,적금,펀드,보험,CMA,주식,경매))",
-        "title": "gs25에서 t멤버십도 화요일에 신선식품은 할인되네요",
-        "url": "https://cafe.naver.com/onepieceholicplus/5754609",
-        "date": "",
-        "text": "오늘 티멤버십 검색하다보니 gs25에서 화요일에 신선식품은 20% 할인되네요 처음 알았습니다"
+        "text": "내일 CU에서 사용할 KT멤버십 바코드 등급 무관하게 200원에 구합니다(1천P 사용)"
       },
       {
         "source": "네이버카페(● 짠돌이카페 ● 짠돌이부자되기(재테크,절약,보험료줄이기))",
-        "title": "gs25 화요일마다 t멤버십 할인되는거 아셨나요?",
-        "url": "https://cafe.naver.com/engmstudy/3023964",
+        "title": "(완료)내일 CU에서 사용할 KT멤버십 등급무관하게 200원에 구합니다(1천P사용)",
+        "url": "https://cafe.naver.com/engmstudy/3106271",
         "date": "",
-        "text": "샌드위치 도시락 삼각김밥류 사고 20프로 할인받고 왔어요 은행에서 받은 gs상품권 만원짜리도 쓰고 알뜰쇼핑했어요✌️✌️"
+        "text": "내일 CU에서 사용할 KT멤버십 등급무관하게 200원에 구합니다"
       },
       {
         "source": "뽐뿌",
@@ -194,61 +266,61 @@
       },
       {
         "source": "뽐뿌",
-        "title": "SK 유심만 개통해도 사은품 58만 !! SK 퀀텀6, A17 사은품 25만 KT 기기변경 폴드8 90요금제 부가없음 최저가~KT 유심번호 이동만해도 43만",
+        "title": "SK 유심만 개통해도 사은품 62만 !! SK 퀀텀6, A17 사은품 30만  KT 유심번호 이동만해도 43만",
         "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87814",
         "date": "",
         "text": ""
       },
       {
         "source": "뽐뿌",
-        "title": "갤노트20 사전예약 혜택 판매처별 정리(통신사향)",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=T%B8%E2%B9%F6%BD%CA+GS25&no=3625711",
+        "title": "kt 멤버십과 토스 보험간 연계에 대한 질의응답 등 공유입니다. 잘못된 내용은 정정 환...",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=KT%B8%E2%B9%F6%BD%CA+CU&no=3597725",
         "date": "",
         "text": ""
       },
       {
         "source": "뽐뿌",
-        "title": "KT멤버십 GS25/이마트24 안좋아지네요...",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=T%B8%E2%B9%F6%BD%CA+GS25&no=3615794",
+        "title": "검색해보니 \\'T멤버십+하나SK체크카드로 SK를 터는 방법\\'이 있어 따라해볼까 합니다...",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=KT%B8%E2%B9%F6%BD%CA+CU&no=2850028",
         "date": "",
         "text": ""
       },
       {
         "source": "뽐뿌",
-        "title": "KT, 5월 '가정의 달' 맞아 멤버십 혜택 강화",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=T%B8%E2%B9%F6%BD%CA+GS25&no=3513123",
+        "title": "SKT 멤버십 할인 정리",
+        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=KT%B8%E2%B9%F6%BD%CA+CU&no=2470619",
         "date": "",
         "text": ""
       }
     ],
-    "kt": [
+    "lgu": [
       {
         "source": "네이버카페(● 짠돌이카페 ● 짠돌이부자되기(재테크,절약,보험료줄이기))",
-        "title": "gs25 통신사 멤버십 10% 할인되는 것(kt, lg 유플) 500점 구해요",
-        "url": "https://cafe.naver.com/engmstudy/3171683",
+        "title": "유플투쁠 쿼터9천원 할인권 천원에구해요.",
+        "url": "https://cafe.naver.com/engmstudy/3159859",
         "date": "",
-        "text": "50원 구합니다"
+        "text": "kt 배달의민족 자담치킨 2만2천원이상 7천원할인쿠폰번호 엘지유플 윌라 1개월 이용권 ~7.31 엘지유플 아모레멤버쉽1개월 ~7.30 올리브영 2만원이상 3천할인쿠폰 올리브영 무료배송쿠폰 오늘 던킨vip 50% 최대... "
       },
       {
         "source": "네이버카페(월급쟁이 재테크 연구 (예금,적금,절약,보험,주식,ETF,부동산))",
-        "title": "(아윤맘)8월1일/#모니모 #엘지전자멤버십 #오휘 #올리브영 #바로주유 #더페이....",
-        "url": "https://cafe.naver.com/onepieceholicplus/6117576",
+        "title": "구해요) 유플투쁠, 올리브영 리디포인트 구해요",
+        "url": "https://cafe.naver.com/onepieceholicplus/6039234",
         "date": "",
-        "text": "ㆍ엘지전자멤버십 공유이벤즉당 지에스1천원1장 #오휘 #룰렛 https://m.ohui.com/pages/event... run/6aFyjRVYx6G69e #lg전자멤버십 #즉당 2026명 https://event.ext.membership.lge.co.kr/e-cycle-festa-share... "
+        "text": "3000 포인트는 유효기간 6월까지인거 700원, 2000 포인트는 유효기간 5월,6월까지인거 300원, 1000 포인트는 200원에 구합니다 (3장까지) 거래 https://open.kakao.com/o/smmbQAjg 알람 안울릴 수도 있으니... "
       },
       {
-        "source": "네이버카페(라일樂: 라이브방송과 퀴즈로 일상의 행복을 함께 나누는 즐거움)",
-        "title": "7월 첫당첨 모음입니다.^^",
-        "url": "https://cafe.naver.com/livequizshow/262325",
+        "source": "네이버카페(월급쟁이 재테크 연구카페(예금,적금,펀드,보험,CMA,주식,경매))",
+        "title": "[히응히읗] 4인가구 한달 80만원 살기 / 무지출 6회 / 쿠팡체험단 / 3번째 신세....",
+        "url": "https://cafe.naver.com/onepieceholicplus/5923831",
         "date": "",
-        "text": "*광주광역시 북구청 정책퀴즈, GS25 5천원권. *KT멤버십 달달혜택 밸런스게임, 다이소3천원권. *OK캐쉬백 경유 G마켓 구매스탬프, 네페1만원권. *롯데온 L스탬프 배팅하기, L포인트 일천포인트. 장마비가 쏟아졌다 그쳤다... "
+        "text": "득템 - 유플투쁠 컴포즈 뜨아 - cu 20% 쿠폰 성공 - 신세계 cgv 쿠폰 판매 5,700원 이번달 cgv 쿠폰 벌써... [올리브영] 스탬프 5개찍고 올리브베러 기프트카드 2천 추첨 1000명 (~2/28) 스탬프 잘 찍혔는지 확인하세용... "
       },
       {
-        "source": "네이버카페(정가를 거부하는 사람들 (알뜰폰, 절약, 재테크))",
-        "title": "수정))KT보상쿠폰)GS25 모찌롤2개 + 로제신라면 6개 6400원",
-        "url": "https://cafe.naver.com/wjdrkrjqn/179015",
+        "source": "네이버카페(월급쟁이 재테크 연구카페(예금,적금,펀드,보험,CMA,주식,경매))",
+        "title": "[히응히읗] 4인가구 한달 90만원 살기 / 무지출 7회 / 힘든 하루 / 대상웰라이....",
+        "url": "https://cafe.naver.com/onepieceholicplus/5522354",
         "date": "",
-        "text": "댓글에 보면 카카오페이 공유링크 있어요 그거 받으면 카카오페이 굿딜 500원 할인쿠폰 받을 수 있어요 gs25 결제 방법 상품 한번에 모두 찍고 kt 통신사 멤버십 할인 찍고 kt 50% 보상쿠폰 여러개 한번에 다 찍고... "
+        "text": "부수입 및 득템 - 월재연 gs25 모상 5천원 - 알바천국 피크닉, 츄팝춥스 - 유플투쁠 컴포즈 하와이안 에이드, 카카페 3천캐시 이벤트 공유 1. [모니모] 모니스쿨 정답 : 1번 우등상 젤리까지 꼭 챙기세여 ! 2. [페이북] AI... "
       },
       {
         "source": "뽐뿌",
@@ -266,80 +338,8 @@
       },
       {
         "source": "뽐뿌",
-        "title": "S25 (-9만), 25FE (-16만), A17 (-11만),점프 (-13만),아이폰 AiR(-11만), 폴더블8,갤S26, 아이폰17 , 차비폰 [부가X, 제휴카드X], 택배발송,인터넷 가입 최대지원 1544-7225",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87777",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "KT멤버십 GS25/이마트24 안좋아지네요...",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=KT%B8%E2%B9%F6%BD%CA+GS25&no=3615794",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "KT, 5월 '가정의 달' 맞아 멤버십 혜택 강화",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=KT%B8%E2%B9%F6%BD%CA+GS25&no=3513123",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "통신사들이 Membership 에 주는 혜택이 이제 필요 없다고 생각 하나 봅니다.",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=KT%B8%E2%B9%F6%BD%CA+GS25&no=3398778",
-        "date": "",
-        "text": ""
-      }
-    ],
-    "lgu": [
-      {
-        "source": "네이버카페(스펙업｜취업,대학생,인턴,대기업,GSAT,대외활동,공모전,스펙)",
-        "title": "유플투쁠 6월 파리바게트 할인 총정리｜최대 혜택 받기",
-        "url": "https://cafe.naver.com/specup/7839191",
-        "date": "",
-        "text": "https://forms.gle/MaKrZQ5NVSNqKBAt6 유플러스 쓰시면서 유플투쁠 혜택 제대로 챙기고 계신가요? 매달 파리바게트, 스타벅스, 아웃백 등 인기 F&B 브랜드 할인이 올라오는데, 놓치면 다음 달까지 기다려야 해서 타이밍이 정말... "
-      },
-      {
-        "source": "네이버카페(Twinkle STARBUCKS / 트윙클 스타벅스)",
-        "title": "앗 ,,,,,놓쳤네요 ㅠㅠ",
-        "url": "https://cafe.naver.com/twinklestarbucks/88942",
-        "date": "",
-        "text": "오늘 유플투쁠 스타벅스 별 리워드 주는날인데 아침에 기억나서 들어가니 11시 부터라고 떠있길래 좀있다 들어와야자 했다가 지금들어갔더니 늦었어요 ㅠㅠ 벌써 마감이라니 ㅠㅠ 전에는 오후까지 있더니 왜이리 빨리... "
-      },
-      {
-        "source": "네이버카페(● 짠돌이카페 ● 짠돌이부자되기(재테크,절약,보험료줄이기))",
-        "title": "유플투쁠 스타벅스 별리워드 쿠폰 빠르게 구매해용~~",
-        "url": "https://cafe.naver.com/engmstudy/3130368",
-        "date": "",
-        "text": "8개짜리는 2500원에 5개짜리는 1500원에 구해봐용!!"
-      },
-      {
-        "source": "네이버카페(겟꿀)",
-        "title": "유플투쁠 오늘 스타벅스 별 최대8개 줍니다",
-        "url": "https://cafe.naver.com/dpdtydzzz/11370",
-        "date": "",
-        "text": "알람 맞춰놔야겠어요"
-      },
-      {
-        "source": "뽐뿌",
-        "title": "[키워드 알림] 관심 키워드 등록하고, 앱push 알림 받자!",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=notice&no=1060",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "[LGU+천마통신]<LG사은품은 여기가 최고!> #47만원+00만원추가+설치비무료!! / 인터넷단독 43만원+설치비무료!! / 당일입금!!",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=54992",
-        "date": "",
-        "text": ""
-      },
-      {
-        "source": "뽐뿌",
-        "title": "[득템단] 8월17일 특가시작! / SK, KT, LG 번이기간특가! /  유심만 단독개통 최대40만원 지급! / 기기값즉시할인(제휴카드X, 기기반납X, 할부48개월X) / 택배진행 / 인터넷,티비 단독,결합 문의주세요!",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87741",
+        "title": "[뽐뿌인증] 8월25일(화) 온라인 휴대폰성지 최저가 시세표",
+        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87738",
         "date": "",
         "text": ""
       },
