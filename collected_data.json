@@ -1,13 +1,12 @@
 {
-  "collected_at": "2026.08.25 01:59",
+  "collected_at": "2026.09.01 05:27",
   "trend": {
-    "collected_at": "2026.08.25 01:59",
+    "collected_at": "2026.09.01 05:27",
     "period": {
-      "start": "2026-05-25",
-      "end": "2026-08-24"
+      "start": "2026-06-01",
+      "end": "2026-08-31"
     },
     "labels": [
-      "5/25",
       "6/01",
       "6/08",
       "6/15",
@@ -20,10 +19,10 @@
       "8/03",
       "8/10",
       "8/17",
-      "8/24"
+      "8/24",
+      "8/31"
     ],
     "skt": [
-      7.4,
       8.8,
       7.8,
       8.0,
@@ -36,10 +35,10 @@
       12.2,
       9.7,
       8.6,
-      1.2
+      8.2,
+      1.1
     ],
     "kt": [
-      12.7,
       12.3,
       10.7,
       13.2,
@@ -52,10 +51,10 @@
       15.9,
       16.1,
       15.0,
-      1.6
+      11.3,
+      2.1
     ],
     "lgu": [
-      26.3,
       3.9,
       100,
       93.4,
@@ -68,7 +67,8 @@
       84.3,
       56.1,
       86.0,
-      3.6
+      9.4,
+      0.4
     ]
   },
   "news": {
@@ -151,218 +151,218 @@
   "sentiment": {
     "skt": [
       {
-        "source": "네이버카페(고요한 아침)",
-        "title": "T멤버십 스타벅스 쿠폰 이벤트 하네요^^",
-        "url": "https://cafe.naver.com/singorstar/249",
+        "source": "네이버카페(울산 휴대폰성지 싸게파는곳 시세카페 다폰)",
+        "title": "\"멤버십부터 공모전까지\"…SKT·KT·LGU+의 Z세대 공략법",
+        "url": "https://cafe.naver.com/hntmobile/70489",
         "date": "",
-        "text": "T멤버십 T day에서 스타벅스 쿠폰 5종 랜덤 추첨 이벤트를 하고 있더라구요. T멤버십 쓰시는 분들은 한번 확인해보세요^^"
+        "text": "통신 3사, Z세대 잡기 경쟁 본격화 SK텔레콤 13~34세 대상 혜택 프로그램 '0(영) 위크' 운영 시험기간 맞춰 커피·디저트 할인 제공 메가MGC커피 바나프레소 투썸플레이스 배스킨라빈스 'T멤버십 커피드림카... "
       },
       {
-        "source": "네이버카페(9알뜰신잡h21)",
-        "title": "스타벅스 쿠폰 어디서 다운받지 T멤버십 앱 활용법 알려드립니다",
-        "url": "https://cafe.naver.com/sibigu0021/1282",
+        "source": "네이버카페(e편한세상 용인 한숲시티 입주민 대표 카페)",
+        "title": "[T 멤버십] 배스킨라빈스블록팩 1+1",
+        "url": "https://cafe.naver.com/forestcitypeople/230058",
         "date": "",
-        "text": "T멤버십 앱 활용법 스타벅스 쿠폰을 다운로드하기 위해서는 T멤버십 앱을 먼저 설치해야 합니다. 앱을 다운로드한 후, 회원가입 과정을 통해 필요한 개인 정보를 입력하고 인증 절차를 거쳐 계정을 활성화합니다. 가입이... "
+        "text": "혜택은 만 13~34세, T 멤버십 [T 멤버십] 배스킨라빈스 블록팩 1+1 https://m.sktmembership.co.kr/l/udzCQr"
       },
       {
-        "source": "네이버카페(9알뜰신잡h21)",
-        "title": "T멤버십 쿠폰 놓쳤다면 손해 스타벅스와 피자 할인 모두 정리해드립니다",
-        "url": "https://cafe.naver.com/sibigu0021/98",
+        "source": "네이버카페(선운톡(선운⦁광산구 커뮤니티) 동네생활 & 부동산)",
+        "title": "[T 멤버십] 배스킨라빈스40% 할인 매직바코드 사용",
+        "url": "https://cafe.naver.com/greenlamp/7448",
         "date": "",
-        "text": "이 글에서는 T멤버십 쿠폰을 효과적으로 활용하지 못했을 때의 손해와, 스타벅스 및 피자 할인 혜택에 대해 자세히 살펴보겠습니다. 쿠폰 미사용의 금전적 손해 스타벅스와 피자 업계는 고객의 재방문을 유도하기 위해... "
+        "text": "[T 멤버십] 배스킨라빈스 파인트 40% 할인/적립 https://m.sktmembership.co.kr/l/DZ4CQr ✌️선운톡✌️ 선운광산구커뮤니티 가입환영~ 소통해요! 게시글을 보셨다면, <좋아요> 한 번 눌러주시면 큰 힘이 됩니다!... "
       },
       {
-        "source": "네이버카페(9알뜰신잡h7)",
-        "title": "T멤버십 쿠폰 놓쳤다면 손해 스타벅스와 피자 할인 모두 정리해드립니다",
-        "url": "https://cafe.naver.com/sibigu007/1503",
+        "source": "네이버카페(THOME 톰 더글로우 공식 카페ㅣ국내 1위 홈케어 커뮤니티)",
+        "title": "배스킨 라빈스 파인트 40% 할인/적립",
+        "url": "https://cafe.naver.com/clickg/225320",
         "date": "",
-        "text": "본 글에서는 T멤버십 쿠폰 활용의 중요성과 스타벅스 및 피자 업계에서 제공하는 할인 혜택에 대해 자세히 설명드리겠습니다. 스타벅스 할인 혜택 스타벅스는 다양한 음료와 디저트를 제공하는 인기 브랜드로, 고객들이... "
+        "text": "어쩔수없이...제가 먹겠습니다 (징짜 어쩔수없는거에여!!) 혹시나 저녁에 저 가기전에 댓 주시면 매직바코드 열어서 바로 보내드릴께용♡ [T 멤버십] 배스킨라빈스 파인트 40% 할인/적립 https://m.... "
       },
       {
-        "source": "뽐뿌",
-        "title": "[키워드 알림] 관심 키워드 등록하고, 앱push 알림 받자!",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=notice&no=1060",
+        "source": "theqoo",
+        "title": "더쿠 - 배스킨라빈스 쿠폰 받는법",
+        "url": "https://theqoo.net/square/1913509681",
         "date": "",
-        "text": ""
+        "text": "네이버 어플 음성 검색에서 “민트초코봉봉” 말하기 https://img.theqoo.net/TxbYF 2. 이벤트 자세히 보기 https://img.theqoo.net/KqNBw 3. 해피포인트 어플에서 쿠폰 다운 받기... "
       },
       {
-        "source": "뽐뿌",
-        "title": "[8월 한정 이벤트 진행 중] [당일 현금 즉시 입금] 업계 1위 아정당이 현금 사은품을 타업체보다 많이 줄 수밖에 없는 이유",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87704",
+        "source": "theqoo",
+        "title": "더쿠 - 배스킨라빈스 파인트 4900원",
+        "url": "https://theqoo.net/beauty/2562564567",
         "date": "",
-        "text": ""
+        "text": "SPC 불매는 패스 해줘 해피포인트 앱이나 해피오더 앱에 가면 배너가 있어 쿠폰받고 주문하면 돼 난 예약 픽업으로 주문했어 https://img.theqoo.net/DwzBM"
       },
       {
-        "source": "뽐뿌",
-        "title": "[득템단] 8월24일 특가시작! / SK, KT, LG 번이기간특가! /  유심만 단독개통 최대40만원 지급! / 기기값즉시할인(제휴카드X, 기기반납X, 할부48개월X) / 택배진행 / 인터넷,티비 단독,결합 문의주세요!",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87741",
+        "source": "theqoo",
+        "title": "더쿠 - 배스킨라빈스, 애플페이 결제 시 해피포인트 자동 적립",
+        "url": "https://theqoo.net/square/2745638913",
         "date": "",
-        "text": ""
+        "text": "https://img.theqoo.net/tdAsh https://img.theqoo.net/OYApS 하필 SPC.... 배스킨라빈스가 되는걸 보면 다른 SPC 가맹점도 될 가능성 높음 앞으로 다른 가맹점도 자동 적립 기능 도입됐으면 좋겠음... "
       },
       {
-        "source": "뽐뿌",
-        "title": "SK텔레콤에서 유심해킹으로 문제가 생겼을때",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=T%B8%E2%B9%F6%BD%CA+%BD%BA%C5%B8%B9%F7%BD%BA&no=3853212",
+        "source": "dcinside",
+        "title": "5/15배스킨라빈스 내일 행사 ㄷㄷ - 치킨 갤러리",
+        "url": "https://gall.dcinside.com/board/view/?id=chicken&no=2327310",
         "date": "",
-        "text": ""
+        "text": "치킨갤러리친구들 5/15 배스킨라빈스에서 미친짓함 31분 동안 아이스크림 조낸 퍼줌ㅋㅋ 6900원에 무한리필 서울 4개 강남대로 / 청담 / 파르나스몰 / SPC스퀘어 똥辛산 1개 부산서면중앙 이 5개 점포만 됨... "
       },
       {
-        "source": "뽐뿌",
-        "title": "저만의 S25 울트라 자급제 구매 방법 정리",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=T%B8%E2%B9%F6%BD%CA+%BD%BA%C5%B8%B9%F7%BD%BA&no=3824214",
+        "source": "dcinside",
+        "title": "배스킨라빈스 아이스크림중에 이름에 레몬들어간건데 ㅠㅠ - 빙과 갤러리",
+        "url": "https://gall.dcinside.com/board/view/?id=ices&no=7594",
         "date": "",
-        "text": ""
+        "text": "단종된지 쫌 된거같은데(언제부턴가 어딜가도 안보였음 ㅠㅠ) 갑자기 떠올라서요 ㅠㅠ옛날에 꼭 넣어서 먹었던 아이스크림인데 ㅠㅠ 혹시 아시는분 레몬 어쩌군데..막 상큼달콤?"
       },
       {
-        "source": "뽐뿌",
-        "title": "kt 공홈 아이폰16 사전예약후 해지후기",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=T%B8%E2%B9%F6%BD%CA+%BD%BA%C5%B8%B9%F7%BD%BA&no=3814680",
+        "source": "dcinside",
+        "title": "베스킨 라빈스31에서 주는 분홍색 티스푼 같은게 몇 g(그램) 정도 되나 - 빙과 갤....",
+        "url": "https://gall.dcinside.com/board/view/?id=ices&no=7309",
         "date": "",
-        "text": ""
+        "text": "베스킨 라빈스31에서 주는 분홍색 티스푼 같은게 몇 g(그램) 정도 되나요?"
       }
     ],
     "kt": [
       {
-        "source": "네이버카페(정가를 거부하는 사람들 (알뜰폰, 절약, 재테크))",
-        "title": "CU GET 아이스아메리카노 XL 신한쏠페이100원행사 CU적립시 kt알뜰통신사 할인 ....",
-        "url": "https://cafe.naver.com/wjdrkrjqn/187839",
-        "date": "",
-        "text": "CU GET 아이스아메리카노 XL 신한쏠페이100원행사 참여하려고 보니 저는 CU 멤버십적립에 kt알뜰통신사 제휴 할인이 자동으로 세팅되있어서 적립하면 할인이 자동으로 되버리거든요~ 저같은 경우는 100원 결제가... "
-      },
-      {
         "source": "네이버카페(월급쟁이 재테크 연구 (예금,적금,절약,보험,주식,ETF,부동산))",
-        "title": "[라하니] 6월 1일 #맘마미아가계부 #k뱅크ai퀴즈 #우리은행 #신한은행 #카카오....",
-        "url": "https://cafe.naver.com/onepieceholicplus/6042724",
+        "title": "(아윤맘)8월1일/#모니모 #엘지전자멤버십 #오휘 #올리브영 #바로주유 #더페이....",
+        "url": "https://cafe.naver.com/onepieceholicplus/6117576",
         "date": "",
-        "text": "사용했어요 - cu컵라면3개 + 김밥 4,000원 (6,000 - 2천 모상) *돌발지출... 패스 #lg전자멤버십 1) 1주차 즉당 퀴즈 정답 4번 2) 배너 첫번째 뜨던... 찾기 #kt닷컴 혜택알림 신청하고 카카오페이 1천 추첨 치료받고 와서 뭐... "
+        "text": "ㆍ하나카드 올리브영4천원1장 ㆍ엘지전자멤버십 공유이벤즉당 지에스1천원1장 #오휘 #룰렛 https://m.ohui.com/pages/event/read.html?no=17085&board_no=2 &&&&&& #올리브영 #에너지플러스... "
       },
       {
-        "source": "네이버카페(● 짠돌이카페 ● 짠돌이부자되기(재테크,절약,보험료줄이기))",
-        "title": "내일 CU에서 사용할 KT멤버십 바코드 등급 무관하게 200원에 구합니다(1천P 사....",
-        "url": "https://cafe.naver.com/engmstudy/3106691",
+        "source": "네이버카페(하노이 고스트-베트남하노이자유여행,하롱베이,호텔,마사지,맛집)",
+        "title": "(일상정보)KT-올리브영 3천원 혜택",
+        "url": "https://cafe.naver.com/guitarnsong/272710",
         "date": "",
-        "text": "내일 CU에서 사용할 KT멤버십 바코드 등급 무관하게 200원에 구합니다(1천P 사용)"
+        "text": "KT고객님들 주목하셔요~ 다가오는 6월 15일(월)요일까지 올리브영 3천원 혜택이 있습니다. KT멤버십 들어가서 쿠폰 받아서 잊어보리지 말고 언넝 올리브영 가셔요. 방법 및 유의사항은 다음과 같습니다 꼴라 오늘... "
       },
       {
-        "source": "네이버카페(● 짠돌이카페 ● 짠돌이부자되기(재테크,절약,보험료줄이기))",
-        "title": "(완료)내일 CU에서 사용할 KT멤버십 등급무관하게 200원에 구합니다(1천P사용)",
-        "url": "https://cafe.naver.com/engmstudy/3106271",
+        "source": "네이버카페(맘이베베 (핫딜, 육아, 놀이))",
+        "title": "유플 아모레멤버십 구함(KT 올리브영 3천원)",
+        "url": "https://cafe.naver.com/skybluezw4rh/14663931",
         "date": "",
-        "text": "내일 CU에서 사용할 KT멤버십 등급무관하게 200원에 구합니다"
+        "text": "올리브영 3천 금액권 6/15까지예요~"
       },
       {
-        "source": "뽐뿌",
-        "title": "[키워드 알림] 관심 키워드 등록하고, 앱push 알림 받자!",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=notice&no=1060",
+        "source": "네이버카페(꿀 통)",
+        "title": "T day 이케아 할인 / KT 올리브영(고객보답)",
+        "url": "https://cafe.naver.com/postmore/75418",
         "date": "",
-        "text": ""
+        "text": "평일이니까 멤버십 무료커피도 받았고 음식이 크게 맛있진 않지만 그래도 이케아 갈때마다 먹으러 가게... P1층에 올리브영이 있네요? 이거 3장이 있었는데 한번에 사용도 가능하더라구요 저는 살게 없어서 먹을거만... "
       },
       {
-        "source": "뽐뿌",
-        "title": "[LGU+천마통신]<LG사은품은 여기가 최고!> #47만원+00만원추가+설치비무료!! / 인터넷단독 43만원+설치비무료!! / 당일입금!!",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=54992",
+        "source": "theqoo",
+        "title": "더쿠 - 일본인들의 한국 올리브영 쇼핑 떼 샷.jpg",
+        "url": "https://theqoo.net/square/4052646048",
         "date": "",
-        "text": ""
+        "text": "다이소 글이 핫게가서 올영도 써봄 https://theqoo.net/4052238673 짤에 있는거 중에 이거 써봤는데 좋음ㅋㅋㅋㅋㅋㅋ 일본 지인보니까 면세 들어가면 엄청 싸더라ㅎㅎ"
       },
       {
-        "source": "뽐뿌",
-        "title": "SK 유심만 개통해도 사은품 62만 !! SK 퀀텀6, A17 사은품 30만  KT 유심번호 이동만해도 43만",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87814",
+        "source": "theqoo",
+        "title": "더쿠 - 올리브영 알바 첫날 후기",
+        "url": "https://theqoo.net/review/703922152",
         "date": "",
-        "text": ""
+        "text": "올리브영이 주휴 포함하면 시급높기도하고 화장품 꽤 좋아해서 지원했는데 합격해서 오늘 첫출근 다녀옴... 서서일하는거,(아직은)제품추천해달라는손님이 젤 힘들었오 전국 올리브영 알바생들 화이팅,,,,"
       },
       {
-        "source": "뽐뿌",
-        "title": "kt 멤버십과 토스 보험간 연계에 대한 질의응답 등 공유입니다. 잘못된 내용은 정정 환...",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=KT%B8%E2%B9%F6%BD%CA+CU&no=3597725",
+        "source": "theqoo",
+        "title": "더쿠 - 혹시 올리브영 픽업 신청하면 시간 얼마나 걸려?",
+        "url": "https://theqoo.net/beauty/2907640152",
         "date": "",
-        "text": ""
+        "text": "슬슬 출발해볼까하고.."
       },
       {
-        "source": "뽐뿌",
-        "title": "검색해보니 \\'T멤버십+하나SK체크카드로 SK를 터는 방법\\'이 있어 따라해볼까 합니다...",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=KT%B8%E2%B9%F6%BD%CA+CU&no=2850028",
+        "source": "dcinside",
+        "title": "올브영 그만둔 김에 쓰는 알바 후기 - 올리브영 마이너 갤러리",
+        "url": "https://gall.dcinside.com/mgallery/board/view/?id=oy&no=12",
         "date": "",
-        "text": ""
+        "text": "롭스나 왓슨스는 잘 모르겠는데, 올리브영은 은근히 남자도 많이... 만약에 올리브영 알바하면서 공부한다면 말리고 싶다. 올브영 알바가... 다쳐서 올리브영을 그만둬버린 탓에 상품권도 못받고 피자도 못먹음.... "
       },
       {
-        "source": "뽐뿌",
-        "title": "SKT 멤버십 할인 정리",
-        "url": "https://www.ppomppu.co.krview.php?id=phone&page=1&divpage=710&keyword=KT%B8%E2%B9%F6%BD%CA+CU&no=2470619",
+        "source": "dcinside",
+        "title": "올리브영 마이너 갤러리 - 커뮤니티 포털 디시인사이드",
+        "url": "https://gall.dcinside.com/mgallery/board/lists/?id=oy",
         "date": "",
-        "text": ""
+        "text": "올리브영에 관한 이야기를 나누는 곳입니다. - 올리브영 갤러리에 다양한 이야기를 남겨주세요."
+      },
+      {
+        "source": "dcinside",
+        "title": "올리브영 고객센터 직원이다 - 올리브영 마이너 갤러리",
+        "url": "https://gall.dcinside.com/mgallery/board/view/?id=oy&no=388",
+        "date": "",
+        "text": "1:1문의 하지 마라 어차피 답변 못 받음"
       }
     ],
     "lgu": [
       {
-        "source": "네이버카페(● 짠돌이카페 ● 짠돌이부자되기(재테크,절약,보험료줄이기))",
-        "title": "유플투쁠 쿼터9천원 할인권 천원에구해요.",
-        "url": "https://cafe.naver.com/engmstudy/3159859",
+        "source": "네이버카페(월급쟁이 재테크 연구카페(예금,적금,펀드,보험,CMA,주식,경매))",
+        "title": "[히응히읗] 4인가구 한달 80만원 살기 / 무지출 3회 / cu 토스 페이스페이 / 프....",
+        "url": "https://cafe.naver.com/onepieceholicplus/5951434",
         "date": "",
-        "text": "kt 배달의민족 자담치킨 2만2천원이상 7천원할인쿠폰번호 엘지유플 윌라 1개월 이용권 ~7.31 엘지유플 아모레멤버쉽1개월 ~7.30 올리브영 2만원이상 3천할인쿠폰 올리브영 무료배송쿠폰 오늘 던킨vip 50% 최대... "
+        "text": "무지출 3회 혹시나 또 받아놓은 쿠폰 날아갈까봐 퇴근길에 cu 들러서 하겐다즈 쿠폰 썼어요 ! ㅎㅎㅎ... 부수입 및 득템 - 월재연 네페포 1만원 - 유플투쁠 cgv 팝콘 m 이벤트 공유 1. [우리은행] 럭키박스 즉당... "
       },
       {
         "source": "네이버카페(월급쟁이 재테크 연구 (예금,적금,절약,보험,주식,ETF,부동산))",
-        "title": "구해요) 유플투쁠, 올리브영 리디포인트 구해요",
-        "url": "https://cafe.naver.com/onepieceholicplus/6039234",
+        "title": "[왕초보재린이] 4인가족 12월 한달 60만원 살기 / 알뜰지출 / 유플투쁠 / 티빙 ....",
+        "url": "https://cafe.naver.com/onepieceholicplus/5821957",
         "date": "",
-        "text": "3000 포인트는 유효기간 6월까지인거 700원, 2000 포인트는 유효기간 5월,6월까지인거 300원, 1000 포인트는 200원에 구합니다 (3장까지) 거래 https://open.kakao.com/o/smmbQAjg 알람 안울릴 수도 있으니... "
+        "text": "처럼 뭐가 생겼길래 병원다녀오라고했어요 \"실결제 9,400원\" 부수입,득탬 - 유플투쁠 아몰 vvip,vip 두장 줍줍 - 설문 cu 5천 - 하나카드 티빙 2아이디 줍줍 가부 구경하러 갈게요 총총총"
       },
       {
-        "source": "네이버카페(월급쟁이 재테크 연구카페(예금,적금,펀드,보험,CMA,주식,경매))",
-        "title": "[히응히읗] 4인가구 한달 80만원 살기 / 무지출 6회 / 쿠팡체험단 / 3번째 신세....",
-        "url": "https://cafe.naver.com/onepieceholicplus/5923831",
+        "source": "네이버카페(맘이베베 (핫딜, 육아, 놀이))",
+        "title": "유플투쁠 본도시락 8천원할인쿠폰 구해요~(cu 허쉬초코드링크 드려요)",
+        "url": "https://cafe.naver.com/skybluezw4rh/13940750",
         "date": "",
-        "text": "득템 - 유플투쁠 컴포즈 뜨아 - cu 20% 쿠폰 성공 - 신세계 cgv 쿠폰 판매 5,700원 이번달 cgv 쿠폰 벌써... [올리브영] 스탬프 5개찍고 올리브베러 기프트카드 2천 추첨 1000명 (~2/28) 스탬프 잘 찍혔는지 확인하세용... "
+        "text": "안쓰시는분 계실까요? 제육한쌈 넘 먹고싶네요ㅠ"
       },
       {
-        "source": "네이버카페(월급쟁이 재테크 연구카페(예금,적금,펀드,보험,CMA,주식,경매))",
-        "title": "[히응히읗] 4인가구 한달 90만원 살기 / 무지출 7회 / 힘든 하루 / 대상웰라이....",
-        "url": "https://cafe.naver.com/onepieceholicplus/5522354",
+        "source": "네이버카페(맘이베베 (핫딜, 육아, 놀이))",
+        "title": "(저)7.31까지 cu포카칩 2장으로 (맘님)유플투쁠 싱글콤보나 팝콘무료 구해봅....",
+        "url": "https://cafe.naver.com/skybluezw4rh/13673654",
         "date": "",
-        "text": "부수입 및 득템 - 월재연 gs25 모상 5천원 - 알바천국 피크닉, 츄팝춥스 - 유플투쁠 컴포즈 하와이안 에이드, 카카페 3천캐시 이벤트 공유 1. [모니모] 모니스쿨 정답 : 1번 우등상 젤리까지 꼭 챙기세여 ! 2. [페이북] AI... "
+        "text": "내일 아이들이랑 영화보러 가려는데 멤버십 등급이 일반으로 내려가서 ㅠㅜㅜ 구해봅니다."
       },
       {
-        "source": "뽐뿌",
-        "title": "[키워드 알림] 관심 키워드 등록하고, 앱push 알림 받자!",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=notice&no=1060",
+        "source": "theqoo",
+        "title": "더쿠 - CU편의점 키핑쿠폰과 GS25 나만의 냉장고 차이점",
+        "url": "https://theqoo.net/square/1317311949",
         "date": "",
-        "text": ""
+        "text": "https://img.theqoo.net/TdAxe 지난주부터 CU편의점에서도 증정품을 보관할 수 있게 됐어 그런데 GS25 나만의 냉장고와는 다르게 구매한 점포에서만 증정품을 보관할 수 있음 GS25는 아무 편의점에 가도 증정품을... "
       },
       {
-        "source": "뽐뿌",
-        "title": "[이번달 한정 추가지급] 48만원+00만원 더! [전액현금/당일입금] [와이파이 무료] [타사대비 최고혜택] [무조건 사은품 더 지급!] [1668-3427]",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87552",
+        "source": "theqoo",
+        "title": "더쿠 - Cu 신상 더단백 후기",
+        "url": "https://theqoo.net/diet/2022205937",
         "date": "",
-        "text": ""
+        "text": "https://img.theqoo.net/QGbXH https://img.theqoo.net/NbwVq 학창시절 매점이나 자판기에서 파는 500원짜리 캔에 담긴 초코우유맛"
       },
       {
-        "source": "뽐뿌",
-        "title": "[뽐뿌인증] 8월25일(화) 온라인 휴대폰성지 최저가 시세표",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=sponsor&no=87738",
+        "source": "theqoo",
+        "title": "더쿠 - 아이스노미(アイスの実)가 생각나서 사본 CU 빅구슬아이스",
+        "url": "https://theqoo.net/muk/578533313",
         "date": "",
-        "text": ""
+        "text": "http://img.theqoo.net/mihbH 일본 아이스크림 중에 아이스노미라는게 있는데... 너무 달지 않은게 과일향도... 먹고싶은데 우리나라에선 구할 방법이 없으니까ㅠㅠ 그냥 먹고싶어하기만 하다가 어제 CU에 비슷한게... "
       },
       {
-        "source": "뽐뿌",
-        "title": "개인정보처리방침",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=regulation&page=1&divpage=1&no=49",
+        "source": "dcinside",
+        "title": "디시인사이드",
+        "url": "https://www.dcinside.com/",
         "date": "",
-        "text": ""
+        "text": "국내 인터넷 커뮤니티 포털이자 인터넷 트렌드의 중심, 디시인사이드입니다. 실시간 베스트 등의 갤러리 커뮤니티 서비스를 제공."
       },
       {
-        "source": "뽐뿌",
-        "title": "청소년보호정책",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=regulation&page=2&divpage=1&no=5",
+        "source": "dcinside",
+        "title": "LG U+ ‘유플투쁠’ 올해 누적 참여 700만건 돌파 | IT조선",
+        "url": "https://issuefeed.dcinside.com/content/1575760",
         "date": "",
-        "text": ""
+        "text": "LG유플러스가 월 정기 멤버십 혜택 프로그램 ‘유플투쁠’을 이용한 고객들의 누적 참여 건수가... 통해 고객들에게 차별적인 멤버십 경험을 제공할 수 있도록 힘쓰겠다”고 말했다. 김광연 기자 *******@chosunbiz.com"
       },
       {
-        "source": "뽐뿌",
-        "title": "불법촬영물등 신고",
-        "url": "https://www.ppomppu.co.kr/zboard/view.php?id=regulation&page=2&divpage=1&no=19",
+        "source": "dcinside",
+        "title": "‘유플투쁠’ 두 달간 누적 이용 고객 80만명 돌파 | IT조선",
+        "url": "https://issuefeed.dcinside.com/content/961087",
         "date": "",
-        "text": ""
+        "text": "프로그램 ‘유플투쁠’의 누적 이용 고객이 론칭 두 달 만에... 5000원), CU(최대 50%) 등 할인 혜택까지 총 38종을 마련했다. 매월 마지막... 영역도 확대해 나갈 계획이다”고 말했다. 김광연 기자 *******@chosunbiz.com"
       }
     ]
   },
