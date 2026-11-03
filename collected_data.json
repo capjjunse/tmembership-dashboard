@@ -1,13 +1,12 @@
 {
-  "collected_at": "2026.10.27 05:22",
+  "collected_at": "2026.11.03 07:05",
   "trend": {
-    "collected_at": "2026.10.27 05:22",
+    "collected_at": "2026.11.03 07:05",
     "period": {
-      "start": "2026-07-27",
-      "end": "2026-10-26"
+      "start": "2026-08-03",
+      "end": "2026-11-02"
     },
     "labels": [
-      "7/27",
       "8/03",
       "8/10",
       "8/17",
@@ -20,10 +19,10 @@
       "10/05",
       "10/12",
       "10/19",
-      "10/26"
+      "10/26",
+      "11/02"
     ],
     "skt": [
-      8.2,
       10.3,
       8.2,
       7.4,
@@ -36,10 +35,10 @@
       6.2,
       6.9,
       5.8,
-      0.8
+      6.5,
+      1.4
     ],
     "kt": [
-      16.7,
       13.5,
       13.7,
       12.8,
@@ -52,10 +51,10 @@
       7.5,
       6.9,
       7.2,
-      1.1
+      11.4,
+      2.6
     ],
     "lgu": [
-      2.9,
       71.8,
       47.7,
       73.2,
@@ -68,7 +67,8 @@
       49.9,
       82.7,
       100,
-      8.2
+      47.0,
+      0.3
     ]
   },
   "news": {
@@ -76,38 +76,38 @@
     "kt": [
       {
         "carrier": "kt",
-        "title": "KT, 도미노피자·롯데월드 반값 할인...10월 '달달혜택' 공개",
-        "url": "https://n.news.naver.com/mnews/article/092/0002439374?sid=105",
-        "date": "2026-09-30",
-        "summary": "KT는 KT멤버십 가입자라면 도미노피자 방문포장 반 값 할인과 롯데리아 특정 메뉴 1인팩, 2인팩 최대 40% 할인 중 하나를 고를 수 있 10월 KT멤버십 달달혜택을 선보인다고 30일 밝혔다. 롯데월드 어드벤처는 본인 반 값... "
+        "title": "[똑똑한소비] 롯데웰푸드 빼빼로 버스 팝업·bhc 한국시리즈 직영점 중...",
+        "url": "https://www.ekn.kr/web/view.php?key=20261102028044388",
+        "date": "2026-11-02",
+        "summary": "◇ 파파존스, 1만~5만원 포장 주문 반값 할인…사이드·음료 최대 2잔 포함 한국파파존스가 KT 멤버십 '달달혜택' 프로모션에 참여해 방문 포장 50% 할인을 제공한다. 기간은 2일부터 오는 30일까지 29일간이다. KT... "
       },
       {
         "carrier": "kt",
-        "title": "KT '달달혜택', 가을 나들이 겨냥…외식·테마파크·공연 묶었다",
-        "url": "http://www.thefirstmedia.net/news/articleView.html?idxno=209822",
-        "date": "2026-09-30",
-        "summary": "KT멤버십 고객은 도미노피자와 롯데리아 혜택 가운데 하나를 선택해 이용할 수 있다. 테마파크 혜택은 선택형 달달혜택과 별도로 제공한다. 롯데월드 어드벤처와 에버랜드, 서울랜드 가운데 한 곳만 선택하는... "
+        "title": "파파존스, 'KT 달달혜택' 프로모션 진행···\"피자부터 음료까지 반값\"",
+        "url": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2487439",
+        "date": "2026-11-02",
+        "summary": "파파존스는 오는 30일까지 KT 멤버십 프로모션 '달달혜택'에 참여한다고 2일 밝혔다. 할인 방법은 간단하다. KT 멤버십 앱에서 쿠폰을 내려받은 뒤 파파존스 공식 홈페이지나 모바일 앱에서 주문하고 매장에서 제품을... "
       },
       {
         "carrier": "kt",
-        "title": "KT, 10월 멤버십 혜택 확대…테마파크·공연 최대 50% 할인",
-        "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=491501",
-        "date": "2026-09-30",
-        "summary": "모델들이 10월 KT멤버십 혜택을 소개하고 있다. 사진=KT KT가 가을 연휴를 맞아 외식과 테마파크... 강이환 KT Customer부문 Customer서비스본부장 상무는 \"10월 달달혜택은 외식부터 가을 나들이, 문화생활까지 고객의... "
+        "title": "[SV 유통 단신] bhc, 직영점서 한국시리즈 전 경기 중계 外",
+        "url": "https://www.socialvalue.kr/news/view/1065599617089403",
+        "date": "2026-11-02",
+        "summary": "▲ 파파존스, KT 멤버십 고객 방문 포장 50% 할인./사진=한국파파존스 재공 ◇ 파파존스, KT 멤버십 고객 방문 포장 50% 할인 한국파파존스는 오는 30일까지 KT 멤버십 ‘달달혜택’ 프로모션에 참여해 방문 포장 주문에 50... "
       },
       {
         "carrier": "kt",
-        "title": "KT, 10월 '달달혜택' 멤버십 공개…뭐길래?",
-        "url": "https://www.ggilbo.com/news/articleView.html?idxno=1184491",
-        "date": "2026-09-30",
-        "summary": "지난 30일 KT는 오는 10월 1일부터 31일 한 달간 KT멤버십 '달.달.혜택'을 운영한다고 밝혔다. 해당 기간 KT멤버십 고객은 롯데리아 특정 메뉴 1인팩·2인팩 최대 40% 할인, 도미노피자 방문포장 50% 할인 중 원하는 혜택을... "
+        "title": "파파존스, KT 멤버십 할인 나선다…방문 포장 고객 혜택 확대",
+        "url": "https://www.megaeconomy.co.kr/news/newsview.php?ncode=1065598802519704",
+        "date": "2026-11-02",
+        "summary": "▲ [사진=한국파파존스] 혜택은 KT 멤버십 달달혜택을 통해 통합 월 1회 이용할 수 있다. 행사 기간 다른 브랜드의 달달혜택을 이용한 고객은 참여할 수 없으며, 다른 제휴 할인과 쿠폰, 세트 메뉴 및 사은품 증정... "
       },
       {
         "carrier": "kt",
-        "title": "KT, 10월 멤버십 ‘달.달.혜택’ 공개..외식·나들이·문화 할인 제공",
-        "url": "http://www.breaknews.com/1240060",
-        "date": "2026-09-30",
-        "summary": "10월 KT멤버십 ‘달.달.혜택’을 선보인다고 30일 밝혔다. 이번 혜택은 개천절과... KT Customer부문 Customer서비스본부장 강이환 상무는 “10월 달달혜택은 외식부터 가을... "
+        "title": "파파존스, KT 멤버십 고객에 피자·사이드·음료 50% 할인…11월 한 달간",
+        "url": "https://www.e-science.co.kr/news/articleView.html?idxno=138673",
+        "date": "2026-11-02",
+        "summary": "혜택을 이용하려면 KT 멤버십 앱에서 달달혜택 쿠폰을 발급받은 뒤 파파존스 공식 홈페이지나 모바일 앱에서 방문 포장으로 주문하면 된다. 할인은 1만 원 이상 5만 원 이하 주문에 적용되며, 할인 금액과 관계없이... "
       }
     ],
     "lgu": [
@@ -151,218 +151,218 @@
   "sentiment": {
     "skt": [
       {
-        "source": "네이버카페(ㆍ피터팬의 좋은방 구하기ㆍ)",
-        "title": "신한 디스카운트플랜+ 할인 혜택 추천하는 이유 (쇼핑 교통 영화)",
-        "url": "https://cafe.naver.com/kig/19666676",
+        "source": "네이버카페(정가를 거부하는 사람들 (알뜰폰, 절약, 재테크))",
+        "title": "cu 솔트래블체카 빼빼로, 토스페페 gs, cu 구매후기",
+        "url": "https://cafe.naver.com/wjdrkrjqn/217755",
         "date": "",
-        "text": "[Time Plan 할인 혜택] 구분 시간 대상 가맹점 혜택 DAY 07:00 ~ 15:00 스타벅스, 투썸, 메가커피 등 주요 카페 및... 구독 / 멤버십 20% 할인 넷플릭스, 유튜브 프리미엄, 티빙, 디즈니+, 네이버플러스 멤버십, 쿠팡 와우 멤버십... "
+        "text": "신한 sol트래블카드 3개씩 5명 15개(가족들꺼 대표로갖다왔어요.. 나눠줄예정) 2. gs25 페페 다른제품 되는지 모르고 빼빼로로! 3. cu 페페 비쵸비 580원 결제 (3600원ㅡ달콤20퍼ㅡt멤버십ㅡ페페2천)"
       },
       {
         "source": "네이버카페(꿀 통)",
-        "title": "좋은 밤입니다 :)",
-        "url": "https://cafe.naver.com/postmore/101527",
+        "title": "CU 쏠트래블 빼빼로 하려고 신규가입하신분들~!!",
+        "url": "https://cafe.naver.com/postmore/104583",
         "date": "",
-        "text": "다들 안뇽? 어느덧 반달이 예쁜 (자꾸 검은 구름에 가려져 못 찍음 이슈ㅜㅜ) 그런 까만 밤입니다. 한 주의 시작, 오늘은 월요일. 다들 좋은 하루 보내셨는지요? 오늘은 가붓하게(?) 로스트 찌끼니로요 다들 꿀맛저... "
-      },
-      {
-        "source": "네이버카페(복지킹)",
-        "title": "삼성월렛 사용법 삼성페이 교통카드 포인트 머니 아이폰 편의점 출금",
-        "url": "https://cafe.naver.com/bosiking/719",
-        "date": "",
-        "text": "및 멤버십까지 스마트폰 하나에 모두 담아낸 갤럭시 통합 디지털 지갑 플랫폼이 바로 '삼성월렛(Samsung Wallet)... 모바일 쿠폰 '선물하기': 삼성월렛 내 '선물하기' 코너를 통해 카페(스타벅스, 투썸), 치킨, 편의점 모바일... "
+        "text": "포켓cu 메인에 신규는 2천원 쿠폰 주거든요 원래 버리려고했는데(5천이상 사용시 쓸 수 있는거라) 두툼... 이걸로 쓰면 되겠더라구요 사진 속 4종만 가능합니다 이렇게 쿠폰 체크한 상태로 멤버십 qr만 찍으면... "
       },
       {
         "source": "네이버카페(정가를 거부하는 사람들 (알뜰폰, 절약, 재테크))",
-        "title": "스벅 땡큐이벤트 좋네요 (커피먹고 700원버는)",
-        "url": "https://cafe.naver.com/wjdrkrjqn/211726",
+        "title": "cu 빼빼로 바나나 잘구입했습니다",
+        "url": "https://cafe.naver.com/wjdrkrjqn/217227",
         "date": "",
-        "text": "3회한정) 버디패스 30%할인시 음료한잔 3,290에 별 8개 적립 별 개당 500원이라 생각하면 커피먹고 약 700원을 오히려 버는 구조네요. t멤버십 구독 20%하신분들도 나쁘지않고요. 이번주 주말에 달리겠습니다. (~10/21)"
+        "text": "카페 정보로 신한쏠 빼빼로3개랑 바나나 2천쿠폰쓰고 t멤버쉽 할인으로 300 원에 바나나구입요 (바나나는 가격내림으로 2500이고 + t할인10프로 페이스페이빼빼로 2천쿠폰써서 300원에 구입요) 우패는없어서 20프로... "
+      },
+      {
+        "source": "네이버카페(정가를 거부하는 사람들 (알뜰폰, 절약, 재테크))",
+        "title": "CU 화장지",
+        "url": "https://cafe.naver.com/wjdrkrjqn/215282",
+        "date": "",
+        "text": "BC카드 결제할인 30% + T멤버십(골드)10% + 온누리10% 개당 약 6500원 이네요 1롤에 270원이면.. 딱 정가입니다 안싸요ㅜ"
       },
       {
         "source": "theqoo",
-        "title": "더쿠 - 더쿠 검색개편때문에 알아야할, 구글에서 더쿠 글 검색하는법",
-        "url": "https://theqoo.net/square/750693577",
+        "title": "더쿠 - 더시즌즈 <성시경의 고막남친> 이번주 라인업",
+        "url": "https://theqoo.net/square/4201359496",
         "date": "",
-        "text": "찾고싶은 검색어를 적고 띄어쓰기 한뒤 site:theqoo.net 을 적어놓는다. 이러면 더쿠안의 글만 검색돼. 3. 더쿠의 글만 확인가능. 4. 이외에 개별방만 검색하는 법도 있음. 더쿠 도메인... "
+        "text": ""
       },
       {
         "source": "theqoo",
-        "title": "더쿠 - T멤버십 퍼블로그 포토팩 0원 쿠폰",
-        "url": "https://theqoo.net/diy/1918773678",
+        "title": "더쿠 - 포켓cu qr이 멤버십qr 말하는걸까?",
+        "url": "https://theqoo.net/theqdeal/4241000833",
         "date": "",
-        "text": "https://img.theqoo.net/HglzN 2월부터 쿠폰 뿌린 거라 쿠폰 쓴 덬들 꽤 있을 거 같지만... 4/30까지 발급 가능 https://www.sktmembership.co.kr:443/onepass.do?m1=01&SHARE_SEQ=797963"
+        "text": "보통 이벤트페이지에 qr있던데 프라페는 없네 앱에서 결제.적립 누르면 나오는거"
       },
       {
         "source": "theqoo",
-        "title": "더쿠 - 내 최애 t우주는 갈대밭엔딩(?)임ㅠㅠㅠ.. ㅅㅍ",
-        "url": "https://theqoo.net/bl/2496956524",
+        "title": "더쿠 - 라이즈 원빈 x 불가리 <마리끌레르> 서머 에디션 커버 공개",
+        "url": "https://theqoo.net/square/4291029113",
         "date": "",
-        "text": "원본우주는 말할것도 없고 이환매 자폭하는우주가 진짜 넘넘넘넘넘 좋음ㅜㅠㅠㅠㅠ https://img.theqoo.net/RSgUb https://img.theqoo.net/HNhEG https://img.theqoo.net/zgchw 이환매 지는 자폭하면서 관창한테... "
+        "text": "↓ https://www.instagram.com/p/DbMzKeJBfAR/"
       },
       {
         "source": "dcinside",
-        "title": "2021년, 가장 주목해야 할 T멤버십 혜택은 무엇?",
-        "url": "https://news.sktelecom.com/128718",
+        "title": "대문 - 디시위키",
+        "url": "https://wiki.dcinside.com/wiki/%EB%8C%80%EB%AC%B8",
         "date": "",
-        "text": "나의 T 멤버십 등급 확인하러 가기 ‘무려 110여곳이?’ T멤버십의 풍성한 제휴사 혜택 T멤버십에... 이 외에도 스타벅스 아메리카노 1잔 무료(2만매 수량 한정), CU 5,000원 기프티콘 무료(1만매 수량 한정)... "
+        "text": ""
       },
       {
         "source": "dcinside",
-        "title": "[ 젠지 관련 링크 모음 (굿즈,멤버십 등) ] - 젠지(Gen.G) LOL 마이너 갤러리",
-        "url": "https://gall.dcinside.com/mgallery/board/view/?id=lolssg&no=1395527",
+        "title": "디시위키",
+        "url": "https://wiki.dcinside.com/",
         "date": "",
-        "text": "fan ㄴ 젠지 멤버십 가입하는 방법 : https://m.dcinside.com/board/lolssg/1482947 [ 젠지 멤버십 가입하는 방법 정리 ] - Gen.G LOL 마이너 갤러리 1. 앱스토어에 “비스테이지”... "
+        "text": "누구나 편집하고 열람할 수 있는 디시위키! 국내 커뮤니티 포털 디시인사이드의 위키 서비스입니다."
       },
       {
         "source": "dcinside",
-        "title": "오늘 뤁규 - 아이두 아이두 갤러리",
-        "url": "https://gall.dcinside.com/board/view/?id=idoido&no=28633",
+        "title": "일베 - 디시위키",
+        "url": "https://wiki.dcinside.com/wiki/%EC%9D%BC%EB%B2%A0",
         "date": "",
-        "text": "https://twitter.com/0405x0909/status/1560909716695396353?s=21&t=oU7CPjCY68WeYsYKi-jEvg https://twitter.com/0405x0909/status/1560907004129845250?s=21&t=oU7CPjCY68WeYsYKi-jEvg https... "
+        "text": ""
       }
     ],
     "kt": [
       {
-        "source": "네이버카페(앤텔레콤 선불폰 선불유심 알뜰폰 _선불eSIM/연체/신용/인증폰)",
-        "title": "신평면 선불유심, 어르신 효도폰 요금 부담 줄이는 법",
-        "url": "https://cafe.naver.com/unintelecom/12605",
+        "source": "네이버카페(맘이베베 (핫딜, 육아, 놀이))",
+        "title": "아웃백kt구해요 ㅡ스타벅스아아쿠폰드려요",
+        "url": "https://cafe.naver.com/skybluezw4rh/14986954",
         "date": "",
-        "text": "망 고르기 — 준비한 유심이 K망(KT)인지 L망(LG U+)인지 선택합니다.... 충전 후 시작 — 앤텔레콤 멤버십 앱을 깔고 요금을 충전하면 바로 쓰실... (K망)은 CU·GS25·이마트24, 모두의 유심 원칩(L망)은 이마트24·스토리웨이... "
+        "text": "제가 kt인데.벌써 마감이 ㅜ"
       },
       {
-        "source": "네이버카페(모바일브라더스 개통연구소 [선불폰/알뜰폰/선불유심/요금제])",
-        "title": "홍성군휴대폰성지 선불폰 개통 | 비대면 당일 셀프개통 순서",
-        "url": "https://cafe.naver.com/mbros/5876",
+        "source": "네이버카페(호주만 Australia 시드니 브리즈번 멜버른 ^_^)",
+        "title": "기자협회보유진이엔티, 방미통위에 'YTN 최대주주 승인' 청문 보류 요청일다....",
+        "url": "https://cafe.naver.com/city6/9457",
         "date": "",
-        "text": "유심 구입 CU, 이마트24 같은 편의점에서 살 수 있고, LG망은 모두의유심... 19:50 ※ KT 미납이 남아 있다면 LG망으로 진행하는 쪽이 유리한 경우가... 재부팅 멤버십 앱 설치 후 충전하면 곧바로 사용할 수 있습니다. ⑤... "
+        "text": "#Ai영상 #스타벅스알바생 #아기영상 #유행탑승 y ppeum 재생시간01:15... 한마디\"ㅋㅋㅋㅋ #장성우 #강민호 #한국시리즈 #야구 #KT위즈... com 네이버 플러스 멤버십시작하기쪽지 229해피빈 메일 34카페블로그 99... "
       },
       {
-        "source": "네이버카페(모바일브라더스 개통연구소 [선불폰/알뜰폰/선불유심/요금제])",
-        "title": "제한기간내 번호이동 막혀 고민이라면! LG·KT 선불폰 요금제 비교와 안면인....",
-        "url": "https://cafe.naver.com/mbros/5870",
+        "source": "네이버카페(보험포유[나에게 맞는 보험을 제대로 알고 준비하자])",
+        "title": "KT 11월 멤버십, 외식 할인과 수험생 혜택 날짜",
+        "url": "https://cafe.naver.com/bohumforyou/141",
         "date": "",
-        "text": "LG·KT 선불폰 요금제 비교와 안면인증 셀프개통 순서 정리 제한기간내... LG망 선불유심은 모두의유심 원칩을 이용할 수 있으며 CU, 이마트24 같은... ⑩ 앤텔레콤 멤버십 앱 설치 및 충전 개통이 끝났다면 앤텔레콤 멤버십... "
+        "text": "11월 19일부터 30일까지, 2006년 1월부터 2008년 12월 사이에 태어난 KT 멤버십 고객을 대상으로 스타벅스 음료 쿠폰과 올리브영 3천원권을 제공한다고 해요. 오늘부터 받을 수 있는 혜택과 섞어 기억하지 않는 게... "
       },
       {
-        "source": "네이버카페(모바일브라더스 개통연구소 [선불폰/알뜰폰/선불유심/요금제])",
-        "title": "원곡동선불폰 개통방법, 요금제 고르고 집에서 셀프개통",
-        "url": "https://cafe.naver.com/mbros/5869",
+        "source": "네이버카페(축산모[축산,양돈,한우,양계,육우,돼지,소,축산, 구인구직])",
+        "title": "t 멤버십 등 통신사, 11월 맞이 할인 및 수험생 혜택 공개",
+        "url": "https://cafe.naver.com/kfarm/30893",
         "date": "",
-        "text": "분 KT 쪽에 미납이 있다면 LG망 선불로 진행하는 편이 수월한 경우가... 있고, CU 이마트24 일부 편의점 에서 손쉽게 구할 수 있습니다. eSIM을... 앤텔레콤 멤버십 앱을 설치해 요금을 충전하면 바로 쓸 수 있습니다. ⑤... "
-      },
-      {
-        "source": "theqoo",
-        "title": "더쿠 - SUGA일본콘서트 + 로손티켓(l-ticket)이 뭐야? 정리 (+)(+)(0414update!)",
-        "url": "https://theqoo.net/bts/2741324620",
-        "date": "",
-        "text": "(2)VIP석(멤버십 한정 업그레이드 추첨만 가능 / 일반 판매는 없음) - 26,400엔 ☆VIP혜택 : 사운드체크... ☞ https://theqoo.net/index.php?mid=seventeen&document_srl=2547879278 근데 내 과거 경험에서는 선행추첨때 결제까지... "
+        "text": "- KT는 수험생 고객을 위해 스타벅스 음료 쿠폰과 올리브영 모바일 상품권을 증정합니다. ■ 자세한 내용 SK텔레콤의 11월 T 멤버십은 고향사랑기부제 참여 시 최대 100% 세액공제와 답례품 외에 추가 혜택을... "
       },
       {
         "source": "theqoo",
-        "title": "더쿠 - 더쿠 검색개편때문에 알아야할, 구글에서 더쿠 글 검색하는법",
-        "url": "https://theqoo.net/square/750693577",
+        "title": "더쿠 - 더시즌즈 <성시경의 고막남친> 이번주 라인업",
+        "url": "https://theqoo.net/square/4201359496",
         "date": "",
-        "text": "찾고싶은 검색어를 적고 띄어쓰기 한뒤 site:theqoo.net 을 적어놓는다. 이러면 더쿠안의 글만 검색돼. 3. 더쿠의 글만 확인가능. 4. 이외에 개별방만 검색하는 법도 있음. 더쿠 도메인... "
+        "text": ""
       },
       {
         "source": "theqoo",
-        "title": "더쿠 - KT 멤버십 달달 초이스 혜택 (4/17~)",
-        "url": "https://theqoo.net/square/2776564907",
+        "title": "더쿠 - 라이즈 원빈 x 불가리 <마리끌레르> 서머 에디션 커버 공개",
+        "url": "https://theqoo.net/square/4291029113",
         "date": "",
-        "text": "https://img.theqoo.net/RUsEHM https://img.theqoo.net/ZYSnfD"
+        "text": "↓ https://www.instagram.com/p/DbMzKeJBfAR/"
+      },
+      {
+        "source": "theqoo",
+        "title": "더쿠 - https://theqoo.net/dingyuxi",
+        "url": "https://theqoo.net/dingyuxi/3836889897",
+        "date": "",
+        "text": "🌸일로와야 해 얘드라🌸"
       },
       {
         "source": "dcinside",
-        "title": "[ 젠지 관련 링크 모음 (굿즈,멤버십 등) ] - 젠지(Gen.G) LOL 마이너 갤러리",
-        "url": "https://gall.dcinside.com/mgallery/board/view/?id=lolssg&no=1395527",
+        "title": "대문 - 디시위키",
+        "url": "https://wiki.dcinside.com/wiki/%EB%8C%80%EB%AC%B8",
         "date": "",
-        "text": "fan ㄴ 젠지 멤버십 가입하는 방법 : https://m.dcinside.com/board/lolssg/1482947 [ 젠지 멤버십 가입하는 방법 정리 ] - Gen.G LOL 마이너 갤러리 1. 앱스토어에 “비스테이지”... "
+        "text": ""
       },
       {
         "source": "dcinside",
-        "title": "디시인사이드",
-        "url": "https://www.dcinside.com/",
+        "title": "디시위키",
+        "url": "https://wiki.dcinside.com/",
         "date": "",
-        "text": "국내 인터넷 커뮤니티 포털이자 인터넷 트렌드의 중심, 디시인사이드입니다. 실시간 베스트 등의 갤러리 커뮤니티 서비스를 제공."
+        "text": "누구나 편집하고 열람할 수 있는 디시위키! 국내 커뮤니티 포털 디시인사이드의 위키 서비스입니다."
       },
       {
         "source": "dcinside",
-        "title": "진천 cu BGF여기 씻는곳있음? - 아르바이트 갤러리",
-        "url": "https://gall.dcinside.com/board/view/?id=arbeit&no=6771608",
+        "title": "일베 - 디시위키",
+        "url": "https://wiki.dcinside.com/wiki/%EC%9D%BC%EB%B2%A0",
         "date": "",
-        "text": "https://gall.dcinside.com/board/view/?id=arbeit&no=4408536 진천CU BGF 물류센터 후기씀 - 아르바이트 갤러리 어차피 여기는 쿠팡갤이지만사이트에 공고로 맨날올라오고 충청지역에서 알바구하는 애들은... "
+        "text": ""
       }
     ],
     "lgu": [
       {
+        "source": "네이버카페(국내1위 다이어트 커뮤니티 씨씨앙(식단,운동,후기,헬스,체험단))",
+        "title": "유플멤버십 혜택 총정리ㅣ등급 체계, VIP콕과 유플투쁠 차이, 쿠폰 받는 법",
+        "url": "https://cafe.naver.com/cantsb/3669703",
+        "date": "",
+        "text": "프로모션인 유플투쁠 등으로 구성됨 ✔ 유플투쁠은 2024년 4월 시작했고, 날짜별로 열리는 쿠폰을 앱에서... 있나 유플멤버십의 큰 틀이에요 ✨ 구분 내용 상시 제휴 파리바게뜨, GS25 등 제휴처 상시 할인. 등급별... "
+      },
+      {
         "source": "네이버카페(월급쟁이 재테크 연구 (예금,적금,절약,보험,주식,ETF,부동산))",
-        "title": "[설레는맘으로 / 3인 / 100만원] 10/13(화) 실비환급 / 당근커피판매 / 다이소 / C....",
-        "url": "https://cafe.naver.com/onepieceholicplus/6200660",
+        "title": "[히응히읗] 카카오페이 다람쥐쿠폰으로 식빵 꽁쇼 / 카카오페이X파리바게트",
+        "url": "https://cafe.naver.com/onepieceholicplus/6200809",
         "date": "",
-        "text": "전국CU가 된다고 하니 받으신분들 모두들 뭐든 사오셔요 ㅎㅎ 결제할때는 \"모바일상품권\"으로 쓴다고... Hpoint 하이라이트 / 모니모 간식뽑기 현대홈쇼핑 크루즈 상담예약 hy팩토리 견학쿠폰 / 유플투쁠 백억커피 무료쿠폰"
+        "text": "고게 나와서 바로 식빵 샀습니당 ㅎㅎㅎ 애들이 아침으로 잘 먹거든여 ㅎㅎㅎ 젤 만만하기도 하구 ㅎㅎㅎㅎ 유플로 300원 할인받고 쿠폰 2400원 할인받고 차액 1200원은 카페포로 결제해서 식빵 공짜로 삽니당 ㅎㅎ 육각형... "
       },
       {
-        "source": "네이버카페(맘이베베 (핫딜, 육아, 놀이))",
-        "title": "9월 출석체크 및 즉당",
-        "url": "https://cafe.naver.com/skybluezw4rh/14855127",
+        "source": "네이버카페(월급쟁이 재테크 연구 (예금,적금,절약,보험,주식,ETF,부동산))",
+        "title": "[히응히읗] 4인가구 한달 80만원 살기 / 무지출 3회 / 파바 / 케이뱅크X페이북 ....",
+        "url": "https://cafe.naver.com/onepieceholicplus/6200805",
         "date": "",
-        "text": "CU 풍요로운 시작, 추석! 출석체크 https://www.pocketcu.co.kr/deepLink/checkAppInstall?viewType=1&viewUrl=/event/eventView/9005260811062 [안드로이드 Play스토어앱 링크] ※ 위의 링크가 잘... "
+        "text": "유플 300원 할인받고 2400원 쿠폰쓰고 차액은 카페포로 결제해서 실지출 0원 ! 대상웰라이프 만원 나와서 비타민D 두 통 샀습니당 ㅋㅋㅋㅋㅋ 하나는 친정 하나는 저 먹으려구여 ㅋㅋㅋㅋㅋㅋㅋ 일부러... "
       },
       {
-        "source": "네이버카페(정가를 거부하는 사람들 (알뜰폰, 절약, 재테크))",
-        "title": "정가거부 하는날- 롯백중동점,현백 ,다이소,이마트24,CU,샤넬 향수 샘플까지 ....",
-        "url": "https://cafe.naver.com/wjdrkrjqn/198602",
+        "source": "네이버카페(군산맘 / 미녀맘 since16.05.18)",
+        "title": "파바가 원래 통신사, 해피포인트적립이 동시에 안되나요?!",
+        "url": "https://cafe.naver.com/kunsanbeauty/1536765",
         "date": "",
-        "text": "1번 방문지 -다이소 유플투쁠에서 받은 다이소 깊콘 오늘 마감이라 2,000원짜리 사용하고 옴~ 실지출 0원... 방문지-Cu 오늘까지인 깊콘 사용하고 왔어요~ 생각보다 맛있어요. 4번 방문지 -이마트24 이것도 오늘까지... "
-      },
-      {
-        "source": "네이버카페(핫딜맘 놀이터)",
-        "title": "오늘 할 일 체크해보아요",
-        "url": "https://cafe.naver.com/hotdealplayground/529805",
-        "date": "",
-        "text": "11시 유플투쁠 장기고객 - 오전 11시 엘포앱 바나프레소2천 100원딜 (배민5만-46,500원) - 오후 14시 CU 무지개 챌린지 룰렛 즉당 ** H포인트 파바 1천 or p 즉당! V3퀴즈(보이스피싱) 즉당! 초록우산 룰렛 즉당! 알파쇼핑 룰렛... "
+        "text": "예전에는 직원분이 먼저 안내해서 그렇게해서 샀었던거같은데 엊그제가니 이중으로 안된다고하셔서 궁금하네요. 바뀌었나요?!"
       },
       {
         "source": "theqoo",
-        "title": "더쿠 - 더쿠 검색개편때문에 알아야할, 구글에서 더쿠 글 검색하는법",
-        "url": "https://theqoo.net/square/750693577",
+        "title": "더쿠 - 표절의혹 강한 파리바게뜨 제주한정상품.jpg",
+        "url": "https://theqoo.net/square/2053321718",
         "date": "",
-        "text": "찾고싶은 검색어를 적고 띄어쓰기 한뒤 site:theqoo.net 을 적어놓는다. 이러면 더쿠안의 글만 검색돼. 3. 더쿠의 글만 확인가능. 4. 이외에 개별방만 검색하는 법도 있음. 더쿠 도메인... "
+        "text": "파리바게뜨에서 제주공항한정으로2019년부터해서 쿠키안에 공간을 만들어서 생크림과 땅콩버터크림을 넣은 제품임 만드는걸 눈앞에서 볼수있는 제주 마음샌드 그런데 일본브랜드 Press butter sand 에서... "
       },
       {
         "source": "theqoo",
-        "title": "더쿠 - ㅇㅂㅌ 혹시 cu앱 예약구매 시간 넘어가면 픽업 못하나?",
-        "url": "https://theqoo.net/beauty/2617481447",
+        "title": "더쿠 - 40대가 파리바게트 알바 3일 한 중기",
+        "url": "https://theqoo.net/review/2598844517",
         "date": "",
-        "text": "https://img.theqoo.net/zGgri 시간이 오후 4시까지밖에 없어서ㅠㅠ 4시 넘어서 가면 못받아..?"
+        "text": "5배로 해야한다고 함 내가 포장한 빵들을 팔아도 되는걸까 생각이 듬 옥수수타르트 가운데 눌렸는데 비밀임 프렌치 마늘 바게트랑 마늘모닝바게뜨랑 다르다는걸 오늘알았는데 비밀임 잘못찍은적은 없지만 어쨌든... "
       },
       {
         "source": "theqoo",
-        "title": "더쿠 - Cu 신상 더단백 후기",
-        "url": "https://theqoo.net/diet/2022205937",
+        "title": "더쿠 - 더시즌즈 <성시경의 고막남친> 이번주 라인업",
+        "url": "https://theqoo.net/square/4201359496",
         "date": "",
-        "text": "https://img.theqoo.net/QGbXH https://img.theqoo.net/NbwVq 학창시절 매점이나 자판기에서 파는 500원짜리 캔에 담긴 초코우유맛"
+        "text": ""
       },
       {
         "source": "dcinside",
-        "title": "디시인사이드",
-        "url": "https://www.dcinside.com/",
+        "title": "대문 - 디시위키",
+        "url": "https://wiki.dcinside.com/wiki/%EB%8C%80%EB%AC%B8",
         "date": "",
-        "text": "국내 인터넷 커뮤니티 포털이자 인터넷 트렌드의 중심, 디시인사이드입니다. 실시간 베스트 등의 갤러리 커뮤니티 서비스를 제공."
+        "text": ""
       },
       {
         "source": "dcinside",
-        "title": "‘유플투쁠’ 두 달간 누적 이용 고객 80만명 돌파 | IT조선",
-        "url": "https://issuefeed.dcinside.com/content/961087",
+        "title": "파리바게뜨 마이너 갤러리 - 커뮤니티 포털 디시인사이드",
+        "url": "https://gall.dcinside.com/mgallery/board/lists/?id=parisbaguette",
         "date": "",
-        "text": "프로그램 ‘유플투쁠’의 누적 이용 고객이 론칭 두 달 만에... 5000원), CU(최대 50%) 등 할인 혜택까지 총 38종을 마련했다. 매월 마지막... 영역도 확대해 나갈 계획이다”고 말했다. 김광연 기자 *******@chosunbiz.com"
+        "text": "대한민국 대표 프랜차이즈 베이커리 - 파리바게뜨 갤러리에 다양한 이야기를 남겨주세요."
       },
       {
         "source": "dcinside",
-        "title": "가격대별 추천 스피커 - 스피커 마이너 갤러리",
-        "url": "https://gall.dcinside.com/mgallery/board/view/?id=speakers&no=212954",
+        "title": "디시위키",
+        "url": "https://wiki.dcinside.com/",
         "date": "",
-        "text": "[시리즈] 추천 공지 · 가격대별 추천 스피커 · 가격대별 추천 서브우퍼 · 가격대별 추천 DAC/AMP 본문 링크 https://gall.dcinside.com/m/speakers/212954 사진 클릭 시 리뷰 및... "
+        "text": "누구나 편집하고 열람할 수 있는 디시위키! 국내 커뮤니티 포털 디시인사이드의 위키 서비스입니다."
       }
     ]
   },
